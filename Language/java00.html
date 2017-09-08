@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>[java纲]Java概论 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;[java纲]Java概论
+    <span class="updated">Page Updated&nbsp;
+      2017-09-01 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">[java纲]Java概论</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>完备的系统在演变中浑然天成,要想在系统中添加新的功能,必须能够忍受带来的递归增长的问题.</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">面向对象</a><ul>
+<li><a href="#_2">说明</a></li>
+<li><a href="#_3">五大特性</a></li>
+<li><a href="#_4">设计目标</a><ul>
+<li><a href="#_5">安全性</a></li>
+<li><a href="#_6">易维护性</a></li>
+<li><a href="#_7">灵活性</a></li>
+<li><a href="#_8">高效性</a></li>
+<li><a href="#_9">内聚性</a></li>
+<li><a href="#_10">特性</a></li>
+</ul>
+</li>
+<li><a href="#_11">最佳实践</a></li>
+<li><a href="#_12">章节细化</a><ul>
+<li><a href="#_13">运算</a></li>
+<li><a href="#_14">流程控制结构</a></li>
+</ul>
+</li>
+<li><a href="#_15">至少会用</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">面向对象</h2>
+<hr />
+<h3 id="_2">说明</h3>
+<p>自始至终,编程语言一步一步的提供着高程度的抽象给开发人员，从最开始的简单的自然语言的抽象,到数学语言的抽象的函数式编程，到待解决问题的抽象的面向对象,看起来，能解决问题的复杂程度取决于问题的抽象程度,程序员作为计算机与现实世界的沟通桥梁,同时承载着现实世界问题的待解决问题建模(问题空间)与所应用的计算机的机器建模(解空间)，建立这两种空间的桥梁是很复杂的，这也是面向对象的挑战，编程语言的出现无非是从这两个空间上削弱复杂度，看起来,Java语言做的不错.</p>
+<h3 id="_3">五大特性</h3>
+<hr />
+<ul>
+<li>万物皆对象</li>
+<li>程序是对象的集合,通过互相发送消息运作</li>
+<li>对象可以包含子对象</li>
+<li>对象具有类型</li>
+<li>某一特定类型的对象可以接受相同的消息</li>
+</ul>
+<div class="hlcode"><pre><span class="err">对象具有状态</span><span class="p">(</span><span class="err">内部数据</span><span class="p">),</span><span class="err">行为</span><span class="p">(</span><span class="err">方法</span><span class="p">),</span><span class="err">标识</span><span class="p">(</span><span class="err">类型</span><span class="p">)</span>
+</pre></div>
+
+
+<h3 id="_4">设计目标</h3>
+<hr />
+<blockquote>
+<p>没有不付出代价的特性.牺牲空间或者时间以获得安全或者效率上的出众</p>
+</blockquote>
+<h4 id="_5">安全性</h4>
+<div class="hlcode"><pre><span class="err">我们将类库的创建者称为类创建者</span>
+<span class="err">将使用类库</span><span class="n">API</span><span class="err">的称为客户端程序猿</span>
+</pre></div>
+
+
+<ol>
+<li>
+<p>客户端程序员使用类库时如果操作了敏感程度高的代码可能会触发安全故障[引入访问权限控制]</p>
+<blockquote>
+<p>道理我都懂,那么仅仅使用public和privated不就行了吗?为什么还要有protected和default？<br />
+    答: 为了解决继承的访问权限问题,谁让你引入继承</p>
+</blockquote>
+<p><a href='#inherit'>可是我为什么要引入继承？</a></p>
+</li>
+<li>
+<p>内存泄漏,通用诟病,如果将对象的控制权交付给程序员本身的化容易出现人为失误,出现内存泄漏<br />
+<code>c++与java走了不同的道路,因为理念不同,c++追求效率,为了让程序猿获得更大的效率控制能力,复杂化了处理过程,程序员必须自己管理内存的分配,而java比较注重灵活性与安全性,引入了垃圾回收器,内存泄露的监控与防范交付给虚拟机灵活是必然的,但是机器毕竟不是人，会容易在效率上大打折扣.</code></p>
+</li>
+<li>
+<p>异常控制，java引入了错误处理将异常看做为对象,而且在众多语言中地位颇高,<br />
+<code>关于java语言的异常处理机制,目前没有深入过</code></p>
+</li>
+<li>
+<p>数组越界<br />
+<code>引入范围检查</code></p>
+</li>
+<li>
+<p>没有被初始化的类型乱用(不适用方法内变量[“局部”变量])<br />
+<code>基本类型自动数据初始化,自定义类类型引用默认NULL</code></p>
+<ul>
+<li><code>局部</code>变量不适用怎么办<br />
+<code>编译器警告</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="_6">易维护性</h4>
+<p>受c语言的静态绑定影响,方法在<b>编译阶段绑定</b>,那么问题来了,拥有一个这样的方法,子类型不断创造,但不影响方法的执行,那么就引入泛化概念吧,但是怎么解决静态绑定问题,我们这样做只是为了<b>方法与类型分离</b>,准确的说是<b>方法与引用</b>分离,泛化方法功能,那么,方法的地址应该是由动态创建的对象中含有的特定信息计算出来的,不像C++,为了实现这种功能,引入了virtual关键字,来告诉别人,这个方法是与类型分离的,不需要在编译期去计算方法的地址,由此看来java好像默默的给你做好了这件事,在这方面，看起来java更胜一筹.<br />
+<code>使用动态绑定</code></p>
+<h4 id="_7">灵活性</h4>
+<ul>
+<li>类库代码改变可能会影响客户端程序猿的代码[所以尽量除了API，其他的都隐藏]<br />
+<code>使用访问权限控制</code></li>
+<li>所有的类对象都可以有公用的方法[比如我想使用一个可以回收任何对象垃圾的垃圾回收器]<br />
+<code>使用单根继承</code></li>
+<li>如何动态扩充存储对象的空间,运行前有可能不知道对象的多少<br />
+<code>使用容器,java提供了很多容器可选择,当然需要在性能与功能上做权衡</code><br />
+<code>c的链表可以看做为容器的一个具体实例</code></li>
+<li>容器里存储对对象的引用,但是要想让容器具有通用性,有可能用到单根继承的思想,即在引用中放入父类型的声明<br />
+<code>当然这延伸出了新的问题--&gt;转型问题..向上转型丢失身份</code><br />
+<code>那么有没有可能使容器存储记录对象的类型呢?</code><br />
+<code>解决方案:引入范型(参数化类型)[Java SE5]</code></li>
+</ul>
+<h4 id="_8">高效性</h4>
+<ul>
+<li>两个问题拥有相似的解决方案,仅仅有一点差别,没必要使用两次重复的代码吧.[引入继承]<span id='inherit'></span><br />
+<code>使用继承</code></li>
+</ul>
+<h4 id="_9">内聚性</h4>
+<blockquote>
+<p>动态发生的组合(composition)叫做聚合(aggregation)</p>
+</blockquote>
+<p><a href="http://www.cnblogs.com/wanghuaijun/p/5421419.html">聚合,组合</a></p>
+<ul>
+<li>将对象看作是提供服务的信息体,可以提高对象的内聚性,因为他齿轮化了问题.</li>
+</ul>
+<h4 id="_10">特性</h4>
+<ul>
+<li>并发编程</li>
+<li>Java web</li>
+</ul>
+<h3 id="_11">最佳实践</h3>
+<hr />
+<ul>
+<li>设计时优先考虑组合其次考虑继承</li>
+</ul>
+<h3 id="_12">章节细化</h3>
+<hr />
+<h4 id="_13">运算</h4>
+<ul>
+<li>
+<p>运算符</p>
+<ul>
+<li>注意赋值运算符,赋值不是简简单单的数理符号,如果他的操作数是对象的话.</li>
+<li>注意运算优先级</li>
+<li>逻辑运算符的“短路”特性</li>
+<li>按位运算符</li>
+<li>移位运算符</li>
+<li>语法糖运算符<ul>
+<li>+=</li>
+<li>-=</li>
+<li>/=</li>
+<li>*=</li>
+</ul>
+</li>
+<li>三元运算符</li>
+<li>类型转换<ul>
+<li>基本类型的转换</li>
+<li>截断与舍入[暂时忘了]</li>
+<li>自定义类型的转换<ul>
+<li>不会丢失信息</li>
+<li>会丢失身份</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>操作数</p>
+<ul>
+<li>直接量<ul>
+<li>类型与进制<ul>
+<li>33f,33d,33l[直接量的显示声明]</li>
+</ul>
+</li>
+<li>编译器对直接量的选择</li>
+<li>通常将指数以double形式使用</li>
+</ul>
+</li>
+<li>变量</li>
+</ul>
+</li>
+</ul>
+<h4 id="_14">流程控制结构</h4>
+<ul>
+<li>foreach[Java SE5]<br />
+<code>用于数组和容器的迭代,也可以迭代字符串</code></li>
+</ul>
+<div class="hlcode"><pre>    <span class="n">foreach</span><span class="o">(</span><span class="kt">char</span> <span class="nl">c:</span><span class="s">&quot;i am very happy today&quot;</span><span class="o">){</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">+</span><span class="s">&quot;&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="c1">//range为自己定制的Range</span>
+    <span class="n">foreach</span><span class="o">(</span><span class="kt">int</span> <span class="nl">a:</span><span class="n">range</span><span class="o">(</span><span class="mi">10</span><span class="o">)){</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">+</span><span class="s">&quot;&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+</pre></div>
+
+
+<ul>
+<li>void 方法末尾添加隐式的<code>return</code></li>
+<li>label<br />
+<code>与continue和break结合使用,类似goto,用起来还不错</code><br />
+<code>java限制的很,label只能紧邻循环体结构之上</code></li>
+<li>switch<br />
+<code>Only convertible int values and emun variables are permitted</code></li>
+</ul>
+<div class="hlcode"><pre>  <span class="c1">//以下代码就是错误的,注意char可以转int</span>
+  <span class="c1">//switch目前只支持整数，char和emun，long也不行哦</span>
+  <span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;missing&quot;</span><span class="o">;</span>
+    <span class="k">switch</span><span class="o">(</span><span class="n">b</span><span class="o">){</span>
+
+    <span class="o">}</span>
+</pre></div>
+
+
+<h3 id="_15">至少会用</h3>
+<hr />
+<ul>
+<li>Random</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<ul>
+<li>你认为什么人可以说自己精通面向对象<br />
+<code>将面向对象与class分离吧，类是面向对象的特性,但不是全部</code></li>
+<li>什么是类<br />
+<code>问题空间问题的抽象建模</code></li>
+<li>为什么使用类<br />
+<code>大概java设计者学习过算法吧:)[笑],个人以为这是看透了问题空间问题与问题的关系</code></li>
+<li>为什么普通字段不能在对象之间共享<br />
+<code>破坏了问题的独立性,现实生活中不也是这么,你以为面相对象是解决什么问题的</code></li>
+<li>谈一谈方法有什么要注意的<br />
+<code>对编译器来说,如果不想出现歧义的调用方法,那么就得在语法上限制方法,需要找一个东西唯一标识,那么我们就把它称为签名吧,一开始学c的时候我和同学讨论,c对方法的检查虽然简单,是啊,但是课本里至少讲一下吧,老师用看智障的眼神说,谁特么秀逗的在一个文件里写两个一模一样的方法名,但是面向对象引入重载后,就不得不谈了,方法之间必须有明确的界限,而且还要提到教育高度笑～</code></li>
+<li>能不能讲一下static？<br />
+<code>不会自己思考么？</code><br />
+<code>如果不是学妹长得漂亮就不回答了....</code><br />
+<code>首先相当于c中的全局方法吧,没有对象我也想有方法啊？总不能为了实现一个简单的功能我必须创建对象吧,它能够在对象之前产生,所以你说在它里面使用this合适不？别说编译器给你检查这个问题了，在eclipse中文本编辑器都给你检查出红色波浪线，其实这样说过于轻率了,从设计思想来说吧,不可避免的比如你的兄弟节点想得知有多少兄弟们,人类可以通过观察计数,对于对象来说,他没有主动观察能力,只能靠外界信息传递,有必要提供这么一个信息接口,而且要独立在对象之外,放在类里面.</code></li>
+<li>你喜欢java哪一点?<br />
+<code>可以定制更强大的sdk？最主要写起来方便</code></li>
+<li>有人说看见java的helloworld这么难写就放弃了,你有什么看法？<br />
+<code>自己不会定制一下？mdzz,再不济也可以用inport static 啊</code></li>
+<li>谈一谈sizeof,为什么java没有<br />
+<code>因为java不需要在语言级别解决平台移植问题,至于c++中的小打小闹用其他方式替代了</code></li>
+<li>能不能简略的讲一下java文档能力？<br />
+<code>这个我会专门的写一篇文章</code></li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '[java纲]Java概论',
+    owner: 'srcmit',
+    repo: 'wiki',
+    oauth: {
+      client_id: 'bde03e9480361e89d518',
+      client_secret: '4cbe90a78300811e30fd5ac0eca9684f7169fc59',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcmit/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-08 11:13:37</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

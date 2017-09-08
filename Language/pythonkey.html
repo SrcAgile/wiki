@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>[词法目][python目]关键字/特殊概念 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;[词法目][python目]关键字/特殊概念
+    <span class="updated">Page Updated&nbsp;
+      2017-08-28 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">[词法目][python目]关键字/特殊概念</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">更新....</a><br />
+<strong>文档类型：</strong><b>[ <a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-pythonwith/">引</a> ]</b></p>
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="k">[自.评论]</span>
+<span class="err">这个女的竟然不为大众所知</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=409102911&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">关键字</a><ul>
+<li><a href="#with"><b style='color:#67ac82'>with</b></a><ul>
+<li><a href="#_2">概念</a></li>
+<li><a href="#_3">格式</a></li>
+<li><a href="#_4">自定义上下文管理器</a></li>
+</ul>
+</li>
+<li><a href="#_5"><b style='color:#67ac82'>变量</b></a><ul>
+<li><a href="#sysargv"><b>sys.argv</b></a></li>
+<li><a href="#__name__"><b>__name__</b></a></li>
+</ul>
+</li>
+<li><a href="#_6"><b style='color:#67ac82'>方法</b></a><ul>
+<li><a href="#__str__"><b>__str__</b></a></li>
+<li><a href="#__repr__"><b>__repr__</b></a></li>
+<li><a href="#__iter__"><b>__iter__</b></a></li>
+<li><a href="#__next__"><b>__next__</b></a></li>
+<li><a href="#__getitem__"><b>__getitem__</b></a></li>
+<li><a href="#__getattr__"><b>__getattr__</b></a></li>
+<li><a href="#__call__"><b>__call__</b></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">关键字</h2>
+<h3 id="with"><b style='color:#67ac82'>with</b></h3>
+<hr />
+<h4 id="_2">概念</h4>
+<ul>
+<li><b>上下文管理协议（Context Management Protocol）</b>：包含方法 <code>__enter__()</code> 和 <code>__exit__()</code>，支持该协议的对象要实现这两个方法。</li>
+<li><b>上下文管理器（Context Manager）</b>：支持上下文管理协议的对象，这种对象实现了<code>__enter__()</code> 和 <code>__exit__()</code> 方法。上下文管理器定义执行with 语句时要建立的运行时上下文，负责执行 with 语句块上下文中的进入与退出操作。通常使用 with 语句调用上下文管理器，也可以通过直接调用其方法来使用。</li>
+<li><b>运行时上下文（runtime context）</b>：由上下文管理器创建，通过上下文管理器的 <code>__enter__()</code>和<code>__exit__()</code> 方法实现，<code>__enter__()</code> 方法在语句体执行之前进入运行时上下文，<code>__exit__()</code> 在语句体执行完后从运行时上下文退出。with 语句支持运行时上下文这一概念。</li>
+<li><b>上下文表达式（Context Expression）</b>：with 语句中跟在关键字 with 之后的表达式，该表达式要返回一个上下文管理器对象。</li>
+<li><b>语句体（with-body）</b>：with 语句包裹起来的代码块，在执行语句体之前会调用上下文管理器的 <code>__enter__()</code> 方法，执行完语句体之后执行<code>__exit__()</code> 方法。</li>
+</ul>
+<h4 id="_3">格式</h4>
+<ul>
+<li>标准用法</li>
+</ul>
+<div class="hlcode"><pre><span class="mi">1</span><span class="p">:</span>    <span class="k">with</span> <span class="n">context_expression</span> <span class="p">[</span><span class="k">as</span> <span class="n">target</span><span class="p">(</span><span class="n">s</span><span class="p">)]:</span>
+<span class="mi">2</span><span class="p">:</span>         <span class="k">with</span><span class="o">-</span><span class="n">body</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="err">这里</span> <span class="n">context_expression</span> <span class="err">要返回一个上下文管理器对象，该对象并不赋值给</span> <span class="n">as</span> <span class="err">子句中的</span> <span class="n">target</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="err">，</span>
+<span class="err">如果指定了</span> <span class="n">as</span> <span class="err">子句的话，会将上下文管理器的</span> <span class="n">__enter__</span><span class="p">()</span> <span class="err">方法的返回值赋值给</span> <span class="n">target</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="err">。</span>
+<span class="n">target</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="err">可以是单个变量，或者由“</span><span class="p">()</span><span class="err">”括起来的元组（不能是仅仅由“</span><span class="p">,</span><span class="err">”分隔的变量列表，必须加“</span><span class="p">()</span><span class="err">”）。</span>
+<span class="n">Python</span> <span class="err">对一些内建对象进行改进，加入了对上下文管理器的支持，可以用于</span> <span class="n">with</span> <span class="err">语句中，比如可以自动关闭</span>
+<span class="err">文件、线程锁的自动获取和释放等。假设要对一个文件进行操作，使用</span> <span class="n">with</span> <span class="err">语句可以有如下代码：</span>
+</pre></div>
+
+
+<ul>
+<li>操作文件对象[with]</li>
+</ul>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">r&#39;somefileName&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">somefile</span><span class="p">:</span>
+<span class="mf">2.</span>    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">somefile</span><span class="p">:</span>
+<span class="mf">3.</span>        <span class="k">print</span> <span class="n">line</span>
+<span class="mf">4.</span>        <span class="c"># ...more code</span>
+</pre></div>
+
+
+<ul>
+<li>操作文件对象[try/except]</li>
+</ul>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="n">somefile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">r&#39;somefileName&#39;</span><span class="p">)</span>
+<span class="mf">2.</span><span class="k">try</span><span class="p">:</span>
+<span class="mf">3.</span>    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">somefile</span><span class="p">:</span>
+<span class="mf">4.</span>        <span class="k">print</span> <span class="n">line</span>
+<span class="mf">5.</span>        <span class="c"># ...more code</span>
+<span class="mf">6.</span><span class="k">finally</span><span class="p">:</span>
+<span class="mf">7.</span>    <span class="n">somefile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<ul>
+<li>with 语句执行过程描述</li>
+</ul>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="n">context_manager</span> <span class="o">=</span> <span class="n">context_expression</span>
+<span class="mf">2.</span><span class="n">exit</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">context_manager</span><span class="p">)</span><span class="o">.</span><span class="n">__exit__</span><span class="err"> </span>
+<span class="mf">3.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">4.</span><span class="n">type</span><span class="p">(</span><span class="n">context_manager</span><span class="p">)</span><span class="o">.</span><span class="n">__enter__</span><span class="p">(</span><span class="n">context_manager</span><span class="p">)</span>
+<span class="mf">5.</span><span class="n">exc</span> <span class="o">=</span> <span class="bp">True</span><span class="err">  </span> <span class="c"># True 表示正常执行，即便有异常也忽略；False 表示重新抛出异常，需要对异常进行处理</span>
+<span class="mf">6.</span><span class="k">try</span><span class="p">:</span>
+<span class="mf">7.</span><span class="err">    </span><span class="k">try</span><span class="p">:</span>
+<span class="mf">8.</span><span class="err">        </span><span class="n">target</span> <span class="o">=</span> <span class="n">value</span><span class="err"> </span> <span class="c"># 如果使用了 as 子句</span>
+<span class="mf">9.</span><span class="err">        </span><span class="k">with</span><span class="o">-</span><span class="n">body</span><span class="err">    </span> <span class="c"># 执行 with-body</span>
+<span class="mf">10.</span><span class="err">    </span><span class="k">except</span><span class="p">:</span>
+<span class="mf">11.</span><span class="err">        </span><span class="c"># 执行过程中有异常发生</span>
+<span class="mf">12.</span><span class="err">        </span><span class="n">exc</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="mf">13.</span><span class="err">        </span><span class="c"># 如果 __exit__ 返回 True，则异常被忽略；如果返回 False，则重新抛出异常</span>
+<span class="mf">14.</span><span class="err">        </span><span class="c"># 由外层代码对异常进行处理</span>
+<span class="mf">15.</span><span class="err">        </span><span class="k">if</span> <span class="ow">not</span> <span class="nb">exit</span><span class="p">(</span><span class="n">context_manager</span><span class="p">,</span> <span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()):</span>
+<span class="mf">16.</span><span class="err">            </span><span class="k">raise</span>
+<span class="mf">17.</span><span class="k">finally</span><span class="p">:</span>
+<span class="mf">18.</span><span class="err">    </span><span class="c"># 正常退出，或者通过 statement-body 中的 break/continue/return 语句退出</span>
+<span class="mf">19.</span><span class="err">    </span><span class="c"># 或者忽略异常退出</span>
+<span class="mf">20.</span><span class="err">    </span><span class="k">if</span> <span class="n">exc</span><span class="p">:</span>
+<span class="mf">21.</span><span class="err">        </span><span class="nb">exit</span><span class="p">(</span><span class="n">context_manager</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="mf">22.</span><span class="err">    </span><span class="c"># 缺省返回 None，None 在布尔上下文中看做是 False</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="mf">1.</span><span class="err">执行</span> <span class="n">context_expression</span><span class="err">，生成上下文管理器</span> <span class="n">context_manager</span>
+<span class="err">调用上下文管理器的</span> <span class="n">__enter__</span><span class="p">()</span> <span class="err">方法；如果使用了</span> <span class="k">as</span> <span class="err">子句，则将</span> <span class="n">__enter__</span><span class="p">()</span>
+<span class="err">方法的返回值赋值给</span> <span class="k">as</span> <span class="err">子句中的</span> <span class="n">target</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="err">执行语句体</span> <span class="k">with</span><span class="o">-</span><span class="n">body</span>
+<span class="mf">2.</span><span class="err">不管是否执行过程中是否发生了异常，执行上下文管理器的</span> <span class="n">__exit__</span><span class="p">()</span> <span class="err">方法，</span>
+<span class="n">__exit__</span><span class="p">()</span> <span class="err">方法负责执行“清理”工作，如释放资源等。如果执行过程中没有出现异常，</span>
+<span class="err">或者语句体中执行了语句</span> <span class="k">break</span><span class="o">/</span><span class="k">continue</span><span class="o">/</span><span class="k">return</span><span class="err">，则以</span> <span class="bp">None</span> <span class="err">作为参数</span>
+<span class="err">调用</span> <span class="n">__exit__</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="err">；</span>
+<span class="mf">3.</span><span class="err">如果执行过程中出现异常，则使用</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span> <span class="err">得到的异常信息为参数</span>
+<span class="err">调用</span> <span class="n">__exit__</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span><span class="p">)</span><span class="err">出现异常时，</span>
+<span class="err">如果</span> <span class="n">__exit__</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span> <span class="err">返回</span> <span class="bp">False</span><span class="err">，则会重新抛出</span>
+<span class="err">异常，让</span><span class="k">with</span> <span class="err">之外的语句逻辑来处理异常，这也是通用做法；如果返回</span> <span class="bp">True</span><span class="err">，</span>
+<span class="err">则忽略异常，不再对异常进行处理</span>
+</pre></div>
+
+
+<h4 id="_4">自定义上下文管理器</h4>
+<p>开发人员可以自定义支持上下文管理协议的类。自定义的上下文管理器要实现上下文管理协议所需要的 <strong>enter</strong>() 和 <strong>exit</strong>() 两个方法：<br />
+context_manager.<strong>enter</strong>() ：进入上下文管理器的运行时上下文，在语句体执行前调用。with 语句将该方法的返回值赋值给 as 子句中的 target，如果指定了 as 子句的话<br />
+context_manager.<strong>exit</strong>(exc_type, exc_value, exc_traceback) ：退出与上下文管理器相关的运行时上下文，返回一个布尔值表示是否对发生的异常进行处理。参数表示引起退出操作的异常，如果退出时没有发生异常，则3个参数都为None。如果发生异常，返回<br />
+True 表示不处理异常，否则会在退出该方法后重新抛出异常以由 with 语句之外的代码逻辑进行处理。如果该方法内部产生异常，则会取代由 statement-body 中语句产生的异常。要处理异常时，不要显示重新抛出异常，即不能重新抛出通过参数传递进来的异常，只需要将返回值设置为 False 就可以了。之后，上下文管理代码会检测是否 <strong>exit</strong>() 失败来处理异常<br />
+下面通过一个简单的示例来演示如何构建自定义的上下文管理器。注意，上下文管理器必须同时提供 <strong>enter</strong>() 和 <strong>exit</strong>() 方法的定义，缺少任何一个都会导致 AttributeError；with 语句会先检查是否提供了 <strong>exit</strong>() 方法，然后检查是否定义了 <strong>enter</strong>() 方法。<br />
+假设有一个资源 DummyResource，这种资源需要在访问前先分配，使用完后再释放掉；分配操作可以放到 <strong>enter</strong>() 方法中，释放操作可以放到 <strong>exit</strong>() 方法中。简单起见，这里只通过打印语句来表明当前的操作，并没有实际的资源分配与释放。</p>
+<ul>
+<li>自定义支持 with 语句的对象</li>
+</ul>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="k">class</span> <span class="nc">DummyResource</span><span class="p">:</span>
+<span class="mf">2.</span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+<span class="mf">3.</span>        <span class="bp">self</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span>
+<span class="mf">4.</span>        <span class="k">print</span> <span class="s">&#39;Resource [</span><span class="si">%s</span><span class="s">]&#39;</span> <span class="o">%</span> <span class="n">tag</span>
+<span class="mf">5.</span>    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="mf">6.</span>        <span class="k">print</span> <span class="s">&#39;[Enter </span><span class="si">%s</span><span class="s">]: Allocate resource.&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span>
+<span class="mf">7.</span>       <span class="k">return</span> <span class="bp">self</span>   <span class="c"># 可以返回不同的对象</span>
+<span class="mf">8.</span>    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+<span class="mf">9.</span>        <span class="k">print</span> <span class="s">&#39;[Exit </span><span class="si">%s</span><span class="s">]: Free resource.&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span>
+<span class="mf">10.</span>        <span class="k">if</span> <span class="n">exc_tb</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="mf">11.</span>            <span class="k">print</span> <span class="s">&#39;[Exit </span><span class="si">%s</span><span class="s">]: Exited without exception.&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span>
+<span class="mf">12.</span>        <span class="k">else</span><span class="p">:</span>
+<span class="mf">13.</span>            <span class="k">print</span> <span class="s">&#39;[Exit </span><span class="si">%s</span><span class="s">]: Exited with exception raised.&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span>
+<span class="mf">14.</span>            <span class="k">return</span> <span class="bp">False</span>   <span class="c"># 可以省略，缺省的None也是被看做是False</span>
+</pre></div>
+
+
+<p>DummyResource 中的 <strong>enter</strong>() 返回的是自身的引用，这个引用可以赋值给 as 子句中的 target 变量；返回值的类型可以根据实际需要设置为不同的类型，不必是上下文管理器对象本身。<br />
+<strong>exit</strong>() 方法中对变量 exc_tb 进行检测，如果不为 None，表示发生了异常，返回 False 表示需要由外部代码逻辑对异常进行处理；注意到如果没有发生异常，缺省的返回值为 None，在布尔环境中也是被看做 False，但是由于没有异常发生，<strong>exit</strong>() 的三个参数都为 None，上下文管理代码可以检测这种情况，做正常处理。<br />
+下面在 with 语句中访问 DummyResource ：</p>
+<ul>
+<li>使用自定义的支持 with 语句的对象</li>
+</ul>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="k">with</span> <span class="n">DummyResource</span><span class="p">(</span><span class="s">&#39;Normal&#39;</span><span class="p">):</span>
+<span class="mf">2.</span>   <span class="k">print</span> <span class="s">&#39;[with-body] Run without exceptions.&#39;</span>
+<span class="mf">3.</span>
+<span class="mf">4.</span><span class="k">with</span> <span class="n">DummyResource</span><span class="p">(</span><span class="s">&#39;With-Exception&#39;</span><span class="p">):</span>
+<span class="mf">5.</span>    <span class="k">print</span> <span class="s">&#39;[with-body] Run with exception.&#39;</span>
+<span class="mf">6.</span>    <span class="k">raise</span> <span class="ne">Exception</span>
+<span class="mf">7.</span>    <span class="k">print</span> <span class="s">&#39;[with-body] Run with exception. Failed to finish statement-body!&#39;</span>
+</pre></div>
+
+
+<p>第1个 with 语句的执行结果如下：</p>
+<ul>
+<li>with 语句1执行结果</li>
+</ul>
+<div class="hlcode"><pre><span class="n">Resource</span> <span class="p">[</span><span class="n">Normal</span><span class="p">]</span>
+<span class="p">[</span><span class="n">Enter</span> <span class="n">Normal</span><span class="p">]:</span> <span class="n">Allocate</span> <span class="n">resource</span><span class="o">.</span>
+<span class="p">[</span><span class="k">with</span><span class="o">-</span><span class="n">body</span><span class="p">]</span> <span class="n">Run</span> <span class="n">without</span> <span class="n">exceptions</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Exit</span> <span class="n">Normal</span><span class="p">]:</span> <span class="n">Free</span> <span class="n">resource</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Exit</span> <span class="n">Normal</span><span class="p">]:</span> <span class="n">Exited</span> <span class="n">without</span> <span class="n">exception</span><span class="o">.</span>
+</pre></div>
+
+
+<p>可以看到，正常执行时会先执行完语句体 with-body，然后执行 <strong>exit</strong>() 方法释放资源。<br />
+第2个 with 语句的执行结果如下：</p>
+<ul>
+<li>with 语句2执行结果</li>
+</ul>
+<div class="hlcode"><pre><span class="n">Resource</span> <span class="p">[</span><span class="n">With</span><span class="o">-</span><span class="ne">Exception</span><span class="p">]</span>
+<span class="p">[</span><span class="n">Enter</span> <span class="n">With</span><span class="o">-</span><span class="ne">Exception</span><span class="p">]:</span> <span class="n">Allocate</span> <span class="n">resource</span><span class="o">.</span>
+<span class="p">[</span><span class="k">with</span><span class="o">-</span><span class="n">body</span><span class="p">]</span> <span class="n">Run</span> <span class="k">with</span> <span class="n">exception</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Exit</span> <span class="n">With</span><span class="o">-</span><span class="ne">Exception</span><span class="p">]:</span> <span class="n">Free</span> <span class="n">resource</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Exit</span> <span class="n">With</span><span class="o">-</span><span class="ne">Exception</span><span class="p">]:</span> <span class="n">Exited</span> <span class="k">with</span> <span class="n">exception</span> <span class="n">raised</span><span class="o">.</span>
+
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">&quot;G:/demo&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">20</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+   <span class="k">raise</span> <span class="ne">Exception</span>
+<span class="ne">Exception</span>
+</pre></div>
+
+
+<p>可以看到，with-body 中发生异常时with-body 并没有执行完，但资源会保证被释放掉，同时产生的异常由 with 语句之外的代码逻辑来捕获处理。<br />
+可以自定义上下文管理器来对软件系统中的资源进行管理，比如数据库连接、共享资源的访问控制等。Python 在线文档 <b><a href="http://docs.python.org/release/2.6/whatsnew/2.6.html#module-contextlib">Writing Context Managers</a></b> 提供了一个针对数据库连接进行管理的上下文管理器的简单范例。</p>
+<h3 id="_5"><b style='color:#67ac82'>变量</b></h3>
+<hr />
+<h4 id="sysargv"><b>sys.argv</b></h4>
+<p><code>sys</code>模块有一个<code>argv</code>变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该<code>.py</code>文件的名称，例如：</p>
+<p>运行<code>python hello.py</code>获得的<code>sys.argv</code>就是<code>['hello.py']</code>；</p>
+<p>运行<code>python hello.py -t</code>获得的sys.argv就是<code>['hello.py', '-t']</code>。</p>
+<h4 id="__name__"><b><code>__name__</code></b></h4>
+<div class="hlcode"><pre><span class="c">#hello.py</span>
+<span class="mf">1.</span><span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="mf">2.</span>    <span class="n">hello</span><span class="p">()</span>
+</pre></div>
+
+
+<p>当我们在命令行运行hello模块文件时，Python解释器把一个特殊变量<code>__name__</code>置为<code>__main__</code>，而如果在其他地方导入该hello模块时，if判断将失败，因此，这种if测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是<b style='color:green'>运行测试</b>。</p>
+<ul>
+<li>测试</li>
+</ul>
+<div class="hlcode"><pre><span class="nv">$ </span>python3 hello.py
+Hello, world!
+<span class="nv">$ </span>python hello.py World
+Hello, World!
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="nv">$ </span>python3
+Python 3.4.3 <span class="o">(</span>v3.4.3:9b73f1c3e601, Feb 23 2015, 02:52:03<span class="o">)</span>
+<span class="o">[</span>GCC 4.2.1 <span class="o">(</span>Apple Inc. build 5666<span class="o">)</span> <span class="o">(</span>dot 3<span class="o">)]</span> on darwin
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for </span>more information.
+&gt;&gt;&gt; import hello
+&gt;&gt;&gt;
+<span class="c">#屁都没有</span>
+</pre></div>
+
+
+<h3 id="_6"><b style='color:#67ac82'>方法</b></h3>
+<hr />
+<h4 id="__str__"><b><code>__str__</code></b></h4>
+<ul>
+<li>与object绑定print方法</li>
+</ul>
+<div class="hlcode"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">a</span>   <span class="c">#调用__str__()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+</pre></div>
+
+
+<h4 id="__repr__"><b><code>__repr__</code></b></h4>
+<ul>
+<li>交互模式下输出调用</li>
+</ul>
+<div class="hlcode"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>   <span class="c">#调用__repr__()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+</pre></div>
+
+
+<h4 id="__iter__"><b><code>__iter__</code></b></h4>
+<ul>
+<li>返回迭代对象</li>
+</ul>
+<h4 id="__next__"><b><code>__next__</code></b></h4>
+<ul>
+<li>迭代对象调用</li>
+</ul>
+<h4 id="__getitem__"><b><code>__getitem__</code></b></h4>
+<ul>
+<li>下标取值</li>
+<li>切片</li>
+</ul>
+<h4 id="__getattr__"><b><code>__getattr__</code></b></h4>
+<ul>
+<li>动态返回属性</li>
+<li>动态返回函数 [可以写成高级函数或return 朗姆达表达式]</li>
+<li>可以实现链式调用chain()<b style='color:green'>[很棒]</b></li>
+</ul>
+<h4 id="__call__"><b><code>__call__</code></b></h4>
+<p><code>任何类，只需要定义一个__call__()方法，就可以直接对实例进行调用</code></p>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="mf">2.</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="mf">3.</span>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="mf">4.</span>
+<span class="mf">5.</span>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="mf">6.</span>        <span class="k">print</span><span class="p">(</span><span class="s">&#39;My name is </span><span class="si">%s</span><span class="s">.&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="hlcode"><pre>&gt;&gt;&gt; <span class="nv">s</span> <span class="o">=</span> Student<span class="o">(</span><span class="s1">&#39;hi&#39;</span><span class="o">)</span>
+&gt;&gt;&gt; s<span class="o">()</span> <span class="c"># self参数不要传入</span>
+My name is hi.
+</pre></div>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '[词法目][python目]关键字/特殊概念',
+    owner: 'srcmit',
+    repo: 'wiki',
+    oauth: {
+      client_id: 'bde03e9480361e89d518',
+      client_secret: '4cbe90a78300811e30fd5ac0eca9684f7169fc59',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcmit/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-08 11:13:37</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

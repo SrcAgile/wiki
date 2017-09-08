@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>python源码分析 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;python源码分析
+    <span class="updated">Page Updated&nbsp;
+      2017-08-27 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">python源码分析</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="k">[网评]</span>
+<span class="err">谢谢网易云音乐让我知道真相.</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=624751&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">写在开头</a></li>
+<li><a href="#_2">架构图</a></li>
+<li><a href="#_3">结构剖析</a><ul>
+<li><a href="#_4">编译安装</a></li>
+<li><a href="#c">调用c函数</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">写在开头</h2>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="err">本系列文章的理解水平建立在编译原理</span><span class="p">,</span><span class="n">c</span><span class="err">语言</span><span class="p">,</span><span class="n">python</span><span class="err">语言的了解基础上</span>
+<span class="mf">2.</span><span class="err">如果不知道</span><span class="n">Scaner</span><span class="p">,</span><span class="n">Parser</span><span class="p">,</span><span class="n">AST</span><span class="p">[</span><span class="err">抽象语法树</span><span class="p">],</span><span class="n">compiler</span><span class="err">，</span><span class="n">Code</span> <span class="n">Evaluator</span><span class="err">建议进修</span>
+<span class="mf">3.</span>
+</pre></div>
+
+
+<h2 id="_2">架构图</h2>
+<p><center ><br />
+<div style="width:644px"><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/pyarchive" /><br />
+</div><br />
+</center></p>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="n">Scaner</span><span class="o">--</span><span class="p">[</span><span class="n">token</span><span class="p">]</span><span class="o">---&gt;</span><span class="n">Parser</span><span class="o">--</span><span class="p">[</span><span class="n">AST</span><span class="p">]</span><span class="o">--&gt;</span><span class="n">Compiler</span><span class="o">--</span><span class="p">[</span><span class="n">byte</span> <span class="n">code</span><span class="p">]</span><span class="o">--&gt;</span><span class="n">Code</span> <span class="n">Evaluator</span>
+<span class="mf">2.</span><span class="n">Parser</span>         <span class="n">use</span>      <span class="n">Object</span><span class="o">/</span><span class="n">Type</span> <span class="n">Structure</span>
+<span class="mf">3.</span><span class="n">Compiler</span>       <span class="n">use</span>      <span class="n">memory</span> <span class="n">Allocator</span>
+<span class="mf">4.</span><span class="n">Code</span> <span class="n">Evaluator</span> <span class="n">modify</span>   <span class="n">current</span> <span class="n">state</span> <span class="n">of</span> <span class="n">python</span>
+</pre></div>
+
+
+<hr />
+<h2 id="_3">结构剖析</h2>
+<div class="hlcode"><pre><span class="mf">1.</span> <span class="p">[.</span><span class="o">/</span><span class="n">include</span><span class="p">]</span> <span class="n">C</span><span class="o">/</span><span class="n">C</span><span class="o">++</span><span class="err">编写</span><span class="n">python</span><span class="err">模块的头文件源</span>
+<span class="mf">2.</span> <span class="p">[.</span><span class="o">/</span><span class="n">Lib</span><span class="p">]</span> <span class="n">python</span><span class="err">自带标准库#速度慢</span>
+<span class="mf">3.</span> <span class="p">[.</span><span class="o">/</span><span class="n">Module</span><span class="p">]</span> <span class="err">由</span><span class="n">c</span><span class="err">编写#速度快</span>
+<span class="mf">4.</span> <span class="p">[.</span><span class="o">/</span><span class="n">Parser</span><span class="p">]</span> <span class="n">Scaner</span><span class="o">+</span><span class="n">parser</span><span class="o">+</span><span class="n">some</span> <span class="n">tools</span>
+<span class="mf">5.</span> <span class="p">[.</span><span class="o">/</span><span class="n">Objects</span><span class="p">]</span> <span class="n">Python</span><span class="err">所有内建对象</span><span class="o">+</span><span class="err">运行时的对象实现</span>
+<span class="mf">6.</span> <span class="p">[.</span><span class="o">/</span><span class="n">python</span><span class="p">]</span> <span class="o">**</span><span class="err">运行核心</span><span class="o">**</span> <span class="n">Compiler</span><span class="o">+</span><span class="n">Evaluator</span>
+<span class="mf">7.</span> <span class="p">[.</span><span class="o">/</span><span class="n">PcBuild</span><span class="p">]</span> <span class="n">windows</span><span class="err">工程文件</span>
+</pre></div>
+
+
+<h3 id="_4">编译安装</h3>
+<ul>
+<li>windows 没错这就是我格式化windows的原因</li>
+<li>Linux/Unix<br />
+    1.<code>&gt;  ./configure --prefix='PATH'</code><br />
+    2.<code>&gt;  make</code><br />
+    3.<code>&gt;  make install</code></li>
+</ul>
+<h3 id="c">调用c函数</h3>
+<ul>
+<li><a href="https://coolshell.cn/articles/671.html">陈皓</a></li>
+<li>暂停睡觉</li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'python源码分析',
+    owner: 'srcmit',
+    repo: 'wiki',
+    oauth: {
+      client_id: 'bde03e9480361e89d518',
+      client_secret: '4cbe90a78300811e30fd5ac0eca9684f7169fc59',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcmit/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-08 11:13:37</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

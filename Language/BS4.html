@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>数据采集 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;数据采集
+    <span class="updated">Page Updated&nbsp;
+      2017-08-27 23:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">数据采集</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28872586&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#intro"><b style='color:#580000'>Intro</b></a></li>
+<li><a href="#objectbeautifulsoup"><b style='color:#580000'>Object[BeautifulSoup]</b></a><ul>
+<li><a href="#_1"><b style='color:#700000'>构造参数</b></a><ul>
+<li><a href="#encode"><b style='color:#A00000'>Encode</b></a></li>
+<li><a href="#parser"><b style='color:#A00000'>Parser</b></a></li>
+<li><a href="#parse_only"><b style='color:#A00000'>parse_only</b></a></li>
+</ul>
+</li>
+<li><a href="#attribute"><b style='color:#700000'>Attribute</b></a></li>
+<li><a href="#method"><b style='color:#700000'>Method</b></a><ul>
+<li><a href="#normal"><b style='color:#A00000'>Normal</b></a></li>
+<li><a href="#search"><b style='color:#A00000'>Search</b></a></li>
+<li><a href="#traversal"><b style='color:#A00000'>Traversal</b></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_2"><b style='color:#580000'>周末放映室</b></a></li>
+</ul>
+</div>
+<h2 id="intro"><b style='color:#580000'>Intro</b></h2>
+<div class="hlcode"><pre><span class="mf">1.</span><span class="p">[</span><span class="n">lib</span><span class="p">]</span><span class="n">I</span> <span class="n">choose</span> <span class="n">bs4</span>
+<span class="mf">2.</span><span class="p">[</span><span class="n">version</span><span class="p">]</span><span class="n">python3</span><span class="p">.</span><span class="n">x</span>
+</pre></div>
+
+
+<h2 id="objectbeautifulsoup"><b style='color:#580000'>Object[BeautifulSoup]</b></h2>
+<h3 id="_1"><b style='color:#700000'>构造参数</b></h3>
+<h4 id="encode"><b style='color:#A00000'>Encode</b></h4>
+<p><code>输入编码其实可以自动检测,但是不一定准哦,输出指定UTF8</code><br />
+- from_encoding[以文档指定的编码解析]<code>E:from_encoding="iso-8859-8"</code><br />
+- exclude_encodings[排除编码]<code>E: exclude_encodings=["ISO-8859-7"]</code></p>
+<h4 id="parser"><b style='color:#A00000'>Parser</b></h4>
+<ul>
+<li>xml</li>
+<li>lxml[推荐]</li>
+<li>html5lib</li>
+<li>html.parser[内置]</li>
+<li><a>差异比较</a></li>
+</ul>
+<h4 id="parse_only"><b style='color:#A00000'>parse_only</b></h4>
+<ul>
+<li>SoupStrainer对象<ul>
+<li>SoupStrainer("TAG_NAME")</li>
+<li>SoupStrainer(id='##')[选择器]</li>
+<li>SoupStrainer(method引用)</li>
+</ul>
+</li>
+</ul>
+<h3 id="attribute"><b style='color:#700000'>Attribute</b></h3>
+<ul>
+<li>soup.tag-------------[<a>获得标签</a>] [<a>属</a>]</li>
+<li>soup.tag['Attr']---[<a>获得键值</a>] [<a>属</a>]</li>
+<li>soup.contents-----[<a>获得.descendants子节点<code>&lt;html&gt;#&lt;/html&gt;</code></a>] [<a>属</a>]</li>
+<li>soup.children------[<a>获得子节点</a>] [<a>属</a>]</li>
+<li>soup.descendants-[<a>获得子孙节点</a>] [<a>属</a>]</li>
+<li>soup.strings-----[<a>文档去标签化</a>] [<a>属</a>]</li>
+<li>soup.stripped_strings---[<a>忽略空行去标签化</a>] [<a>属</a>]</li>
+<li>soup.parent------[<a>父节点NONE</a>] [<a>属</a>]</li>
+<li>soup.original_encoding---[<a>模糊识别编码</a>] [<a>属</a>]</li>
+</ul>
+<h3 id="method"><b style='color:#700000'>Method</b></h3>
+<h4 id="normal"><b style='color:#A00000'>Normal</b></h4>
+<ul>
+<li>soup.prettify([编码默认utf8])[<a>格式化输出</a>] [<a>IO</a>]</li>
+<li>soup.get_text()---[<a>获得文本</a>]<ul>
+<li>soup.get_text("character")[tag之间character分割]</li>
+<li>soup.get_text("|", strip=True)[<a>以‘|’分割标签,移除空白</a>]</li>
+</ul>
+</li>
+</ul>
+<h4 id="search"><b style='color:#A00000'>Search</b></h4>
+<ul>
+<li>soup.new_tag("a", href="url")[<a>增加新标签</a>] [<a>增</a>]</li>
+<li>soup.new_string("string", Comment)[<a href='Comment' style='color:green'><b>Comment</b></a>] [<a>添加注释</a>] [<a>增</a>]</li>
+<li>soup.find_all('tag')---[查找.标签] [得到.列表] [<a>查</a>]</li>
+<li>soup.find(id='#')------[查找.定位] [得到.唯一] [<a>查</a>]</li>
+<li>soup.select("tag")[<a>CSS选择器</a>] [<a>直接查找</a>] [<a>查</a>]<ul>
+<li>soup.select("tag1 tag2")[<a>CSS选择器</a>] [<a>逐层查找</a>] [<a>tag1 的子孙是tag2皆可</a>] [<a>查</a>]</li>
+<li>soup.select("tag1 &gt; tag2")[<a>CSS选择器</a>] [<a>tag1的儿子tag2</a>] [<a>查</a>]</li>
+<li>soup.select("#tag1 ~ .class")[<a>CSS选择器</a>] [<a>tag1的所有class兄弟</a>] [<a>查</a>]</li>
+<li>soup.select("#tag1 + .class")[<a>CSS选择器</a>] [<a>tag1的紧邻的class兄弟</a>] [<a>查</a>]</li>
+<li>soup.select(".class") [<a>CSS选择器</a>] [<a>所有的class节点</a>] [<a>查</a>]</li>
+<li>soup.select("[class~=some_name]")[<a>CSS选择器</a>] [<a><b style='color:red'>忘了</b></a>] [<a>查</a>]</li>
+<li>soup.select("#id") [<a>CSS选择器</a>] [<a>查</a>]</li>
+<li>soup.select("tag#id") [<a>CSS选择器</a>] [<a>查</a>]</li>
+<li>soup.select("#id1，#id2")[<a>CSS选择器</a>] [<a>查</a>]</li>
+<li>soup.select('a[href]')[<a>具有属性</a>] [<a>查</a>]<ul>
+<li>soup.select('a[href="url"]')[<a>确定指定属性值</a>] [<a>查</a>]</li>
+<li>soup.select('a[href^="url"]')[<a>属性值不为</a>] [<a>查</a>]</li>
+<li>soup.select('a[href*="url"]')[<a>局部匹配</a>] [<a>查</a>]</li>
+<li>soup.select('a[href*="url"]')[<a>局部匹配</a>] [<a>查</a>]</li>
+</ul>
+</li>
+<li>soup.select_one("选择器")[<a>返回查找回的第一个</a>] [<a>查</a>]</li>
+</ul>
+</li>
+</ul>
+<h4 id="traversal"><b style='color:#A00000'>Traversal</b></h4>
+<h2 id="_2"><b style='color:#580000'>周末放映室</b></h2>
+<hr />
+<p><code>没想到center标签不支持width属性,只能自定义&lt;div&gt;了</code><br />
+<center ><br />
+<div style="width:644px"><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/Paprika.png" /><br />
+</div><br />
+</center></p>
+<p><center><br />
+<embed height="415" width="644" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=4887477&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed><br />
+</center></p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '数据采集',
+    owner: 'srcmit',
+    repo: 'wiki',
+    oauth: {
+      client_id: 'bde03e9480361e89d518',
+      client_secret: '4cbe90a78300811e30fd5ac0eca9684f7169fc59',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcmit/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-08 11:13:37</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

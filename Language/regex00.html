@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>[Regex纲]Regex概论 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;[Regex纲]Regex概论
+    <span class="updated">Page Updated&nbsp;
+      2017-08-31 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">[Regex纲]Regex概论</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">思索中....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+今日无音乐,只有乱.</li>
+</ul>
+<hr />
+<blockquote>
+<p>混乱的思想,难以安眠的嘈杂,生命的歌与诗,坠落在绚烂多彩的深渊.</p>
+</blockquote>
+<hr />
+<p>以下均为不成熟的思想,为了记录脑中知识,故将知识扔到这一片荒芜之地.<br />
+1. 规则即命题<br />
+2. 将表达式看做命题<br />
+3. 将匹配分为确定匹配与规则匹配</p>
+<p>好了现在我要创造正则表达式,那么我知道正则表达式的目的就是描述模式,<b>描述</b>本身应该有什么性质,对的，他要遵循<b>精准性</b>,<b>客观性</b>还有<b>灵活性</b>这意味这要减小描述的复杂度,为了减小描述的复杂度，那就提高符号抽象程度。<br />
+此处引入集合论的混乱观点，毕竟数学都是建立在它上面的，我使用一下应该不会有太大的出入，那么开始吧。<br />
+1. 集合内的元素被认为元对象<br />
+2. 集合上面的运算形成新的集合</p>
+<hr />
+<p>[草稿.篇]</p>
+<div class="hlcode"><pre><span class="err">大局观：代表对元素集合的描述，考虑的是整个元素集合的性质</span><span class="p">,</span><span class="err">例如数量</span>
+<span class="err">　微观：代表对单个元素的描述</span><span class="p">,</span><span class="err">考虑的是单个索引上元素的值，例如位置和值</span>
+</pre></div>
+
+
+<p>上面也说过描述要具有精准性，我们要知道他的位置，他的值才能唯一描述他，他的值可能是常项也可能是变项，常项可能包括空集,变项引入符号‘|’,所以元素是变动的“null|{set}”&lt;---&gt;"{set}?"<br />
+$$Regex \Rightarrow \begin{cases} 大局观  &amp;  \begin{cases}<br />
+                                  数量观 &amp;  \begin{cases}有限 \\<br />
+                                                        无限(有限是无限的子集)<br />
+                                            \end{cases}\\  <br />
+                                  \end{cases}<br />
+                                  \\<br />
+                        \\<br />
+                        微观    &amp;  \begin{cases}<br />
+                                    基本元素 &amp; \begin{cases}常项 &amp; \begin{cases}特殊元素 \\<br />
+                                                                              其他元素<br />
+                                                                   \end{cases}\\  <br />
+                                                          变项 &amp; \\<br />
+                                                \end{cases}<br />
+                                    \\<br />
+                                    位置 &amp;     \begin{cases}绝对位置\\<br />
+                                                           相对位置\\<br />
+                                              \end{cases}<br />
+                                     \\<br />
+                                  \end{cases}\\<br />
+                         \end{cases}<br />
+$$</p>
+<hr />
+<p>对草稿篇出现疑问<br />
+1. 量词的引入是为了简化描述吗?<br />
+2. 有点混乱...<br />
+3. 我一开始为什么要执着引入谓词逻辑？</p>
+<p>以下为写在本子上的公式</p>
+<p>$$运算\begin{smallmatrix}&amp;抽象&amp;\\ &amp;\Longleftrightarrow&amp;\end{smallmatrix}规则\begin{smallmatrix}&amp;实体化&amp;\\ &amp;\Longleftrightarrow&amp;\end{smallmatrix}命题\begin{smallmatrix}&amp;使用&amp;\\ &amp;\longrightarrow&amp;\end{smallmatrix}谓词$$</p>
+<p>看来真正的理解只能去写一个正则引擎了QAQ</p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '[Regex纲]Regex概论',
+    owner: 'srcmit',
+    repo: 'wiki',
+    oauth: {
+      client_id: 'bde03e9480361e89d518',
+      client_secret: '4cbe90a78300811e30fd5ac0eca9684f7169fc59',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcmit/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-08 11:13:37</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

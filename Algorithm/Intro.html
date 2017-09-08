@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>算法起引 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Algorithm">Algorithm</a>&nbsp;&#187;&nbsp;算法起引
+    <span class="updated">Page Updated&nbsp;
+      2017-09-06 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">算法起引</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=286999&auto=0&height=66"></iframe></li>
+</ul>
+<hr />
+<blockquote>
+<p>设计的魅力在于能让人在枯燥中感受快乐</p>
+</blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">前言</a></li>
+<li><a href="#_2">什么是算法</a></li>
+<li><a href="#_3">数学化描述</a></li>
+</ul>
+</div>
+<h3 id="_1">前言</h3>
+<hr />
+<p>本来我是不想写关于算法类的介绍的,原因很简单,我不想分享知识,这不是自私的原因,而是懒得去做,设计本身就是很复杂的东西,设计一个算法就像是在微分方程一样,没有固定的解法,不一定有解法[<b>可计算性</b>],但是如果仅仅是为了结果去设计,人总会陷入漫长的枯燥中,真正的设计者享受着设计的每一个过程,像是认真捏造一个细碎的星星,企图窥探银河的壮观,那是一种特殊的感受,无法用语言描述,总而言之很壮观,很美丽,那么到底是什么驱动了我的书写,一个是知识的系统化,另一个是来自开源社区的共享精神,可以说互联网思维吧笑：),但愿每一个看过这些东西的算法爱好者能感受其中的魅力,自认为在抒情方面的语言组织能力不够好,所以废话不多说。</p>
+<h3 id="_2">什么是算法</h3>
+<hr />
+<ul>
+<li>有限性</li>
+<li>可行性</li>
+<li>输入</li>
+<li>输出</li>
+<li>确定性</li>
+</ul>
+<p>满足以上特性的叫做算法.</p>
+<div class="hlcode"><pre><span class="err">有限是指算法中的指令不能是没有边界的数量</span><span class="p">,</span><span class="err">没有边界就像死循环一样</span><span class="p">,</span><span class="err">如何让产生答案</span><span class="p">.</span><span class="err">如果一个算法缺少有限性只能叫做计算方法</span><span class="p">.</span>
+<span class="err">确定性是指每一个基本步骤必须是无歧义的</span><span class="p">,</span><span class="err">不能出现让执行机器为难的事情，程序语言就是用来干这个的</span><span class="p">.</span>
+<span class="err">输入</span> <span class="mi">0</span><span class="err">个输入或多个输入</span>
+<span class="err">输出</span> <span class="err">至少一个输出</span>
+<span class="err">可行性</span> <span class="err">运算的基本指令单位必须是充分的基本的</span><span class="p">,</span><span class="err">比如你直接写一个函数求解常微分方程这就有点不合适了</span>
+</pre></div>
+
+
+<p>以上仅仅是基本的需求,在这些需求出现了之后,人开始发现,条条大路通罗马,一个问题有很多的解决方案,这么多方案哪个最好呢？就像是选美大赛,选美肯定有一定的标准,所以算法的比较也一定有自己的标准,标准很简单,时间复杂度与空间复杂度,鉴于硬件容量的迅猛发展,人们更倾向于时间复杂度,将其作为计算机世界的货币,无论是时间复杂度还是空间复杂度都可以被量化为performance,很多人把所有的赞誉都给了时间复杂度,其实如果不是空间复杂度的割肉,怎会在时间上取得那么多的好效果,自从得到了货币,有些人开始想着去购买东西,购买其他性能,购买其他功能,这不过是一场权衡的游戏,看谁能在context下做出更好的决策罢了.</p>
+<h3 id="_3">数学化描述</h3>
+<hr />
+<p><code>数学不好的可以绕行</code><br />
+按特性描述算法,果然不严谨,老师说过的既要有数学家的严谨又要有工程师的直觉,这句话果然很重要,作为数学的基石,不用集合描述都感觉是在浪费。<br />
+定义一个四元组 $({Q,I,\Psi,f})$<br />
+满足以下条件:<br />
+Q代表计算状态<br />
+I代表输入<br />
+$(\Psi)$代表输出<br />
+$(f)$代表计算规则<br />
+$(I\subset Q,\Psi\subset Q)$<br />
+$(\forall x_i \in \Psi,f(x_i)=x_i)$<br />
+对$(I)$中的任意一个x定义一个计算序列$(x_1,x_2,x_3...x_k)$<br />
+$(如果 k 是满足 f(x_k)\in \Psi 的最小值,那么必然存在f(x_k+n)=f(x_k))$</p>
+<p><b>限制</b><br />
+$(\Psi)$不为空<br />
+$(f)$是基本充分的</p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '算法起引',
+    owner: 'srcmit',
+    repo: 'wiki',
+    oauth: {
+      client_id: 'bde03e9480361e89d518',
+      client_secret: '4cbe90a78300811e30fd5ac0eca9684f7169fc59',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcmit/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-08 11:13:37</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
