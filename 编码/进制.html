@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>进制介绍 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#编码">编码</a>&nbsp;&#187;&nbsp;进制介绍
+    <span class="updated">Page Updated&nbsp;
+      2017-09-06 11:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">进制介绍</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>编码让少量的数据存储大量的信息.</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">计算机进制</a><ul>
+<li><a href="#_2">进制的转换</a></li>
+<li><a href="#_3">谈谈语言中的进制转换</a><ul>
+<li><a href="#java">Java</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">计算机进制</h2>
+<p>在 二进制,三进制,十进制的筛选中,选择了二进制,但这并不意味着二进制在某种程度上优于三进制</p>
+<h3 id="_2">进制的转换</h3>
+<hr />
+<p><b>整数二进制转换</b></p>
+<div class="hlcode"><pre><span class="kt">void</span> <span class="nf">trans</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">){</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">m</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">trans</span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+  <span class="n">m</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;0&quot;</span><span class="p">)</span><span class="o">:</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><b>纯小数二进制转换</b><br />
+设小数二进制为0.$a_1,a_2,a_3...a_n$<br />
+设小数十进制为0.$b_1,b_2,b_3...b_n$<br />
+转化十进制公式 $(2^{-1}\times(a_1+2^{-1}\times(a_2+2^{-1}\times(...))))$<br />
+所以<br />
+对于十进制纯小数来说<br />
+在公式层面每乘一次相当于拆一层外围括号,露出里面的部分<br />
+在二进制运算层面相当于左移一位,此时看一看小数点左边第一位就行,如果是1就写1,反之则反.</p>
+<p><code>如果,上述的介绍你没有理解,那么,我有专门提供的简单方法,但是这种方法是答案,原理并不是显而易见</code></p>
+<p>这种办法和我上面说的实质上是一样的,所以这个是我从网上找的例子,<a>版权问题请联系</a></p>
+<div class="hlcode"><pre><span class="err">以</span> <span class="mf">20.5</span> <span class="err">转换为例，</span>
+<span class="mi">20</span><span class="err">转换后变为</span>  <span class="mi">10100</span>
+<span class="mf">0.5</span>  <span class="err">要转换二进制，需要乘</span><span class="mi">2</span><span class="p">,</span> <span class="err">乘完之后</span> <span class="err">取整数部分，然后用乘的结果减去整数部分，</span> <span class="err">然后</span> <span class="err">接着乘</span><span class="mi">2</span><span class="p">,</span> <span class="err">直至最后没有小数或者小数出现循环</span><span class="p">,</span>  <span class="err">即乘完</span><span class="p">.</span>
+<span class="err">如果等于</span><span class="mi">0</span><span class="p">,</span> <span class="err">就取前面不为</span><span class="mi">0</span><span class="err">的部分</span><span class="p">.</span>
+<span class="mf">0.5</span> <span class="o">*</span> <span class="mi">2</span>  <span class="o">=</span> <span class="mf">1.0</span> <span class="err">（取</span><span class="mi">1</span><span class="err">）</span>
+<span class="mi">0</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span>   <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="err">所以</span><span class="p">,</span>  <span class="err">转换后</span> <span class="mf">0.5</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+<span class="err">所以</span> <span class="mf">20.5</span> <span class="err">转换二进制后，</span> <span class="mf">20.5</span> <span class="o">=</span> <span class="mf">10100.1</span><span class="p">(</span><span class="err">二进制</span><span class="p">)</span>
+<span class="o">--------------------------------</span>
+<span class="err">再看一个浮点数</span> <span class="mf">20.3</span>
+ <span class="mi">20</span> <span class="o">=</span> <span class="mi">10100</span> <span class="p">(</span><span class="err">二进制</span><span class="p">)</span>
+<span class="mf">0.3</span>  <span class="o">*</span> <span class="mi">2</span><span class="o">=</span> <span class="mf">0.6</span>  <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="mf">0.6</span>  <span class="o">*</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">1.2</span>  <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">0.2</span>  <span class="o">*</span>  <span class="mi">2</span><span class="o">=</span>  <span class="mf">0.4</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="mf">0.4</span>  <span class="o">*</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">0.8</span>  <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="mf">0.8</span>  <span class="o">*</span><span class="mi">2</span> <span class="o">=</span> <span class="mf">1.6</span>   <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="err">计算到这里，</span> <span class="err">将再出现</span><span class="mf">0.6</span><span class="p">,</span><span class="err">进入循环了，所以，结果</span>
+<span class="mf">0.3</span>  <span class="o">=</span> <span class="mf">0.010011001</span><span class="p">..</span><span class="mf">.1001</span>
+<span class="err">所以</span><span class="mf">20.3</span> <span class="o">=</span> <span class="mf">10100.010011001</span><span class="p">..</span><span class="mf">.1001</span> <span class="p">(</span><span class="err">二进制</span><span class="p">).</span>
+</pre></div>
+
+
+<h3 id="_3">谈谈语言中的进制转换</h3>
+<hr />
+<h4 id="java">Java</h4>
+<p><code>仅在次怀念怎么都学不好的zz们</code></p>
+<div class="hlcode"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Float_Double</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="kt">float</span> <span class="n">f_v1</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>  
+        <span class="kt">float</span> <span class="n">f_v2</span> <span class="o">=</span> <span class="mf">20.3f</span><span class="o">;</span>  
+        <span class="kt">float</span> <span class="n">f_v3</span> <span class="o">=</span> <span class="mf">20.5f</span><span class="o">;</span>  
+
+        <span class="kt">double</span> <span class="n">d_v1</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>  
+        <span class="kt">double</span> <span class="n">d_v2</span> <span class="o">=</span> <span class="mf">20.3</span><span class="o">;</span>  
+        <span class="kt">double</span> <span class="n">d_v3</span> <span class="o">=</span> <span class="mf">20.5</span><span class="o">;</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="n">f_v1</span> <span class="o">==</span> <span class="n">d_v1</span><span class="o">)?</span><span class="s">&quot;true&quot;</span><span class="o">:</span><span class="s">&quot;false&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f_v2</span> <span class="o">==</span> <span class="n">d_v2</span><span class="o">?</span><span class="s">&quot;true&quot;</span><span class="o">:</span><span class="s">&quot;false&quot;</span><span class="o">);</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f_v3</span> <span class="o">==</span> <span class="n">d_v3</span><span class="o">?</span><span class="s">&quot;true&quot;</span><span class="o">:</span><span class="s">&quot;false&quot;</span><span class="o">);</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>当我看了一秒说出true,false,true时,学弟由等待出糗的表情变成了吃鲸...<br />
+他癫狂的说在Java中<br />
+float 占四个字节</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号位</th>
+<th align="center">指数位</th>
+<th align="center">尾数位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1位</td>
+<td align="center">占8位</td>
+<td align="center">占23位</td>
+</tr>
+</tbody>
+</table>
+<p>double 占8个字节</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号位</th>
+<th align="center">指数位</th>
+<th align="center">尾数位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1位</td>
+<td align="center">占11位</td>
+<td align="center">占52位</td>
+</tr>
+</tbody>
+</table>
+<p>先把20.5转化为二进制数,对于float来说,指数的值加127存入指数位,尾数为看着补零放入<br />
+对于double来说,指数的值加1023存入指数位,尾数为看着补零放入<br />
+在转型比较时,指数恢复原型减去127和减去1023,8位的指数位前面补三个0后进行指数位比较<br />
+23位的尾数位在后面补29个0,再进行尾数比较<br />
+这样才能算出啊=_=|</p>
+<p><b>听到这里我突然震惊了,0.3循环左移出现死循环永远移不完,而0.5移一次就行,肯定会在20.3转型时出现循环截断,那时候再往后面补0肯定是不会匹配的,一看就是20.3肯定不行,20.5肯定行</b><br />
+他还狡辩到你这是对数据的不尊重,不适用严谨的无误的逻辑去推理.<br />
+<b>大概是你还不了解什么是工程吧.</b></p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '进制介绍',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-11 20:10:26</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

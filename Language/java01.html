@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>[java纲]Java(一) - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;[java纲]Java(一)
+    <span class="updated">Page Updated&nbsp;
+      2017-09-02 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">[java纲]Java(一)</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>完备的系统在演变中浑然天成,要想在系统中添加新的功能,必须能够忍受带来的递归增长的问题.</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">草稿</a></li>
+<li><a href="#_2">构造器</a><ul>
+<li><a href="#_3">功能需求</a></li>
+</ul>
+</li>
+<li><a href="#_4">基本类型的重载</a></li>
+<li><a href="#this">this</a></li>
+<li><a href="#_5">清理</a></li>
+<li><a href="#_6">再谈初始化</a></li>
+<li><a href="#_7">构造器初始化</a></li>
+<li><a href="#_8">数组的初始化</a></li>
+<li><a href="#_9">枚举类型</a></li>
+</ul>
+</div>
+<h3 id="_1">草稿</h3>
+<div class="hlcode"><pre><span class="cp">###混乱中</span>
+<span class="o">---</span>
+<span class="o">-</span> <span class="err">对象的存储</span>
+    <span class="o">-</span> <span class="err">存储方式</span><span class="p">(</span><span class="err">位置</span><span class="p">)</span>
+<span class="err">基本类型存储在栈</span>
+<span class="err">自己创建的对象存储在堆</span>
+<span class="err">堆的速度慢</span>
+<span class="err">栈的速度快</span>
+
+<span class="err">栈要求知道生命周期</span>
+<span class="err">堆不需要知道生命周期以便操作栈指针</span>
+
+<span class="err">老师说生命周期并不是一个软件一个对象死了</span><span class="p">,</span><span class="err">而是指他该做的已经做了</span><span class="p">,</span><span class="err">他已经对现有系统没用了</span><span class="p">.</span><span class="err">对于软件来说</span><span class="p">,</span><span class="err">他的功能已经不足以现在的系统</span><span class="p">,</span><span class="err">他的生命周期已经结束了</span><span class="p">,</span><span class="err">所以你要经常维护他</span><span class="p">,</span><span class="err">让他成长</span><span class="p">,</span><span class="err">他的生命才会存在，并且生命周期一直会延长着</span><span class="p">.</span>
+<span class="o">-</span> <span class="err">插入题外话</span><span class="p">,</span><span class="err">现在要搜索结构化开发与面向对象开发的比较</span>
+
+<span class="cp">###知识点</span>
+<span class="o">---</span>
+<span class="o">-</span> <span class="err">基本类型使用频繁</span><span class="p">,</span><span class="err">如果放入堆区难免影响速度</span><span class="p">,</span><span class="err">故放入栈区</span>
+<span class="o">-</span> <span class="err">新概念：包装基本类型</span>
+
+<span class="cp">###策略</span>
+<span class="o">-</span> <span class="err">性能换功能</span>
+    <span class="o">-</span> <span class="err">速度换精度</span><span class="p">(</span><span class="err">包装类型</span><span class="n">BigInteger</span><span class="err">和</span><span class="n">BigDecimal</span><span class="p">)</span>
+</pre></div>
+
+
+<h3 id="_2">构造器</h3>
+<hr />
+<p>为了安全性考虑,java引入了构造器,不可避免的制定了目标,并在解空间建模之后,就要进行迭代的概要设计与详细设计</p>
+<h4 id="_3">功能需求</h4>
+<ul>
+<li>能够防止与其他方法重名</li>
+<li>编译器自动调用,既然不能硬编码<br />
+<code>解决方案:那就和类一个名字吧</code><br />
+<code>并且不能有返回类型,因为返回了编译期也没办法处理,毕竟返回值的处理不好泛化</code></li>
+<li>提出新的需求,考虑到一个对象的初始化有很多方式,引入重载<br />
+<code>没办法再加一个功能吧,反正大家也都能用,又不是只让构造器用</code></li>
+<li>既然重载了,就把我上一章提到的方法签名拿出来吧<br />
+<code>参数列表就是方法签名</code><ul>
+<li>参数的顺序</li>
+<li>参数的多少</li>
+<li>参数的类型</li>
+</ul>
+</li>
+<li>为什么不用返回值来作为签名信息之一<br />
+<code>当只是使用方法的副作用的时候,而不是使用返回值会出现歧义。例如: f();请问是哪一个f(), int f() or void f()?</code></li>
+</ul>
+<h3 id="_4">基本类型的重载</h3>
+<hr />
+<ul>
+<li>基本类型由于具有隐式的向上转型,致使很多人在调用时出错<br />
+<code>记住以下的介绍的就行,基本类型默认匹配参数一致的,对于直接数来说,整数为int为参数一致,只能向上转型,不能向下转型,毕竟信息可以丢失但不能缺失</code></li>
+</ul>
+<h3 id="this">this</h3>
+<hr />
+<p>类方法如何确定来的是哪个对象的调用,其实这句话我也不知道自己说的对不对,a.hello(),b.hello();hello怎么确定它前面是a还是b，解决这个问题我认为有两种,另外如果我想在构造器中调用构造器</p>
+<ul>
+<li>将类方法代码复制一份到对象自己的私有空间,对象在私有空间对其进行调用,我认为这样不好</li>
+<li>在调用的时候应该隐式的将对象的唯一标识传入方法即<b>this</b></li>
+<li><b style='color:red'>待解决:到底类的方法会不会复制一份到对象的独立区域</b></li>
+</ul>
+<p>对了,值得一提,this能够消除歧义</p>
+<h3 id="_5">清理</h3>
+<hr />
+<p>以前看了看垃圾回收器的作用,发现了一个问题,垃圾回收只能操作new出来的对象,万一脑子一抽不用new申请出一块特殊内存,垃圾回收器不知道怎么回收,那不出现内存泄漏了么？对此java引入了新的机制,finalize(),我把它称为”终结者“笑:-D<br />
+这里谈一谈垃圾回收器的强调<br />
+1. 垃圾回收器代表不了析构函数，之所以会用垃圾回收器是因为java贪图安全防止内存泄漏<br />
+一旦回收器准备释放某一部分空间时,他会先调用其finalize方法,然后在等到其应该执行回收动作的时候再进行真正的释放.所以说finalize并没有在真正的意义上将对象释放.<br />
+回收器开始工作时,垃圾不一定会被回收,因为垃圾回收器也占有一定的开销,冒昧的使用只会增大系统的浪费,所以在使用finalize方法时要注意,就像是声明要去做一样，但是不一定去做,如果去做了,一定会做完。</p>
+<h3 id="_6">再谈初始化</h3>
+<hr />
+<ul>
+<li>注意java和c++在指定初始化的不同<br />
+<code>对于类成员的初始化,java可以直接指定赋值,而c++不行</code></li>
+</ul>
+<div class="hlcode"><pre>    <span class="err">##</span><span class="n">java</span>
+    <span class="n">line</span> <span class="mi">1</span><span class="o">:</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span><span class="o">{</span>
+    <span class="n">line</span> <span class="mi">2</span><span class="o">:</span>  <span class="kd">public</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span><span class="c1">//正确</span>
+    <span class="n">line</span> <span class="mi">3</span><span class="o">:</span>  <span class="kd">public</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="o">;</span><span class="c1">//正确</span>
+    <span class="n">line</span> <span class="mi">4</span><span class="o">:</span>  <span class="kt">int</span> <span class="n">f</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span><span class="k">return</span> <span class="mi">11</span><span class="o">*</span><span class="n">n</span><span class="o">;}</span><span class="c1">//正确</span>
+    <span class="n">line</span> <span class="mi">5</span><span class="o">:</span>  <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">(</span><span class="n">a</span><span class="o">);</span><span class="c1">//正确</span>
+    <span class="o">}</span>
+    <span class="err">方法的引用可以是无序的</span>
+    <span class="err">所以</span><span class="n">line5</span><span class="err">和</span><span class="n">line4</span><span class="err">调换位置是不影响的</span>
+    <span class="err">但是参数的使用必须是有序的所以</span><span class="n">line2</span><span class="err">不能和</span><span class="n">line5</span><span class="err">换位</span>
+</pre></div>
+
+
+<div class="hlcode"><pre>   <span class="err">##</span><span class="n">c</span><span class="o">++</span>
+   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span><span class="o">{</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span><span class="c1">//错误</span>
+     <span class="kd">public</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="o">;</span><span class="c1">//错误</span>
+   <span class="o">}</span>
+</pre></div>
+
+
+<h3 id="_7">构造器初始化</h3>
+<hr />
+<p><code>涉及到初始化顺序</code><br />
+<center><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/initial.png" /><br />
+</center></p>
+<h3 id="_8">数组的初始化</h3>
+<hr />
+<ul>
+<li>创建方式[见后面文章 new {}]</li>
+<li>基本类型的数组元素会自动被初始化为空值</li>
+<li>自定义类型的数组元素会自动被初始化为空引用</li>
+<li>产生一维数组的可打印版本,不用迭代了<ul>
+<li>Arrays.toString()<br />
+<code>使用Arrays.toString(数组引用)</code></li>
+</ul>
+</li>
+<li>使用初始化列表</li>
+</ul>
+<div class="hlcode"><pre>   <span class="k">new</span> <span class="n">Integer</span><span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">};</span><span class="c1">//作为参数</span>
+   <span class="kt">int</span> <span class="o">[]</span> <span class="n">happy</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">};</span>
+</pre></div>
+
+
+<ul>
+<li>可变参数列表<br />
+<code>十分不赞同使用可变参数列表,毕竟有重载</code><br />
+<code>自己去了解老版的使用方式</code><br />
+<code>Object...args</code><br />
+<code>原理,编译器将参数组合为数组然后传递,所以要注意转型问题</code></li>
+<li>但是可变参数带来了重载的复杂性<br />
+有人说类型不是自动匹配吗,遇见相同的类型为最佳匹配,遇见较低的不匹配,遇见较高的向上转型,但是很多人忽略了一个问题,那就是没有参数的传递,到底该调用那个,在前面的重载中,我们以参数的可控长度重载方法,那时候我们知道,如果参数值长度是0的话,就要去找相应参数长度的重载方法,但是可变参数的引用搅乱了方法签名,以至于参数的长度与顺序均不起效,一旦参数的长度与顺序均不奇效,那么一旦出现参数的长度与顺序与以前不同的调用就出现了歧义,那么bug就出现了.<br />
+比如 <code>f()</code>,我特喵不知道该调用哪个重载的函数啊.<br />
+出现问题就要解决问题,为了防止参数长度与参数顺序的bug,首先要在书写重载方法时防范,对于固定类型的参数列表写一个就行了,除非有固定参数,因为0个参数不仅带来参数长度问题还带来参数类型问题,所以我们也是加一个固定类型的参数放在前面进行防范.</li>
+</ul>
+<h3 id="_9">枚举类型</h3>
+<hr />
+<div class="hlcode"><pre><span class="kd">public</span> <span class="n">emun</span> <span class="n">circle</span><span class="o">{</span>
+  <span class="n">ONE</span><span class="o">,</span>
+  <span class="n">TWO</span><span class="o">.</span>
+  <span class="n">THREE</span><span class="o">,</span>
+  <span class="n">FOUR</span><span class="o">,</span>
+  <span class="n">FIVE</span><span class="o">,</span>
+  <span class="n">SIX</span><span class="o">,</span>
+  <span class="n">SEVEN</span><span class="o">,</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<ul>
+<li>emun中定义的类方法<ul>
+<li>values(所有的emun值集合)</li>
+</ul>
+</li>
+<li>emun中定义的对象方法<ul>
+<li>ordinal(每个值的序号 ONE-&gt;0,TWO-&gt;2...)</li>
+</ul>
+</li>
+</ul>
+<p><strong>可以使用在Switch</strong></p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '[java纲]Java(一)',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-11 20:10:26</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
