@@ -39,15 +39,29 @@
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=144199&auto=0&height=66"></iframe></li>
 </ul>
 <hr />
-<h2 id="_1">&gt;</h2>
+<h2 id="fuck">&gt;无FUCK说</h2>
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#_1">&gt;</a><ul>
-<li><a href="#_2">设计杂论</a></li>
+<li><a href="#fuck">&gt;无FUCK说</a><ul>
+<li><a href="#mmp">MMP</a></li>
+<li><a href="#_1">设计杂论</a></li>
+<li><a href="#918-post">9/18 Post</a><ul>
+<li><a href="#_2">信息</a></li>
+<li><a href="#_3">使用</a></li>
+</ul>
+</li>
+<li><a href="#_4"><b style='color:red'>已解决</b></a></li>
+<li><a href="#_5"><b style='color:red'>待解决</b></a><ul>
+<li><a href="#_6">基础不稳</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
-<h3 id="_2">设计杂论</h3>
+<h3 id="mmp">MMP</h3>
+<p>我刚学,有很多问题...</p>
+<h3 id="_1">设计杂论</h3>
+<hr />
 <p>关于在flask中request对象的概念定位<br />
 作为单次参数传递给视图函数的话,每个视图函数都要写,如果增加其他对象,增加了了调用的混乱度,如果设置成全局变量的话,在多线程服务器中是不可能的,毕竟每个线程都会处理不同的request对象,作为全局对象,无法实现多线程,所以flask引入context(上下文)控制request在单个线程里面称为全局对象.<br />
 对于上面的话,目前我还有一部分<b style='color:red'>疑问</b><br />
@@ -60,6 +74,117 @@ context 有点像缓冲区</p>
 <p>四种钩子 java类似监视器</p>
 </li>
 </ul>
+<h3 id="918-post">9/18 Post</h3>
+<hr />
+<p>本次主要是注重实践,在一下午看完了前四章,还没来的及吸收<br />
+开发工具: VIM<br />
+语言选择: PY<br />
+模板选择: Jinja2<br />
+模块选择: python_script, python_bootstrap, python_mement,flask_wtf</p>
+<p><del><del>我说这么多屁话干嘛</del></del></p>
+<h4 id="_2">信息</h4>
+<ol>
+<li>Flask 中有两种上下文:程序上下文和请求上下文<br />
+<code>Flask 在分发请求之前激活(或推送)程序和请求上下文,请求处理完成后再将其删除。程序上下文被推送后,就可以在线程中使用 current_app 和 g 变量。类似地,请求上下文被推送后,就可以使用 request 和 session 变量。如果使用这些变量时我们没有激活程序上下文或请求上下文,就会导致错误。</code></li>
+</ol>
+<div class="hlcode"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">hello</span> <span class="kn">import</span> <span class="n">app</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">current_app</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">current_app</span><span class="o">.</span><span class="n">name</span>
+<span class="ne">RuntimeError</span><span class="p">:</span> <span class="n">working</span> <span class="n">outside</span> <span class="n">of</span> <span class="n">application</span> <span class="n">context</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">app_ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">app_ctx</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">current_app</span><span class="o">.</span><span class="n">name</span>
+<span class="s">&#39;hello&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">app_ctx</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+<span class="c">#在程序实例上调用 app.app_context() 可获得一个程序上下文</span>
+</pre></div>
+
+
+<p><b style='color:red'>至于为什么输出hello,我们以后解释<b></p>
+<h4 id="_3">使用</h4>
+<ol>
+<li>先用Flask创造一个app对象<br />
+<code>Flask初始化参数必须只有一个指定的参数,即程序主模块或包的名字</code><br />
+<code>Flask 用这个参数决定程序的根目录,以便稍后能够找到相对于程
+序根目录的资源文件位置</code></li>
+<li>为了灵活使用app.run(),我们加入<b style='color:yellow'>python_script</b><br />
+<code>看看Moment对app进行的劳动改造</code></li>
+</ol>
+<div class="hlcode"><pre><span class="k">class</span> <span class="nc">Moment</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">app</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">init_app</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s">&#39;extensions&#39;</span><span class="p">):</span>
+            <span class="n">app</span><span class="o">.</span><span class="n">extensions</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">extensions</span><span class="p">[</span><span class="s">&#39;moment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_moment</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">context_processor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">context_processor</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">context_processor</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s">&#39;moment&#39;</span><span class="p">:</span> <span class="n">current_app</span><span class="o">.</span><span class="n">extensions</span><span class="p">[</span><span class="s">&#39;moment&#39;</span><span class="p">]</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">current_app</span><span class="o">.</span><span class="n">extensions</span><span class="p">[</span><span class="s">&#39;moment&#39;</span><span class="p">](</span><span class="n">timestamp</span><span class="p">)</span>
+</pre></div>
+
+
+<ol>
+<li>动态url匹配的路由<b style='color:red' id='tro001'>存在问题</b></li>
+</ol>
+<div class="hlcode"><pre>  <span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/user/&lt;name&gt;&#39;</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">user</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&#39;&lt;h1&gt;Hello, </span><span class="si">% s</span><span class="s">!&lt;/h1&gt;&#39;</span> <span class="o">%</span> <span class="n">name</span>
+  <span class="c">#这三个name必须都是一样的变量名吗?</span>
+</pre></div>
+
+
+<ol>
+<li>请求 - 响应循环</li>
+<li>程序和请求上下文<br />
+<code>Flask 从客户端收到请求时,要让视图函数能访问一些对象,这样才能处理请求。请求对象就是一个很好的例子,它封装了客户端发送的 HTTP 请求。</code><br />
+<code>Flask 使用上下文临时把某些对象变为全局可访问。有了上下文,就可以写出下面的视图函数:</code></li>
+</ol>
+<div class="hlcode"><pre>  <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+  <span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="n">user_agent</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;User-Agent&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">&#39;&lt;p&gt;Your browser is </span><span class="si">% s</span><span class="s">&lt;/p&gt;&#39;</span> <span class="o">%</span> <span class="n">user_agent</span>
+
+  <span class="o">//===============================================</span>
+  <span class="err">事实上</span><span class="p">,</span> <span class="n">request</span> <span class="err">不可能是</span>
+<span class="err">`</span> <span class="err">全局变量。试想</span><span class="p">,</span><span class="err">在多线程服务器中</span><span class="p">,</span><span class="err">多个线程同时处理不同客户端发送的不同请求时</span><span class="p">,</span><span class="err">每个线程看到的</span> <span class="n">request</span> <span class="err">对象必然不同。</span><span class="n">Falsk</span> <span class="err">使用上下文让特定的变量在一个线程中全局可访问</span><span class="p">,</span><span class="err">与此同时却不会干扰其他线程。</span>
+</pre></div>
+
+
+<h3 id="_4"><b style='color:red'>已解决</b></h3>
+<hr />
+<ol>
+<li>the flowing</li>
+</ol>
+<div class="hlcode"><pre>  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+<span class="n">__name__</span><span class="o">==</span> <span class="s">&#39; __main__ &#39;</span> <span class="err">是</span> <span class="n">Python</span> <span class="err">的惯常用法</span><span class="p">,</span><span class="err">在这里确保直接执行这个脚本时才启动开发</span><span class="n">Web</span> <span class="err">服务器。如果这个脚本由其他脚本引入</span><span class="p">,</span><span class="err">程序假定父级脚本会启动不同的服务器</span><span class="p">,</span><span class="err">因此不会执行</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="err">。只有真正执行到才会运行哦</span><span class="p">,</span><span class="err">所以经常用来做测试</span><span class="p">,</span><span class="err">我以前说过</span><span class="o">...</span>
+</pre></div>
+
+
+<h3 id="_5"><b style='color:red'>待解决</b></h3>
+<h4 id="_6">基础不稳</h4>
+<hr />
+<ol>
+<li>import的加载问题</li>
+<li>不太理解每一个工程目录下的隐式的__init__文件</li>
+<li><a href="#tro001">使用顺序-3</a></li>
+<li><del>current_app是什么?</del><br />
+<code>当前激活程序的程序实例</code></li>
+<li>current_app有什么用?</li>
+</ol>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -92,7 +217,7 @@ context 有点像缓冲区</p>
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-18 20:02:48</p>
+        <p>Site Generated 2017-09-18 21:08:44</p>
       </span>
     </div>
 

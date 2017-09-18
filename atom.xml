@@ -7,7 +7,7 @@
   <title>Meta's Wiki</title>
   <link href="/" />
   <link href="/atom.xml" rel="self" type="application/atom+xml" />
-  <updated>2017-09-18T20:02:48+08:00</updated>
+  <updated>2017-09-18T21:08:44+08:00</updated>
   <id></id>
   <author>
     <name>Guozhen Li</name>
@@ -250,202 +250,6 @@ windows 编程是基于消息驱动的,当消息到来时,应用程序就调用�
     - 找到答案了，果然出现了控制权的移交&lt;br /&gt;
 &lt;code&gt;在程序执行时,系统会创建一个能控制他运行的数据结构,叫做pcb,pcb不断的查询消息队列&lt;/code&gt;&lt;br /&gt;
 &lt;code&gt;一旦出现消息,就会根据相应的消息号去调用消息映射函数&lt;/code&gt;&lt;/p&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/About/aboutMe.html</id>
-    <title>关于我</title>
-    <link href="/About/aboutMe.html" />
-    <published>2017-08-25T21:00:00+08:00</published>
-
-    
-    <updated>2017-08-25T21:00:00+08:00</updated>
-    
-
-    
-    <category term="About" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;br /&gt;
-  &lt;p style=&#34;position:relative; left:80px;text-align:center&#34;&gt;&lt;br /&gt;
-    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
-    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
-    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
-  &lt;/p&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
-&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
-&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
-&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
-&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
-&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
-&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
-&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
-&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
-&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
-&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
-&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
     
     
   </entry>
@@ -1450,138 +1254,173 @@ $(f)$是基本充分的&lt;/p&gt;
   
     
   <entry>
-    <id>/Language/BS4.html</id>
-    <title>数据采集</title>
-    <link href="/Language/BS4.html" />
-    <published>2017-08-27T23:00:00+08:00</published>
+    <id>/web/flask01.html</id>
+    <title>Flask</title>
+    <link href="/web/flask01.html" />
+    <published>2017-09-07T21:00:00+08:00</published>
 
     
-    <updated>2017-08-27T23:00:00+08:00</updated>
-    
-
-    
-    <category term="Language" />
+    <updated>2017-09-07T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=28872586&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+    <category term="web" />
+    
 
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=144199&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;fuck&#34;&gt;&amp;gt;无FUCK说&lt;/h2&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#fuck&#34;&gt;&amp;gt;无FUCK说&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#mmp&#34;&gt;MMP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;设计杂论&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#918-post&#34;&gt;9/18 Post&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;信息&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;已解决&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;待解决&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;基础不稳&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/h2&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bs4&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
+&lt;h3 id=&#34;mmp&#34;&gt;MMP&lt;/h3&gt;
+&lt;p&gt;我刚学,有很多问题...&lt;/p&gt;
+&lt;h3 id=&#34;_1&#34;&gt;设计杂论&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;关于在flask中request对象的概念定位&lt;br /&gt;
+作为单次参数传递给视图函数的话,每个视图函数都要写,如果增加其他对象,增加了了调用的混乱度,如果设置成全局变量的话,在多线程服务器中是不可能的,毕竟每个线程都会处理不同的request对象,作为全局对象,无法实现多线程,所以flask引入context(上下文)控制request在单个线程里面称为全局对象.&lt;br /&gt;
+对于上面的话,目前我还有一部分&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;&lt;br /&gt;
+context 有点像缓冲区&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;请求调度 路由指定请求方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四种钩子 java类似监视器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;918-post&#34;&gt;9/18 Post&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;本次主要是注重实践,在一下午看完了前四章,还没来的及吸收&lt;br /&gt;
+开发工具: VIM&lt;br /&gt;
+语言选择: PY&lt;br /&gt;
+模板选择: Jinja2&lt;br /&gt;
+模块选择: python_script, python_bootstrap, python_mement,flask_wtf&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;&lt;del&gt;我说这么多屁话干嘛&lt;/del&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;h4 id=&#34;_2&#34;&gt;信息&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Flask 中有两种上下文:程序上下文和请求上下文&lt;br /&gt;
+&lt;code&gt;Flask 在分发请求之前激活(或推送)程序和请求上下文,请求处理完成后再将其删除。程序上下文被推送后,就可以在线程中使用 current_app 和 g 变量。类似地,请求上下文被推送后,就可以使用 request 和 session 变量。如果使用这些变量时我们没有激活程序上下文或请求上下文,就会导致错误。&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;hello&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+&lt;span class=&#34;ne&#34;&gt;RuntimeError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;working&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;outside&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;application&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app_context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+&lt;span class=&#34;c&#34;&gt;#在程序实例上调用 app.app_context() 可获得一个程序上下文&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 id=&#34;objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;输入编码其实可以自动检测,但是不一定准哦,输出指定UTF8&lt;/code&gt;&lt;br /&gt;
-- from_encoding[以文档指定的编码解析]&lt;code&gt;E:from_encoding=&#34;iso-8859-8&#34;&lt;/code&gt;&lt;br /&gt;
-- exclude_encodings[排除编码]&lt;code&gt;E: exclude_encodings=[&#34;ISO-8859-7&#34;]&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&#34;parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;xml&lt;/li&gt;
-&lt;li&gt;lxml[推荐]&lt;/li&gt;
-&lt;li&gt;html5lib&lt;/li&gt;
-&lt;li&gt;html.parser[内置]&lt;/li&gt;
-&lt;li&gt;&lt;a&gt;差异比较&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;SoupStrainer对象&lt;ul&gt;
-&lt;li&gt;SoupStrainer(&#34;TAG_NAME&#34;)&lt;/li&gt;
-&lt;li&gt;SoupStrainer(id=&#39;##&#39;)[选择器]&lt;/li&gt;
-&lt;li&gt;SoupStrainer(method引用)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.tag-------------[&lt;a&gt;获得标签&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.tag[&#39;Attr&#39;]---[&lt;a&gt;获得键值&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.contents-----[&lt;a&gt;获得.descendants子节点&lt;code&gt;&amp;lt;html&amp;gt;#&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.children------[&lt;a&gt;获得子节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.descendants-[&lt;a&gt;获得子孙节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.strings-----[&lt;a&gt;文档去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.stripped_strings---[&lt;a&gt;忽略空行去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.parent------[&lt;a&gt;父节点NONE&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.original_encoding---[&lt;a&gt;模糊识别编码&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.prettify([编码默认utf8])[&lt;a&gt;格式化输出&lt;/a&gt;] [&lt;a&gt;IO&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.get_text()---[&lt;a&gt;获得文本&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.get_text(&#34;character&#34;)[tag之间character分割]&lt;/li&gt;
-&lt;li&gt;soup.get_text(&#34;|&#34;, strip=True)[&lt;a&gt;以‘|’分割标签,移除空白&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.new_tag(&#34;a&#34;, href=&#34;url&#34;)[&lt;a&gt;增加新标签&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.new_string(&#34;string&#34;, Comment)[&lt;a href=&#39;Comment&#39; style=&#39;color:green&#39;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;添加注释&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.find_all(&#39;tag&#39;)---[查找.标签] [得到.列表] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.find(id=&#39;#&#39;)------[查找.定位] [得到.唯一] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;直接查找&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.select(&#34;tag1 tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;逐层查找&lt;/a&gt;] [&lt;a&gt;tag1 的子孙是tag2皆可&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag1 &amp;gt; tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的儿子tag2&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#tag1 ~ .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的所有class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#tag1 + .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的紧邻的class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;.class&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;所有的class节点&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;[class~=some_name]&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;&lt;b style=&#39;color:red&#39;&gt;忘了&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#id1，#id2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href]&#39;)[&lt;a&gt;具有属性&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.select(&#39;a[href=&#34;url&#34;]&#39;)[&lt;a&gt;确定指定属性值&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href^=&#34;url&#34;]&#39;)[&lt;a&gt;属性值不为&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;soup.select_one(&#34;选择器&#34;)[&lt;a&gt;返回查找回的第一个&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/h4&gt;
-&lt;h2 id=&#34;_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;至于为什么输出hello,我们以后解释&lt;b&gt;&lt;/p&gt;
+&lt;h4 id=&#34;_3&#34;&gt;使用&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;先用Flask创造一个app对象&lt;br /&gt;
+&lt;code&gt;Flask初始化参数必须只有一个指定的参数,即程序主模块或包的名字&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;Flask 用这个参数决定程序的根目录,以便稍后能够找到相对于程
+序根目录的资源文件位置&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;为了灵活使用app.run(),我们加入&lt;b style=&#39;color:yellow&#39;&gt;python_script&lt;/b&gt;&lt;br /&gt;
+&lt;code&gt;看看Moment对app进行的劳动改造&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Moment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;init_app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;init_app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;hasattr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;extensions&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_moment&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;nd&#34;&gt;@staticmethod&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;timestamp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;](&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;timestamp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;动态url匹配的路由&lt;b style=&#39;color:red&#39; id=&#39;tro001&#39;&gt;存在问题&lt;/b&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;nd&#34;&gt;@app.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;/user/&amp;lt;name&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;&amp;lt;h1&amp;gt;Hello, &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;% s&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;!&amp;lt;/h1&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+  &lt;span class=&#34;c&#34;&gt;#这三个name必须都是一样的变量名吗?&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;请求 - 响应循环&lt;/li&gt;
+&lt;li&gt;程序和请求上下文&lt;br /&gt;
+&lt;code&gt;Flask 从客户端收到请求时,要让视图函数能访问一些对象,这样才能处理请求。请求对象就是一个很好的例子,它封装了客户端发送的 HTTP 请求。&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;Flask 使用上下文临时把某些对象变为全局可访问。有了上下文,就可以写出下面的视图函数:&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;
+  &lt;span class=&#34;nd&#34;&gt;@app.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;user_agent&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;&amp;lt;p&amp;gt;Your browser is &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;% s&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;lt;/p&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user_agent&lt;/span&gt;
+
+  &lt;span class=&#34;o&#34;&gt;//===============================================&lt;/span&gt;
+  &lt;span class=&#34;err&#34;&gt;事实上&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;不可能是&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;`&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;全局变量。试想&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在多线程服务器中&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;多个线程同时处理不同客户端发送的不同请求时&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每个线程看到的&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;对象必然不同。&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Falsk&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;使用上下文让特定的变量在一个线程中全局可访问&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与此同时却不会干扰其他线程。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_4&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;已解决&lt;/b&gt;&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;code&gt;没想到center标签不支持width属性,只能自定义&amp;lt;div&amp;gt;了&lt;/code&gt;&lt;br /&gt;
-&lt;center &gt;&lt;br /&gt;
-&lt;div style=&#34;width:644px&#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/Paprika.png&#34; /&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;br /&gt;
-&lt;embed height=&#34;415&#34; width=&#34;644&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=4887477&amp;page=1&#34; pluginspage=&#34;//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&#34;&gt;&lt;/embed&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;</content>
+&lt;ol&gt;
+&lt;li&gt;the flowing&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;debug&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39; __main__ &amp;#39;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;是&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Python&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;的惯常用法&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在这里确保直接执行这个脚本时才启动开发&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Web&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;服务器。如果这个脚本由其他脚本引入&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;程序假定父级脚本会启动不同的服务器&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因此不会执行&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;。只有真正执行到才会运行哦&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;所以经常用来做测试&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我以前说过&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_5&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;待解决&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;_6&#34;&gt;基础不稳&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;import的加载问题&lt;/li&gt;
+&lt;li&gt;不太理解每一个工程目录下的隐式的__init__文件&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tro001&#34;&gt;使用顺序-3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;current_app是什么?&lt;/del&gt;&lt;br /&gt;
+&lt;code&gt;当前激活程序的程序实例&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;current_app有什么用?&lt;/li&gt;
+&lt;/ol&gt;</content>
     
     
   </entry>
@@ -1809,13 +1648,13 @@ $(f)$是基本充分的&lt;/p&gt;
   
     
   <entry>
-    <id>/Language/markdown下编辑公式教程.html</id>
-    <title>页面渲染Latex字符</title>
-    <link href="/Language/markdown下编辑公式教程.html" />
-    <published>2017-08-26T00:00:00+08:00</published>
+    <id>/Language/regex03.html</id>
+    <title>regex(三)</title>
+    <link href="/Language/regex03.html" />
+    <published>2017-09-08T21:00:00+08:00</published>
 
     
-    <updated>2017-08-26T00:00:00+08:00</updated>
+    <updated>2017-09-08T21:00:00+08:00</updated>
     
 
     
@@ -1823,362 +1662,126 @@ $(f)$是基本充分的&lt;/p&gt;
     
 
     
-    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;前言&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#mathjax&#34;&gt;MathJax功能引入&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;外联引入使用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#customize-configuration&#34;&gt;内联Customize Configuration&lt;/a&gt;&lt;/li&gt;
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;思索中....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;规律之外,无语无言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#perl&#34;&gt;perl&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#904&#34;&gt;9/04更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#918&#34;&gt;9/18更新&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;页面使用&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;基本用法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;常见的转字符&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;希腊字母&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;字体&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;常见的表达式&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;参考文献&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;已完善&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;_1&#34;&gt;前言&lt;/h1&gt;
-&lt;p&gt;满怀欢喜的以为Markdown支持了Latex渲染，然而并没有在此WIKI使用,没有办法只能自己渲染，还好网络上有提供的开源的库直接使用。&lt;/p&gt;
-&lt;h1 id=&#34;mathjax&#34;&gt;MathJax功能引入&lt;/h1&gt;
-&lt;h2 id=&#34;_2&#34;&gt;外联引入使用&lt;/h2&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;#官方有可能慢&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;#国内&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id=&#34;customize-configuration&#34;&gt;内联Customize Configuration&lt;/h2&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;text/x-mathjax-config&amp;quot;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
-MathJax.Hub.Config({
-  #customize
-});
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;path-to-MathJax/MathJax.js&amp;quot;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1 id=&#34;_3&#34;&gt;页面使用&lt;/h1&gt;
-&lt;h2 id=&#34;_4&#34;&gt;基本用法&lt;/h2&gt;
-&lt;p&gt;行间公式：&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$$&lt;/span&gt;
-&lt;span class=&#34;s&#34;&gt;&amp;quot;公式&amp;quot;&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;$$&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;行内公式:&lt;code&gt;$&#34;公式&#34;$&lt;/code&gt;  注：有的地方可能需要用小括号将公式括起来：&lt;code&gt;$(&#34;公式&#34;)$&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_5&#34;&gt;常见的转字符&lt;/h2&gt;
+&lt;h3 id=&#34;perl&#34;&gt;perl&lt;/h3&gt;
+&lt;h4 id=&#34;904&#34;&gt;9/04更新&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;简单掌握&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;求和: \sum_{i=1}^n{x_i}  ($(\sum_{i=1}^n{x_i})$)&lt;/p&gt;
+&lt;p&gt;变量的特殊性 &lt;code&gt;$variable&lt;/code&gt;，面临引号输出也不会解体,除非转义&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;趋近于: \to  ($(\to)$)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;无穷大: \infty ($(\infty)$)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;二元关系: \times ($(\times)$), \div ($(\div)$), \pm ($(\pm)$), \circ ($(\circ)$), \cdot ($(\cdot)$)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;关系运算符：如\leq(≤), \geq(≥), \subset(⊂), \supset(⊃), \in(∈), \bigcup $(\bigcup)$, \bigcap $(\bigcap)$, \iint $(\iint)$, \int $(\int)$;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;否定关系运算符：如\not=(≠), \not&amp;lt;(≮), \not\supset (⊅);&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;箭头, \leftarrow(←), \rightarrow(→), \longrightarrow(⟶), \uparrow(↑)等;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;绝对值， \vert{x}\vert ($(\vert{x}\vert)$), \Vert{x}\Vert ($(\Vert{x}\Vert)$), \langle{x}\rangle ($(\langle{x}\rangle)$)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;其它符号, \nabla(∇), \angle(∠), \forall(∀), \exists(∃), \prime(导数的撇′).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;而对于专有名词,如一些函数名, 如sin x中的sin, 就要用罗马体, 而不是一般的数学斜体排印,我们可以用sinx, 也可以用TeX提供的直接在函数名前加”\”的方法: sinx,一般的函数均有定义, 如\sin, \cos, \lim, \log等.&lt;/p&gt;
-&lt;/li&gt;
+&lt;p&gt;运算符的特殊性&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=～ &lt;code&gt;匹配&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;==  &lt;code&gt;相等&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;=   &lt;code&gt;赋值&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;_6&#34;&gt;希腊字母&lt;/h2&gt;
+&lt;/li&gt;
+&lt;li&gt;编码运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;welcome to use perl test \n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;please input the value:\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;&amp;lt;STDIN&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;chomp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=~&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt; /^[0-9]+$/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;你是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;不是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&amp;gt;&amp;gt;&amp;gt; perl -w &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
+&amp;gt;&amp;gt;&amp;gt; welcome to use perl &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;    &lt;/span&gt;please input the value:
+    101
+    你是数字
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;918&#34;&gt;9/18更新&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;注意精通regex  p49总结&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/i&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;忽略大小写的替换&lt;/span&gt;
+&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/g&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;所有行都进行替换&lt;/span&gt;
+&lt;span class=&#34;sr&#34;&gt;m/regex/i&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或者&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以不用加&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;意会即可&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;任务来了,老板给了一个超级大的文件,是的html文件(然而所有的代码都挤在了一块),他说让我让这个文档层次感显示,小意思,我去做,但是&lt;b&gt;mmp&lt;/b&gt;914行,本来我说使用&lt;b&gt;notepad++&lt;/b&gt;毕竟能匹配括号,但是这并没有卵用啊,914行,所以说我只能借助正则婊了,但是完全不会用啊摔!那么只能先使用perl把标签分出来,让其单行显示&lt;/p&gt;
+&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;v0.01&lt;/b&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;(!| )*([a-z!-])+ *[^&amp;gt;&amp;lt;]*&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;\/ *[^&amp;gt;&amp;lt;]+ *&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;真是呵呵,现在的自己好辣鸡,而且还是分两次做完的单行&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;部分解释&lt;/b&gt;&lt;br /&gt;
+1. 其实在perl中&lt;code&gt;$1&lt;/code&gt;, &lt;code&gt;$2&lt;/code&gt;, &lt;code&gt;$3&lt;/code&gt;, 可以代替 &lt;code&gt;\1&lt;/code&gt;, &lt;code&gt;\2&lt;/code&gt;, &lt;code&gt;\3&lt;/code&gt;作为捕获文本的&lt;br /&gt;
+2. 我们都知道正则&lt;code&gt;()&lt;/code&gt; 可以用来捕获文本,但是如果不需要捕获,它偏偏捕获了,这样只会肆意拓展$型变量的长度,所以使用了非捕获型规则,即&lt;code&gt;(?:...)&lt;/code&gt;, 但凡出现在这个括号里面,都不会被捕获的.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;那么我现在有一个&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;还没有&lt;del&gt;思考出来&lt;/del&gt;实践验证出来, &lt;code&gt;(|)&lt;/code&gt; 会 不会被捕获&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;b&gt;Perl参数含义&lt;/b&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;字母名称&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;大写&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;markdown语法&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;小写&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;markdown语法&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;参数&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;alpha&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(A)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;A&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\alpha)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\alpha&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-p&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;对目标文件的每一行进行查找&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;beta&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(B)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;B&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\beta)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\beta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-w&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;like gdb, 和warning一个意思,打开perl额外警告功能&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;gamma&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Gamma)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Gamma&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\gamma)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\gamma&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;delta&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Delta)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Delta&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\delta)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\delta&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;epsilon&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(E)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;E&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\epsilon)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\epsilon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\varepsilon)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\varepsilon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;zeta&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(Z)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Z&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\zeta)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\zeta&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;eta&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(E)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;E&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\eta)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\eta&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;theta&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Theta)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Theta&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\theta)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\theta&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;iota&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(I)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;I&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\iota)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\iota&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;kappa&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(K)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;K&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\kappa)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\kappa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;lambda&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Lambda)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Lambda&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\lambda)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\lambda&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Mu&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(M)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\mu)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\mu&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;nu&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(N)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;N&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\nu)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\nu&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;xi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Xi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Xi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Xi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\xi&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;omicron&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(O)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;O&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\omicron)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\omicron&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;pi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(Pi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Pi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\pi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;pi&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;rho&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(P)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;P&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\rho)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\rho&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;sigma&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Sigma)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Sigma&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\sigma)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\sigma&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;tau&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(T)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;T&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\tau)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\tau&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;upsilon&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Upsilon)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Upsilon&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\upsilon)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\upsilon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;phi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Phi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Phi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\phi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\phi&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\varphi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\varphi&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;chi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(X)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;X&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\chi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\chi&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;psi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\Psi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\Psi&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;$(\psi)$&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\psi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-e&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;表示整个程序接在命令后面[&lt;b style=&#39;color:green&#39;&gt;不明觉li&lt;/b&gt;]&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;_7&#34;&gt;字体&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathbb or \Bbb for &#34;blackboard bold&#34;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathbb{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
-&lt;li&gt;$(\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathbf for boldface:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathbf{abcefghijklmnopqrstuvwxyz})$.&lt;/li&gt;
-&lt;li&gt;$(\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathtt for &#34;typewriter&#34; font:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathtt{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
-&lt;li&gt;$(\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathrm for roman font:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathrm{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
-&lt;li&gt;$(\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathsf for sans-serif font:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathsf{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
-&lt;li&gt;$(\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathcal for &#34;calligraphic&#34; letters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathcal{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
-&lt;li&gt;$(\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathscr for script letters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathscr{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
-&lt;li&gt;$(\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use \mathfrak for &#34;Fraktur&#34; (old German style) letters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\mathfrak{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
-&lt;li&gt;$(\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;_8&#34;&gt;常见的表达式&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;分数：$$\frac{a+1}{a-1}$$&lt;br /&gt;
-语法： \frac{a+1}{a-1}&lt;/li&gt;
-&lt;li&gt;$$\sum_{i=0}^n {i^2} ={\frac{(i+1)(i^2+6)}{i-1}}$$&lt;br /&gt;
-语法：\sum_{i=0}^n {i^2} ={\frac{(i+1)(i^2+6)}{i-1}}&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;_9&#34;&gt;参考文献&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://blog.csdn.net/Linear_Luo/article/details/52224996&#34;&gt;MarkDown(LaTex) 数学公式&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&#34;&gt;MATHEMATICS meta&lt;/a&gt;&lt;/p&gt;</content>
+&lt;/table&gt;</content>
     
     
   </entry>
   
     
   <entry>
-    <id>/About/computer.html</id>
-    <title>做什么</title>
-    <link href="/About/computer.html" />
-    <published>2017-08-26T21:00:00+08:00</published>
+    <id>/About/aboutMe.html</id>
+    <title>关于我</title>
+    <link href="/About/aboutMe.html" />
+    <published>2017-08-25T21:00:00+08:00</published>
 
     
-    <updated>2017-08-26T21:00:00+08:00</updated>
+    <updated>2017-08-25T21:00:00+08:00</updated>
     
 
     
@@ -2186,8 +1789,182 @@ MathJax.Hub.Config({
     
 
     
-    <content type="html">&lt;p&gt;计算机的创造以及在其上一层又一层抽象的发展均是为解决问题而出现的,而非为创造问题的.&lt;br /&gt;
-艰难的问题是原本存在的,但为了解决艰难的问题,所以使用分治的思想去拆分为大同小异的问题,但并非不可解决的.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png&#34; /&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;br /&gt;
+  &lt;p style=&#34;position:relative; left:80px;text-align:center&#34;&gt;&lt;br /&gt;
+    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
+    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
+    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
+  &lt;/p&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
+&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
+&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
+&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
+&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
+&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
+&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
+&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
+&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
+&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
+&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
+&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
     
     
   </entry>
@@ -2229,13 +2006,13 @@ MathJax.Hub.Config({
   
     
   <entry>
-    <id>/Language/intro.html</id>
-    <title>语言介绍</title>
-    <link href="/Language/intro.html" />
-    <published>2017-08-25T21:00:00+08:00</published>
+    <id>/Language/BS4.html</id>
+    <title>数据采集</title>
+    <link href="/Language/BS4.html" />
+    <published>2017-08-27T23:00:00+08:00</published>
 
     
-    <updated>2017-08-25T21:00:00+08:00</updated>
+    <updated>2017-08-27T23:00:00+08:00</updated>
     
 
     
@@ -2243,216 +2020,124 @@ MathJax.Hub.Config({
     
 
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;我认为能够形成一定的完备的系统，&lt;br /&gt;
-且可以作为信源的符号集合可以成为语言&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[评论]&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;同时推荐喀什的这首歌...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=27317272&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=28872586&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
 
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;人类语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1&#34;&gt;[1]视觉语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;图像语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;甲骨文&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;图片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;文/数字语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#2&#34;&gt;[2]听觉语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;语言的发声&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;音乐&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#3&#34;&gt;[3]触觉语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;盲文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;计算机语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;[一代目]机器语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;[二代目]汇编语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;[三代目]高级语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;[四代目]面向问题语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_20&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_21&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_22&#34;&gt;说明&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_23&#34;&gt;[五代目]人工智能语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_24&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_25&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_26&#34;&gt;语言概念&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_27&#34;&gt;语法/语法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_28&#34;&gt;语法糖&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/fire.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_1&#34;&gt;人类语言&lt;/h2&gt;
-&lt;h3 id=&#34;1&#34;&gt;[1]视觉语言&lt;/h3&gt;
-&lt;h4 id=&#34;_2&#34;&gt;图像语言&lt;/h4&gt;
-&lt;h5 id=&#34;_3&#34;&gt;甲骨文&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;了解的很少哇&lt;/span&gt;
+&lt;h2 id=&#34;intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/h2&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bs4&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h5 id=&#34;_4&#34;&gt;图片&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;一张图片透漏的信息的数量级极其高&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_5&#34;&gt;文/数字语言&lt;/h4&gt;
-&lt;h5 id=&#34;_6&#34;&gt;代表&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;各国文字&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数学&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;理化公式等等&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;2&#34;&gt;[2]听觉语言&lt;/h3&gt;
-&lt;h4 id=&#34;_7&#34;&gt;语言的发声&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;传说中的闻风丧旦&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_8&#34;&gt;音乐&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;啊哈哈，巴赫我现在还不太懂&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;推荐《音乐的奉献》如果你有这种欣赏水平的话&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;3&#34;&gt;[3]触觉语言&lt;/h3&gt;
-&lt;h4 id=&#34;_9&#34;&gt;盲文&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;海伦凯勒&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id=&#34;_10&#34;&gt;计算机语言&lt;/h2&gt;
-&lt;h3 id=&#34;_11&#34;&gt;[一代目]机器语言&lt;/h3&gt;
-&lt;h4 id=&#34;_12&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.01&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;位串组成&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;有关计算机三进制、二进制、十进制的权衡略过&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于繁琐&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作级别高&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_13&#34;&gt;[二代目]汇编语言&lt;/h3&gt;
-&lt;h4 id=&#34;_14&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法倾向自然语言，抽象的第一大步&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于依赖底层&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;助记码不适宜软件工程&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_15&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.8086&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;汇编&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_16&#34;&gt;[三代目]高级语言&lt;/h3&gt;
-&lt;h4 id=&#34;_17&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向了更加自然地处理方式&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向性能与功能博弈的通用稳定状态&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注重过程&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了面向对象思想&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以作为程序员自由灵活设计的通用编程语言&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GPPL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;General&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Purpose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Programming&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Language&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;6.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;图灵完备&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;7.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了所谓的拥护者&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;摊手&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;8.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学习的人占领市场，出现普遍水平地下的社会现状&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_18&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Perl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Python&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PHP&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;JavaScript&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_19&#34;&gt;[四代目]面向问题语言&lt;/h3&gt;
-&lt;h4 id=&#34;_20&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DSL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DPP&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;探索式编程&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;人员发挥空间小，多数扔给了引擎&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;多数非图灵完备&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;重在目标而非过程、重在描述而非实现&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_21&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;SQL&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SAS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SPSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LaTeX&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Regex&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_22&#34;&gt;说明&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是我自认为可以分为此类&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_23&#34;&gt;[五代目]人工智能语言&lt;/h3&gt;
-&lt;h4 id=&#34;_24&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学术界争议大，小小码农不敢造次&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_25&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Prolog&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Mercury&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;OPS5&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id=&#34;_26&#34;&gt;语言概念&lt;/h2&gt;
-&lt;h3 id=&#34;_27&#34;&gt;语法/语法&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In linguistics, grammar is the set of structural rules governing the composition of clauses, phrases, and words in any given natural language. The term refers also to the study of such rules, and this field includes morphology, syntax, and phonology, often complemented by phonetics, semantics, and pragmatics.&lt;br /&gt;
-在语言学中,语法是句子、短语和词汇在任何给定的自然语言中的结构规则组成。这个领域也包括这些规则的研究,这一领域包括形态学、语构、语音,常常辅以语音学,语义学和语用学。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;center style=&#34;&#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/parser.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;词法：语言的最小组成单元&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;名代数冠介连形&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法：连接语言单元的规则&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语义：连接上下文&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;得到的语言含义&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_28&#34;&gt;语法糖&lt;/h3&gt;
+&lt;h2 id=&#34;objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;输入编码其实可以自动检测,但是不一定准哦,输出指定UTF8&lt;/code&gt;&lt;br /&gt;
+- from_encoding[以文档指定的编码解析]&lt;code&gt;E:from_encoding=&#34;iso-8859-8&#34;&lt;/code&gt;&lt;br /&gt;
+- exclude_encodings[排除编码]&lt;code&gt;E: exclude_encodings=[&#34;ISO-8859-7&#34;]&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;$(\lambda)$ 演算的创始人创造&lt;/li&gt;
-&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[介绍]意指那些没有给计算机语言添加新功能，而只是对人类来说更“甜蜜”的语法。语法糖往往给程序员提供了更实用的编码方式，有益于更好的编码风格，更易读。&lt;/b&gt;&lt;/li&gt;
-&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[Example]：A[i] &amp;lt;---&amp;gt; *(A+i) 面向对象更像是面向过程的sugar &lt;/b&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;li&gt;xml&lt;/li&gt;
+&lt;li&gt;lxml[推荐]&lt;/li&gt;
+&lt;li&gt;html5lib&lt;/li&gt;
+&lt;li&gt;html.parser[内置]&lt;/li&gt;
+&lt;li&gt;&lt;a&gt;差异比较&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;SoupStrainer对象&lt;ul&gt;
+&lt;li&gt;SoupStrainer(&#34;TAG_NAME&#34;)&lt;/li&gt;
+&lt;li&gt;SoupStrainer(id=&#39;##&#39;)[选择器]&lt;/li&gt;
+&lt;li&gt;SoupStrainer(method引用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.tag-------------[&lt;a&gt;获得标签&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.tag[&#39;Attr&#39;]---[&lt;a&gt;获得键值&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.contents-----[&lt;a&gt;获得.descendants子节点&lt;code&gt;&amp;lt;html&amp;gt;#&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.children------[&lt;a&gt;获得子节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.descendants-[&lt;a&gt;获得子孙节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.strings-----[&lt;a&gt;文档去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.stripped_strings---[&lt;a&gt;忽略空行去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.parent------[&lt;a&gt;父节点NONE&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.original_encoding---[&lt;a&gt;模糊识别编码&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.prettify([编码默认utf8])[&lt;a&gt;格式化输出&lt;/a&gt;] [&lt;a&gt;IO&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.get_text()---[&lt;a&gt;获得文本&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.get_text(&#34;character&#34;)[tag之间character分割]&lt;/li&gt;
+&lt;li&gt;soup.get_text(&#34;|&#34;, strip=True)[&lt;a&gt;以‘|’分割标签,移除空白&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.new_tag(&#34;a&#34;, href=&#34;url&#34;)[&lt;a&gt;增加新标签&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.new_string(&#34;string&#34;, Comment)[&lt;a href=&#39;Comment&#39; style=&#39;color:green&#39;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;添加注释&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.find_all(&#39;tag&#39;)---[查找.标签] [得到.列表] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.find(id=&#39;#&#39;)------[查找.定位] [得到.唯一] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;直接查找&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.select(&#34;tag1 tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;逐层查找&lt;/a&gt;] [&lt;a&gt;tag1 的子孙是tag2皆可&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag1 &amp;gt; tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的儿子tag2&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#tag1 ~ .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的所有class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#tag1 + .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的紧邻的class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;.class&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;所有的class节点&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;[class~=some_name]&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;&lt;b style=&#39;color:red&#39;&gt;忘了&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#id1，#id2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href]&#39;)[&lt;a&gt;具有属性&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.select(&#39;a[href=&#34;url&#34;]&#39;)[&lt;a&gt;确定指定属性值&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href^=&#34;url&#34;]&#39;)[&lt;a&gt;属性值不为&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;soup.select_one(&#34;选择器&#34;)[&lt;a&gt;返回查找回的第一个&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;没想到center标签不支持width属性,只能自定义&amp;lt;div&amp;gt;了&lt;/code&gt;&lt;br /&gt;
+&lt;center &gt;&lt;br /&gt;
+&lt;div style=&#34;width:644px&#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/Paprika.png&#34; /&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;br /&gt;
+&lt;embed height=&#34;415&#34; width=&#34;644&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=4887477&amp;page=1&#34; pluginspage=&#34;//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&#34;&gt;&lt;/embed&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;</content>
     
     
   </entry>
@@ -2980,48 +2665,22 @@ $$&lt;/p&gt;
   
     
   <entry>
-    <id>/web/flask01.html</id>
-    <title>Flask</title>
-    <link href="/web/flask01.html" />
-    <published>2017-09-07T21:00:00+08:00</published>
+    <id>/About/computer.html</id>
+    <title>做什么</title>
+    <link href="/About/computer.html" />
+    <published>2017-08-26T21:00:00+08:00</published>
 
     
-    <updated>2017-09-07T21:00:00+08:00</updated>
-    
-
-    
-    <category term="web" />
+    <updated>2017-08-26T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=144199&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h2 id=&#34;_1&#34;&gt;&amp;gt;&lt;/h2&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&amp;gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;设计杂论&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;_2&#34;&gt;设计杂论&lt;/h3&gt;
-&lt;p&gt;关于在flask中request对象的概念定位&lt;br /&gt;
-作为单次参数传递给视图函数的话,每个视图函数都要写,如果增加其他对象,增加了了调用的混乱度,如果设置成全局变量的话,在多线程服务器中是不可能的,毕竟每个线程都会处理不同的request对象,作为全局对象,无法实现多线程,所以flask引入context(上下文)控制request在单个线程里面称为全局对象.&lt;br /&gt;
-对于上面的话,目前我还有一部分&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;&lt;br /&gt;
-context 有点像缓冲区&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;请求调度 路由指定请求方法&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;四种钩子 java类似监视器&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
+    <category term="About" />
+    
+
+    
+    <content type="html">&lt;p&gt;计算机的创造以及在其上一层又一层抽象的发展均是为解决问题而出现的,而非为创造问题的.&lt;br /&gt;
+艰难的问题是原本存在的,但为了解决艰难的问题,所以使用分治的思想去拆分为大同小异的问题,但并非不可解决的.&lt;/p&gt;</content>
     
     
   </entry>
@@ -3460,13 +3119,13 @@ Intel x86共支持256中向量中断，Intel给每种中断源编号，从0-255,
   
     
   <entry>
-    <id>/Language/regex03.html</id>
-    <title>regex(三)</title>
-    <link href="/Language/regex03.html" />
-    <published>2017-09-08T21:00:00+08:00</published>
+    <id>/Language/intro.html</id>
+    <title>语言介绍</title>
+    <link href="/Language/intro.html" />
+    <published>2017-08-25T21:00:00+08:00</published>
 
     
-    <updated>2017-09-08T21:00:00+08:00</updated>
+    <updated>2017-08-25T21:00:00+08:00</updated>
     
 
     
@@ -3474,113 +3133,579 @@ Intel x86共支持256中向量中断，Intel给每种中断源编号，从0-255,
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;思索中....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;规律之外,无语无言&lt;/p&gt;
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;我认为能够形成一定的完备的系统，&lt;br /&gt;
+且可以作为信源的符号集合可以成为语言&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[评论]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;同时推荐喀什的这首歌...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=27317272&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#perl&#34;&gt;perl&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#904&#34;&gt;9/04更新&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#918&#34;&gt;9/18更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;人类语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1&#34;&gt;[1]视觉语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;图像语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;甲骨文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;图片&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;文/数字语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2&#34;&gt;[2]听觉语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;语言的发声&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;音乐&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3&#34;&gt;[3]触觉语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;盲文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;计算机语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;[一代目]机器语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;[二代目]汇编语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;[三代目]高级语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;[四代目]面向问题语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_20&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_21&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_22&#34;&gt;说明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_23&#34;&gt;[五代目]人工智能语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_24&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_25&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_26&#34;&gt;语言概念&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_27&#34;&gt;语法/语法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_28&#34;&gt;语法糖&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;perl&#34;&gt;perl&lt;/h3&gt;
-&lt;h4 id=&#34;904&#34;&gt;9/04更新&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;简单掌握&lt;/p&gt;
+&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/fire.png&#34; /&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_1&#34;&gt;人类语言&lt;/h2&gt;
+&lt;h3 id=&#34;1&#34;&gt;[1]视觉语言&lt;/h3&gt;
+&lt;h4 id=&#34;_2&#34;&gt;图像语言&lt;/h4&gt;
+&lt;h5 id=&#34;_3&#34;&gt;甲骨文&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;了解的很少哇&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;_4&#34;&gt;图片&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;一张图片透漏的信息的数量级极其高&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_5&#34;&gt;文/数字语言&lt;/h4&gt;
+&lt;h5 id=&#34;_6&#34;&gt;代表&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;各国文字&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数学&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;理化公式等等&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;2&#34;&gt;[2]听觉语言&lt;/h3&gt;
+&lt;h4 id=&#34;_7&#34;&gt;语言的发声&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;传说中的闻风丧旦&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_8&#34;&gt;音乐&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;啊哈哈，巴赫我现在还不太懂&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;推荐《音乐的奉献》如果你有这种欣赏水平的话&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;3&#34;&gt;[3]触觉语言&lt;/h3&gt;
+&lt;h4 id=&#34;_9&#34;&gt;盲文&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;海伦凯勒&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;_10&#34;&gt;计算机语言&lt;/h2&gt;
+&lt;h3 id=&#34;_11&#34;&gt;[一代目]机器语言&lt;/h3&gt;
+&lt;h4 id=&#34;_12&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.01&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;位串组成&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;有关计算机三进制、二进制、十进制的权衡略过&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于繁琐&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作级别高&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_13&#34;&gt;[二代目]汇编语言&lt;/h3&gt;
+&lt;h4 id=&#34;_14&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法倾向自然语言，抽象的第一大步&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于依赖底层&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;助记码不适宜软件工程&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_15&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.8086&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;汇编&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_16&#34;&gt;[三代目]高级语言&lt;/h3&gt;
+&lt;h4 id=&#34;_17&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向了更加自然地处理方式&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向性能与功能博弈的通用稳定状态&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注重过程&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了面向对象思想&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以作为程序员自由灵活设计的通用编程语言&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GPPL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;General&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Purpose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Programming&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Language&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;6.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;图灵完备&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;7.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了所谓的拥护者&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;摊手&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;8.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学习的人占领市场，出现普遍水平地下的社会现状&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_18&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Perl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Python&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PHP&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;JavaScript&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_19&#34;&gt;[四代目]面向问题语言&lt;/h3&gt;
+&lt;h4 id=&#34;_20&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DSL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DPP&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;探索式编程&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;人员发挥空间小，多数扔给了引擎&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;多数非图灵完备&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;重在目标而非过程、重在描述而非实现&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_21&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;SQL&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SAS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SPSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LaTeX&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Regex&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_22&#34;&gt;说明&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是我自认为可以分为此类&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_23&#34;&gt;[五代目]人工智能语言&lt;/h3&gt;
+&lt;h4 id=&#34;_24&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学术界争议大，小小码农不敢造次&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_25&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Prolog&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Mercury&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;OPS5&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;_26&#34;&gt;语言概念&lt;/h2&gt;
+&lt;h3 id=&#34;_27&#34;&gt;语法/语法&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In linguistics, grammar is the set of structural rules governing the composition of clauses, phrases, and words in any given natural language. The term refers also to the study of such rules, and this field includes morphology, syntax, and phonology, often complemented by phonetics, semantics, and pragmatics.&lt;br /&gt;
+在语言学中,语法是句子、短语和词汇在任何给定的自然语言中的结构规则组成。这个领域也包括这些规则的研究,这一领域包括形态学、语构、语音,常常辅以语音学,语义学和语用学。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;center style=&#34;&#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/parser.png&#34; /&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;词法：语言的最小组成单元&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;名代数冠介连形&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法：连接语言单元的规则&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语义：连接上下文&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;得到的语言含义&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_28&#34;&gt;语法糖&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;变量的特殊性 &lt;code&gt;$variable&lt;/code&gt;，面临引号输出也不会解体,除非转义&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;运算符的特殊性&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;=～ &lt;code&gt;匹配&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;==  &lt;code&gt;相等&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;=   &lt;code&gt;赋值&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;$(\lambda)$ 演算的创始人创造&lt;/li&gt;
+&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[介绍]意指那些没有给计算机语言添加新功能，而只是对人类来说更“甜蜜”的语法。语法糖往往给程序员提供了更实用的编码方式，有益于更好的编码风格，更易读。&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[Example]：A[i] &amp;lt;---&amp;gt; *(A+i) 面向对象更像是面向过程的sugar &lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/Language/markdown下编辑公式教程.html</id>
+    <title>页面渲染Latex字符</title>
+    <link href="/Language/markdown下编辑公式教程.html" />
+    <published>2017-08-26T00:00:00+08:00</published>
+
+    
+    <updated>2017-08-26T00:00:00+08:00</updated>
+    
+
+    
+    <category term="Language" />
+    
+
+    
+    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;前言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mathjax&#34;&gt;MathJax功能引入&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;外联引入使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#customize-configuration&#34;&gt;内联Customize Configuration&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;编码运行&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;页面使用&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;基本用法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;常见的转字符&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;希腊字母&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;字体&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;常见的表达式&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;welcome to use perl test \n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;please input the value:\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;&amp;lt;STDIN&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;chomp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=~&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt; /^[0-9]+$/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;你是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;不是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;参考文献&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;已完善&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;_1&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;满怀欢喜的以为Markdown支持了Latex渲染，然而并没有在此WIKI使用,没有办法只能自己渲染，还好网络上有提供的开源的库直接使用。&lt;/p&gt;
+&lt;h1 id=&#34;mathjax&#34;&gt;MathJax功能引入&lt;/h1&gt;
+&lt;h2 id=&#34;_2&#34;&gt;外联引入使用&lt;/h2&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;#官方有可能慢&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;#国内&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&amp;gt;&amp;gt;&amp;gt; perl -w &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; welcome to use perl &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;    &lt;/span&gt;please input the value:
-    101
-    你是数字
-&amp;gt;&amp;gt;&amp;gt;
+&lt;h2 id=&#34;customize-configuration&#34;&gt;内联Customize Configuration&lt;/h2&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;text/x-mathjax-config&amp;quot;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+MathJax.Hub.Config({
+  #customize
+});
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;path-to-MathJax/MathJax.js&amp;quot;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h4 id=&#34;918&#34;&gt;9/18更新&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;注意精通regex  p49总结&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/i&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;忽略大小写的替换&lt;/span&gt;
-&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/g&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;所有行都进行替换&lt;/span&gt;
-&lt;span class=&#34;sr&#34;&gt;m/regex/i&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或者&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以不用加&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;意会即可&lt;/span&gt;
+&lt;h1 id=&#34;_3&#34;&gt;页面使用&lt;/h1&gt;
+&lt;h2 id=&#34;_4&#34;&gt;基本用法&lt;/h2&gt;
+&lt;p&gt;行间公式：&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$$&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;quot;公式&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;$$&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;任务来了,老板给了一个超级大的文件,是的html文件(然而所有的代码都挤在了一块),他说让我让这个文档层次感显示,小意思,我去做,但是&lt;b&gt;mmp&lt;/b&gt;914行,本来我说使用&lt;b&gt;notepad++&lt;/b&gt;毕竟能匹配括号,但是这并没有卵用啊,914行,所以说我只能借助正则婊了,但是完全不会用啊摔!那么只能先使用perl把标签分出来,让其单行显示&lt;/p&gt;
-&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;v0.01&lt;/b&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;(!| )*([a-z!-])+ *[^&amp;gt;&amp;lt;]*&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
-
-&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;\/ *[^&amp;gt;&amp;lt;]+ *&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;真是呵呵,现在的自己好辣鸡,而且还是分两次做完的单行&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;部分解释&lt;/b&gt;&lt;br /&gt;
-1. 其实在perl中&lt;code&gt;$1&lt;/code&gt;, &lt;code&gt;$2&lt;/code&gt;, &lt;code&gt;$3&lt;/code&gt;, 可以代替 &lt;code&gt;\1&lt;/code&gt;, &lt;code&gt;\2&lt;/code&gt;, &lt;code&gt;\3&lt;/code&gt;作为捕获文本的&lt;br /&gt;
-2. 我们都知道正则&lt;code&gt;()&lt;/code&gt; 可以用来捕获文本,但是如果不需要捕获,它偏偏捕获了,这样只会肆意拓展$型变量的长度,所以使用了非捕获型规则,即&lt;code&gt;(?:...)&lt;/code&gt;, 但凡出现在这个括号里面,都不会被捕获的.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;那么我现在有一个&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;还没有&lt;del&gt;思考出来&lt;/del&gt;实践验证出来, &lt;code&gt;(|)&lt;/code&gt; 会 不会被捕获&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;b&gt;Perl参数含义&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;行内公式:&lt;code&gt;$&#34;公式&#34;$&lt;/code&gt;  注：有的地方可能需要用小括号将公式括起来：&lt;code&gt;$(&#34;公式&#34;)$&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_5&#34;&gt;常见的转字符&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;求和: \sum_{i=1}^n{x_i}  ($(\sum_{i=1}^n{x_i})$)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;趋近于: \to  ($(\to)$)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无穷大: \infty ($(\infty)$)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二元关系: \times ($(\times)$), \div ($(\div)$), \pm ($(\pm)$), \circ ($(\circ)$), \cdot ($(\cdot)$)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关系运算符：如\leq(≤), \geq(≥), \subset(⊂), \supset(⊃), \in(∈), \bigcup $(\bigcup)$, \bigcap $(\bigcap)$, \iint $(\iint)$, \int $(\int)$;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;否定关系运算符：如\not=(≠), \not&amp;lt;(≮), \not\supset (⊅);&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;箭头, \leftarrow(←), \rightarrow(→), \longrightarrow(⟶), \uparrow(↑)等;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;绝对值， \vert{x}\vert ($(\vert{x}\vert)$), \Vert{x}\Vert ($(\Vert{x}\Vert)$), \langle{x}\rangle ($(\langle{x}\rangle)$)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其它符号, \nabla(∇), \angle(∠), \forall(∀), \exists(∃), \prime(导数的撇′).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;而对于专有名词,如一些函数名, 如sin x中的sin, 就要用罗马体, 而不是一般的数学斜体排印,我们可以用sinx, 也可以用TeX提供的直接在函数名前加”\”的方法: sinx,一般的函数均有定义, 如\sin, \cos, \lim, \log等.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;_6&#34;&gt;希腊字母&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;参数&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;字母名称&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;大写&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;markdown语法&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;小写&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;markdown语法&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;-p&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;对目标文件的每一行进行查找&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;alpha&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(A)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\alpha)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\alpha&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;-w&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;like gdb, 和warning一个意思,打开perl额外警告功能&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;beta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(B)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;B&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\beta)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\beta&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;-e&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;表示整个程序接在命令后面[&lt;b style=&#39;color:green&#39;&gt;不明觉li&lt;/b&gt;]&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;gamma&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Gamma)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Gamma&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\gamma)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\gamma&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;delta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Delta)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Delta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\delta)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\delta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;epsilon&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(E)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;E&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\epsilon)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\epsilon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\varepsilon)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\varepsilon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;zeta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(Z)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Z&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\zeta)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\zeta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;eta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(E)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;E&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\eta)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\eta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;theta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Theta)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Theta&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\theta)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\theta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;iota&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(I)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\iota)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\iota&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;kappa&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(K)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;K&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\kappa)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\kappa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;lambda&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Lambda)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Lambda&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\lambda)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\lambda&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Mu&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(M)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\mu)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\mu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;nu&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(N)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;N&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\nu)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\nu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;xi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Xi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Xi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Xi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\xi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;omicron&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(O)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;O&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\omicron)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\omicron&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;pi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(Pi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Pi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\pi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;pi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;rho&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(P)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;P&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\rho)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\rho&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;sigma&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Sigma)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Sigma&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\sigma)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\sigma&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;tau&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(T)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;T&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\tau)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\tau&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;upsilon&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Upsilon)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Upsilon&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\upsilon)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\upsilon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;phi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Phi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Phi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\phi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\phi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\varphi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\varphi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;chi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(X)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;X&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\chi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\chi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;psi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\Psi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\Psi&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$(\psi)$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\psi&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content>
+&lt;/table&gt;
+&lt;h2 id=&#34;_7&#34;&gt;字体&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathbb or \Bbb for &#34;blackboard bold&#34;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathbb{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
+&lt;li&gt;$(\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathbf for boldface:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathbf{abcefghijklmnopqrstuvwxyz})$.&lt;/li&gt;
+&lt;li&gt;$(\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathtt for &#34;typewriter&#34; font:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathtt{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
+&lt;li&gt;$(\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathrm for roman font:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathrm{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
+&lt;li&gt;$(\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathsf for sans-serif font:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathsf{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
+&lt;li&gt;$(\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathcal for &#34;calligraphic&#34; letters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathcal{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
+&lt;li&gt;$(\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathscr for script letters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathscr{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
+&lt;li&gt;$(\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use \mathfrak for &#34;Fraktur&#34; (old German style) letters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\mathfrak{abcefghijklmnopqrstuvwxyz})$&lt;/li&gt;
+&lt;li&gt;$(\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;_8&#34;&gt;常见的表达式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;分数：$$\frac{a+1}{a-1}$$&lt;br /&gt;
+语法： \frac{a+1}{a-1}&lt;/li&gt;
+&lt;li&gt;$$\sum_{i=0}^n {i^2} ={\frac{(i+1)(i^2+6)}{i-1}}$$&lt;br /&gt;
+语法：\sum_{i=0}^n {i^2} ={\frac{(i+1)(i^2+6)}{i-1}}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;_9&#34;&gt;参考文献&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.csdn.net/Linear_Luo/article/details/52224996&#34;&gt;MarkDown(LaTex) 数学公式&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&#34;&gt;MATHEMATICS meta&lt;/a&gt;&lt;/p&gt;</content>
     
     
   </entry>
