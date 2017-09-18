@@ -44,10 +44,16 @@
 </blockquote>
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#perl">perl</a></li>
+<li><a href="#perl">perl</a><ul>
+<li><a href="#904">9/04更新</a></li>
+<li><a href="#918">9/18更新</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <h3 id="perl">perl</h3>
+<h4 id="904">9/04更新</h4>
+<hr />
 <p>简单掌握</p>
 <ul>
 <li>
@@ -84,6 +90,55 @@
     你是数字
 &gt;&gt;&gt;
 </pre></div>
+
+
+<h4 id="918">9/18更新</h4>
+<hr />
+<p><strong>注意精通regex  p49总结</strong></p>
+<div class="hlcode"><pre><span class="sr">s/regex/replacement/i</span> <span class="err">忽略大小写的替换</span>
+<span class="sr">s/regex/replacement/g</span> <span class="err">所有行都进行替换</span>
+<span class="sr">m/regex/i</span><span class="err">或者</span><span class="n">g</span> <span class="n">m</span><span class="err">可以不用加</span><span class="p">,</span> <span class="err">意会即可</span>
+</pre></div>
+
+
+<p>任务来了,老板给了一个超级大的文件,是的html文件(然而所有的代码都挤在了一块),他说让我让这个文档层次感显示,小意思,我去做,但是<b>mmp</b>914行,本来我说使用<b>notepad++</b>毕竟能匹配括号,但是这并没有卵用啊,914行,所以说我只能借助正则婊了,但是完全不会用啊摔!那么只能先使用perl把标签分出来,让其单行显示</p>
+<p><b style='color:red'>v0.01</b></p>
+<div class="hlcode"><pre><span class="n">meta</span><span class="nv">@meta$</span>  <span class="nv">perl</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s">&#39;s/(&lt;(!| )*([a-z!-])+ *[^&gt;&lt;]*&gt;)/\n\1\n/g&#39;</span> <span class="sr">/home/m</span><span class="n">eta</span><span class="sr">/Desktop/</span><span class="n">a</span><span class="o">.</span><span class="n">html</span>
+
+<span class="n">meta</span><span class="nv">@meta$</span>  <span class="nv">perl</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s">&#39;s/(&lt;\/ *[^&gt;&lt;]+ *&gt;)/\n\1\n/g&#39;</span> <span class="sr">/home/m</span><span class="n">eta</span><span class="sr">/Desktop/</span><span class="n">a</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+
+
+<p>真是呵呵,现在的自己好辣鸡,而且还是分两次做完的单行</p>
+<p><b>部分解释</b><br />
+1. 其实在perl中<code>$1</code>, <code>$2</code>, <code>$3</code>, 可以代替 <code>\1</code>, <code>\2</code>, <code>\3</code>作为捕获文本的<br />
+2. 我们都知道正则<code>()</code> 可以用来捕获文本,但是如果不需要捕获,它偏偏捕获了,这样只会肆意拓展$型变量的长度,所以使用了非捕获型规则,即<code>(?:...)</code>, 但凡出现在这个括号里面,都不会被捕获的.</p>
+<ol>
+<li>那么我现在有一个<b style='color:red'>疑问</b>还没有<del>思考出来</del>实践验证出来, <code>(|)</code> 会 不会被捕获</li>
+</ol>
+<p><b>Perl参数含义</b></p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">-p</td>
+<td align="center">对目标文件的每一行进行查找</td>
+</tr>
+<tr>
+<td align="center">-w</td>
+<td align="center">like gdb, 和warning一个意思,打开perl额外警告功能</td>
+</tr>
+<tr>
+<td align="center">-e</td>
+<td align="center">表示整个程序接在命令后面[<b style='color:green'>不明觉li</b>]</td>
+</tr>
+</tbody>
+</table>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -116,7 +171,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-11 20:10:26</p>
+        <p>Site Generated 2017-09-18 20:02:48</p>
       </span>
     </div>
 

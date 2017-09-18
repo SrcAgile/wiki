@@ -7,7 +7,7 @@
   <title>Meta's Wiki</title>
   <link href="/" />
   <link href="/atom.xml" rel="self" type="application/atom+xml" />
-  <updated>2017-09-11T20:10:26+08:00</updated>
+  <updated>2017-09-18T20:02:48+08:00</updated>
   <id></id>
   <author>
     <name>Guozhen Li</name>
@@ -256,280 +256,6 @@ windows 编程是基于消息驱动的,当消息到来时,应用程序就调用�
   
     
   <entry>
-    <id>/Language/java00.html</id>
-    <title>[java纲]Java概论</title>
-    <link href="/Language/java00.html" />
-    <published>2017-09-01T21:00:00+08:00</published>
-
-    
-    <updated>2017-09-01T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Language" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;完备的系统在演变中浑然天成,要想在系统中添加新的功能,必须能够忍受带来的递归增长的问题.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;暂无评论&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=386830&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;说明&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;五大特性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;设计目标&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;安全性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;易维护性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;灵活性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;高效性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;内聚性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;特性&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;最佳实践&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;章节细化&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;运算&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;流程控制结构&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;至少会用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;_1&#34;&gt;面向对象&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_2&#34;&gt;说明&lt;/h3&gt;
-&lt;p&gt;自始至终,编程语言一步一步的提供着高程度的抽象给开发人员，从最开始的简单的自然语言的抽象,到数学语言的抽象的函数式编程，到待解决问题的抽象的面向对象,看起来，能解决问题的复杂程度取决于问题的抽象程度,程序员作为计算机与现实世界的沟通桥梁,同时承载着现实世界问题的待解决问题建模(问题空间)与所应用的计算机的机器建模(解空间)，建立这两种空间的桥梁是很复杂的，这也是面向对象的挑战，编程语言的出现无非是从这两个空间上削弱复杂度，看起来,Java语言做的不错.&lt;/p&gt;
-&lt;h3 id=&#34;_3&#34;&gt;五大特性&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;万物皆对象&lt;/li&gt;
-&lt;li&gt;程序是对象的集合,通过互相发送消息运作&lt;/li&gt;
-&lt;li&gt;对象可以包含子对象&lt;/li&gt;
-&lt;li&gt;对象具有类型&lt;/li&gt;
-&lt;li&gt;某一特定类型的对象可以接受相同的消息&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;对象具有状态&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;内部数据&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;行为&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;方法&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;标识&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;类型&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_4&#34;&gt;设计目标&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;没有不付出代价的特性.牺牲空间或者时间以获得安全或者效率上的出众&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;_5&#34;&gt;安全性&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;我们将类库的创建者称为类创建者&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;将使用类库&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;API&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;的称为客户端程序猿&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;客户端程序员使用类库时如果操作了敏感程度高的代码可能会触发安全故障[引入访问权限控制]&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;道理我都懂,那么仅仅使用public和privated不就行了吗?为什么还要有protected和default？&lt;br /&gt;
-    答: 为了解决继承的访问权限问题,谁让你引入继承&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#39;#inherit&#39;&gt;可是我为什么要引入继承？&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;内存泄漏,通用诟病,如果将对象的控制权交付给程序员本身的化容易出现人为失误,出现内存泄漏&lt;br /&gt;
-&lt;code&gt;c++与java走了不同的道路,因为理念不同,c++追求效率,为了让程序猿获得更大的效率控制能力,复杂化了处理过程,程序员必须自己管理内存的分配,而java比较注重灵活性与安全性,引入了垃圾回收器,内存泄露的监控与防范交付给虚拟机灵活是必然的,但是机器毕竟不是人，会容易在效率上大打折扣.&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;异常控制，java引入了错误处理将异常看做为对象,而且在众多语言中地位颇高,&lt;br /&gt;
-&lt;code&gt;关于java语言的异常处理机制,目前没有深入过&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;数组越界&lt;br /&gt;
-&lt;code&gt;引入范围检查&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;没有被初始化的类型乱用(不适用方法内变量[“局部”变量])&lt;br /&gt;
-&lt;code&gt;基本类型自动数据初始化,自定义类类型引用默认NULL&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;局部&lt;/code&gt;变量不适用怎么办&lt;br /&gt;
-&lt;code&gt;编译器警告&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;自定义的类型包怎么初始化&lt;br /&gt;
-&lt;code&gt;使用构造器&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;_6&#34;&gt;易维护性&lt;/h4&gt;
-&lt;p&gt;受c语言的静态绑定影响,方法在&lt;b&gt;编译阶段绑定&lt;/b&gt;,那么问题来了,拥有一个这样的方法,子类型不断创造,但不影响方法的执行,那么就引入泛化概念吧,但是怎么解决静态绑定问题,我们这样做只是为了&lt;b&gt;方法与类型分离&lt;/b&gt;,准确的说是&lt;b&gt;方法与引用&lt;/b&gt;分离,泛化方法功能,那么,方法的地址应该是由动态创建的对象中含有的特定信息计算出来的,不像C++,为了实现这种功能,引入了virtual关键字,来告诉别人,这个方法是与类型分离的,不需要在编译期去计算方法的地址,由此看来java好像默默的给你做好了这件事,在这方面，看起来java更胜一筹.&lt;br /&gt;
-&lt;code&gt;使用动态绑定&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&#34;_7&#34;&gt;灵活性&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;类库代码改变可能会影响客户端程序猿的代码[所以尽量除了API，其他的都隐藏]&lt;br /&gt;
-&lt;code&gt;使用访问权限控制&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;所有的类对象都可以有公用的方法[比如我想使用一个可以回收任何对象垃圾的垃圾回收器]&lt;br /&gt;
-&lt;code&gt;使用单根继承&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如何动态扩充存储对象的空间,运行前有可能不知道对象的多少&lt;br /&gt;
-&lt;code&gt;使用容器,java提供了很多容器可选择,当然需要在性能与功能上做权衡&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;c的链表可以看做为容器的一个具体实例&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;容器里存储对对象的引用,但是要想让容器具有通用性,有可能用到单根继承的思想,即在引用中放入父类型的声明&lt;br /&gt;
-&lt;code&gt;当然这延伸出了新的问题--&amp;gt;转型问题..向上转型丢失身份&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;那么有没有可能使容器存储记录对象的类型呢?&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;解决方案:引入范型(参数化类型)[Java SE5]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_8&#34;&gt;高效性&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;两个问题拥有相似的解决方案,仅仅有一点差别,没必要使用两次重复的代码吧.[引入继承]&lt;span id=&#39;inherit&#39;&gt;&lt;/span&gt;&lt;br /&gt;
-&lt;code&gt;使用继承&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_9&#34;&gt;内聚性&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;动态发生的组合(composition)叫做聚合(aggregation)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.cnblogs.com/wanghuaijun/p/5421419.html&#34;&gt;聚合,组合&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;将对象看作是提供服务的信息体,可以提高对象的内聚性,因为他齿轮化了问题.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_10&#34;&gt;特性&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;并发编程&lt;/li&gt;
-&lt;li&gt;Java web&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_11&#34;&gt;最佳实践&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;设计时优先考虑组合其次考虑继承&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_12&#34;&gt;章节细化&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&#34;_13&#34;&gt;运算&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;运算符&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;注意赋值运算符,赋值不是简简单单的数理符号,如果他的操作数是对象的话.&lt;/li&gt;
-&lt;li&gt;注意运算优先级&lt;/li&gt;
-&lt;li&gt;逻辑运算符的“短路”特性&lt;/li&gt;
-&lt;li&gt;按位运算符&lt;/li&gt;
-&lt;li&gt;移位运算符&lt;/li&gt;
-&lt;li&gt;语法糖运算符&lt;ul&gt;
-&lt;li&gt;+=&lt;/li&gt;
-&lt;li&gt;-=&lt;/li&gt;
-&lt;li&gt;/=&lt;/li&gt;
-&lt;li&gt;*=&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;三元运算符&lt;/li&gt;
-&lt;li&gt;类型转换&lt;ul&gt;
-&lt;li&gt;基本类型的转换&lt;/li&gt;
-&lt;li&gt;截断与舍入[暂时忘了]&lt;/li&gt;
-&lt;li&gt;自定义类型的转换&lt;ul&gt;
-&lt;li&gt;不会丢失信息&lt;/li&gt;
-&lt;li&gt;会丢失身份&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;操作数&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;直接量&lt;ul&gt;
-&lt;li&gt;类型与进制&lt;ul&gt;
-&lt;li&gt;33f,33d,33l[直接量的显示声明]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;编译器对直接量的选择&lt;/li&gt;
-&lt;li&gt;通常将指数以double形式使用&lt;/li&gt;
-&lt;li&gt;通常普通整数以int形式存储使用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;变量&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_14&#34;&gt;流程控制结构&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;foreach[Java SE5]&lt;br /&gt;
-&lt;code&gt;用于数组和容器的迭代,也可以迭代字符串&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;    &lt;span class=&#34;n&#34;&gt;foreach&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;c:&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;i am very happy today&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
-      &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;c1&#34;&gt;//range为自己定制的Range&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;foreach&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;a:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)){&lt;/span&gt;
-      &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;void 方法末尾添加隐式的&lt;code&gt;return&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;label&lt;br /&gt;
-&lt;code&gt;与continue和break结合使用,类似goto,用起来还不错&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;java限制的很,label只能紧邻循环体结构之上&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;switch&lt;br /&gt;
-&lt;code&gt;Only convertible int values and emun variables are permitted&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;c1&#34;&gt;//以下代码就是错误的,注意char可以转int&lt;/span&gt;
-  &lt;span class=&#34;c1&#34;&gt;//switch目前只支持整数，char和emun，long也不行哦&lt;/span&gt;
-  &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;missing&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;switch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
-
-    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_15&#34;&gt;至少会用&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;Random&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;你认为什么人可以说自己精通面向对象&lt;br /&gt;
-&lt;code&gt;将面向对象与class分离吧，类是面向对象的特性,但不是全部&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;什么是类&lt;br /&gt;
-&lt;code&gt;问题空间问题的抽象建模&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;为什么使用类&lt;br /&gt;
-&lt;code&gt;大概java设计者学习过算法吧:)[笑],个人以为这是看透了问题空间问题与问题的关系&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;为什么普通字段不能在对象之间共享&lt;br /&gt;
-&lt;code&gt;破坏了问题的独立性,现实生活中不也是这么,你以为面相对象是解决什么问题的&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;谈一谈方法有什么要注意的&lt;br /&gt;
-&lt;code&gt;对编译器来说,如果不想出现歧义的调用方法,那么就得在语法上限制方法,需要找一个东西唯一标识,那么我们就把它称为签名吧,一开始学c的时候我和同学讨论,c对方法的检查虽然简单,是啊,但是课本里至少讲一下吧,老师用看智障的眼神说,谁特么秀逗的在一个文件里写两个一模一样的方法名,但是面向对象引入重载后,就不得不谈了,方法之间必须有明确的界限,而且还要提到教育高度笑～&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;能不能讲一下static？&lt;br /&gt;
-&lt;code&gt;不会自己思考么？&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;如果不是学妹长得漂亮就不回答了....&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;首先相当于c中的全局方法吧,没有对象我也想有方法啊？总不能为了实现一个简单的功能我必须创建对象吧,它能够在对象之前产生,所以你说在它里面使用this合适不？别说编译器给你检查这个问题了，在eclipse中文本编辑器都给你检查出红色波浪线，其实这样说过于轻率了,从设计思想来说吧,不可避免的比如你的兄弟节点想得知有多少兄弟们,人类可以通过观察计数,对于对象来说,他没有主动观察能力,只能靠外界信息传递,有必要提供这么一个信息接口,而且要独立在对象之外,放在类里面.&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;你喜欢java哪一点?&lt;br /&gt;
-&lt;code&gt;可以定制更强大的sdk？最主要写起来方便&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;有人说看见java的helloworld这么难写就放弃了,你有什么看法？&lt;br /&gt;
-&lt;code&gt;自己不会定制一下？mdzz,再不济也可以用inport static 啊&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;谈一谈sizeof,为什么java没有&lt;br /&gt;
-&lt;code&gt;因为java不需要在语言级别解决平台移植问题,至于c++中的小打小闹用其他方式替代了&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;java引用到底和指针有什么区别呢?&lt;br /&gt;
-&lt;code&gt;区别很大,指针是自由的,引用并非自由,指针理论能操纵任意一块地址,但一旦引用的对象死亡,引用就再也不能用了&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;能不能简略的讲一下java文档能力？&lt;br /&gt;
-&lt;code&gt;这个我会专门的写一篇文章&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
     <id>/About/aboutMe.html</id>
     <title>关于我</title>
     <link href="/About/aboutMe.html" />
@@ -720,6 +446,44 @@ windows 编程是基于消息驱动的,当消息到来时,应用程序就调用�
 
 
 &lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/Life/emotion-sum.html</id>
+    <title>情绪概论</title>
+    <link href="/Life/emotion-sum.html" />
+    <published>2017-08-26T19:00:00+08:00</published>
+
+    
+    <updated>2017-08-26T19:00:00+08:00</updated>
+    
+
+    
+    <category term="Life" />
+    
+
+    
+    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;情绪&lt;/strong&gt;，是对一系列主观认知经验的通称，是多种感觉、思想和行为综合产生的心理和生理状态。&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%83%85%E7%BB%AA&#34;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;包含&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a&gt;情绪&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a&gt;钦佩&lt;/a&gt; &lt;a&gt;爱意&lt;/a&gt; &lt;a&gt;畏&lt;/a&gt; &lt;a&gt;躁动&lt;/a&gt; &lt;a&gt;疼痛&lt;/a&gt; &lt;a&gt;滑稽&lt;/a&gt; &lt;a&gt;愤怒&lt;/a&gt; &lt;a&gt;精神痛苦&lt;/a&gt; &lt;a&gt;烦恼&lt;/a&gt; &lt;a&gt;焦虑&lt;/a&gt; &lt;a&gt;冷漠&lt;/a&gt; &lt;a&gt;警醒&lt;/a&gt; &lt;a&gt;人际吸引力&lt;/a&gt; &lt;a&gt;敬畏&lt;/a&gt; &lt;a&gt;厌烦&lt;/a&gt; &lt;a&gt;冷静&lt;a/&gt; &lt;a&gt;同情&lt;/a&gt; &lt;a&gt;轻视&lt;/a&gt; &lt;a&gt;满足&lt;/a&gt; &lt;a&gt;失败主义&lt;/a&gt; &lt;a&gt;抑郁&lt;/a&gt; &lt;a&gt;绝望&lt;/a&gt; &lt;a&gt;欲望&lt;/a&gt; &lt;a&gt;失望&lt;/a&gt; &lt;a&gt;厌恶&lt;/a&gt; &lt;a&gt;狂喜&lt;/a&gt; &lt;a&gt;尴尬&lt;/a&gt; &lt;a&gt;同理心&lt;/a&gt; &lt;a&gt;注意&lt;/a&gt; &lt;a&gt;热心&lt;/a&gt; &lt;a&gt;羡慕&lt;/a&gt; &lt;a&gt;欣快&lt;/a&gt; &lt;a&gt;兴奋&lt;/a&gt; &lt;a&gt;恐惧&lt;/a&gt; &lt;a&gt;挫折&lt;/a&gt; &lt;a&gt;感恩&lt;/a&gt; &lt;a&gt;丧恸&lt;/a&gt; &lt;a&gt;罪恶感&lt;/a&gt; &lt;a&gt;快乐&lt;/a&gt; &lt;a&gt;仇恨&lt;/a&gt; &lt;a&gt;思乡病&lt;/a&gt; &lt;a&gt;希望&lt;/a&gt; &lt;a&gt;恐怖 (Horror and terror)&lt;/a&gt; &lt;a&gt;敌意&lt;/a&gt; &lt;a&gt;羞辱&lt;/a&gt; &lt;a&gt;歇斯底里&lt;/a&gt; &lt;a&gt;迷恋&lt;/a&gt; &lt;a&gt;不安&lt;/a&gt; &lt;a&gt;侮辱&lt;/a&gt; &lt;a&gt;兴趣&lt;/a&gt; &lt;a&gt;应激性&lt;/a&gt; &lt;a&gt;孤立&lt;/a&gt; &lt;a&gt;妒忌&lt;/a&gt; &lt;a&gt;欢乐&lt;/a&gt; &lt;a&gt;孤单&lt;/a&gt; &lt;a&gt;爱&lt;/a&gt; &lt;a&gt;贪念&lt;/a&gt; &lt;a&gt;忧郁&lt;/a&gt; &lt;a&gt;物哀&lt;/a&gt; &lt;a&gt;忽视&lt;/a&gt; &lt;a&gt;怀旧&lt;/a&gt; &lt;a&gt;恐慌&lt;/a&gt; &lt;a&gt;激情&lt;/a&gt; &lt;a&gt;可惜&lt;/a&gt; &lt;a&gt;愉快&lt;/a&gt; &lt;a&gt;骄傲&lt;/a&gt;  &lt;a&gt;傲慢&lt;/a&gt;   &lt;a&gt;暴怒&lt;/a&gt; &lt;a&gt;后悔&lt;/a&gt; &lt;a&gt;排挤&lt;/a&gt; &lt;a&gt;悔恨&lt;/a&gt; &lt;a&gt;不满&lt;/a&gt; &lt;a&gt;报复&lt;/a&gt; &lt;a&gt;悲伤&lt;/a&gt; &lt;a&gt;萨乌达德&lt;/a&gt; &lt;a&gt;幸灾乐祸&lt;/a&gt; &lt;a&gt;怀念&lt;/a&gt; &lt;a&gt;感伤&lt;/a&gt; &lt;a&gt;羞耻&lt;/a&gt; &lt;a&gt;急性压力反应&lt;/a&gt; &lt;a&gt;害羞&lt;/a&gt; &lt;a&gt;忧伤&lt;/a&gt; &lt;a&gt;恼怒&lt;/a&gt; &lt;a&gt;压力&lt;/a&gt; &lt;a&gt;痛苦&lt;/a&gt; &lt;a&gt;惊讶&lt;/a&gt; &lt;a&gt;同感 (Sympathy)&lt;/a&gt; &lt;a&gt;慢性压力&lt;/a&gt; &lt;a&gt;好奇&lt;/a&gt; &lt;a&gt;担心&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content>
     
     
   </entry>
@@ -1369,6 +1133,85 @@ float 占四个字节&lt;/p&gt;
   
     
   <entry>
+    <id>/Algorithm/Intro.html</id>
+    <title>算法起引</title>
+    <link href="/Algorithm/Intro.html" />
+    <published>2017-09-06T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-06T21:00:00+08:00</updated>
+    
+
+    
+    <category term="Algorithm" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计的魅力在于能让人在枯燥中感受快乐&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;前言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;什么是算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;数学化描述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;图书推荐&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;_1&#34;&gt;前言&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;本来我是不想写关于算法类的介绍的,原因很简单,我不想分享知识,这不是自私的原因,而是懒得去做,设计本身就是很复杂的东西,设计一个算法就像是在微分方程一样,没有固定的解法,不一定有解法[&lt;b&gt;可计算性&lt;/b&gt;],但是如果仅仅是为了结果去设计,人总会陷入漫长的枯燥中,真正的设计者享受着设计的每一个过程,像是认真捏造一个细碎的星星,企图窥探银河的壮观,那是一种特殊的感受,无法用语言描述,总而言之很壮观,很美丽,那么到底是什么驱动了我的书写,一个是知识的系统化,另一个是来自开源社区的共享精神,可以说互联网思维吧笑：),但愿每一个看过这些东西的算法爱好者能感受其中的魅力,自认为在抒情方面的语言组织能力不够好,所以废话不多说。&lt;/p&gt;
+&lt;h3 id=&#34;_2&#34;&gt;什么是算法&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;有限性&lt;/li&gt;
+&lt;li&gt;可行性&lt;/li&gt;
+&lt;li&gt;输入&lt;/li&gt;
+&lt;li&gt;输出&lt;/li&gt;
+&lt;li&gt;确定性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;满足以上特性的叫做算法.&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;有限是指算法中的指令不能是没有边界的数量&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;没有边界就像死循环一样&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;如何让产生答案&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;如果一个算法缺少有限性只能叫做计算方法&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;确定性是指每一个基本步骤必须是无歧义的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;不能出现让执行机器为难的事情，程序语言就是用来干这个的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;输入&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;个输入或多个输入&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;输出&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;至少一个输出&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;可行性&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;运算的基本指令单位必须是充分的基本的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;比如你直接写一个函数求解常微分方程这就有点不合适了&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;以上仅仅是基本的需求,在这些需求出现了之后,人开始发现,条条大路通罗马,一个问题有很多的解决方案,这么多方案哪个最好呢？就像是选美大赛,选美肯定有一定的标准,所以算法的比较也一定有自己的标准,标准很简单,时间复杂度与空间复杂度,鉴于硬件容量的迅猛发展,人们更倾向于时间复杂度,将其作为计算机世界的货币,无论是时间复杂度还是空间复杂度都可以被量化为performance,很多人把所有的赞誉都给了时间复杂度,其实如果不是空间复杂度的割肉,怎会在时间上取得那么多的好效果,自从得到了货币,有些人开始想着去购买东西,购买其他性能,购买其他功能,这不过是一场权衡的游戏,看谁能在context下做出更好的决策罢了.&lt;/p&gt;
+&lt;h3 id=&#34;_3&#34;&gt;数学化描述&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;数学不好的可以绕行&lt;/code&gt;&lt;br /&gt;
+按特性描述算法,果然不严谨,老师说过的既要有数学家的严谨又要有工程师的直觉,这句话果然很重要,作为数学的基石,不用集合描述都感觉是在浪费。&lt;br /&gt;
+定义一个四元组 ($(Q,I,\Psi,f)$)&lt;br /&gt;
+满足以下条件:&lt;br /&gt;
+Q代表计算状态&lt;br /&gt;
+I代表输入&lt;br /&gt;
+$(\Psi)$代表输出&lt;br /&gt;
+$(f)$代表计算规则&lt;br /&gt;
+$(I\subset Q,\Psi\subset Q)$&lt;br /&gt;
+$(\forall x_i \in \Psi,f(x_i)=x_i)$&lt;br /&gt;
+对$(I)$中的任意一个x定义一个计算序列$(x_1,x_2,x_3...x_k)$&lt;br /&gt;
+$(如果 k 是满足 f(x_k)\in \Psi 的最小值,那么必然存在f(x_k+n)=f(x_k))$&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;限制&lt;/b&gt;&lt;br /&gt;
+$(\Psi)$不为空&lt;br /&gt;
+$(f)$是基本充分的&lt;/p&gt;
+&lt;h3 id=&#34;_4&#34;&gt;图书推荐&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://dl.download.csdn.net/down10/20150409/44c594f043b8cd70a1abe830abb4a7ca.pdf?response-content-disposition=attachment%3Bfilename%3D%22%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA_%E5%8E%9F%E4%B9%A6%E7%AC%AC3%E7%89%88_CHS.pdf%22&amp;amp;OSSAccessKeyId=9q6nvzoJGowBj4q1&amp;amp;Expires=1505477606&amp;amp;Signature=a3Iz%2F1yCJjtdOL0ay84Xe%2Fjgczw%3D&amp;amp;user=mosao3725&amp;amp;sourceid=8577653&#34;&gt;算法导论.第三版&lt;/a&gt;&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/Linux/inital.html</id>
     <title>linux概论</title>
     <link href="/Linux/inital.html" />
@@ -1424,21 +1267,21 @@ float 占四个字节&lt;/p&gt;
   
     
   <entry>
-    <id>/Algorithm/Intro.html</id>
-    <title>算法起引</title>
-    <link href="/Algorithm/Intro.html" />
-    <published>2017-09-06T21:00:00+08:00</published>
+    <id>/Language/regex02.html</id>
+    <title>regex(二)</title>
+    <link href="/Language/regex02.html" />
+    <published>2017-08-31T21:00:00+08:00</published>
 
     
-    <updated>2017-09-06T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Algorithm" />
+    <updated>2017-08-31T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+    <category term="Language" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;思索中....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
@@ -1446,54 +1289,116 @@ float 占四个字节&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;设计的魅力在于能让人在枯燥中感受快乐&lt;/p&gt;
+&lt;p&gt;规律之外,无语无言&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;前言&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;什么是算法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;数学化描述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;术语&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;常见&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;解决方案&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;解析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;常用手段&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;常见问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;实践心得&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;_1&#34;&gt;前言&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;本来我是不想写关于算法类的介绍的,原因很简单,我不想分享知识,这不是自私的原因,而是懒得去做,设计本身就是很复杂的东西,设计一个算法就像是在微分方程一样,没有固定的解法,不一定有解法[&lt;b&gt;可计算性&lt;/b&gt;],但是如果仅仅是为了结果去设计,人总会陷入漫长的枯燥中,真正的设计者享受着设计的每一个过程,像是认真捏造一个细碎的星星,企图窥探银河的壮观,那是一种特殊的感受,无法用语言描述,总而言之很壮观,很美丽,那么到底是什么驱动了我的书写,一个是知识的系统化,另一个是来自开源社区的共享精神,可以说互联网思维吧笑：),但愿每一个看过这些东西的算法爱好者能感受其中的魅力,自认为在抒情方面的语言组织能力不够好,所以废话不多说。&lt;/p&gt;
-&lt;h3 id=&#34;_2&#34;&gt;什么是算法&lt;/h3&gt;
+&lt;h3 id=&#34;_1&#34;&gt;声明&lt;/h3&gt;
+&lt;p&gt;以下实例均出自egrep所属流派(flavor),如果出现复制之后无法匹配,证明你...&lt;/p&gt;
+&lt;h3 id=&#34;_2&#34;&gt;术语&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;正则[Regex]&lt;/li&gt;
+&lt;li&gt;匹配[matching]&lt;/li&gt;
+&lt;li&gt;元字符[metacharacter]&lt;/li&gt;
+&lt;li&gt;流派[flavor]&lt;/li&gt;
+&lt;li&gt;子表达式[subexpression]&lt;/li&gt;
+&lt;li&gt;字符[character]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_3&#34;&gt;常见&lt;/h3&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;有限性&lt;/li&gt;
-&lt;li&gt;可行性&lt;/li&gt;
-&lt;li&gt;输入&lt;/li&gt;
-&lt;li&gt;输出&lt;/li&gt;
-&lt;li&gt;确定性&lt;/li&gt;
+&lt;li&gt;量词&lt;ul&gt;
+&lt;li&gt;? + *&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;满足以上特性的叫做算法.&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;有限是指算法中的指令不能是没有边界的数量&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;没有边界就像死循环一样&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;如何让产生答案&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;如果一个算法缺少有限性只能叫做计算方法&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;确定性是指每一个基本步骤必须是无歧义的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;不能出现让执行机器为难的事情，程序语言就是用来干这个的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;输入&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;个输入或多个输入&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;输出&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;至少一个输出&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;可行性&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;运算的基本指令单位必须是充分的基本的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;比如你直接写一个函数求解常微分方程这就有点不合适了&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;以上仅仅是基本的需求,在这些需求出现了之后,人开始发现,条条大路通罗马,一个问题有很多的解决方案,这么多方案哪个最好呢？就像是选美大赛,选美肯定有一定的标准,所以算法的比较也一定有自己的标准,标准很简单,时间复杂度与空间复杂度,鉴于硬件容量的迅猛发展,人们更倾向于时间复杂度,将其作为计算机世界的货币,无论是时间复杂度还是空间复杂度都可以被量化为performance,很多人把所有的赞誉都给了时间复杂度,其实如果不是空间复杂度的割肉,怎会在时间上取得那么多的好效果,自从得到了货币,有些人开始想着去购买东西,购买其他性能,购买其他功能,这不过是一场权衡的游戏,看谁能在context下做出更好的决策罢了.&lt;/p&gt;
-&lt;h3 id=&#34;_3&#34;&gt;数学化描述&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_4&#34;&gt;解决方案&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;code&gt;数学不好的可以绕行&lt;/code&gt;&lt;br /&gt;
-按特性描述算法,果然不严谨,老师说过的既要有数学家的严谨又要有工程师的直觉,这句话果然很重要,作为数学的基石,不用集合描述都感觉是在浪费。&lt;br /&gt;
-定义一个四元组 ($(Q,I,\Psi,f)$)&lt;br /&gt;
-满足以下条件:&lt;br /&gt;
-Q代表计算状态&lt;br /&gt;
-I代表输入&lt;br /&gt;
-$(\Psi)$代表输出&lt;br /&gt;
-$(f)$代表计算规则&lt;br /&gt;
-$(I\subset Q,\Psi\subset Q)$&lt;br /&gt;
-$(\forall x_i \in \Psi,f(x_i)=x_i)$&lt;br /&gt;
-对$(I)$中的任意一个x定义一个计算序列$(x_1,x_2,x_3...x_k)$&lt;br /&gt;
-$(如果 k 是满足 f(x_k)\in \Psi 的最小值,那么必然存在f(x_k+n)=f(x_k))$&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;限制&lt;/b&gt;&lt;br /&gt;
-$(\Psi)$不为空&lt;br /&gt;
-$(f)$是基本充分的&lt;/p&gt;</content>
+&lt;ul&gt;
+&lt;li&gt;重复出现 + *&lt;/li&gt;
+&lt;li&gt;多选择  &lt;ul&gt;
+&lt;li&gt;单位置 (|)&lt;ul&gt;
+&lt;li&gt;不确定 .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;连续多位置 [...]  [^...] 集合与补集&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;可选择 ？&lt;/li&gt;
+&lt;li&gt;高级手段&lt;ul&gt;
+&lt;li&gt;反向匹配[看到了动态语言的影子]&lt;br /&gt;
+&lt;code&gt;实现重复单词查询&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;Ex: \&amp;lt;([A-Za-z]+) +\1\&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_5&#34;&gt;解析&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;()&lt;/code&gt;的原因&lt;ul&gt;
+&lt;li&gt;限制多选结构&lt;/li&gt;
+&lt;li&gt;分组&lt;/li&gt;
+&lt;li&gt;捕获文本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;转义的三种情况&lt;ul&gt;
+&lt;li&gt;元字符普通化&lt;/li&gt;
+&lt;li&gt;普通字符元字符序列化&lt;/li&gt;
+&lt;li&gt;除此之外被忽略掉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_6&#34;&gt;常用手段&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;缩小问题空间&lt;br /&gt;
+&lt;code&gt;color 与colour egrep &#39;(color|colour)&#39;----&#39;colo(u)?r&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;正则表达式内部没有忽略大小写,想要忽略大小写从封装他的软件入手&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;egrep -i#忽略大小写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_7&#34;&gt;常见问题&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;单词分界&lt;br /&gt;
+&lt;code&gt;smallcat 与cat 但是我仅仅想要匹配单独的cat单词&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;解决:元字符序列 \&amp;lt;  \&amp;gt;类似单词版本的^$&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;使用:(\&amp;gt;cat\&amp;gt;)&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;特性:遇见非英文字符直接认为是词首或者词尾&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;贪心匹配&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;提取引号内字符串&lt;br /&gt;
+&lt;code&gt;&#34;[^&#34;]*&#34;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;美元金额&lt;br /&gt;
+&lt;code&gt;\$[0-9]+(\.[0-9]+)?&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;匹配HTTP URL&lt;br /&gt;
+&lt;code&gt;\&amp;lt;(H|h)(T|t){2}(P|p)://[^ ]+\&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;html tag&lt;br /&gt;
+&lt;code&gt;&#39;&amp;lt; *([a-z]+) *[^&amp;lt;&amp;gt;\/]*&amp;gt;.*&amp;lt;/\1&amp;gt;&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;匹配时间&lt;br /&gt;
+&lt;code&gt;下次有时间补上&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_8&#34;&gt;实践心得&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;* +&lt;/code&gt;的对象大都是空格&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -1683,6 +1588,105 @@ $(f)$是基本充分的&lt;/p&gt;</content>
   
     
   <entry>
+    <id>/Linux/config.html</id>
+    <title>Sysconf-1</title>
+    <link href="/Linux/config.html" />
+    <published>2017-09-08T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-08T21:00:00+08:00</updated>
+    
+
+    
+    <category term="Linux" />
+    
+
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;致力学习到策略,而非限制&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;linux配置&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;环境变量&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;分类&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;查看&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;常见&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;使用语言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;linux&#34;&gt;linux配置&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;配置是具有范围的,时效的.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;_1&#34;&gt;环境变量&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_2&#34;&gt;分类&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;生命周期&lt;br /&gt;
+&lt;code&gt;永久的,修改配置文件生效&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;暂时的,使用export在shell生效&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;作用域&lt;br /&gt;
+&lt;code&gt;系统环境变量,对所有用户生效&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;用户环境变量,对指定用户生效&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;当前shell&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_3&#34;&gt;配置&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;作用域:所有用户+生命周期:永久的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;vim /etc/profile
+&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./JAVA_HOME/lib;&lt;span class=&#34;nv&#34;&gt;$JAVA_HOME&lt;/span&gt;/jre/lib
+&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /etc/profile
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;作用域:当前用户+生命周期:永久的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;vim ~/.bash.profile
+&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./JAVA_HOME/lib;&lt;span class=&#34;nv&#34;&gt;$JAVA_HOME&lt;/span&gt;/jre/lib
+&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bash.profile
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;作用域:当前shell+生命周期:临时的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./JAVA_HOME/lib;&lt;span class=&#34;nv&#34;&gt;$JAVA_HOME&lt;/span&gt;/jre/lib
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_4&#34;&gt;查看&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;#注意大小写&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_5&#34;&gt;常见&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;查看所有shell变量&lt;br /&gt;
+&lt;code&gt;$ export&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看所有环境变量&lt;br /&gt;
+&lt;code&gt;$ env&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;PATH 指定命令的搜索路径&lt;br /&gt;
+&lt;code&gt;$ export PATH=$PATH:/NEW/PATH&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_6&#34;&gt;使用语言&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;C语言&lt;/strong&gt;&lt;br /&gt;
+- getenv()返回一个环境变量&lt;br /&gt;
+- setenv()设置一个环境变量&lt;br /&gt;
+- unsetenv()清除一个环境变量&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/Language/regex01.html</id>
     <title>regex(一)</title>
     <link href="/Language/regex01.html" />
@@ -1798,144 +1802,6 @@ $(f)$是基本充分的&lt;/p&gt;</content>
 &lt;li&gt;&lt;code&gt;正则 pattern    VS   三代目中的function&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;正则 direction  VS   三代目的顺序&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;([|])*----QAQ脑子暂时短路这里以后补上&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/Language/regex02.html</id>
-    <title>regex(二)</title>
-    <link href="/Language/regex02.html" />
-    <published>2017-08-31T21:00:00+08:00</published>
-
-    
-    <updated>2017-08-31T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Language" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;思索中....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;规律之外,无语无言&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;声明&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;术语&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;常见&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;解决方案&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;解析&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;常用手段&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;常见问题&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;实践心得&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;_1&#34;&gt;声明&lt;/h3&gt;
-&lt;p&gt;以下实例均出自egrep所属流派(flavor),如果出现复制之后无法匹配,证明你...&lt;/p&gt;
-&lt;h3 id=&#34;_2&#34;&gt;术语&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;正则[Regex]&lt;/li&gt;
-&lt;li&gt;匹配[matching]&lt;/li&gt;
-&lt;li&gt;元字符[metacharacter]&lt;/li&gt;
-&lt;li&gt;流派[flavor]&lt;/li&gt;
-&lt;li&gt;子表达式[subexpression]&lt;/li&gt;
-&lt;li&gt;字符[character]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_3&#34;&gt;常见&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;量词&lt;ul&gt;
-&lt;li&gt;? + *&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_4&#34;&gt;解决方案&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;重复出现 + *&lt;/li&gt;
-&lt;li&gt;多选择  &lt;ul&gt;
-&lt;li&gt;单位置 (|)&lt;ul&gt;
-&lt;li&gt;不确定 .&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;连续多位置 [...]  [^...] 集合与补集&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;可选择 ？&lt;/li&gt;
-&lt;li&gt;高级手段&lt;ul&gt;
-&lt;li&gt;反向匹配[看到了动态语言的影子]&lt;br /&gt;
-&lt;code&gt;实现重复单词查询&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;Ex: \&amp;lt;([A-Za-z]+) +\1\&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_5&#34;&gt;解析&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;使用&lt;code&gt;()&lt;/code&gt;的原因&lt;ul&gt;
-&lt;li&gt;限制多选结构&lt;/li&gt;
-&lt;li&gt;分组&lt;/li&gt;
-&lt;li&gt;捕获文本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;转义的三种情况&lt;ul&gt;
-&lt;li&gt;元字符普通化&lt;/li&gt;
-&lt;li&gt;普通字符元字符序列化&lt;/li&gt;
-&lt;li&gt;除此之外被忽略掉&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_6&#34;&gt;常用手段&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;缩小问题空间&lt;br /&gt;
-&lt;code&gt;color 与colour egrep &#39;(color|colour)&#39;----&#39;colo(u)?r&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;正则表达式内部没有忽略大小写,想要忽略大小写从封装他的软件入手&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;egrep -i#忽略大小写&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_7&#34;&gt;常见问题&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;单词分界&lt;br /&gt;
-&lt;code&gt;smallcat 与cat 但是我仅仅想要匹配单独的cat单词&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;解决:元字符序列 \&amp;lt;  \&amp;gt;类似单词版本的^$&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;使用:(\&amp;gt;cat\&amp;gt;)&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;特性:遇见非英文字符直接认为是词首或者词尾&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;贪心匹配&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;提取引号内字符串&lt;br /&gt;
-&lt;code&gt;&#34;[^&#34;]*&#34;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;美元金额&lt;br /&gt;
-&lt;code&gt;\$[0-9]+(\.[0-9]+)?&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;匹配HTTP URL&lt;br /&gt;
-&lt;code&gt;\&amp;lt;(H|h)(T|t){2}(P|p)://[^ ]+\&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;html tag&lt;br /&gt;
-&lt;code&gt;&#39;&amp;lt; *([a-z]+) *[^&amp;lt;&amp;gt;\/]*&amp;gt;.*&amp;lt;/\1&amp;gt;&#39;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;匹配时间&lt;br /&gt;
-&lt;code&gt;下次有时间补上&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_8&#34;&gt;实践心得&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;* +&lt;/code&gt;的对象大都是空格&lt;/li&gt;
 &lt;/ul&gt;</content>
     
     
@@ -2306,38 +2172,22 @@ MathJax.Hub.Config({
   
     
   <entry>
-    <id>/Life/emotion-sum.html</id>
-    <title>情绪概论</title>
-    <link href="/Life/emotion-sum.html" />
-    <published>2017-08-26T19:00:00+08:00</published>
+    <id>/About/computer.html</id>
+    <title>做什么</title>
+    <link href="/About/computer.html" />
+    <published>2017-08-26T21:00:00+08:00</published>
 
     
-    <updated>2017-08-26T19:00:00+08:00</updated>
-    
-
-    
-    <category term="Life" />
+    <updated>2017-08-26T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;情绪&lt;/strong&gt;，是对一系列主观认知经验的通称，是多种感觉、思想和行为综合产生的心理和生理状态。&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%83%85%E7%BB%AA&#34;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;包含&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;a&gt;情绪&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;a&gt;钦佩&lt;/a&gt; &lt;a&gt;爱意&lt;/a&gt; &lt;a&gt;畏&lt;/a&gt; &lt;a&gt;躁动&lt;/a&gt; &lt;a&gt;疼痛&lt;/a&gt; &lt;a&gt;滑稽&lt;/a&gt; &lt;a&gt;愤怒&lt;/a&gt; &lt;a&gt;精神痛苦&lt;/a&gt; &lt;a&gt;烦恼&lt;/a&gt; &lt;a&gt;焦虑&lt;/a&gt; &lt;a&gt;冷漠&lt;/a&gt; &lt;a&gt;警醒&lt;/a&gt; &lt;a&gt;人际吸引力&lt;/a&gt; &lt;a&gt;敬畏&lt;/a&gt; &lt;a&gt;厌烦&lt;/a&gt; &lt;a&gt;冷静&lt;a/&gt; &lt;a&gt;同情&lt;/a&gt; &lt;a&gt;轻视&lt;/a&gt; &lt;a&gt;满足&lt;/a&gt; &lt;a&gt;失败主义&lt;/a&gt; &lt;a&gt;抑郁&lt;/a&gt; &lt;a&gt;绝望&lt;/a&gt; &lt;a&gt;欲望&lt;/a&gt; &lt;a&gt;失望&lt;/a&gt; &lt;a&gt;厌恶&lt;/a&gt; &lt;a&gt;狂喜&lt;/a&gt; &lt;a&gt;尴尬&lt;/a&gt; &lt;a&gt;同理心&lt;/a&gt; &lt;a&gt;注意&lt;/a&gt; &lt;a&gt;热心&lt;/a&gt; &lt;a&gt;羡慕&lt;/a&gt; &lt;a&gt;欣快&lt;/a&gt; &lt;a&gt;兴奋&lt;/a&gt; &lt;a&gt;恐惧&lt;/a&gt; &lt;a&gt;挫折&lt;/a&gt; &lt;a&gt;感恩&lt;/a&gt; &lt;a&gt;丧恸&lt;/a&gt; &lt;a&gt;罪恶感&lt;/a&gt; &lt;a&gt;快乐&lt;/a&gt; &lt;a&gt;仇恨&lt;/a&gt; &lt;a&gt;思乡病&lt;/a&gt; &lt;a&gt;希望&lt;/a&gt; &lt;a&gt;恐怖 (Horror and terror)&lt;/a&gt; &lt;a&gt;敌意&lt;/a&gt; &lt;a&gt;羞辱&lt;/a&gt; &lt;a&gt;歇斯底里&lt;/a&gt; &lt;a&gt;迷恋&lt;/a&gt; &lt;a&gt;不安&lt;/a&gt; &lt;a&gt;侮辱&lt;/a&gt; &lt;a&gt;兴趣&lt;/a&gt; &lt;a&gt;应激性&lt;/a&gt; &lt;a&gt;孤立&lt;/a&gt; &lt;a&gt;妒忌&lt;/a&gt; &lt;a&gt;欢乐&lt;/a&gt; &lt;a&gt;孤单&lt;/a&gt; &lt;a&gt;爱&lt;/a&gt; &lt;a&gt;贪念&lt;/a&gt; &lt;a&gt;忧郁&lt;/a&gt; &lt;a&gt;物哀&lt;/a&gt; &lt;a&gt;忽视&lt;/a&gt; &lt;a&gt;怀旧&lt;/a&gt; &lt;a&gt;恐慌&lt;/a&gt; &lt;a&gt;激情&lt;/a&gt; &lt;a&gt;可惜&lt;/a&gt; &lt;a&gt;愉快&lt;/a&gt; &lt;a&gt;骄傲&lt;/a&gt;  &lt;a&gt;傲慢&lt;/a&gt;   &lt;a&gt;暴怒&lt;/a&gt; &lt;a&gt;后悔&lt;/a&gt; &lt;a&gt;排挤&lt;/a&gt; &lt;a&gt;悔恨&lt;/a&gt; &lt;a&gt;不满&lt;/a&gt; &lt;a&gt;报复&lt;/a&gt; &lt;a&gt;悲伤&lt;/a&gt; &lt;a&gt;萨乌达德&lt;/a&gt; &lt;a&gt;幸灾乐祸&lt;/a&gt; &lt;a&gt;怀念&lt;/a&gt; &lt;a&gt;感伤&lt;/a&gt; &lt;a&gt;羞耻&lt;/a&gt; &lt;a&gt;急性压力反应&lt;/a&gt; &lt;a&gt;害羞&lt;/a&gt; &lt;a&gt;忧伤&lt;/a&gt; &lt;a&gt;恼怒&lt;/a&gt; &lt;a&gt;压力&lt;/a&gt; &lt;a&gt;痛苦&lt;/a&gt; &lt;a&gt;惊讶&lt;/a&gt; &lt;a&gt;同感 (Sympathy)&lt;/a&gt; &lt;a&gt;慢性压力&lt;/a&gt; &lt;a&gt;好奇&lt;/a&gt; &lt;a&gt;担心&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content>
+    <category term="About" />
+    
+
+    
+    <content type="html">&lt;p&gt;计算机的创造以及在其上一层又一层抽象的发展均是为解决问题而出现的,而非为创造问题的.&lt;br /&gt;
+艰难的问题是原本存在的,但为了解决艰难的问题,所以使用分治的思想去拆分为大同小异的问题,但并非不可解决的.&lt;/p&gt;</content>
     
     
   </entry>
@@ -3130,6 +2980,54 @@ $$&lt;/p&gt;
   
     
   <entry>
+    <id>/web/flask01.html</id>
+    <title>Flask</title>
+    <link href="/web/flask01.html" />
+    <published>2017-09-07T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-07T21:00:00+08:00</updated>
+    
+
+    
+    <category term="web" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=144199&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;_1&#34;&gt;&amp;gt;&lt;/h2&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&amp;gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;设计杂论&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;_2&#34;&gt;设计杂论&lt;/h3&gt;
+&lt;p&gt;关于在flask中request对象的概念定位&lt;br /&gt;
+作为单次参数传递给视图函数的话,每个视图函数都要写,如果增加其他对象,增加了了调用的混乱度,如果设置成全局变量的话,在多线程服务器中是不可能的,毕竟每个线程都会处理不同的request对象,作为全局对象,无法实现多线程,所以flask引入context(上下文)控制request在单个线程里面称为全局对象.&lt;br /&gt;
+对于上面的话,目前我还有一部分&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;&lt;br /&gt;
+context 有点像缓冲区&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;请求调度 路由指定请求方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四种钩子 java类似监视器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/Linux/os01.html</id>
     <title>系统概论</title>
     <link href="/Linux/os01.html" />
@@ -3159,6 +3057,17 @@ $$&lt;/p&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#what-is&#34;&gt;what is&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;发展&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;开始&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#temp&#34;&gt;temp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;与设备交互&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;来源&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;处理时间&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;寄存器&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3 id=&#34;what-is&#34;&gt;what is&lt;/h3&gt;
@@ -3172,7 +3081,379 @@ $$&lt;/p&gt;
 &lt;li&gt;分时&lt;/li&gt;
 &lt;li&gt;并发&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;计算机网络中对于cs模型具有重复型或并发型，看起来具有共同之处&lt;/p&gt;</content>
+&lt;p&gt;计算机网络中对于cs模型具有重复型或并发型，看起来具有共同之处&lt;/p&gt;
+&lt;h3 id=&#34;_2&#34;&gt;开始&lt;/h3&gt;
+&lt;h4 id=&#34;temp&#34;&gt;temp&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;加电 cs:ip = 0xf000:fff0&lt;/li&gt;
+&lt;li&gt;post自检[寻找显卡和执行BIOS]&lt;/li&gt;
+&lt;li&gt;加载bootloader 到 0x7c00+512字节 控制转移&lt;/li&gt;
+&lt;li&gt;加载内核&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_3&#34;&gt;与设备交互&lt;/h4&gt;
+&lt;h5 id=&#34;_4&#34;&gt;来源&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;面向外设 中断+io处理&lt;/li&gt;
+&lt;li&gt;面向系统程序 系统调用和异常提供服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;_5&#34;&gt;处理时间&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;中断:异步&lt;/li&gt;
+&lt;li&gt;异常:同步&lt;/li&gt;
+&lt;li&gt;系统调用: 同步或异步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;IA-32 Intel ® Architecture&lt;/p&gt;
+&lt;p&gt;Software Developer’s Manual Volume 1: Basic Architecture给出的解释:&lt;/p&gt;
+&lt;p&gt;6.4.INTERRUPTS AND EXCEPTIONS&lt;br /&gt;
+The processor provides two mechanisms for interrupting program execution: interrupts and exceptions:An interrupt is an asynchronous event that is typically triggered by an I/O device.An exception is a synchronous event that is generated when the processor detects one or more predefined conditions while executing an instruction. The IA-32 architecture specifies three classes of exceptions: faults, traps, and aborts.&lt;br /&gt;
+The processor responds to interrupts and exceptions in essentially the same way. When an interrupt or exception is signaled, the processor halts execution of the current program or task and switches to a handler procedure that has been written specifically to handle the interrupt or exception condition.&lt;br /&gt;
+ The processor accesses the handler procedure through an entry in the interrupt descriptor table (IDT). When the handler has completed handling the interrupt or exception,program control is returned to the interrupted program or task.&lt;br /&gt;
+The operating system, executive, and/or device drivers normally handle interrupts and exceptions independently from application programs or tasks. Application programs can, however,access the interrupt and exception handlers incorporated in an operating system or executive through assembly-language calls. The remainder of this section gives a brief overview of theprocessor’s interrupt and exception handling mechanism. See Chapter 5, Interrupt and Exception Handling in the IA-32 Intel Architecture Software Developer’s Manual, Volume 3, for a detailed description of this mechanism.&lt;br /&gt;
+The IA-32 Architecture defines 17 predefined interrupts and exceptions and 224 user defined interrupts, which are associated with entries in the IDT. Each interrupt and exception in the IDT is identified with a number, called a vector. Table 6-1 lists the interrupts and exceptions with entries in the IDT and their respective vector numbers. Vectors 0 through 8, 10 through 14, and16 through 19 are the predefined interrupts and exceptions, and vectors 32 through 255 are the user-defined interrupts, called mask-able interrupts.&lt;br /&gt;
+&lt;b&gt;定义&lt;/b&gt;：&lt;br /&gt;
+中断和异常是强制性的执行流的转移，从当前正在执行的程序或任务转移到一个特殊的例程或任务。当处理器收到中断信号或检测到异常时，便挂起当前正在运行的进程或者任务，而转去执行中断或异常处理例程。中断或异常处理例程执行完毕之后，处理器继续执行被中断的进程或任务。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;分类&lt;/b&gt;：&lt;br /&gt;
+&lt;b&gt;中断&lt;b&gt;：又称为异步中断，是其他硬件依照CPU时钟信号随机产生的。中断又被分为可屏蔽硬件中断和不可屏蔽中断。在微机原理课程中，处理器中有两个引脚NMI和INTR负责接受中断信号，还有高级可编程中断控制器（APIC），如8259A管理中断信号。则可屏蔽硬件中断：任何通过INTR或着局部APIC传递到处理器的中断信号都被称为可屏蔽硬件中断，由IO设备产生的IRQ（Interrupt ReQuest）也是可屏蔽硬件中断。但是通过INTR引脚传递的可屏蔽硬件中断可使用Intel架构定义的中断向量（0-255），而局部的APIC传递的部分只能使用16-255号向量。若中断信号从NMI引脚传递过来，则发生的是一个不可屏蔽中断。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;异常&lt;/b&gt;：又称为同步中断，是当指令执行时CPU控制单元产生的，之所以称为同步，是因为只有在一条指令终止执行后CPU才会发出中断。在不失进程执行连续性的同时，按引起的异常的指令是否能重新执行,且依据它们被报告的方式，异常分为错误，陷阱，和终止三种情况。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;错误&lt;/b&gt;：错误是一种通常可以能够被修正的异常，一旦修正，程序能够不失去连续性地接着执行。当报告错误发生时，处理器将机器状态恢复到执行错误之前的状态。错误处理例程的返回地址指向产生错误的指令，而不是错误指令之后的的那条指令。如页错误。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;陷阱&lt;/b&gt;：当引起陷阱的指令发生时，马上产生该异常。陷阱允许程序不失去连续性的继续执行。陷阱处理例程的返回地址指向引起陷阱的指令的下一条指令（与错误本质上的区别）。如溢出。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;终止&lt;/b&gt;：它并不总是报告产生异常的指令的确定位置，也不允许引起终止的进程或任务重新执行。如总线错误导致异常终止。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;中断向量&lt;/b&gt;：&lt;br /&gt;
+Intel x86共支持256中向量中断，Intel给每种中断源编号，从0-255,并把这个无符号整数叫做一个中断向量。不可屏蔽中断的向量和异常的向量是固定的，而可屏蔽的硬件中断可以通过对中断控制器编程来改变。&lt;/p&gt;
+&lt;p&gt;Linux中的中断向量：&lt;/p&gt;
+&lt;p&gt;0-19的中断向量对应于异常和非屏蔽中断。&lt;/p&gt;
+&lt;p&gt;20-31Intel保留&lt;/p&gt;
+&lt;p&gt;32-127可屏蔽硬件中断&lt;/p&gt;
+&lt;p&gt;128用于系统调用的可编程异常&lt;/p&gt;
+&lt;p&gt;129-238可屏蔽硬件中断&lt;/p&gt;
+&lt;p&gt;239本地APIC时钟中断&lt;/p&gt;
+&lt;p&gt;240本地APIC高温中断&lt;/p&gt;
+&lt;p&gt;241-250由Linux留作将来使用&lt;/p&gt;
+&lt;p&gt;251-253处理器间中断&lt;/p&gt;
+&lt;p&gt;254本地APIC错误中断&lt;/p&gt;
+&lt;p&gt;255本地APIC伪中断(CPU屏蔽某个中断时产生的)&lt;/p&gt;
+&lt;p&gt;中断描述符表：&lt;br /&gt;
+中断描述符表（Interrupt Descriptor Table，IDT）是一个系统表，它与每一个中断或异常向量相关，每一个向量在表中有相应的中断或异常处理程序的入口地址。内核在允许中断发生前，必须适当地初始化IDT，用lidt汇编指令初始化idtr。&lt;/p&gt;
+&lt;p&gt;任务门：当中断信号发生时，必须取代当前进程的那个进程的TSS选择符存放在任务门中。&lt;/p&gt;
+&lt;p&gt;中断门：包含段选择符和中断或异常处理程序的段内偏移量。当控制权转移到一个适当的段时，处理器清IF标志，从而关闭将来会发生的可屏蔽中断。&lt;/p&gt;
+&lt;p&gt;陷阱门：与中断门相似，只是控制权传递到一个适当的段时处理器不修改IF标志。&lt;/p&gt;
+&lt;p&gt;Linux利用中断门处理中断，利用陷阱门处理异常。&lt;/p&gt;
+&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;区分用户态与内核态&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中断处理与子程序调用的区别&lt;br /&gt;
+&lt;code&gt;反正中断处理一定会保护程序状态字寄存器，而子程序调用不会&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;中断向量地址是&lt;br /&gt;
+&lt;code&gt;中断服务例程地址的地址&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通用库函数可以执行特权吗？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;应用程序发生异常时操作系统可能做什么？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作系统执行中断处理的流程包括&lt;br /&gt;
+&lt;code&gt;保护现场与恢复现场是编译器做的&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;执行中断应该不是他做的吧&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下列程序工作在内核态的有&lt;br /&gt;
+&lt;code&gt;系统调用[]&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;中断处理程序[]&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;进程调度[]&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;内存管理[]&lt;/code&gt;&lt;br /&gt;
+系统调用在用户态发生，内核态执行，外部中断随时发生，应用程序执行时可能发生缺页&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中断处理例程主要做什么&lt;br /&gt;
+&lt;code&gt;执行开/关中断特权指令&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_6&#34;&gt;寄存器&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;psw(程序状态字)&lt;br /&gt;
+&lt;code&gt;用于记录当前处理器状态和控制指令的执行顺序，并且保留与运行相关的各种信息&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;主要作用:实现程序状态的恢复与保护&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;中断经常用到，但子程序调用不会用到，因为子程序调用在程序内部执行&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/Language/java00.html</id>
+    <title>[java纲]Java概论</title>
+    <link href="/Language/java00.html" />
+    <published>2017-09-01T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-01T21:00:00+08:00</updated>
+    
+
+    
+    <category term="Language" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;完备的系统在演变中浑然天成,要想在系统中添加新的功能,必须能够忍受带来的递归增长的问题.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;暂无评论&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=386830&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;说明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;五大特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;设计目标&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;安全性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;易维护性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;灵活性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;高效性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;内聚性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;特性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;最佳实践&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;章节细化&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;运算&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;流程控制结构&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;至少会用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;_1&#34;&gt;面向对象&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_2&#34;&gt;说明&lt;/h3&gt;
+&lt;p&gt;自始至终,编程语言一步一步的提供着高程度的抽象给开发人员，从最开始的简单的自然语言的抽象,到数学语言的抽象的函数式编程，到待解决问题的抽象的面向对象,看起来，能解决问题的复杂程度取决于问题的抽象程度,程序员作为计算机与现实世界的沟通桥梁,同时承载着现实世界问题的待解决问题建模(问题空间)与所应用的计算机的机器建模(解空间)，建立这两种空间的桥梁是很复杂的，这也是面向对象的挑战，编程语言的出现无非是从这两个空间上削弱复杂度，看起来,Java语言做的不错.&lt;/p&gt;
+&lt;h3 id=&#34;_3&#34;&gt;五大特性&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;万物皆对象&lt;/li&gt;
+&lt;li&gt;程序是对象的集合,通过互相发送消息运作&lt;/li&gt;
+&lt;li&gt;对象可以包含子对象&lt;/li&gt;
+&lt;li&gt;对象具有类型&lt;/li&gt;
+&lt;li&gt;某一特定类型的对象可以接受相同的消息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;对象具有状态&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;内部数据&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;行为&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;方法&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;标识&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;类型&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_4&#34;&gt;设计目标&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;没有不付出代价的特性.牺牲空间或者时间以获得安全或者效率上的出众&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;_5&#34;&gt;安全性&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;我们将类库的创建者称为类创建者&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;将使用类库&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;API&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;的称为客户端程序猿&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;客户端程序员使用类库时如果操作了敏感程度高的代码可能会触发安全故障[引入访问权限控制]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;道理我都懂,那么仅仅使用public和privated不就行了吗?为什么还要有protected和default？&lt;br /&gt;
+    答: 为了解决继承的访问权限问题,谁让你引入继承&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#39;#inherit&#39;&gt;可是我为什么要引入继承？&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内存泄漏,通用诟病,如果将对象的控制权交付给程序员本身的化容易出现人为失误,出现内存泄漏&lt;br /&gt;
+&lt;code&gt;c++与java走了不同的道路,因为理念不同,c++追求效率,为了让程序猿获得更大的效率控制能力,复杂化了处理过程,程序员必须自己管理内存的分配,而java比较注重灵活性与安全性,引入了垃圾回收器,内存泄露的监控与防范交付给虚拟机灵活是必然的,但是机器毕竟不是人，会容易在效率上大打折扣.&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;异常控制，java引入了错误处理将异常看做为对象,而且在众多语言中地位颇高,&lt;br /&gt;
+&lt;code&gt;关于java语言的异常处理机制,目前没有深入过&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数组越界&lt;br /&gt;
+&lt;code&gt;引入范围检查&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有被初始化的类型乱用(不适用方法内变量[“局部”变量])&lt;br /&gt;
+&lt;code&gt;基本类型自动数据初始化,自定义类类型引用默认NULL&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;局部&lt;/code&gt;变量不适用怎么办&lt;br /&gt;
+&lt;code&gt;编译器警告&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;自定义的类型包怎么初始化&lt;br /&gt;
+&lt;code&gt;使用构造器&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;_6&#34;&gt;易维护性&lt;/h4&gt;
+&lt;p&gt;受c语言的静态绑定影响,方法在&lt;b&gt;编译阶段绑定&lt;/b&gt;,那么问题来了,拥有一个这样的方法,子类型不断创造,但不影响方法的执行,那么就引入泛化概念吧,但是怎么解决静态绑定问题,我们这样做只是为了&lt;b&gt;方法与类型分离&lt;/b&gt;,准确的说是&lt;b&gt;方法与引用&lt;/b&gt;分离,泛化方法功能,那么,方法的地址应该是由动态创建的对象中含有的特定信息计算出来的,不像C++,为了实现这种功能,引入了virtual关键字,来告诉别人,这个方法是与类型分离的,不需要在编译期去计算方法的地址,由此看来java好像默默的给你做好了这件事,在这方面，看起来java更胜一筹.&lt;br /&gt;
+&lt;code&gt;使用动态绑定&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;_7&#34;&gt;灵活性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;类库代码改变可能会影响客户端程序猿的代码[所以尽量除了API，其他的都隐藏]&lt;br /&gt;
+&lt;code&gt;使用访问权限控制&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;所有的类对象都可以有公用的方法[比如我想使用一个可以回收任何对象垃圾的垃圾回收器]&lt;br /&gt;
+&lt;code&gt;使用单根继承&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如何动态扩充存储对象的空间,运行前有可能不知道对象的多少&lt;br /&gt;
+&lt;code&gt;使用容器,java提供了很多容器可选择,当然需要在性能与功能上做权衡&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;c的链表可以看做为容器的一个具体实例&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;容器里存储对对象的引用,但是要想让容器具有通用性,有可能用到单根继承的思想,即在引用中放入父类型的声明&lt;br /&gt;
+&lt;code&gt;当然这延伸出了新的问题--&amp;gt;转型问题..向上转型丢失身份&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;那么有没有可能使容器存储记录对象的类型呢?&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;解决方案:引入范型(参数化类型)[Java SE5]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_8&#34;&gt;高效性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;两个问题拥有相似的解决方案,仅仅有一点差别,没必要使用两次重复的代码吧.[引入继承]&lt;span id=&#39;inherit&#39;&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;code&gt;使用继承&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_9&#34;&gt;内聚性&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;动态发生的组合(composition)叫做聚合(aggregation)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.cnblogs.com/wanghuaijun/p/5421419.html&#34;&gt;聚合,组合&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将对象看作是提供服务的信息体,可以提高对象的内聚性,因为他齿轮化了问题.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_10&#34;&gt;特性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;并发编程&lt;/li&gt;
+&lt;li&gt;Java web&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_11&#34;&gt;最佳实践&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;设计时优先考虑组合其次考虑继承&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_12&#34;&gt;章节细化&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_13&#34;&gt;运算&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;运算符&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注意赋值运算符,赋值不是简简单单的数理符号,如果他的操作数是对象的话.&lt;/li&gt;
+&lt;li&gt;注意运算优先级&lt;/li&gt;
+&lt;li&gt;逻辑运算符的“短路”特性&lt;/li&gt;
+&lt;li&gt;按位运算符&lt;/li&gt;
+&lt;li&gt;移位运算符&lt;/li&gt;
+&lt;li&gt;语法糖运算符&lt;ul&gt;
+&lt;li&gt;+=&lt;/li&gt;
+&lt;li&gt;-=&lt;/li&gt;
+&lt;li&gt;/=&lt;/li&gt;
+&lt;li&gt;*=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;三元运算符&lt;/li&gt;
+&lt;li&gt;类型转换&lt;ul&gt;
+&lt;li&gt;基本类型的转换&lt;/li&gt;
+&lt;li&gt;截断与舍入[暂时忘了]&lt;/li&gt;
+&lt;li&gt;自定义类型的转换&lt;ul&gt;
+&lt;li&gt;不会丢失信息&lt;/li&gt;
+&lt;li&gt;会丢失身份&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;直接量&lt;ul&gt;
+&lt;li&gt;类型与进制&lt;ul&gt;
+&lt;li&gt;33f,33d,33l[直接量的显示声明]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;编译器对直接量的选择&lt;/li&gt;
+&lt;li&gt;通常将指数以double形式使用&lt;/li&gt;
+&lt;li&gt;通常普通整数以int形式存储使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_14&#34;&gt;流程控制结构&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;foreach[Java SE5]&lt;br /&gt;
+&lt;code&gt;用于数组和容器的迭代,也可以迭代字符串&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;    &lt;span class=&#34;n&#34;&gt;foreach&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;c:&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;i am very happy today&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//range为自己定制的Range&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;foreach&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;a:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)){&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;void 方法末尾添加隐式的&lt;code&gt;return&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;label&lt;br /&gt;
+&lt;code&gt;与continue和break结合使用,类似goto,用起来还不错&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;java限制的很,label只能紧邻循环体结构之上&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;switch&lt;br /&gt;
+&lt;code&gt;Only convertible int values and emun variables are permitted&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;c1&#34;&gt;//以下代码就是错误的,注意char可以转int&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;//switch目前只支持整数，char和emun，long也不行哦&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;missing&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;switch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_15&#34;&gt;至少会用&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Random&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;你认为什么人可以说自己精通面向对象&lt;br /&gt;
+&lt;code&gt;将面向对象与class分离吧，类是面向对象的特性,但不是全部&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;什么是类&lt;br /&gt;
+&lt;code&gt;问题空间问题的抽象建模&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;为什么使用类&lt;br /&gt;
+&lt;code&gt;大概java设计者学习过算法吧:)[笑],个人以为这是看透了问题空间问题与问题的关系&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;为什么普通字段不能在对象之间共享&lt;br /&gt;
+&lt;code&gt;破坏了问题的独立性,现实生活中不也是这么,你以为面相对象是解决什么问题的&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;谈一谈方法有什么要注意的&lt;br /&gt;
+&lt;code&gt;对编译器来说,如果不想出现歧义的调用方法,那么就得在语法上限制方法,需要找一个东西唯一标识,那么我们就把它称为签名吧,一开始学c的时候我和同学讨论,c对方法的检查虽然简单,是啊,但是课本里至少讲一下吧,老师用看智障的眼神说,谁特么秀逗的在一个文件里写两个一模一样的方法名,但是面向对象引入重载后,就不得不谈了,方法之间必须有明确的界限,而且还要提到教育高度笑～&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;能不能讲一下static？&lt;br /&gt;
+&lt;code&gt;不会自己思考么？&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;如果不是学妹长得漂亮就不回答了....&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;首先相当于c中的全局方法吧,没有对象我也想有方法啊？总不能为了实现一个简单的功能我必须创建对象吧,它能够在对象之前产生,所以你说在它里面使用this合适不？别说编译器给你检查这个问题了，在eclipse中文本编辑器都给你检查出红色波浪线，其实这样说过于轻率了,从设计思想来说吧,不可避免的比如你的兄弟节点想得知有多少兄弟们,人类可以通过观察计数,对于对象来说,他没有主动观察能力,只能靠外界信息传递,有必要提供这么一个信息接口,而且要独立在对象之外,放在类里面.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;你喜欢java哪一点?&lt;br /&gt;
+&lt;code&gt;可以定制更强大的sdk？最主要写起来方便&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;有人说看见java的helloworld这么难写就放弃了,你有什么看法？&lt;br /&gt;
+&lt;code&gt;自己不会定制一下？mdzz,再不济也可以用inport static 啊&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;谈一谈sizeof,为什么java没有&lt;br /&gt;
+&lt;code&gt;因为java不需要在语言级别解决平台移植问题,至于c++中的小打小闹用其他方式替代了&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;java引用到底和指针有什么区别呢?&lt;br /&gt;
+&lt;code&gt;区别很大,指针是自由的,引用并非自由,指针理论能操纵任意一块地址,但一旦引用的对象死亡,引用就再也不能用了&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;能不能简略的讲一下java文档能力？&lt;br /&gt;
+&lt;code&gt;这个我会专门的写一篇文章&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -3205,10 +3486,16 @@ $$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#perl&#34;&gt;perl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#perl&#34;&gt;perl&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#904&#34;&gt;9/04更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#918&#34;&gt;9/18更新&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3 id=&#34;perl&#34;&gt;perl&lt;/h3&gt;
+&lt;h4 id=&#34;904&#34;&gt;9/04更新&lt;/h4&gt;
+&lt;hr /&gt;
 &lt;p&gt;简单掌握&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -3244,7 +3531,56 @@ $$&lt;/p&gt;
     101
     你是数字
 &amp;gt;&amp;gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;</content>
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;918&#34;&gt;9/18更新&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;注意精通regex  p49总结&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/i&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;忽略大小写的替换&lt;/span&gt;
+&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/g&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;所有行都进行替换&lt;/span&gt;
+&lt;span class=&#34;sr&#34;&gt;m/regex/i&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或者&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以不用加&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;意会即可&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;任务来了,老板给了一个超级大的文件,是的html文件(然而所有的代码都挤在了一块),他说让我让这个文档层次感显示,小意思,我去做,但是&lt;b&gt;mmp&lt;/b&gt;914行,本来我说使用&lt;b&gt;notepad++&lt;/b&gt;毕竟能匹配括号,但是这并没有卵用啊,914行,所以说我只能借助正则婊了,但是完全不会用啊摔!那么只能先使用perl把标签分出来,让其单行显示&lt;/p&gt;
+&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;v0.01&lt;/b&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;(!| )*([a-z!-])+ *[^&amp;gt;&amp;lt;]*&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;\/ *[^&amp;gt;&amp;lt;]+ *&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;真是呵呵,现在的自己好辣鸡,而且还是分两次做完的单行&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;部分解释&lt;/b&gt;&lt;br /&gt;
+1. 其实在perl中&lt;code&gt;$1&lt;/code&gt;, &lt;code&gt;$2&lt;/code&gt;, &lt;code&gt;$3&lt;/code&gt;, 可以代替 &lt;code&gt;\1&lt;/code&gt;, &lt;code&gt;\2&lt;/code&gt;, &lt;code&gt;\3&lt;/code&gt;作为捕获文本的&lt;br /&gt;
+2. 我们都知道正则&lt;code&gt;()&lt;/code&gt; 可以用来捕获文本,但是如果不需要捕获,它偏偏捕获了,这样只会肆意拓展$型变量的长度,所以使用了非捕获型规则,即&lt;code&gt;(?:...)&lt;/code&gt;, 但凡出现在这个括号里面,都不会被捕获的.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;那么我现在有一个&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;还没有&lt;del&gt;思考出来&lt;/del&gt;实践验证出来, &lt;code&gt;(|)&lt;/code&gt; 会 不会被捕获&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;b&gt;Perl参数含义&lt;/b&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;参数&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;-p&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;对目标文件的每一行进行查找&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;-w&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;like gdb, 和warning一个意思,打开perl额外警告功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;-e&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;表示整个程序接在命令后面[&lt;b style=&#39;color:green&#39;&gt;不明觉li&lt;/b&gt;]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content>
     
     
   </entry>

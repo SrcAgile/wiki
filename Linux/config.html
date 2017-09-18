@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>Sysconf-1 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Linux">Linux</a>&nbsp;&#187;&nbsp;Sysconf-1
+    <span class="updated">Page Updated&nbsp;
+      2017-09-08 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">Sysconf-1</div>
+
+  <blockquote>
+<p>致力学习到策略,而非限制</p>
+</blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#linux">linux配置</a><ul>
+<li><a href="#_1">环境变量</a><ul>
+<li><a href="#_2">分类</a></li>
+<li><a href="#_3">配置</a></li>
+<li><a href="#_4">查看</a></li>
+<li><a href="#_5">常见</a></li>
+<li><a href="#_6">使用语言</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="linux">linux配置</h2>
+<blockquote>
+<p>配置是具有范围的,时效的.</p>
+</blockquote>
+<h3 id="_1">环境变量</h3>
+<hr />
+<h4 id="_2">分类</h4>
+<ul>
+<li>生命周期<br />
+<code>永久的,修改配置文件生效</code><br />
+<code>暂时的,使用export在shell生效</code></li>
+<li>作用域<br />
+<code>系统环境变量,对所有用户生效</code><br />
+<code>用户环境变量,对指定用户生效</code><br />
+<code>当前shell</code></li>
+</ul>
+<h4 id="_3">配置</h4>
+<ol>
+<li>作用域:所有用户+生命周期:永久的</li>
+</ol>
+<div class="hlcode"><pre><span class="nv">$ </span>vim /etc/profile
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">CLASSPATH</span><span class="o">=</span>./JAVA_HOME/lib;<span class="nv">$JAVA_HOME</span>/jre/lib
+<span class="nv">$ </span><span class="nb">source</span> /etc/profile
+</pre></div>
+
+
+<ol>
+<li>作用域:当前用户+生命周期:永久的</li>
+</ol>
+<div class="hlcode"><pre><span class="nv">$ </span>vim ~/.bash.profile
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">CLASSPATH</span><span class="o">=</span>./JAVA_HOME/lib;<span class="nv">$JAVA_HOME</span>/jre/lib
+<span class="nv">$ </span><span class="nb">source</span> ~/.bash.profile
+</pre></div>
+
+
+<ol>
+<li>作用域:当前shell+生命周期:临时的</li>
+</ol>
+<div class="hlcode"><pre><span class="nv">$ </span><span class="nb">export </span><span class="nv">CLASSPATH</span><span class="o">=</span>./JAVA_HOME/lib;<span class="nv">$JAVA_HOME</span>/jre/lib
+</pre></div>
+
+
+<h4 id="_4">查看</h4>
+<div class="hlcode"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$PATH</span> <span class="c">#注意大小写</span>
+</pre></div>
+
+
+<h4 id="_5">常见</h4>
+<ul>
+<li>查看所有shell变量<br />
+<code>$ export</code></li>
+<li>查看所有环境变量<br />
+<code>$ env</code></li>
+<li>PATH 指定命令的搜索路径<br />
+<code>$ export PATH=$PATH:/NEW/PATH</code></li>
+</ul>
+<h4 id="_6">使用语言</h4>
+<p><strong>C语言</strong><br />
+- getenv()返回一个环境变量<br />
+- setenv()设置一个环境变量<br />
+- unsetenv()清除一个环境变量</p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'Sysconf-1',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-18 20:02:48</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
