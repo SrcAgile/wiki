@@ -54,32 +54,48 @@
 <li><a href="#_2">命令行特性</a></li>
 <li><a href="#_3">脚本书写</a></li>
 <li><a href="#_4">开发环境</a></li>
-<li><a href="#_5">常见函数</a></li>
 <li><a href="#io">IO</a><ul>
-<li><a href="#_6">模块</a></li>
-<li><a href="#_7">输出函数</a></li>
-<li><a href="#_8">输入函数</a></li>
+<li><a href="#_5">模块</a></li>
+<li><a href="#_6">输出函数</a></li>
+<li><a href="#_7">输入函数</a></li>
 </ul>
 </li>
-<li><a href="#_9">运算</a><ul>
-<li><a href="#_10">运算符</a></li>
-<li><a href="#_11">操作数</a></li>
+<li><a href="#_8">语法</a><ul>
+<li><a href="#_9">书写</a></li>
+<li><a href="#_10">运算</a><ul>
+<li><a href="#_11">运算符</a></li>
+<li><a href="#_12">操作数</a></li>
 </ul>
 </li>
-<li><a href="#_12">控制结构</a><ul>
-<li><a href="#_13">循环</a></li>
+<li><a href="#_13">控制结构</a><ul>
+<li><a href="#_14">循环</a></li>
 </ul>
 </li>
-<li><a href="#_14">函数</a><ul>
-<li><a href="#_15">分类</a></li>
 </ul>
 </li>
-<li><a href="#_16">开发程序</a><ul>
-<li><a href="#_17">文档</a></li>
+<li><a href="#_15">函数</a><ul>
+<li><a href="#_16">分类</a></li>
+<li><a href="#_17">常见内建函数</a></li>
+<li><a href="#_18">参数问题</a></li>
 </ul>
 </li>
-<li><a href="#_18">高级特性</a></li>
-<li><a href="#_19">获取帮助</a></li>
+<li><a href="#_19">类</a></li>
+<li><a href="#_20">使用</a><ul>
+<li><a href="#_21">方法</a></li>
+<li><a href="#_22">对象</a></li>
+</ul>
+</li>
+<li><a href="#_23">模块</a><ul>
+<li><a href="#_24">常见</a></li>
+</ul>
+</li>
+<li><a href="#_25">开发程序</a><ul>
+<li><a href="#_26">文档</a></li>
+<li><a href="#_27">异常控制</a></li>
+</ul>
+</li>
+<li><a href="#_28">高级特性</a></li>
+<li><a href="#_29">获取帮助</a></li>
 </ul>
 </li>
 </ul>
@@ -133,20 +149,14 @@
 <li>pycharm</li>
 <li>spyder</li>
 </ul>
-<h3 id="_5">常见函数</h3>
-<hr />
-<ul>
-<li>abs()<br />
-<code>取绝对值</code></li>
-</ul>
 <h3 id="io">IO</h3>
 <hr />
-<h4 id="_6">模块</h4>
+<h4 id="_5">模块</h4>
 <ul>
 <li>sys.stderr<br />
 <code>标准错误输出</code></li>
 </ul>
-<h4 id="_7">输出函数</h4>
+<h4 id="_6">输出函数</h4>
 <ul>
 <li><code>交互使用repr()</code></li>
 <li><code>print调用str()</code></li>
@@ -157,23 +167,35 @@
 <li>重定向输出<br />
 <code>print &gt;&gt;</code></li>
 </ul>
-<h4 id="_8">输入函数</h4>
+<h4 id="_7">输入函数</h4>
 <ul>
 <li>raw_input()<code>py 2.x</code></li>
 <li>input <code>py 3.x</code></li>
 </ul>
-<h3 id="_9">运算</h3>
+<h3 id="_8">语法</h3>
 <hr />
-<h4 id="_10">运算符</h4>
+<h4 id="_9">书写</h4>
+<ul>
+<li><code>\</code>继续上一行</li>
+<li><code>;</code>两个语句在一行</li>
+<li><code>:</code>将代码头体分离</li>
+<li>缩进</li>
+</ul>
+<h4 id="_10">运算</h4>
+<h5 id="_11">运算符</h5>
 <ul>
 <li><code>**(乘方)</code></li>
 <li><code>//</code>浮点除法(四舍五入)真正的除法</li>
 <li><code>/</code>传统除法(操作数为整型时执行地板除)</li>
 <li><code>!= &lt;&gt;</code>都是不等于</li>
 <li>逻辑运算 <code>and or not</code></li>
+<li>增量赋值 +=,-=</li>
+<li>多重赋值 x =y =z=1</li>
+<li>多元赋值 a,b = b+1, a[涉及元祖特性][可实现简单交换]<br />
+<code>x,y = y,x[不明觉厉]显然赋值之前已经做好了计算</code></li>
 <li>友情提示:多使用括号,增强代码可读性</li>
 </ul>
-<h4 id="_11">操作数</h4>
+<h5 id="_12">操作数</h5>
 <ul>
 <li>注意complex虽然不常用</li>
 <li>字符串知识(切片,索引,克莱尼星号,连接)&lt;-[只读]</li>
@@ -181,41 +203,116 @@
 <li>元组元素个数和值不可变(可切片,克莱尼星号,索引,连接)&lt;-[只读]</li>
 <li>字典 (<b style='color:red'>有重点待续...</b>)</li>
 </ul>
-<h3 id="_12">控制结构</h3>
+<h4 id="_13">控制结构</h4>
 <ul>
 <li><del>没什么好讲的</del></li>
 <li>注意缩进</li>
-<li>range(n)<br />
-<code>生成列表0~n-1</code><br />
-<code>常见搭配 for i in range(len(str))</code></li>
 </ul>
-<h4 id="_13">循环</h4>
-<p><del>不值得专门一节写</del><br />
-- 搞清可迭代对象(序列/迭代器)</p>
-<h3 id="_14">函数</h3>
+<h5 id="_14">循环</h5>
+<p><del>不值得专门一节写</del></p>
+<ul>
+<li>搞清可迭代对象(序列/迭代器)</li>
+</ul>
+<h3 id="_15">函数</h3>
 <hr />
-<h4 id="_15">分类</h4>
+<h4 id="_16">分类</h4>
 <ol>
 <li>有副作用</li>
 <li>无副作用</li>
 </ol>
-<h3 id="_16">开发程序</h3>
+<h4 id="_17">常见内建函数</h4>
+<ul>
+<li>abs()<br />
+<code>取绝对值</code></li>
+<li>dir([obj])<br />
+<code>显示对象属性,如果无参数,则显示全局变量的名字</code></li>
+<li>help([obj])<br />
+<code>帮助</code></li>
+<li>int([obj])<br />
+<code>将对象转换为整数</code></li>
+<li>len(obj)<br />
+<code>返回对象长度</code></li>
+<li>open(fn,mode)<br />
+<code>fn为文件名或者handle, mode取['r','w']</code></li>
+<li>range([start],stop[,step])<br />
+<code>生成列表0~n-1</code><br />
+<code>常见搭配 for i in range(len(str))</code></li>
+<li>str(obj)<br />
+<code>将一个对象转换为字符串</code></li>
+<li>type(obj)<br />
+<code>返回对象类型</code></li>
+</ul>
+<h4 id="_18">参数问题</h4>
+<p><code>暂时书写架构</code><br />
+- 默认参数<br />
+- 可变参数<br />
+- 关键字参数<br />
+- etc</p>
+<h3 id="_19">类</h3>
 <hr />
-<h4 id="_17">文档</h4>
+<h3 id="_20">使用</h3>
+<ul>
+<li>定义<br />
+<code>class classname(baseclass[es]):</code></li>
+<li>创建<br />
+<code>a = classB(pram)</code></li>
+</ul>
+<h4 id="_21">方法</h4>
+<p><code>做到访问权限控制</code><br />
+1. 特殊方法<br />
+<code>__method__()</code><br />
+    ``</p>
+<h4 id="_22">对象</h4>
+<ul>
+<li>自身实例引用<br />
+<code>self类似this</code></li>
+</ul>
+<h3 id="_23">模块</h3>
+<hr />
+<p><code>这个是我现在还比较方的东西</code><br />
+1. 每个python脚本文件都可以当做一个模块<br />
+2. 模块太大?可以自己<b style='color:red'>拆</b></p>
+<h4 id="_24">常见</h4>
+<ul>
+<li>sys<ul>
+<li>platform</li>
+<li>version</li>
+<li>stdout</li>
+</ul>
+</li>
+</ul>
+<h3 id="_25">开发程序</h3>
+<hr />
+<h4 id="_26">文档</h4>
 <ul>
 <li>注释<br />
 <code>#单行</code><br />
 <code>自定义范围 ''' comment '''</code></li>
 </ul>
-<h3 id="_18">高级特性</h3>
+<h4 id="_27">异常控制</h4>
+<ul>
+<li>捕获try-except</li>
+</ul>
+<div class="hlcode"><pre>  <span class="k">try</span><span class="p">:</span>
+    <span class="n">expression</span><span class="p">;</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="n">expression</span><span class="p">;</span>
+
+<span class="o">-</span> <span class="err">生成</span><span class="sb">`raise()`</span>
+</pre></div>
+
+
+<h3 id="_28">高级特性</h3>
 <ul>
 <li>列表解析<br />
 <code>暂时不写 特牛x</code></li>
 </ul>
-<h3 id="_19">获取帮助</h3>
+<h3 id="_29">获取帮助</h3>
 <hr />
 <ol>
 <li>使用help(函数名)<code>交互模式使用</code></li>
+<li>什么是PEP?<br />
+<code>PYTHON增强提案</code></li>
 </ol>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -249,7 +346,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-19 20:05:52</p>
+        <p>Site Generated 2017-09-19 20:36:39</p>
       </span>
     </div>
 

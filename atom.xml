@@ -7,7 +7,7 @@
   <title>Meta's Wiki</title>
   <link href="/" />
   <link href="/atom.xml" rel="self" type="application/atom+xml" />
-  <updated>2017-09-19T20:05:52+08:00</updated>
+  <updated>2017-09-19T20:36:39+08:00</updated>
   <id></id>
   <author>
     <name>Guozhen Li</name>
@@ -803,6 +803,179 @@ float 占四个字节&lt;/p&gt;
   
     
   <entry>
+    <id>/web/flask01.html</id>
+    <title>Flask</title>
+    <link href="/web/flask01.html" />
+    <published>2017-09-07T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-07T21:00:00+08:00</updated>
+    
+
+    
+    <category term="web" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=144199&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;fuck&#34;&gt;&amp;gt;无FUCK说&lt;/h2&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#fuck&#34;&gt;&amp;gt;无FUCK说&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#mmp&#34;&gt;MMP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;设计杂论&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#918-post&#34;&gt;9/18 Post&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;信息&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;已解决&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;待解决&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;基础不稳&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;mmp&#34;&gt;MMP&lt;/h3&gt;
+&lt;p&gt;我刚学,有很多问题...&lt;/p&gt;
+&lt;h3 id=&#34;_1&#34;&gt;设计杂论&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;关于在flask中request对象的概念定位&lt;br /&gt;
+作为单次参数传递给视图函数的话,每个视图函数都要写,如果增加其他对象,增加了了调用的混乱度,如果设置成全局变量的话,在多线程服务器中是不可能的,毕竟每个线程都会处理不同的request对象,作为全局对象,无法实现多线程,所以flask引入context(上下文)控制request在单个线程里面称为全局对象.&lt;br /&gt;
+对于上面的话,目前我还有一部分&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;&lt;br /&gt;
+context 有点像缓冲区&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;请求调度 路由指定请求方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四种钩子 java类似监视器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;918-post&#34;&gt;9/18 Post&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;本次主要是注重实践,在一下午看完了前四章,还没来的及吸收&lt;br /&gt;
+开发工具: VIM&lt;br /&gt;
+语言选择: PY&lt;br /&gt;
+模板选择: Jinja2&lt;br /&gt;
+模块选择: python_script, python_bootstrap, python_mement,flask_wtf&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;&lt;del&gt;我说这么多屁话干嘛&lt;/del&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;h4 id=&#34;_2&#34;&gt;信息&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Flask 中有两种上下文:程序上下文和请求上下文&lt;br /&gt;
+&lt;code&gt;Flask 在分发请求之前激活(或推送)程序和请求上下文,请求处理完成后再将其删除。程序上下文被推送后,就可以在线程中使用 current_app 和 g 变量。类似地,请求上下文被推送后,就可以使用 request 和 session 变量。如果使用这些变量时我们没有激活程序上下文或请求上下文,就会导致错误。&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;hello&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+&lt;span class=&#34;ne&#34;&gt;RuntimeError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;working&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;outside&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;application&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app_context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+&lt;span class=&#34;c&#34;&gt;#在程序实例上调用 app.app_context() 可获得一个程序上下文&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;至于为什么输出hello,我们以后解释&lt;b&gt;&lt;/p&gt;
+&lt;h4 id=&#34;_3&#34;&gt;使用&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;先用Flask创造一个app对象&lt;br /&gt;
+&lt;code&gt;Flask初始化参数必须只有一个指定的参数,即程序主模块或包的名字&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;Flask 用这个参数决定程序的根目录,以便稍后能够找到相对于程
+序根目录的资源文件位置&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;为了灵活使用app.run(),我们加入&lt;b style=&#39;color:yellow&#39;&gt;python_script&lt;/b&gt;&lt;br /&gt;
+&lt;code&gt;看看Moment对app进行的劳动改造&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Moment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;init_app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;init_app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;hasattr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;extensions&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_moment&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;nd&#34;&gt;@staticmethod&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;timestamp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;](&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;timestamp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;动态url匹配的路由&lt;b style=&#39;color:red&#39; id=&#39;tro001&#39;&gt;存在问题&lt;/b&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;nd&#34;&gt;@app.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;/user/&amp;lt;name&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;&amp;lt;h1&amp;gt;Hello, &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;% s&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;!&amp;lt;/h1&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+  &lt;span class=&#34;c&#34;&gt;#这三个name必须都是一样的变量名吗?&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;请求 - 响应循环&lt;/li&gt;
+&lt;li&gt;程序和请求上下文&lt;br /&gt;
+&lt;code&gt;Flask 从客户端收到请求时,要让视图函数能访问一些对象,这样才能处理请求。请求对象就是一个很好的例子,它封装了客户端发送的 HTTP 请求。&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;Flask 使用上下文临时把某些对象变为全局可访问。有了上下文,就可以写出下面的视图函数:&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;
+  &lt;span class=&#34;nd&#34;&gt;@app.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;user_agent&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;&amp;lt;p&amp;gt;Your browser is &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;% s&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;lt;/p&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user_agent&lt;/span&gt;
+
+  &lt;span class=&#34;o&#34;&gt;//===============================================&lt;/span&gt;
+  &lt;span class=&#34;err&#34;&gt;事实上&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;不可能是&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;`&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;全局变量。试想&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在多线程服务器中&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;多个线程同时处理不同客户端发送的不同请求时&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每个线程看到的&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;对象必然不同。&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Falsk&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;使用上下文让特定的变量在一个线程中全局可访问&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与此同时却不会干扰其他线程。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_4&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;已解决&lt;/b&gt;&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;the flowing&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;debug&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39; __main__ &amp;#39;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;是&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Python&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;的惯常用法&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在这里确保直接执行这个脚本时才启动开发&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Web&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;服务器。如果这个脚本由其他脚本引入&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;程序假定父级脚本会启动不同的服务器&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因此不会执行&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;。只有真正执行到才会运行哦&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;所以经常用来做测试&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我以前说过&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_5&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;待解决&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;_6&#34;&gt;基础不稳&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;import的加载问题&lt;/li&gt;
+&lt;li&gt;不太理解每一个工程目录下的隐式的__init__文件&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tro001&#34;&gt;使用顺序-3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;current_app是什么?&lt;/del&gt;&lt;br /&gt;
+&lt;code&gt;当前激活程序的程序实例&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;current_app有什么用?&lt;/li&gt;
+&lt;/ol&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/前景分析/pattern.html</id>
     <title>模式识别</title>
     <link href="/前景分析/pattern.html" />
@@ -1133,144 +1306,6 @@ float 占四个字节&lt;/p&gt;
   
     
   <entry>
-    <id>/Language/BS4.html</id>
-    <title>数据采集</title>
-    <link href="/Language/BS4.html" />
-    <published>2017-08-27T23:00:00+08:00</published>
-
-    
-    <updated>2017-08-27T23:00:00+08:00</updated>
-    
-
-    
-    <category term="Language" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=28872586&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/h2&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bs4&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id=&#34;objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;输入编码其实可以自动检测,但是不一定准哦,输出指定UTF8&lt;/code&gt;&lt;br /&gt;
-- from_encoding[以文档指定的编码解析]&lt;code&gt;E:from_encoding=&#34;iso-8859-8&#34;&lt;/code&gt;&lt;br /&gt;
-- exclude_encodings[排除编码]&lt;code&gt;E: exclude_encodings=[&#34;ISO-8859-7&#34;]&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&#34;parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;xml&lt;/li&gt;
-&lt;li&gt;lxml[推荐]&lt;/li&gt;
-&lt;li&gt;html5lib&lt;/li&gt;
-&lt;li&gt;html.parser[内置]&lt;/li&gt;
-&lt;li&gt;&lt;a&gt;差异比较&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;SoupStrainer对象&lt;ul&gt;
-&lt;li&gt;SoupStrainer(&#34;TAG_NAME&#34;)&lt;/li&gt;
-&lt;li&gt;SoupStrainer(id=&#39;##&#39;)[选择器]&lt;/li&gt;
-&lt;li&gt;SoupStrainer(method引用)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.tag-------------[&lt;a&gt;获得标签&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.tag[&#39;Attr&#39;]---[&lt;a&gt;获得键值&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.contents-----[&lt;a&gt;获得.descendants子节点&lt;code&gt;&amp;lt;html&amp;gt;#&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.children------[&lt;a&gt;获得子节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.descendants-[&lt;a&gt;获得子孙节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.strings-----[&lt;a&gt;文档去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.stripped_strings---[&lt;a&gt;忽略空行去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.parent------[&lt;a&gt;父节点NONE&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.original_encoding---[&lt;a&gt;模糊识别编码&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.prettify([编码默认utf8])[&lt;a&gt;格式化输出&lt;/a&gt;] [&lt;a&gt;IO&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.get_text()---[&lt;a&gt;获得文本&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.get_text(&#34;character&#34;)[tag之间character分割]&lt;/li&gt;
-&lt;li&gt;soup.get_text(&#34;|&#34;, strip=True)[&lt;a&gt;以‘|’分割标签,移除空白&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.new_tag(&#34;a&#34;, href=&#34;url&#34;)[&lt;a&gt;增加新标签&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.new_string(&#34;string&#34;, Comment)[&lt;a href=&#39;Comment&#39; style=&#39;color:green&#39;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;添加注释&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.find_all(&#39;tag&#39;)---[查找.标签] [得到.列表] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.find(id=&#39;#&#39;)------[查找.定位] [得到.唯一] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;直接查找&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.select(&#34;tag1 tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;逐层查找&lt;/a&gt;] [&lt;a&gt;tag1 的子孙是tag2皆可&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag1 &amp;gt; tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的儿子tag2&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#tag1 ~ .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的所有class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#tag1 + .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的紧邻的class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;.class&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;所有的class节点&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;[class~=some_name]&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;&lt;b style=&#39;color:red&#39;&gt;忘了&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#id1，#id2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href]&#39;)[&lt;a&gt;具有属性&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.select(&#39;a[href=&#34;url&#34;]&#39;)[&lt;a&gt;确定指定属性值&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href^=&#34;url&#34;]&#39;)[&lt;a&gt;属性值不为&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;soup.select_one(&#34;选择器&#34;)[&lt;a&gt;返回查找回的第一个&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/h4&gt;
-&lt;h2 id=&#34;_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;code&gt;没想到center标签不支持width属性,只能自定义&amp;lt;div&amp;gt;了&lt;/code&gt;&lt;br /&gt;
-&lt;center &gt;&lt;br /&gt;
-&lt;div style=&#34;width:644px&#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/Paprika.png&#34; /&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;br /&gt;
-&lt;embed height=&#34;415&#34; width=&#34;644&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=4887477&amp;page=1&#34; pluginspage=&#34;//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&#34;&gt;&lt;/embed&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
     <id>/Algorithm/Intro.html</id>
     <title>算法起引</title>
     <link href="/Algorithm/Intro.html" />
@@ -1588,173 +1623,138 @@ $(f)$是基本充分的&lt;/p&gt;
   
     
   <entry>
-    <id>/web/flask01.html</id>
-    <title>Flask</title>
-    <link href="/web/flask01.html" />
-    <published>2017-09-07T21:00:00+08:00</published>
+    <id>/Language/BS4.html</id>
+    <title>数据采集</title>
+    <link href="/Language/BS4.html" />
+    <published>2017-08-27T23:00:00+08:00</published>
 
     
-    <updated>2017-09-07T21:00:00+08:00</updated>
-    
-
-    
-    <category term="web" />
+    <updated>2017-08-27T23:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
+    <category term="Language" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=144199&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=28872586&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
 &lt;hr /&gt;
-&lt;h2 id=&#34;fuck&#34;&gt;&amp;gt;无FUCK说&lt;/h2&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#fuck&#34;&gt;&amp;gt;无FUCK说&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#mmp&#34;&gt;MMP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;设计杂论&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#918-post&#34;&gt;9/18 Post&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;信息&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;已解决&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;待解决&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;基础不稳&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;mmp&#34;&gt;MMP&lt;/h3&gt;
-&lt;p&gt;我刚学,有很多问题...&lt;/p&gt;
-&lt;h3 id=&#34;_1&#34;&gt;设计杂论&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;关于在flask中request对象的概念定位&lt;br /&gt;
-作为单次参数传递给视图函数的话,每个视图函数都要写,如果增加其他对象,增加了了调用的混乱度,如果设置成全局变量的话,在多线程服务器中是不可能的,毕竟每个线程都会处理不同的request对象,作为全局对象,无法实现多线程,所以flask引入context(上下文)控制request在单个线程里面称为全局对象.&lt;br /&gt;
-对于上面的话,目前我还有一部分&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;&lt;br /&gt;
-context 有点像缓冲区&lt;/p&gt;
+&lt;h2 id=&#34;intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/h2&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bs4&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;输入编码其实可以自动检测,但是不一定准哦,输出指定UTF8&lt;/code&gt;&lt;br /&gt;
+- from_encoding[以文档指定的编码解析]&lt;code&gt;E:from_encoding=&#34;iso-8859-8&#34;&lt;/code&gt;&lt;br /&gt;
+- exclude_encodings[排除编码]&lt;code&gt;E: exclude_encodings=[&#34;ISO-8859-7&#34;]&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;请求调度 路由指定请求方法&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;四种钩子 java类似监视器&lt;/p&gt;
+&lt;li&gt;xml&lt;/li&gt;
+&lt;li&gt;lxml[推荐]&lt;/li&gt;
+&lt;li&gt;html5lib&lt;/li&gt;
+&lt;li&gt;html.parser[内置]&lt;/li&gt;
+&lt;li&gt;&lt;a&gt;差异比较&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;SoupStrainer对象&lt;ul&gt;
+&lt;li&gt;SoupStrainer(&#34;TAG_NAME&#34;)&lt;/li&gt;
+&lt;li&gt;SoupStrainer(id=&#39;##&#39;)[选择器]&lt;/li&gt;
+&lt;li&gt;SoupStrainer(method引用)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;918-post&#34;&gt;9/18 Post&lt;/h3&gt;
+&lt;h3 id=&#34;attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.tag-------------[&lt;a&gt;获得标签&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.tag[&#39;Attr&#39;]---[&lt;a&gt;获得键值&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.contents-----[&lt;a&gt;获得.descendants子节点&lt;code&gt;&amp;lt;html&amp;gt;#&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.children------[&lt;a&gt;获得子节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.descendants-[&lt;a&gt;获得子孙节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.strings-----[&lt;a&gt;文档去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.stripped_strings---[&lt;a&gt;忽略空行去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.parent------[&lt;a&gt;父节点NONE&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.original_encoding---[&lt;a&gt;模糊识别编码&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.prettify([编码默认utf8])[&lt;a&gt;格式化输出&lt;/a&gt;] [&lt;a&gt;IO&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.get_text()---[&lt;a&gt;获得文本&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.get_text(&#34;character&#34;)[tag之间character分割]&lt;/li&gt;
+&lt;li&gt;soup.get_text(&#34;|&#34;, strip=True)[&lt;a&gt;以‘|’分割标签,移除空白&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.new_tag(&#34;a&#34;, href=&#34;url&#34;)[&lt;a&gt;增加新标签&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.new_string(&#34;string&#34;, Comment)[&lt;a href=&#39;Comment&#39; style=&#39;color:green&#39;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;添加注释&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.find_all(&#39;tag&#39;)---[查找.标签] [得到.列表] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.find(id=&#39;#&#39;)------[查找.定位] [得到.唯一] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;直接查找&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.select(&#34;tag1 tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;逐层查找&lt;/a&gt;] [&lt;a&gt;tag1 的子孙是tag2皆可&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag1 &amp;gt; tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的儿子tag2&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#tag1 ~ .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的所有class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#tag1 + .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的紧邻的class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;.class&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;所有的class节点&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;[class~=some_name]&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;&lt;b style=&#39;color:red&#39;&gt;忘了&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#id1，#id2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href]&#39;)[&lt;a&gt;具有属性&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.select(&#39;a[href=&#34;url&#34;]&#39;)[&lt;a&gt;确定指定属性值&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href^=&#34;url&#34;]&#39;)[&lt;a&gt;属性值不为&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;soup.select_one(&#34;选择器&#34;)[&lt;a&gt;返回查找回的第一个&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/h2&gt;
 &lt;hr /&gt;
-&lt;p&gt;本次主要是注重实践,在一下午看完了前四章,还没来的及吸收&lt;br /&gt;
-开发工具: VIM&lt;br /&gt;
-语言选择: PY&lt;br /&gt;
-模板选择: Jinja2&lt;br /&gt;
-模块选择: python_script, python_bootstrap, python_mement,flask_wtf&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;&lt;del&gt;我说这么多屁话干嘛&lt;/del&gt;&lt;/del&gt;&lt;/p&gt;
-&lt;h4 id=&#34;_2&#34;&gt;信息&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;Flask 中有两种上下文:程序上下文和请求上下文&lt;br /&gt;
-&lt;code&gt;Flask 在分发请求之前激活(或推送)程序和请求上下文,请求处理完成后再将其删除。程序上下文被推送后,就可以在线程中使用 current_app 和 g 变量。类似地,请求上下文被推送后,就可以使用 request 和 session 变量。如果使用这些变量时我们没有激活程序上下文或请求上下文,就会导致错误。&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;hello&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
-&lt;span class=&#34;ne&#34;&gt;RuntimeError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;working&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;outside&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;application&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app_context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
-&lt;span class=&#34;s&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_ctx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-
-&lt;span class=&#34;c&#34;&gt;#在程序实例上调用 app.app_context() 可获得一个程序上下文&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;至于为什么输出hello,我们以后解释&lt;b&gt;&lt;/p&gt;
-&lt;h4 id=&#34;_3&#34;&gt;使用&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;先用Flask创造一个app对象&lt;br /&gt;
-&lt;code&gt;Flask初始化参数必须只有一个指定的参数,即程序主模块或包的名字&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;Flask 用这个参数决定程序的根目录,以便稍后能够找到相对于程
-序根目录的资源文件位置&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;为了灵活使用app.run(),我们加入&lt;b style=&#39;color:yellow&#39;&gt;python_script&lt;/b&gt;&lt;br /&gt;
-&lt;code&gt;看看Moment对app进行的劳动改造&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Moment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-            &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;init_app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;init_app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;hasattr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;extensions&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-            &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_moment&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-    &lt;span class=&#34;nd&#34;&gt;@staticmethod&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;context_processor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-            &lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;timestamp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;moment&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;](&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;timestamp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;动态url匹配的路由&lt;b style=&#39;color:red&#39; id=&#39;tro001&#39;&gt;存在问题&lt;/b&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;nd&#34;&gt;@app.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;/user/&amp;lt;name&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;&amp;lt;h1&amp;gt;Hello, &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;% s&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;!&amp;lt;/h1&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
-  &lt;span class=&#34;c&#34;&gt;#这三个name必须都是一样的变量名吗?&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;请求 - 响应循环&lt;/li&gt;
-&lt;li&gt;程序和请求上下文&lt;br /&gt;
-&lt;code&gt;Flask 从客户端收到请求时,要让视图函数能访问一些对象,这样才能处理请求。请求对象就是一个很好的例子,它封装了客户端发送的 HTTP 请求。&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;Flask 使用上下文临时把某些对象变为全局可访问。有了上下文,就可以写出下面的视图函数:&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;
-  &lt;span class=&#34;nd&#34;&gt;@app.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;user_agent&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;&amp;lt;p&amp;gt;Your browser is &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;% s&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;lt;/p&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user_agent&lt;/span&gt;
-
-  &lt;span class=&#34;o&#34;&gt;//===============================================&lt;/span&gt;
-  &lt;span class=&#34;err&#34;&gt;事实上&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;不可能是&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;`&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;全局变量。试想&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在多线程服务器中&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;多个线程同时处理不同客户端发送的不同请求时&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每个线程看到的&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;对象必然不同。&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Falsk&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;使用上下文让特定的变量在一个线程中全局可访问&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与此同时却不会干扰其他线程。&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_4&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;已解决&lt;/b&gt;&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li&gt;the flowing&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;debug&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39; __main__ &amp;#39;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;是&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Python&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;的惯常用法&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在这里确保直接执行这个脚本时才启动开发&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Web&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;服务器。如果这个脚本由其他脚本引入&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;程序假定父级脚本会启动不同的服务器&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因此不会执行&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;。只有真正执行到才会运行哦&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;所以经常用来做测试&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我以前说过&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_5&#34;&gt;&lt;b style=&#39;color:red&#39;&gt;待解决&lt;/b&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;_6&#34;&gt;基础不稳&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li&gt;import的加载问题&lt;/li&gt;
-&lt;li&gt;不太理解每一个工程目录下的隐式的__init__文件&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#tro001&#34;&gt;使用顺序-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;current_app是什么?&lt;/del&gt;&lt;br /&gt;
-&lt;code&gt;当前激活程序的程序实例&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;current_app有什么用?&lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;p&gt;&lt;code&gt;没想到center标签不支持width属性,只能自定义&amp;lt;div&amp;gt;了&lt;/code&gt;&lt;br /&gt;
+&lt;center &gt;&lt;br /&gt;
+&lt;div style=&#34;width:644px&#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/Paprika.png&#34; /&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;br /&gt;
+&lt;embed height=&#34;415&#34; width=&#34;644&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=4887477&amp;page=1&#34; pluginspage=&#34;//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&#34;&gt;&lt;/embed&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;</content>
     
     
   </entry>
@@ -2953,32 +2953,48 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;命令行特性&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;脚本书写&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;开发环境&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;常见函数&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#io&#34;&gt;IO&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;模块&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;输出函数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;输入函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;模块&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;输出函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;输入函数&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;运算&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;运算符&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;操作数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;语法&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;书写&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;运算&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;运算符&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;操作数&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;控制结构&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;循环&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;控制结构&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;循环&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;函数&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;分类&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;开发程序&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;函数&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;分类&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;常见内建函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;参数问题&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;高级特性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;获取帮助&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;类&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_20&#34;&gt;使用&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_21&#34;&gt;方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_22&#34;&gt;对象&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_23&#34;&gt;模块&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_24&#34;&gt;常见&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_25&#34;&gt;开发程序&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_26&#34;&gt;文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_27&#34;&gt;异常控制&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_28&#34;&gt;高级特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_29&#34;&gt;获取帮助&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -3032,20 +3048,14 @@ $$&lt;/p&gt;
 &lt;li&gt;pycharm&lt;/li&gt;
 &lt;li&gt;spyder&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;_5&#34;&gt;常见函数&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;abs()&lt;br /&gt;
-&lt;code&gt;取绝对值&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h3 id=&#34;io&#34;&gt;IO&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;h4 id=&#34;_6&#34;&gt;模块&lt;/h4&gt;
+&lt;h4 id=&#34;_5&#34;&gt;模块&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;sys.stderr&lt;br /&gt;
 &lt;code&gt;标准错误输出&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;_7&#34;&gt;输出函数&lt;/h4&gt;
+&lt;h4 id=&#34;_6&#34;&gt;输出函数&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;交互使用repr()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;print调用str()&lt;/code&gt;&lt;/li&gt;
@@ -3056,23 +3066,35 @@ $$&lt;/p&gt;
 &lt;li&gt;重定向输出&lt;br /&gt;
 &lt;code&gt;print &amp;gt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;_8&#34;&gt;输入函数&lt;/h4&gt;
+&lt;h4 id=&#34;_7&#34;&gt;输入函数&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;raw_input()&lt;code&gt;py 2.x&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;input &lt;code&gt;py 3.x&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;_9&#34;&gt;运算&lt;/h3&gt;
+&lt;h3 id=&#34;_8&#34;&gt;语法&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;h4 id=&#34;_10&#34;&gt;运算符&lt;/h4&gt;
+&lt;h4 id=&#34;_9&#34;&gt;书写&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\&lt;/code&gt;继续上一行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;;&lt;/code&gt;两个语句在一行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:&lt;/code&gt;将代码头体分离&lt;/li&gt;
+&lt;li&gt;缩进&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_10&#34;&gt;运算&lt;/h4&gt;
+&lt;h5 id=&#34;_11&#34;&gt;运算符&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;**(乘方)&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;//&lt;/code&gt;浮点除法(四舍五入)真正的除法&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;/&lt;/code&gt;传统除法(操作数为整型时执行地板除)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;!= &amp;lt;&amp;gt;&lt;/code&gt;都是不等于&lt;/li&gt;
 &lt;li&gt;逻辑运算 &lt;code&gt;and or not&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;增量赋值 +=,-=&lt;/li&gt;
+&lt;li&gt;多重赋值 x =y =z=1&lt;/li&gt;
+&lt;li&gt;多元赋值 a,b = b+1, a[涉及元祖特性][可实现简单交换]&lt;br /&gt;
+&lt;code&gt;x,y = y,x[不明觉厉]显然赋值之前已经做好了计算&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;友情提示:多使用括号,增强代码可读性&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;_11&#34;&gt;操作数&lt;/h4&gt;
+&lt;h5 id=&#34;_12&#34;&gt;操作数&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;注意complex虽然不常用&lt;/li&gt;
 &lt;li&gt;字符串知识(切片,索引,克莱尼星号,连接)&amp;lt;-[只读]&lt;/li&gt;
@@ -3080,41 +3102,116 @@ $$&lt;/p&gt;
 &lt;li&gt;元组元素个数和值不可变(可切片,克莱尼星号,索引,连接)&amp;lt;-[只读]&lt;/li&gt;
 &lt;li&gt;字典 (&lt;b style=&#39;color:red&#39;&gt;有重点待续...&lt;/b&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;_12&#34;&gt;控制结构&lt;/h3&gt;
+&lt;h4 id=&#34;_13&#34;&gt;控制结构&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;del&gt;没什么好讲的&lt;/del&gt;&lt;/li&gt;
 &lt;li&gt;注意缩进&lt;/li&gt;
-&lt;li&gt;range(n)&lt;br /&gt;
-&lt;code&gt;生成列表0~n-1&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;常见搭配 for i in range(len(str))&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;_13&#34;&gt;循环&lt;/h4&gt;
-&lt;p&gt;&lt;del&gt;不值得专门一节写&lt;/del&gt;&lt;br /&gt;
-- 搞清可迭代对象(序列/迭代器)&lt;/p&gt;
-&lt;h3 id=&#34;_14&#34;&gt;函数&lt;/h3&gt;
+&lt;h5 id=&#34;_14&#34;&gt;循环&lt;/h5&gt;
+&lt;p&gt;&lt;del&gt;不值得专门一节写&lt;/del&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;搞清可迭代对象(序列/迭代器)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_15&#34;&gt;函数&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;h4 id=&#34;_15&#34;&gt;分类&lt;/h4&gt;
+&lt;h4 id=&#34;_16&#34;&gt;分类&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;有副作用&lt;/li&gt;
 &lt;li&gt;无副作用&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;_16&#34;&gt;开发程序&lt;/h3&gt;
+&lt;h4 id=&#34;_17&#34;&gt;常见内建函数&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;abs()&lt;br /&gt;
+&lt;code&gt;取绝对值&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;dir([obj])&lt;br /&gt;
+&lt;code&gt;显示对象属性,如果无参数,则显示全局变量的名字&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;help([obj])&lt;br /&gt;
+&lt;code&gt;帮助&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;int([obj])&lt;br /&gt;
+&lt;code&gt;将对象转换为整数&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;len(obj)&lt;br /&gt;
+&lt;code&gt;返回对象长度&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;open(fn,mode)&lt;br /&gt;
+&lt;code&gt;fn为文件名或者handle, mode取[&#39;r&#39;,&#39;w&#39;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;range([start],stop[,step])&lt;br /&gt;
+&lt;code&gt;生成列表0~n-1&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;常见搭配 for i in range(len(str))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;str(obj)&lt;br /&gt;
+&lt;code&gt;将一个对象转换为字符串&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;type(obj)&lt;br /&gt;
+&lt;code&gt;返回对象类型&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_18&#34;&gt;参数问题&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;暂时书写架构&lt;/code&gt;&lt;br /&gt;
+- 默认参数&lt;br /&gt;
+- 可变参数&lt;br /&gt;
+- 关键字参数&lt;br /&gt;
+- etc&lt;/p&gt;
+&lt;h3 id=&#34;_19&#34;&gt;类&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;h4 id=&#34;_17&#34;&gt;文档&lt;/h4&gt;
+&lt;h3 id=&#34;_20&#34;&gt;使用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;定义&lt;br /&gt;
+&lt;code&gt;class classname(baseclass[es]):&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;创建&lt;br /&gt;
+&lt;code&gt;a = classB(pram)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_21&#34;&gt;方法&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;做到访问权限控制&lt;/code&gt;&lt;br /&gt;
+1. 特殊方法&lt;br /&gt;
+&lt;code&gt;__method__()&lt;/code&gt;&lt;br /&gt;
+    ``&lt;/p&gt;
+&lt;h4 id=&#34;_22&#34;&gt;对象&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;自身实例引用&lt;br /&gt;
+&lt;code&gt;self类似this&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_23&#34;&gt;模块&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;这个是我现在还比较方的东西&lt;/code&gt;&lt;br /&gt;
+1. 每个python脚本文件都可以当做一个模块&lt;br /&gt;
+2. 模块太大?可以自己&lt;b style=&#39;color:red&#39;&gt;拆&lt;/b&gt;&lt;/p&gt;
+&lt;h4 id=&#34;_24&#34;&gt;常见&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;sys&lt;ul&gt;
+&lt;li&gt;platform&lt;/li&gt;
+&lt;li&gt;version&lt;/li&gt;
+&lt;li&gt;stdout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_25&#34;&gt;开发程序&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_26&#34;&gt;文档&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;注释&lt;br /&gt;
 &lt;code&gt;#单行&lt;/code&gt;&lt;br /&gt;
 &lt;code&gt;自定义范围 &#39;&#39;&#39; comment &#39;&#39;&#39;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;_18&#34;&gt;高级特性&lt;/h3&gt;
+&lt;h4 id=&#34;_27&#34;&gt;异常控制&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;捕获try-except&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;k&#34;&gt;try&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;expression&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;except&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;expression&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;生成&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`raise()`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_28&#34;&gt;高级特性&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;列表解析&lt;br /&gt;
 &lt;code&gt;暂时不写 特牛x&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;_19&#34;&gt;获取帮助&lt;/h3&gt;
+&lt;h3 id=&#34;_29&#34;&gt;获取帮助&lt;/h3&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li&gt;使用help(函数名)&lt;code&gt;交互模式使用&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;什么是PEP?&lt;br /&gt;
+&lt;code&gt;PYTHON增强提案&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;</content>
     
     
