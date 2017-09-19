@@ -7,7 +7,7 @@
   <title>Meta's Wiki</title>
   <link href="/" />
   <link href="/atom.xml" rel="self" type="application/atom+xml" />
-  <updated>2017-09-18T21:08:44+08:00</updated>
+  <updated>2017-09-19T20:05:52+08:00</updated>
   <id></id>
   <author>
     <name>Guozhen Li</name>
@@ -294,6 +294,350 @@ windows 编程是基于消息驱动的,当消息到来时,应用程序就调用�
   
     
   <entry>
+    <id>/About/aboutMe.html</id>
+    <title>关于我</title>
+    <link href="/About/aboutMe.html" />
+    <published>2017-08-25T21:00:00+08:00</published>
+
+    
+    <updated>2017-08-25T21:00:00+08:00</updated>
+    
+
+    
+    <category term="About" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png&#34; /&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;br /&gt;
+  &lt;p style=&#34;position:relative; left:80px;text-align:center&#34;&gt;&lt;br /&gt;
+    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
+    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
+    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
+  &lt;/p&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
+&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
+&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
+&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
+&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
+&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
+&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
+&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
+&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
+&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
+&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
+&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/SE/softwareengine01.html</id>
+    <title>软件工程</title>
+    <link href="/SE/softwareengine01.html" />
+    <published>2017-09-07T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-07T21:00:00+08:00</updated>
+    
+
+    
+    <category term="SE" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;外围概念&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#qusetion&#34;&gt;QUSETION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;软件生存期&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;_1&#34;&gt;外围概念&lt;/h3&gt;
+&lt;p&gt;[WIKI]&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是存在于某个系统中的一组法律、规则与基本前提。这个体系中的其他事物，大体上都可以经由这个基本规律来推导、解释与预测；这个体系中的成员，都应该遵守这个基本规律，在这套规则下运作。经由了解这个体系的原理，可以了解到整个体系的基本特征，或是反映出这个体系被设计的目的。如果这个体系下的某个原理被忽略，可能造成体系无法运作，或是这个行为将无法达成其目的。&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;在哲学、数学及物理学中，都常使用这个名词。在数学中，以公理（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Axiom&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）及逻辑基础作为整个数学体系的原理。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;[BaiDu]&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;自然科学和社会科学中具有普遍意义的基本规律。是在大量观察、实践的基础上，经过归纳、概括而得出的。既能指导实践，又必须经受实践的检验。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;qusetion&#34;&gt;QUSETION&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;软件工程分为软件和工程&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;什么是软件？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;软件开发有什么特性？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;什么是软件工程？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;为什么要建立软件工程学科？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;既然引入软件工程去解决问题&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;那么它的目标是什么？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;为了实现这些目标它有什么原理支撑？&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_2&#34;&gt;软件生存期&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;践行软件工程基本原理的第一条&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;按软件生存周期分阶段指定计划并认真实施&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;括号内代表任务&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;软件定义(任务:做什么)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;问题定义&lt;/li&gt;
+&lt;li&gt;可行性研究&lt;br /&gt;
+&lt;code&gt;任务细化:到底解决什么问题,不要把你的计算机牵扯进来,钱和时间都给了限制能不能在这种情况下开发出来,需要职员:软件分析员，一个软件行不行,要从好多角度看,在大学编程,看起来就像基础技术是否具备,课设截止时间是否能够做出来？但是在社会上仍需要考虑法律,宗教(在对方是穆斯林餐厅的话,你带入猪肉,那就玩完了),还有用户是否具有学会操作的本领()等等，&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;需求分析&lt;br /&gt;
+&lt;code&gt;任务细化:我的系统应该干什么？建立起从问题空间到解空间的映射，看个人的建模能力了,这里需要建立分析模型,从功能数据行为等方面去描述系统的静态特性和动态特性,对目标系统进一步细化,当然软件工程会给你提供参考&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;功能需求&lt;/li&gt;
+&lt;li&gt;非功能需求[性能等等]    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;软件开发(任务:怎么做)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;概要设计&lt;/li&gt;
+&lt;li&gt;详细设计&lt;br /&gt;
+&lt;code&gt;设计是软件工程的技术核心&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;任务细化:如何做出目标系统,这里具体做的就是将需求转化为相应的软件体系结构,结构中的每一组成部分都必须是意义明确的构件,这就是概要设计。进而描述构建应该做什么,以及做事的顺序这就是详细设计，基于设计编写出单元测试计划和集成测试计划提交评审部门。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;编码&lt;br /&gt;
+&lt;code&gt;选择一门好的语言会事半功倍&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;测试&lt;br /&gt;
+&lt;code&gt;单元模块测试,调试排错,保持与设计一致，与编码出现迭代&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;集成测试&lt;br /&gt;
+&lt;code&gt;已测试模块组装&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;系统测试&lt;br /&gt;
+&lt;code&gt;需求检测是否满足用户需求&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;维护(任务:使软件持久的满足用户需要)&lt;br /&gt;
+&lt;code&gt;最浪费人力物力&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改正性维护&lt;/li&gt;
+&lt;li&gt;适应性维护&lt;/li&gt;
+&lt;li&gt;完善性维护&lt;/li&gt;
+&lt;li&gt;预防性维护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是软件危机&lt;br /&gt;
+&lt;code&gt;分两个方面,软件本身与设计者&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/Life/Study.html</id>
+    <title>学习学习</title>
+    <link href="/Life/Study.html" />
+    <published>2017-09-06T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-06T21:00:00+08:00</updated>
+    
+
+    
+    <category term="Life" />
+    
+
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;真知在何处？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;err&#34;&gt;您现在看到的是在我写完大约几百字之后又全部删掉重写的文字&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+  &lt;span class=&#34;err&#34;&gt;值得一提的是这篇文章也许对我很重要&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但如果有作为初入&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cs&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;的学生倒是不妨一览&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+  &lt;span class=&#34;mi&#34;&gt;2015&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;年我踏入大学校门&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;阴差阳错的进入计算机&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;没有理想&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对大学一无所知&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;即使高中当别人给我介绍各种大学的好处的时候&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我仍然会认为那是一个充满严谨学术的地方&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学生们可以有自己的研究方向&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;身边的朋友都会是你以后的得力助手并且校园很大&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当然&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;这不是本科的面貌&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在高中阶段我一直追求的是智力上的卓越与炫耀&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每当考试完交出一份差不多合格的答卷并且引来一阵惊呼&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;他每天睡觉还能考这么高的分数,真是个天才&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;年幼无知&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;被虚荣捧上天&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数学课堂上的日上三竿&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;老师恨铁不成钢的眼神&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;不屑英语的学习&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;认为那绝非我等理科生应该学习的垃圾东西&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;不屑于去做模拟试卷&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;认为那不是真正获得的能力&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我要凭着自己对知识的理解去解答所有的高中所遇到的问题&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;果不其然&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;除了数学&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;错的一塌糊涂&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;现在身边仍然有一些人平时一直玩游戏&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或者平时办事就很马虎&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;一到考试出现各种问题&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;然后会推脱的说要不是我玩游戏&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我就×××××，要不是我粗心大意我就&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;....,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;事实上这和高中的我没什么区别，我认为已经&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;左右的人了，仍然把智力作为学习的第一要素&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;而忽略细心&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;坚持，有理想，有计划各种美好的品格，这样的人以后无论是在学术界还是在商界&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;政界都不会有出色的成就的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当然这仅仅是我认为&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因为大多数的成名的或者默默无闻的扫地僧已经在&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;岁左右展现出来了卓越的号召力&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;处事能力以及思考问题的刁钻手段，古人谚语一遍又一遍的被引用但是“人贵自知”这句话总是不被人听到心里去。&lt;/span&gt;
+
+  &lt;span class=&#34;err&#34;&gt;刚进入大学时&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对计算机的了解停留在连&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;都不知道怎么打开的小白水平&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;现在的我算不上水平高&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但也算在计算机专业领域有了一个可以赖以生存的水平&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;具体细节在这里不愿意透漏&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是仔细的说非姚班计算机&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在理解水平与对计算机的认知水平上能比我强的很少&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当然你可能认为我在吹牛&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我没必要解释&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因为我懒得解释。当然这里又牵扯出了我的致命威胁&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;动手能力&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;抽象能力&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;也许在很多人眼里&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我的动手水平不错&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;至少能做出他们做不出的东西&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;无论是编码规范上还是结构组织亦或者是奇技淫巧上都表现出略胜一筹的状态&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;事实上&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我驱动了灵感为我卖命&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;也许听起来不可思议&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是事实就是如此，当我没心没肺的水上一个下午的时候，我的灵感就会喷薄而出&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;天马行空胡思乱想，对任何事物都有自己的见解&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;企图宏观上去理解世界&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虽然没有成功过，但至少在写代码上它给我反馈了很多信息&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是灵感似乎不是我的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;下一次我再也不会出现相同的灵感&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每当我用完它我就会陷入深深的思考死循环中&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;倘若有一天我的灵感不存在了怎么办&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我该用什么去创造东西&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;于是我试图将灵感经验化&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每当新的思路出现后&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我就会在第一时间去思考他是怎么来的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我会什么会出现这种思考方式&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我如何保存这种思考方式&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;也许你看见我在一个你认为简简单单的问题上踱步不行的话&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;那时我在建立经验&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我是个理性主义者&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;从来不相信想法会无中生有&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;灵感不过是大脑对已有数据的提取与再加工&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;除此之外&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我有很多&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BUG&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;比如&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;319&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;房间和&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;311&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;房间之间隔着几间房子&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;这种特别简单的事情我会用&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;301&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;302&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;的简例去类比推广&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我有很多类比推广的结果但是他们都没有在我脑子里&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;作为分析与整合外界知识的强有力后台&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;现在我终于学会了如何将它们添加到大脑中。&lt;/span&gt;
+  &lt;span class=&#34;err&#34;&gt;如果你看懂了以上并学会去做你会在思想水平上有本质的提高&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;我还有很多要写,但今天到此为止.&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/编码/进制.html</id>
     <title>进制介绍</title>
     <link href="/编码/进制.html" />
@@ -453,154 +797,6 @@ float 占四个字节&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;听到这里我突然震惊了,0.3循环左移出现死循环永远移不完,而0.5移一次就行,肯定会在20.3转型时出现循环截断,那时候再往后面补0肯定是不会匹配的,一看就是20.3肯定不行,20.5肯定行&lt;/b&gt;&lt;br /&gt;
 他还狡辩到你这是对数据的不尊重,不适用严谨的无误的逻辑去推理.&lt;br /&gt;
 &lt;b&gt;大概是你还不了解什么是工程吧.&lt;/b&gt;&lt;/p&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/Life/Study.html</id>
-    <title>学习学习</title>
-    <link href="/Life/Study.html" />
-    <published>2017-09-06T21:00:00+08:00</published>
-
-    
-    <updated>2017-09-06T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Life" />
-    
-
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;真知在何处？&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;  &lt;span class=&#34;err&#34;&gt;您现在看到的是在我写完大约几百字之后又全部删掉重写的文字&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
-  &lt;span class=&#34;err&#34;&gt;值得一提的是这篇文章也许对我很重要&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但如果有作为初入&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cs&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;的学生倒是不妨一览&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
-  &lt;span class=&#34;mi&#34;&gt;2015&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;年我踏入大学校门&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;阴差阳错的进入计算机&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;没有理想&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对大学一无所知&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;即使高中当别人给我介绍各种大学的好处的时候&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我仍然会认为那是一个充满严谨学术的地方&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学生们可以有自己的研究方向&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;身边的朋友都会是你以后的得力助手并且校园很大&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当然&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;这不是本科的面貌&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在高中阶段我一直追求的是智力上的卓越与炫耀&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每当考试完交出一份差不多合格的答卷并且引来一阵惊呼&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;他每天睡觉还能考这么高的分数,真是个天才&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;年幼无知&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;被虚荣捧上天&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数学课堂上的日上三竿&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;老师恨铁不成钢的眼神&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;不屑英语的学习&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;认为那绝非我等理科生应该学习的垃圾东西&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;不屑于去做模拟试卷&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;认为那不是真正获得的能力&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我要凭着自己对知识的理解去解答所有的高中所遇到的问题&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;果不其然&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;除了数学&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;错的一塌糊涂&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;现在身边仍然有一些人平时一直玩游戏&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或者平时办事就很马虎&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;一到考试出现各种问题&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;然后会推脱的说要不是我玩游戏&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我就×××××，要不是我粗心大意我就&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;....,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;事实上这和高中的我没什么区别，我认为已经&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;左右的人了，仍然把智力作为学习的第一要素&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;而忽略细心&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;坚持，有理想，有计划各种美好的品格，这样的人以后无论是在学术界还是在商界&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;政界都不会有出色的成就的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当然这仅仅是我认为&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因为大多数的成名的或者默默无闻的扫地僧已经在&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;岁左右展现出来了卓越的号召力&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;处事能力以及思考问题的刁钻手段，古人谚语一遍又一遍的被引用但是“人贵自知”这句话总是不被人听到心里去。&lt;/span&gt;
-
-  &lt;span class=&#34;err&#34;&gt;刚进入大学时&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对计算机的了解停留在连&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;都不知道怎么打开的小白水平&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;现在的我算不上水平高&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但也算在计算机专业领域有了一个可以赖以生存的水平&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;具体细节在这里不愿意透漏&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是仔细的说非姚班计算机&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;在理解水平与对计算机的认知水平上能比我强的很少&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当然你可能认为我在吹牛&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我没必要解释&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因为我懒得解释。当然这里又牵扯出了我的致命威胁&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;动手能力&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;抽象能力&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;也许在很多人眼里&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我的动手水平不错&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;至少能做出他们做不出的东西&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;无论是编码规范上还是结构组织亦或者是奇技淫巧上都表现出略胜一筹的状态&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;事实上&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我驱动了灵感为我卖命&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;也许听起来不可思议&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是事实就是如此，当我没心没肺的水上一个下午的时候，我的灵感就会喷薄而出&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;天马行空胡思乱想，对任何事物都有自己的见解&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;企图宏观上去理解世界&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虽然没有成功过，但至少在写代码上它给我反馈了很多信息&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是灵感似乎不是我的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;下一次我再也不会出现相同的灵感&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每当我用完它我就会陷入深深的思考死循环中&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;倘若有一天我的灵感不存在了怎么办&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我该用什么去创造东西&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;于是我试图将灵感经验化&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;每当新的思路出现后&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我就会在第一时间去思考他是怎么来的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我会什么会出现这种思考方式&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我如何保存这种思考方式&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;也许你看见我在一个你认为简简单单的问题上踱步不行的话&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;那时我在建立经验&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我是个理性主义者&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;从来不相信想法会无中生有&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;灵感不过是大脑对已有数据的提取与再加工&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;除此之外&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我有很多&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BUG&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;比如&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;319&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;房间和&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;311&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;房间之间隔着几间房子&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;这种特别简单的事情我会用&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;301&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;302&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;的简例去类比推广&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我有很多类比推广的结果但是他们都没有在我脑子里&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;作为分析与整合外界知识的强有力后台&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;现在我终于学会了如何将它们添加到大脑中。&lt;/span&gt;
-  &lt;span class=&#34;err&#34;&gt;如果你看懂了以上并学会去做你会在思想水平上有本质的提高&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;我还有很多要写,但今天到此为止.&lt;/p&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/SE/softwareengine01.html</id>
-    <title>软件工程</title>
-    <link href="/SE/softwareengine01.html" />
-    <published>2017-09-07T21:00:00+08:00</published>
-
-    
-    <updated>2017-09-07T21:00:00+08:00</updated>
-    
-
-    
-    <category term="SE" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;外围概念&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#qusetion&#34;&gt;QUSETION&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;软件生存期&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;_1&#34;&gt;外围概念&lt;/h3&gt;
-&lt;p&gt;[WIKI]&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是存在于某个系统中的一组法律、规则与基本前提。这个体系中的其他事物，大体上都可以经由这个基本规律来推导、解释与预测；这个体系中的成员，都应该遵守这个基本规律，在这套规则下运作。经由了解这个体系的原理，可以了解到整个体系的基本特征，或是反映出这个体系被设计的目的。如果这个体系下的某个原理被忽略，可能造成体系无法运作，或是这个行为将无法达成其目的。&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;在哲学、数学及物理学中，都常使用这个名词。在数学中，以公理（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Axiom&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）及逻辑基础作为整个数学体系的原理。&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;[BaiDu]&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;自然科学和社会科学中具有普遍意义的基本规律。是在大量观察、实践的基础上，经过归纳、概括而得出的。既能指导实践，又必须经受实践的检验。&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;qusetion&#34;&gt;QUSETION&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;软件工程分为软件和工程&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;什么是软件？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;软件开发有什么特性？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;什么是软件工程？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;为什么要建立软件工程学科？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;既然引入软件工程去解决问题&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;那么它的目标是什么？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;为了实现这些目标它有什么原理支撑？&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_2&#34;&gt;软件生存期&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;践行软件工程基本原理的第一条&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;按软件生存周期分阶段指定计划并认真实施&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;括号内代表任务&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;软件定义(任务:做什么)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;问题定义&lt;/li&gt;
-&lt;li&gt;可行性研究&lt;br /&gt;
-&lt;code&gt;任务细化:到底解决什么问题,不要把你的计算机牵扯进来,钱和时间都给了限制能不能在这种情况下开发出来,需要职员:软件分析员，一个软件行不行,要从好多角度看,在大学编程,看起来就像基础技术是否具备,课设截止时间是否能够做出来？但是在社会上仍需要考虑法律,宗教(在对方是穆斯林餐厅的话,你带入猪肉,那就玩完了),还有用户是否具有学会操作的本领()等等，&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;需求分析&lt;br /&gt;
-&lt;code&gt;任务细化:我的系统应该干什么？建立起从问题空间到解空间的映射，看个人的建模能力了,这里需要建立分析模型,从功能数据行为等方面去描述系统的静态特性和动态特性,对目标系统进一步细化,当然软件工程会给你提供参考&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;功能需求&lt;/li&gt;
-&lt;li&gt;非功能需求[性能等等]    &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;软件开发(任务:怎么做)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;概要设计&lt;/li&gt;
-&lt;li&gt;详细设计&lt;br /&gt;
-&lt;code&gt;设计是软件工程的技术核心&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;任务细化:如何做出目标系统,这里具体做的就是将需求转化为相应的软件体系结构,结构中的每一组成部分都必须是意义明确的构件,这就是概要设计。进而描述构建应该做什么,以及做事的顺序这就是详细设计，基于设计编写出单元测试计划和集成测试计划提交评审部门。&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;编码&lt;br /&gt;
-&lt;code&gt;选择一门好的语言会事半功倍&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;测试&lt;br /&gt;
-&lt;code&gt;单元模块测试,调试排错,保持与设计一致，与编码出现迭代&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;集成测试&lt;br /&gt;
-&lt;code&gt;已测试模块组装&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;系统测试&lt;br /&gt;
-&lt;code&gt;需求检测是否满足用户需求&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;维护(任务:使软件持久的满足用户需要)&lt;br /&gt;
-&lt;code&gt;最浪费人力物力&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;改正性维护&lt;/li&gt;
-&lt;li&gt;适应性维护&lt;/li&gt;
-&lt;li&gt;完善性维护&lt;/li&gt;
-&lt;li&gt;预防性维护&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;什么是软件危机&lt;br /&gt;
-&lt;code&gt;分两个方面,软件本身与设计者&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
     
     
   </entry>
@@ -931,6 +1127,144 @@ float 占四个字节&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;可以使用在Switch&lt;/strong&gt;&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/Language/BS4.html</id>
+    <title>数据采集</title>
+    <link href="/Language/BS4.html" />
+    <published>2017-08-27T23:00:00+08:00</published>
+
+    
+    <updated>2017-08-27T23:00:00+08:00</updated>
+    
+
+    
+    <category term="Language" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=28872586&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/h2&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bs4&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;输入编码其实可以自动检测,但是不一定准哦,输出指定UTF8&lt;/code&gt;&lt;br /&gt;
+- from_encoding[以文档指定的编码解析]&lt;code&gt;E:from_encoding=&#34;iso-8859-8&#34;&lt;/code&gt;&lt;br /&gt;
+- exclude_encodings[排除编码]&lt;code&gt;E: exclude_encodings=[&#34;ISO-8859-7&#34;]&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;xml&lt;/li&gt;
+&lt;li&gt;lxml[推荐]&lt;/li&gt;
+&lt;li&gt;html5lib&lt;/li&gt;
+&lt;li&gt;html.parser[内置]&lt;/li&gt;
+&lt;li&gt;&lt;a&gt;差异比较&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;SoupStrainer对象&lt;ul&gt;
+&lt;li&gt;SoupStrainer(&#34;TAG_NAME&#34;)&lt;/li&gt;
+&lt;li&gt;SoupStrainer(id=&#39;##&#39;)[选择器]&lt;/li&gt;
+&lt;li&gt;SoupStrainer(method引用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.tag-------------[&lt;a&gt;获得标签&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.tag[&#39;Attr&#39;]---[&lt;a&gt;获得键值&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.contents-----[&lt;a&gt;获得.descendants子节点&lt;code&gt;&amp;lt;html&amp;gt;#&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.children------[&lt;a&gt;获得子节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.descendants-[&lt;a&gt;获得子孙节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.strings-----[&lt;a&gt;文档去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.stripped_strings---[&lt;a&gt;忽略空行去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.parent------[&lt;a&gt;父节点NONE&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.original_encoding---[&lt;a&gt;模糊识别编码&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.prettify([编码默认utf8])[&lt;a&gt;格式化输出&lt;/a&gt;] [&lt;a&gt;IO&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.get_text()---[&lt;a&gt;获得文本&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.get_text(&#34;character&#34;)[tag之间character分割]&lt;/li&gt;
+&lt;li&gt;soup.get_text(&#34;|&#34;, strip=True)[&lt;a&gt;以‘|’分割标签,移除空白&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;soup.new_tag(&#34;a&#34;, href=&#34;url&#34;)[&lt;a&gt;增加新标签&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.new_string(&#34;string&#34;, Comment)[&lt;a href=&#39;Comment&#39; style=&#39;color:green&#39;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;添加注释&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.find_all(&#39;tag&#39;)---[查找.标签] [得到.列表] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.find(id=&#39;#&#39;)------[查找.定位] [得到.唯一] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;直接查找&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.select(&#34;tag1 tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;逐层查找&lt;/a&gt;] [&lt;a&gt;tag1 的子孙是tag2皆可&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag1 &amp;gt; tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的儿子tag2&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#tag1 ~ .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的所有class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#tag1 + .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的紧邻的class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;.class&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;所有的class节点&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;[class~=some_name]&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;&lt;b style=&#39;color:red&#39;&gt;忘了&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;tag#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#34;#id1，#id2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href]&#39;)[&lt;a&gt;具有属性&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
+&lt;li&gt;soup.select(&#39;a[href=&#34;url&#34;]&#39;)[&lt;a&gt;确定指定属性值&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href^=&#34;url&#34;]&#39;)[&lt;a&gt;属性值不为&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;soup.select_one(&#34;选择器&#34;)[&lt;a&gt;返回查找回的第一个&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;没想到center标签不支持width属性,只能自定义&amp;lt;div&amp;gt;了&lt;/code&gt;&lt;br /&gt;
+&lt;center &gt;&lt;br /&gt;
+&lt;div style=&#34;width:644px&#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/Paprika.png&#34; /&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;br /&gt;
+&lt;embed height=&#34;415&#34; width=&#34;644&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=4887477&amp;page=1&#34; pluginspage=&#34;//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&#34;&gt;&lt;/embed&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;</content>
     
     
   </entry>
@@ -1526,9 +1860,9 @@ context 有点像缓冲区&lt;/p&gt;
   
     
   <entry>
-    <id>/Language/regex01.html</id>
-    <title>regex(一)</title>
-    <link href="/Language/regex01.html" />
+    <id>/About/computer.html</id>
+    <title>做什么</title>
+    <link href="/About/computer.html" />
     <published>2017-08-26T21:00:00+08:00</published>
 
     
@@ -1536,112 +1870,12 @@ context 有点像缓冲区&lt;/p&gt;
     
 
     
-    <category term="Language" />
+    <category term="About" />
     
 
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;If you are a web Programer and you are not familiar with Regex,HeHe:-)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;知识背景&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;数学背景&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;形式化语言描述&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;算子&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;基本常量&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;涉及理论&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;基本语法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;工程应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;元字符&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;脑洞时间&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;_1&#34;&gt;知识背景&lt;/h3&gt;
-&lt;h4 id=&#34;_2&#34;&gt;数学背景&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%85%8B%E8%8E%B1%E5%B0%BC%E4%BB%A3%E6%95%B0&#34;&gt;克莱尼代数&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_3&#34;&gt;形式化语言描述&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;运算符(算子)+常量(变量)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;_4&#34;&gt;算子&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;顺序[联系算子.]&lt;/li&gt;
-&lt;li&gt;选择[联系算子|]&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;循环[联系算子+、?、* ]&lt;/p&gt;
-&lt;p&gt;实现了程序控制的三大基本基本结构&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&#34;_5&#34;&gt;基本常量&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;“空集” ∅指示集合∅&lt;/li&gt;
-&lt;li&gt;“空串” ε指示集合{ε}&lt;/li&gt;
-&lt;li&gt;“文字字符” 在Σ中的a指示集合{a}&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_6&#34;&gt;涉及理论&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a&gt;形式语言&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a&gt;自动机&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a&gt;自动控制理论&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a&gt;....&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_7&#34;&gt;基本语法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;一个表达式可以称为一个pattern，匹配正则语言&lt;/li&gt;
-&lt;li&gt;表达式结构&lt;ul&gt;
-&lt;li&gt;选择&lt;/li&gt;
-&lt;li&gt;数量限定[使用量词]&lt;/li&gt;
-&lt;li&gt;作用范围和优先级[见下]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_8&#34;&gt;工程应用&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;优先级&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;符号&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;最高&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;\&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;高&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;( )、(?: )、(?= )、[ ]&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;中&lt;/td&gt;
-&lt;td align=&#34;center&#34; n=&#34;n&#34;&gt;*、+、?、&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;低&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;^、$、中介字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;最低&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;|&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;_9&#34;&gt;元字符&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F&#34;&gt;WIKI&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_10&#34;&gt;脑洞时间&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;正则 pattern    VS   三代目中的function&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;正则 direction  VS   三代目的顺序&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;([|])*----QAQ脑子暂时短路这里以后补上&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+    <content type="html">&lt;p&gt;计算机的创造以及在其上一层又一层抽象的发展均是为解决问题而出现的,而非为创造问题的.&lt;br /&gt;
+艰难的问题是原本存在的,但为了解决艰难的问题,所以使用分治的思想去拆分为大同小异的问题,但并非不可解决的.&lt;/p&gt;</content>
     
     
   </entry>
@@ -1775,196 +2009,122 @@ context 有点像缓冲区&lt;/p&gt;
   
     
   <entry>
-    <id>/About/aboutMe.html</id>
-    <title>关于我</title>
-    <link href="/About/aboutMe.html" />
-    <published>2017-08-25T21:00:00+08:00</published>
+    <id>/Language/regex01.html</id>
+    <title>regex(一)</title>
+    <link href="/Language/regex01.html" />
+    <published>2017-08-26T21:00:00+08:00</published>
 
     
-    <updated>2017-08-25T21:00:00+08:00</updated>
-    
-
-    
-    <category term="About" />
+    <updated>2017-08-26T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+    <category term="Language" />
+    
+
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;If you are a web Programer and you are not familiar with Regex,HeHe:-)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;知识背景&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;数学背景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;形式化语言描述&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;算子&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;基本常量&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;涉及理论&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;基本语法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;工程应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;元字符&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;脑洞时间&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;br /&gt;
-  &lt;p style=&#34;position:relative; left:80px;text-align:center&#34;&gt;&lt;br /&gt;
-    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
-    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
-    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
-  &lt;/p&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
-&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
-&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
-&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
-&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
-&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
-&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
-&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
-&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
-&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
-&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
-&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
+&lt;h3 id=&#34;_1&#34;&gt;知识背景&lt;/h3&gt;
+&lt;h4 id=&#34;_2&#34;&gt;数学背景&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%85%8B%E8%8E%B1%E5%B0%BC%E4%BB%A3%E6%95%B0&#34;&gt;克莱尼代数&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_3&#34;&gt;形式化语言描述&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;运算符(算子)+常量(变量)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;_4&#34;&gt;算子&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;顺序[联系算子.]&lt;/li&gt;
+&lt;li&gt;选择[联系算子|]&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;循环[联系算子+、?、* ]&lt;/p&gt;
+&lt;p&gt;实现了程序控制的三大基本基本结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;_5&#34;&gt;基本常量&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;“空集” ∅指示集合∅&lt;/li&gt;
+&lt;li&gt;“空串” ε指示集合{ε}&lt;/li&gt;
+&lt;li&gt;“文字字符” 在Σ中的a指示集合{a}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_6&#34;&gt;涉及理论&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a&gt;形式语言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a&gt;自动机&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a&gt;自动控制理论&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a&gt;....&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_7&#34;&gt;基本语法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一个表达式可以称为一个pattern，匹配正则语言&lt;/li&gt;
+&lt;li&gt;表达式结构&lt;ul&gt;
+&lt;li&gt;选择&lt;/li&gt;
+&lt;li&gt;数量限定[使用量词]&lt;/li&gt;
+&lt;li&gt;作用范围和优先级[见下]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_8&#34;&gt;工程应用&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;优先级&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;符号&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;最高&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;\&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;高&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;( )、(?: )、(?= )、[ ]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;中&lt;/td&gt;
+&lt;td align=&#34;center&#34; n=&#34;n&#34;&gt;*、+、?、&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;低&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;^、$、中介字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;最低&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;|&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;_9&#34;&gt;元字符&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F&#34;&gt;WIKI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_10&#34;&gt;脑洞时间&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;正则 pattern    VS   三代目中的function&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;正则 direction  VS   三代目的顺序&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;([|])*----QAQ脑子暂时短路这里以后补上&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -2006,13 +2166,13 @@ context 有点像缓冲区&lt;/p&gt;
   
     
   <entry>
-    <id>/Language/BS4.html</id>
-    <title>数据采集</title>
-    <link href="/Language/BS4.html" />
-    <published>2017-08-27T23:00:00+08:00</published>
+    <id>/Language/intro.html</id>
+    <title>语言介绍</title>
+    <link href="/Language/intro.html" />
+    <published>2017-08-25T21:00:00+08:00</published>
 
     
-    <updated>2017-08-27T23:00:00+08:00</updated>
+    <updated>2017-08-25T21:00:00+08:00</updated>
     
 
     
@@ -2020,124 +2180,216 @@ context 有点像缓冲区&lt;/p&gt;
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;我认为能够形成一定的完备的系统，&lt;br /&gt;
+且可以作为信源的符号集合可以成为语言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=28872586&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;intro&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Intro&lt;/b&gt;&lt;/h2&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bs4&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[评论]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;同时推荐喀什的这首歌...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 id=&#34;objectbeautifulsoup&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;Object[BeautifulSoup]&lt;/b&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;_1&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;构造参数&lt;/b&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;encode&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Encode&lt;/b&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;输入编码其实可以自动检测,但是不一定准哦,输出指定UTF8&lt;/code&gt;&lt;br /&gt;
-- from_encoding[以文档指定的编码解析]&lt;code&gt;E:from_encoding=&#34;iso-8859-8&#34;&lt;/code&gt;&lt;br /&gt;
-- exclude_encodings[排除编码]&lt;code&gt;E: exclude_encodings=[&#34;ISO-8859-7&#34;]&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&#34;parser&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Parser&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;xml&lt;/li&gt;
-&lt;li&gt;lxml[推荐]&lt;/li&gt;
-&lt;li&gt;html5lib&lt;/li&gt;
-&lt;li&gt;html.parser[内置]&lt;/li&gt;
-&lt;li&gt;&lt;a&gt;差异比较&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;parse_only&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;parse_only&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;SoupStrainer对象&lt;ul&gt;
-&lt;li&gt;SoupStrainer(&#34;TAG_NAME&#34;)&lt;/li&gt;
-&lt;li&gt;SoupStrainer(id=&#39;##&#39;)[选择器]&lt;/li&gt;
-&lt;li&gt;SoupStrainer(method引用)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;attribute&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Attribute&lt;/b&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.tag-------------[&lt;a&gt;获得标签&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.tag[&#39;Attr&#39;]---[&lt;a&gt;获得键值&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.contents-----[&lt;a&gt;获得.descendants子节点&lt;code&gt;&amp;lt;html&amp;gt;#&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.children------[&lt;a&gt;获得子节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.descendants-[&lt;a&gt;获得子孙节点&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.strings-----[&lt;a&gt;文档去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.stripped_strings---[&lt;a&gt;忽略空行去标签化&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.parent------[&lt;a&gt;父节点NONE&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.original_encoding---[&lt;a&gt;模糊识别编码&lt;/a&gt;] [&lt;a&gt;属&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;method&#34;&gt;&lt;b style=&#39;color:#700000&#39;&gt;Method&lt;/b&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;normal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Normal&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.prettify([编码默认utf8])[&lt;a&gt;格式化输出&lt;/a&gt;] [&lt;a&gt;IO&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.get_text()---[&lt;a&gt;获得文本&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.get_text(&#34;character&#34;)[tag之间character分割]&lt;/li&gt;
-&lt;li&gt;soup.get_text(&#34;|&#34;, strip=True)[&lt;a&gt;以‘|’分割标签,移除空白&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;search&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Search&lt;/b&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;soup.new_tag(&#34;a&#34;, href=&#34;url&#34;)[&lt;a&gt;增加新标签&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.new_string(&#34;string&#34;, Comment)[&lt;a href=&#39;Comment&#39; style=&#39;color:green&#39;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;添加注释&lt;/a&gt;] [&lt;a&gt;增&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.find_all(&#39;tag&#39;)---[查找.标签] [得到.列表] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.find(id=&#39;#&#39;)------[查找.定位] [得到.唯一] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;直接查找&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.select(&#34;tag1 tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;逐层查找&lt;/a&gt;] [&lt;a&gt;tag1 的子孙是tag2皆可&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag1 &amp;gt; tag2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的儿子tag2&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#tag1 ~ .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的所有class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#tag1 + .class&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;tag1的紧邻的class兄弟&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;.class&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;所有的class节点&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;[class~=some_name]&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;&lt;b style=&#39;color:red&#39;&gt;忘了&lt;/b&gt;&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;tag#id&#34;) [&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#34;#id1，#id2&#34;)[&lt;a&gt;CSS选择器&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href]&#39;)[&lt;a&gt;具有属性&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;ul&gt;
-&lt;li&gt;soup.select(&#39;a[href=&#34;url&#34;]&#39;)[&lt;a&gt;确定指定属性值&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href^=&#34;url&#34;]&#39;)[&lt;a&gt;属性值不为&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;soup.select(&#39;a[href*=&#34;url&#34;]&#39;)[&lt;a&gt;局部匹配&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;soup.select_one(&#34;选择器&#34;)[&lt;a&gt;返回查找回的第一个&lt;/a&gt;] [&lt;a&gt;查&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;traversal&#34;&gt;&lt;b style=&#39;color:#A00000&#39;&gt;Traversal&lt;/b&gt;&lt;/h4&gt;
-&lt;h2 id=&#34;_2&#34;&gt;&lt;b style=&#39;color:#580000&#39;&gt;周末放映室&lt;/b&gt;&lt;/h2&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=27317272&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
 &lt;hr /&gt;
-&lt;p&gt;&lt;code&gt;没想到center标签不支持width属性,只能自定义&amp;lt;div&amp;gt;了&lt;/code&gt;&lt;br /&gt;
-&lt;center &gt;&lt;br /&gt;
-&lt;div style=&#34;width:644px&#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/Paprika.png&#34; /&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;人类语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1&#34;&gt;[1]视觉语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;图像语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;甲骨文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;图片&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;文/数字语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2&#34;&gt;[2]听觉语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;语言的发声&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;音乐&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3&#34;&gt;[3]触觉语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;盲文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;计算机语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;[一代目]机器语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;[二代目]汇编语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;[三代目]高级语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;[四代目]面向问题语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_20&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_21&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_22&#34;&gt;说明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_23&#34;&gt;[五代目]人工智能语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_24&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_25&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_26&#34;&gt;语言概念&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_27&#34;&gt;语法/语法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_28&#34;&gt;语法糖&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/fire.png&#34; /&gt;&lt;br /&gt;
 &lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;br /&gt;
-&lt;embed height=&#34;415&#34; width=&#34;644&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=4887477&amp;page=1&#34; pluginspage=&#34;//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&#34;&gt;&lt;/embed&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;</content>
+&lt;h2 id=&#34;_1&#34;&gt;人类语言&lt;/h2&gt;
+&lt;h3 id=&#34;1&#34;&gt;[1]视觉语言&lt;/h3&gt;
+&lt;h4 id=&#34;_2&#34;&gt;图像语言&lt;/h4&gt;
+&lt;h5 id=&#34;_3&#34;&gt;甲骨文&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;了解的很少哇&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;_4&#34;&gt;图片&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;一张图片透漏的信息的数量级极其高&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_5&#34;&gt;文/数字语言&lt;/h4&gt;
+&lt;h5 id=&#34;_6&#34;&gt;代表&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;各国文字&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数学&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;理化公式等等&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;2&#34;&gt;[2]听觉语言&lt;/h3&gt;
+&lt;h4 id=&#34;_7&#34;&gt;语言的发声&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;传说中的闻风丧旦&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_8&#34;&gt;音乐&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;啊哈哈，巴赫我现在还不太懂&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;推荐《音乐的奉献》如果你有这种欣赏水平的话&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;3&#34;&gt;[3]触觉语言&lt;/h3&gt;
+&lt;h4 id=&#34;_9&#34;&gt;盲文&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;海伦凯勒&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;_10&#34;&gt;计算机语言&lt;/h2&gt;
+&lt;h3 id=&#34;_11&#34;&gt;[一代目]机器语言&lt;/h3&gt;
+&lt;h4 id=&#34;_12&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.01&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;位串组成&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;有关计算机三进制、二进制、十进制的权衡略过&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于繁琐&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作级别高&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_13&#34;&gt;[二代目]汇编语言&lt;/h3&gt;
+&lt;h4 id=&#34;_14&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法倾向自然语言，抽象的第一大步&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于依赖底层&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;助记码不适宜软件工程&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_15&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.8086&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;汇编&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_16&#34;&gt;[三代目]高级语言&lt;/h3&gt;
+&lt;h4 id=&#34;_17&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向了更加自然地处理方式&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向性能与功能博弈的通用稳定状态&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注重过程&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了面向对象思想&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以作为程序员自由灵活设计的通用编程语言&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GPPL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;General&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Purpose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Programming&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Language&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;6.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;图灵完备&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;7.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了所谓的拥护者&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;摊手&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;8.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学习的人占领市场，出现普遍水平地下的社会现状&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_18&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Perl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Python&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PHP&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;JavaScript&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_19&#34;&gt;[四代目]面向问题语言&lt;/h3&gt;
+&lt;h4 id=&#34;_20&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DSL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DPP&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;探索式编程&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;人员发挥空间小，多数扔给了引擎&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;多数非图灵完备&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;重在目标而非过程、重在描述而非实现&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_21&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;SQL&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SAS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SPSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LaTeX&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Regex&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_22&#34;&gt;说明&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是我自认为可以分为此类&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_23&#34;&gt;[五代目]人工智能语言&lt;/h3&gt;
+&lt;h4 id=&#34;_24&#34;&gt;特点&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学术界争议大，小小码农不敢造次&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_25&#34;&gt;代表&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Prolog&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Mercury&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;OPS5&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;_26&#34;&gt;语言概念&lt;/h2&gt;
+&lt;h3 id=&#34;_27&#34;&gt;语法/语法&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In linguistics, grammar is the set of structural rules governing the composition of clauses, phrases, and words in any given natural language. The term refers also to the study of such rules, and this field includes morphology, syntax, and phonology, often complemented by phonetics, semantics, and pragmatics.&lt;br /&gt;
+在语言学中,语法是句子、短语和词汇在任何给定的自然语言中的结构规则组成。这个领域也包括这些规则的研究,这一领域包括形态学、语构、语音,常常辅以语音学,语义学和语用学。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;center style=&#34;&#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/parser.png&#34; /&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;词法：语言的最小组成单元&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;名代数冠介连形&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法：连接语言单元的规则&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语义：连接上下文&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;得到的语言含义&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_28&#34;&gt;语法糖&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;$(\lambda)$ 演算的创始人创造&lt;/li&gt;
+&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[介绍]意指那些没有给计算机语言添加新功能，而只是对人类来说更“甜蜜”的语法。语法糖往往给程序员提供了更实用的编码方式，有益于更好的编码风格，更易读。&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[Example]：A[i] &amp;lt;---&amp;gt; *(A+i) 面向对象更像是面向过程的sugar &lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -2665,22 +2917,205 @@ $$&lt;/p&gt;
   
     
   <entry>
-    <id>/About/computer.html</id>
-    <title>做什么</title>
-    <link href="/About/computer.html" />
-    <published>2017-08-26T21:00:00+08:00</published>
+    <id>/入门/python01.html</id>
+    <title>python入门级教程</title>
+    <link href="/入门/python01.html" />
+    <published>2017-09-11T21:00:00+08:00</published>
 
     
-    <updated>2017-08-26T21:00:00+08:00</updated>
-    
-
-    
-    <category term="About" />
+    <updated>2017-09-11T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;计算机的创造以及在其上一层又一层抽象的发展均是为解决问题而出现的,而非为创造问题的.&lt;br /&gt;
-艰难的问题是原本存在的,但为了解决艰难的问题,所以使用分治的思想去拆分为大同小异的问题,但并非不可解决的.&lt;/p&gt;</content>
+    <category term="入门" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;人生苦短&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;暂无评论&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=386830&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#919&#34;&gt;9.19更新&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;命令行特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;脚本书写&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;开发环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;常见函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#io&#34;&gt;IO&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;模块&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;输出函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;输入函数&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;运算&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;运算符&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;操作数&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;控制结构&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;循环&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;函数&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;分类&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;开发程序&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;高级特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;获取帮助&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;919&#34;&gt;9.19更新&lt;/h2&gt;
+&lt;h3 id=&#34;_1&#34;&gt;特性&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;健壮性&lt;/li&gt;
+&lt;li&gt;易维护性&lt;/li&gt;
+&lt;li&gt;可移植&lt;/li&gt;
+&lt;li&gt;易读易学&lt;/li&gt;
+&lt;li&gt;面向对象&lt;/li&gt;
+&lt;li&gt;可拓展&lt;/li&gt;
+&lt;li&gt;可升级&lt;/li&gt;
+&lt;li&gt;高阶函数(haskell, lisp)&lt;/li&gt;
+&lt;li&gt;内存管理&lt;/li&gt;
+&lt;li&gt;非编译型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_2&#34;&gt;命令行特性&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;-c &#34;cmd&#34;&lt;br /&gt;
+&lt;code&gt;python -c &#34;print (1+2)&#34;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;-d&lt;br /&gt;
+&lt;code&gt;调试输出&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;-v&lt;br /&gt;
+&lt;code&gt;冗余输出&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;-m mod&lt;br /&gt;
+&lt;code&gt;模块以脚本形式运行&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;-O&lt;br /&gt;
+&lt;code&gt;生成优化的字节码 .pyo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;-S&lt;/li&gt;
+&lt;li&gt;-Q&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_3&#34;&gt;脚本书写&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;文本开头搜索python解释器&lt;ul&gt;
+&lt;li&gt;开头&lt;code&gt;#!Python解释器的路径&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;#!/usr/bin/python&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;或者&lt;code&gt;#!/usr/bin/env python&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;从env环境变量中搜索&lt;/code&gt;     &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_4&#34;&gt;开发环境&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;VIM+PYTHON插件&lt;/li&gt;
+&lt;li&gt;pycharm&lt;/li&gt;
+&lt;li&gt;spyder&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_5&#34;&gt;常见函数&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;abs()&lt;br /&gt;
+&lt;code&gt;取绝对值&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;io&#34;&gt;IO&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_6&#34;&gt;模块&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;sys.stderr&lt;br /&gt;
+&lt;code&gt;标准错误输出&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_7&#34;&gt;输出函数&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;交互使用repr()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;print调用str()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;print输出默认加换行&lt;br /&gt;
+&lt;code&gt;使用print a, 加逗号即可改变,但是自动加空格&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;格式化输出&lt;br /&gt;
+&lt;code&gt;print &#34;%s %d&#34; %(a,b)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重定向输出&lt;br /&gt;
+&lt;code&gt;print &amp;gt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_8&#34;&gt;输入函数&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;raw_input()&lt;code&gt;py 2.x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;input &lt;code&gt;py 3.x&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_9&#34;&gt;运算&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_10&#34;&gt;运算符&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;**(乘方)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;//&lt;/code&gt;浮点除法(四舍五入)真正的除法&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt;传统除法(操作数为整型时执行地板除)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!= &amp;lt;&amp;gt;&lt;/code&gt;都是不等于&lt;/li&gt;
+&lt;li&gt;逻辑运算 &lt;code&gt;and or not&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;友情提示:多使用括号,增强代码可读性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_11&#34;&gt;操作数&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;注意complex虽然不常用&lt;/li&gt;
+&lt;li&gt;字符串知识(切片,索引,克莱尼星号,连接)&amp;lt;-[只读]&lt;/li&gt;
+&lt;li&gt;列表元素个数和值可变 (切片,索引,克莱尼星号,连接)&amp;lt;-[读写]&lt;/li&gt;
+&lt;li&gt;元组元素个数和值不可变(可切片,克莱尼星号,索引,连接)&amp;lt;-[只读]&lt;/li&gt;
+&lt;li&gt;字典 (&lt;b style=&#39;color:red&#39;&gt;有重点待续...&lt;/b&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_12&#34;&gt;控制结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;没什么好讲的&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;注意缩进&lt;/li&gt;
+&lt;li&gt;range(n)&lt;br /&gt;
+&lt;code&gt;生成列表0~n-1&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;常见搭配 for i in range(len(str))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_13&#34;&gt;循环&lt;/h4&gt;
+&lt;p&gt;&lt;del&gt;不值得专门一节写&lt;/del&gt;&lt;br /&gt;
+- 搞清可迭代对象(序列/迭代器)&lt;/p&gt;
+&lt;h3 id=&#34;_14&#34;&gt;函数&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_15&#34;&gt;分类&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;有副作用&lt;/li&gt;
+&lt;li&gt;无副作用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;_16&#34;&gt;开发程序&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_17&#34;&gt;文档&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;注释&lt;br /&gt;
+&lt;code&gt;#单行&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;自定义范围 &#39;&#39;&#39; comment &#39;&#39;&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_18&#34;&gt;高级特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;列表解析&lt;br /&gt;
+&lt;code&gt;暂时不写 特牛x&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_19&#34;&gt;获取帮助&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;使用help(函数名)&lt;code&gt;交互模式使用&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
     
     
   </entry>
@@ -3112,236 +3547,6 @@ Intel x86共支持256中向量中断，Intel给每种中断源编号，从0-255,
 &lt;code&gt;区别很大,指针是自由的,引用并非自由,指针理论能操纵任意一块地址,但一旦引用的对象死亡,引用就再也不能用了&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;能不能简略的讲一下java文档能力？&lt;br /&gt;
 &lt;code&gt;这个我会专门的写一篇文章&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/Language/intro.html</id>
-    <title>语言介绍</title>
-    <link href="/Language/intro.html" />
-    <published>2017-08-25T21:00:00+08:00</published>
-
-    
-    <updated>2017-08-25T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Language" />
-    
-
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;我认为能够形成一定的完备的系统，&lt;br /&gt;
-且可以作为信源的符号集合可以成为语言&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[评论]&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;同时推荐喀什的这首歌...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=27317272&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;人类语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1&#34;&gt;[1]视觉语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;图像语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;甲骨文&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;图片&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;文/数字语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#2&#34;&gt;[2]听觉语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;语言的发声&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;音乐&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#3&#34;&gt;[3]触觉语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;盲文&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;计算机语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;[一代目]机器语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;[二代目]汇编语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;[三代目]高级语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;[四代目]面向问题语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_20&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_21&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_22&#34;&gt;说明&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_23&#34;&gt;[五代目]人工智能语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_24&#34;&gt;特点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_25&#34;&gt;代表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_26&#34;&gt;语言概念&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_27&#34;&gt;语法/语法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_28&#34;&gt;语法糖&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/fire.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_1&#34;&gt;人类语言&lt;/h2&gt;
-&lt;h3 id=&#34;1&#34;&gt;[1]视觉语言&lt;/h3&gt;
-&lt;h4 id=&#34;_2&#34;&gt;图像语言&lt;/h4&gt;
-&lt;h5 id=&#34;_3&#34;&gt;甲骨文&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;了解的很少哇&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;_4&#34;&gt;图片&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;一张图片透漏的信息的数量级极其高&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_5&#34;&gt;文/数字语言&lt;/h4&gt;
-&lt;h5 id=&#34;_6&#34;&gt;代表&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;各国文字&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数学&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;理化公式等等&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;2&#34;&gt;[2]听觉语言&lt;/h3&gt;
-&lt;h4 id=&#34;_7&#34;&gt;语言的发声&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;传说中的闻风丧旦&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_8&#34;&gt;音乐&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;啊哈哈，巴赫我现在还不太懂&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;推荐《音乐的奉献》如果你有这种欣赏水平的话&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;3&#34;&gt;[3]触觉语言&lt;/h3&gt;
-&lt;h4 id=&#34;_9&#34;&gt;盲文&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;海伦凯勒&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id=&#34;_10&#34;&gt;计算机语言&lt;/h2&gt;
-&lt;h3 id=&#34;_11&#34;&gt;[一代目]机器语言&lt;/h3&gt;
-&lt;h4 id=&#34;_12&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.01&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;位串组成&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;有关计算机三进制、二进制、十进制的权衡略过&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于繁琐&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作级别高&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_13&#34;&gt;[二代目]汇编语言&lt;/h3&gt;
-&lt;h4 id=&#34;_14&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法倾向自然语言，抽象的第一大步&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;过于依赖底层&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;助记码不适宜软件工程&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_15&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.8086&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;汇编&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_16&#34;&gt;[三代目]高级语言&lt;/h3&gt;
-&lt;h4 id=&#34;_17&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向了更加自然地处理方式&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;走向性能与功能博弈的通用稳定状态&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注重过程&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了面向对象思想&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以作为程序员自由灵活设计的通用编程语言&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GPPL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;General&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Purpose&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Programming&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Language&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;6.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;图灵完备&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;7.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;出现了所谓的拥护者&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;摊手&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;8.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学习的人占领市场，出现普遍水平地下的社会现状&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_18&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Perl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Python&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PHP&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;JavaScript&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_19&#34;&gt;[四代目]面向问题语言&lt;/h3&gt;
-&lt;h4 id=&#34;_20&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DSL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DPP&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;探索式编程&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;人员发挥空间小，多数扔给了引擎&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;多数非图灵完备&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;5.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;重在目标而非过程、重在描述而非实现&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_21&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;SQL&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SAS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SPSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LaTeX&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Regex&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_22&#34;&gt;说明&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CSS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是我自认为可以分为此类&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_23&#34;&gt;[五代目]人工智能语言&lt;/h3&gt;
-&lt;h4 id=&#34;_24&#34;&gt;特点&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;学术界争议大，小小码农不敢造次&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_25&#34;&gt;代表&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;Prolog&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Mercury&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;OPS5&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id=&#34;_26&#34;&gt;语言概念&lt;/h2&gt;
-&lt;h3 id=&#34;_27&#34;&gt;语法/语法&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In linguistics, grammar is the set of structural rules governing the composition of clauses, phrases, and words in any given natural language. The term refers also to the study of such rules, and this field includes morphology, syntax, and phonology, often complemented by phonetics, semantics, and pragmatics.&lt;br /&gt;
-在语言学中,语法是句子、短语和词汇在任何给定的自然语言中的结构规则组成。这个领域也包括这些规则的研究,这一领域包括形态学、语构、语音,常常辅以语音学,语义学和语用学。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;center style=&#34;&#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/parser.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;词法：语言的最小组成单元&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;名代数冠介连形&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语法：连接语言单元的规则&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;语义：连接上下文&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;得到的语言含义&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_28&#34;&gt;语法糖&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;$(\lambda)$ 演算的创始人创造&lt;/li&gt;
-&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[介绍]意指那些没有给计算机语言添加新功能，而只是对人类来说更“甜蜜”的语法。语法糖往往给程序员提供了更实用的编码方式，有益于更好的编码风格，更易读。&lt;/b&gt;&lt;/li&gt;
-&lt;li&gt;&lt;b style=&#39;color:#67ac82&#39;&gt;[Example]：A[i] &amp;lt;---&amp;gt; *(A+i) 面向对象更像是面向过程的sugar &lt;/b&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
     
     
