@@ -248,12 +248,31 @@ True 表示不处理异常，否则会在退出该方法后重新抛出异常以
 <p>运行<code>python hello.py -t</code>获得的sys.argv就是<code>['hello.py', '-t']</code>。</p>
 <h4 id="__name__"><b><code>__name__</code></b></h4>
 <div class="hlcode"><pre><span class="c">#hello.py</span>
-<span class="mf">1.</span><span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="mf">2.</span>    <span class="n">hello</span><span class="p">()</span>
+<span class="mf">1.</span> <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="mf">2.</span>    <span class="k">print</span> <span class="s">&quot;hello&quot;</span>
+<span class="mf">3.</span><span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="mf">4.</span>    <span class="n">hello</span><span class="p">()</span>
 </pre></div>
 
 
 <p>当我们在命令行运行hello模块文件时，Python解释器把一个特殊变量<code>__name__</code>置为<code>__main__</code>，而如果在其他地方导入该hello模块时，if判断将失败，因此，这种if测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是<b style='color:green'>运行测试</b>。</p>
+<div class="hlcode"><pre><span class="err">正经测试</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="err">模块导入测试</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">hello</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hello</span><span class="o">.</span><span class="n">__name__</span>
+<span class="s">&#39;hello&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+
+<span class="mf">2.</span> <span class="err">模块运行测试</span>
+<span class="err">$</span> <span class="n">python</span> <span class="n">hello</span>
+<span class="err">$</span> <span class="n">hello</span>
+
+<span class="err">答案</span><span class="p">:</span>
+<span class="err">可以证明导入时</span> <span class="n">__name__</span><span class="err">为模块名字</span>
+<span class="err">直接运行脚本时</span> <span class="n">__name__</span><span class="err">为</span><span class="n">__main__</span>
+</pre></div>
+
+
 <ul>
 <li>测试</li>
 </ul>
@@ -362,7 +381,7 @@ My name is hi.
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-19 20:36:39</p>
+        <p>Site Generated 2017-09-20 12:19:55</p>
       </span>
     </div>
 

@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>AT&T汇编速览 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;AT&T汇编速览
+    <span class="updated">Page Updated&nbsp;
+      2017-09-20 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">AT&T汇编速览</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>为了完成操作系统也是蛮拼的</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31789216&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">前言</a></li>
+<li><a href="#80386">80386寄存器</a></li>
+<li><a href="#_2">法</a><ul>
+<li><a href="#_3">句法</a></li>
+<li><a href="#_4">语法</a><ul>
+<li><a href="#num">立即数$num</a></li>
+<li><a href="#regis">寄存器$regis</a></li>
+<li><a href="#symbol-constant">symbol constant(符号常量)</a></li>
+<li><a href="#length-of-operator">length of Operator</a></li>
+<li><a href="#sign-and-zero-extension">Sign and Zero Extension(符号扩展和零扩展)</a></li>
+<li><a href="#call-and-jump">Call and Jump</a></li>
+<li><a href="#prefix">Prefix(<b>操作码</b>前缀)</a></li>
+<li><a href="#memory-reference">Memory Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_5">内联汇编</a></li>
+</ul>
+</div>
+<h3 id="_1">前言</h3>
+<hr />
+<p>为了开发linux下的os,使用到了汇编语言,虽然对8086的汇编基本了解,但是众所周知这里我如果使用GCC+GAS的话必须了解AT&amp;T汇编语言.</p>
+<h3 id="80386">80386寄存器</h3>
+<hr />
+<ol>
+<li>16bit寄存器实际上是32bit寄存器的低16位</li>
+<li>8bit寄存器实际上是16bit寄存器<code>%ax,%bx,%cx,%dx</code>的低8位和高8位</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">32bit</th>
+<th align="center">16bit</th>
+<th align="center">8bit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">%eax</td>
+<td align="center">%ax</td>
+<td align="center">%ah</td>
+</tr>
+<tr>
+<td align="center">%ebx</td>
+<td align="center">%bx</td>
+<td align="center">%al</td>
+</tr>
+<tr>
+<td align="center">%ecx</td>
+<td align="center">%cx</td>
+<td align="center">%bh</td>
+</tr>
+<tr>
+<td align="center">%edx</td>
+<td align="center">%dx</td>
+<td align="center">%bl</td>
+</tr>
+<tr>
+<td align="center">%edi</td>
+<td align="center">%di</td>
+<td align="center">%ch</td>
+</tr>
+<tr>
+<td align="center">%esi</td>
+<td align="center">%si</td>
+<td align="center">%cl</td>
+</tr>
+<tr>
+<td align="center">%ebp</td>
+<td align="center">%bp</td>
+<td align="center">%dh</td>
+</tr>
+<tr>
+<td align="center">%esp</td>
+<td align="center">%sp</td>
+<td align="center">%dl</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>6个段寄存器<ul>
+<li>%cs(code)</li>
+<li>%ds(data)</li>
+<li>%ss(satck)</li>
+<li>%es</li>
+<li>%fs</li>
+<li>%gs</li>
+</ul>
+</li>
+<li>
+<p>3个控制寄存器</p>
+<ul>
+<li>%cr0(control)</li>
+<li>%cr2</li>
+<li>%cr3</li>
+</ul>
+</li>
+<li>
+<p>6个debug寄存器</p>
+<ul>
+<li>%db0</li>
+<li>%db1</li>
+<li>%db2</li>
+<li>%db3</li>
+<li>%db6</li>
+<li>%db7</li>
+</ul>
+</li>
+<li>
+<p>两个测试存储器</p>
+<ul>
+<li>%tr6</li>
+<li>%tr7</li>
+</ul>
+</li>
+<li>8个浮点寄存器栈<ul>
+<li>%str(0)</li>
+<li>%str(1)</li>
+<li>%str(2)</li>
+<li>%str(3)</li>
+<li>%str(4)</li>
+<li>%str(5)</li>
+<li>%str(6)</li>
+<li>%str(7)</li>
+</ul>
+</li>
+</ol>
+<h3 id="_2">法</h3>
+<hr />
+<h4 id="_3">句法</h4>
+<ol>
+<li>左源右目的</li>
+</ol>
+<h4 id="_4">语法</h4>
+<h5 id="num">立即数<code>$num</code></h5>
+<h5 id="regis">寄存器<code>$regis</code></h5>
+<h5 id="symbol-constant">symbol constant(符号常量)</h5>
+<div class="hlcode"><pre>  <span class="nl">value:</span> <span class="p">.</span><span class="kt">long</span> <span class="mh">0x12a3f2de</span>
+  <span class="n">movl</span> <span class="n">value</span> <span class="p">,</span> <span class="o">%</span><span class="n">ebx</span><span class="err">#装</span><span class="mh">0x12a3f2de</span><span class="o">-&gt;</span><span class="n">ebx</span>
+  <span class="n">movl</span> <span class="err">$</span><span class="n">value</span><span class="p">,</span> <span class="o">%</span> <span class="n">ebx</span><span class="err">#装符号</span><span class="n">value</span><span class="err">的地址</span><span class="o">-&gt;</span><span class="n">ebx</span>
+</pre></div>
+
+
+<h5 id="length-of-operator">length of Operator</h5>
+<div class="hlcode"><pre><span class="o">-</span> <span class="n">b</span><span class="p">(</span><span class="n">byte</span> <span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="err">`</span><span class="n">movb</span> <span class="o">%</span><span class="n">al</span><span class="p">,</span> <span class="o">%</span><span class="n">bl</span><span class="err">`</span>
+<span class="o">-</span> <span class="n">w</span><span class="p">(</span><span class="n">word</span> <span class="mi">16</span><span class="o">-</span><span class="n">bits</span><span class="p">)</span><span class="err">`</span><span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">bx</span><span class="err">`</span>
+<span class="o">-</span> <span class="n">l</span><span class="p">(</span><span class="kt">long</span> <span class="mi">32</span><span class="o">-</span><span class="n">bits</span><span class="p">)</span> <span class="err">`</span><span class="n">movl</span> <span class="o">%</span><span class="n">eax</span><span class="p">,</span> <span class="o">%</span><span class="n">ebx</span><span class="err">`</span>
+</pre></div>
+
+
+<p><b>W</b>:如果没有指定操作数长度的话,编译期按照目标操作数的长度来设置,如果目标操作数无指定长度,编译器报错,例如 <code>push $4</code></p>
+<h5 id="sign-and-zero-extension">Sign and Zero Extension(符号扩展和零扩展)</h5>
+<p><code>符号扩展指令和零扩展指令需要指定源操作数长度和目的操作数长度,即使在某些指令中这些操作数是隐含的。</code></p>
+<div class="hlcode"><pre><span class="err">在</span> <span class="n">AT</span><span class="o">&amp;</span><span class="n">T</span> <span class="err">语法中</span><span class="p">,</span><span class="err">符号扩展和零扩展指令的格式为</span><span class="p">,</span><span class="err">基本部分</span><span class="s">&quot;movs&quot;</span><span class="err">和</span><span class="s">&quot;movz&quot;</span><span class="p">(</span><span class="err">对应</span>
+<span class="n">Intel</span> <span class="err">语法的</span> <span class="n">movsx</span> <span class="err">和</span> <span class="n">movzx</span><span class="p">),</span><span class="err">后面跟上源操作数长度和目的操作数长度。</span> <span class="n">movsbl</span> <span class="err">意味着</span>
+<span class="n">movs</span> <span class="p">(</span><span class="n">from</span><span class="p">)</span> <span class="n">byte</span> <span class="p">(</span><span class="n">to</span><span class="p">)</span> <span class="kt">long</span><span class="p">;</span> <span class="n">movbw</span> <span class="err">意味着</span> <span class="n">movs</span> <span class="p">(</span><span class="n">from</span><span class="p">)</span> <span class="n">byte</span> <span class="p">(</span><span class="n">to</span><span class="p">)</span> <span class="n">word</span><span class="p">;</span> <span class="n">movswl</span>
+<span class="err">意味着</span> <span class="n">movs</span> <span class="p">(</span><span class="n">from</span><span class="p">)</span><span class="n">word</span> <span class="p">(</span><span class="n">to</span><span class="p">)</span><span class="kt">long</span><span class="err">。对于</span> <span class="n">movz</span> <span class="err">指令也一样。比如指令“</span><span class="n">movsbl</span> <span class="o">%</span><span class="n">al</span><span class="p">,</span>
+<span class="o">%</span><span class="n">edx</span><span class="err">”</span> <span class="err">意味着将</span> <span class="n">al</span> <span class="err">寄存器的内容进行符号扩展后放置到</span> <span class="n">edx</span> <span class="err">寄存器中。</span>
+<span class="err">其它的</span> <span class="n">Intel</span> <span class="err">格式的符号扩展指令还有</span><span class="o">:</span>
+<span class="mi">1</span><span class="o">:</span> <span class="n">cbw</span> <span class="o">--</span> <span class="n">sign</span><span class="o">-</span><span class="n">extend</span> <span class="n">byte</span> <span class="n">in</span> <span class="o">%</span><span class="n">al</span> <span class="n">to</span> <span class="n">word</span> <span class="n">in</span> <span class="o">%</span><span class="n">ax</span><span class="p">;</span>
+<span class="mi">2</span><span class="o">:</span> <span class="n">cwde</span> <span class="o">--</span> <span class="n">sign</span><span class="o">-</span><span class="n">extend</span> <span class="n">word</span> <span class="n">in</span> <span class="o">%</span><span class="n">ax</span> <span class="n">to</span> <span class="kt">long</span> <span class="n">in</span> <span class="o">%</span><span class="n">eax</span><span class="p">;</span>
+<span class="mi">3</span><span class="o">:</span> <span class="n">cwd</span> <span class="o">--</span> <span class="n">sign</span><span class="o">-</span><span class="n">extend</span> <span class="n">word</span> <span class="n">in</span> <span class="o">%</span><span class="n">ax</span> <span class="n">to</span> <span class="kt">long</span> <span class="n">in</span> <span class="o">%</span><span class="n">dx</span><span class="o">:%</span><span class="n">ax</span><span class="p">;</span>
+<span class="mi">4</span><span class="o">:</span> <span class="n">cdq</span> <span class="o">--</span> <span class="n">sign</span><span class="o">-</span><span class="n">extend</span> <span class="n">dword</span> <span class="n">in</span> <span class="o">%</span><span class="n">eax</span> <span class="n">to</span> <span class="n">quad</span> <span class="n">in</span> <span class="o">%</span><span class="n">edx</span><span class="o">:%</span><span class="n">eax</span><span class="p">;</span>
+<span class="err">对应的</span> <span class="n">AT</span><span class="o">&amp;</span><span class="n">T</span> <span class="err">语法的指令为</span> <span class="n">cbtw</span><span class="p">,</span><span class="n">cwtl</span><span class="p">,</span><span class="n">cwtd</span><span class="p">,</span><span class="n">cltd</span>
+</pre></div>
+
+
+<h5 id="call-and-jump">Call and Jump</h5>
+<ul>
+<li>段内call+jump<br />
+<code>call</code><br />
+<code>ret</code><br />
+<code>jmp</code></li>
+<li>段间call+jump<br />
+<code>lcall</code><br />
+<code>lret</code><br />
+<code>ljmp</code></li>
+</ul>
+<h5 id="prefix">Prefix(<b>操作码</b>前缀)</h5>
+<ul>
+<li>. 字符串重复操作指令(rep,repne);<br />
+<code>用来让字符串操作重复“%ecx” 次</code></li>
+<li>. 指定被操作的段(cs,ds,ss,es,fs,gs);</li>
+<li>. 进行总线加锁(lock)<br />
+<code>多处理器环境</code></li>
+<li>.  指定地址和操作的大小(data16,addr16)<br />
+<code>它们被用来在 32-bit 操作数/地址
+代码中指定 16-bit 的操作数/地址</code></li>
+</ul>
+<div class="hlcode"><pre><span class="err">在</span> <span class="n">AT</span><span class="o">&amp;</span><span class="n">T</span> <span class="err">汇编语法中</span><span class="p">,</span><span class="err">操作码前缀通常被单独放在一行</span><span class="p">,</span><span class="err">后面不跟任何操作数。例如</span><span class="p">,</span>
+<span class="err">对于重复</span> <span class="n">scas</span> <span class="err">指令</span><span class="p">,</span><span class="err">其写法为</span><span class="o">:</span>
+<span class="n">repne</span>
+<span class="n">scas</span>
+</pre></div>
+
+
+<h5 id="memory-reference">Memory Reference</h5>
+<ul>
+<li>Intel<br />
+<code>section:[base+index*scale+displacement]</code></li>
+<li>AT&amp;<br />
+<code>section:displacement(base,index,scale)</code></li>
+</ul>
+<div class="hlcode"><pre>    <span class="nl">EXAMPLE1:</span><span class="o">-</span><span class="mi">4</span><span class="p">(</span><span class="o">%</span><span class="n">ebp</span><span class="p">)</span>
+    <span class="nl">EXPLAIN1:</span>
+            <span class="n">base</span><span class="o">=%</span><span class="n">ebp</span><span class="p">,</span>
+            <span class="n">displacement</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span>
+            <span class="n">section</span> <span class="err">没有指定</span><span class="p">,</span>
+            <span class="err">因</span><span class="n">base</span><span class="o">=%</span><span class="n">ebp</span><span class="err">故</span><span class="n">section</span><span class="o">=%</span><span class="n">ss</span><span class="p">,</span>
+            <span class="n">index</span><span class="p">,</span><span class="n">scale</span> <span class="err">没有指定</span><span class="p">,</span><span class="err">则</span> <span class="n">index</span> <span class="err">为</span> <span class="mi">0</span>
+
+    <span class="nl">EXAMPLE2:</span><span class="n">foo</span><span class="p">(,</span><span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nl">EXPLAIN2:</span>
+            <span class="n">index</span><span class="o">=%</span><span class="n">eax</span><span class="p">,</span>
+            <span class="n">scale</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+            <span class="n">displacement</span><span class="o">=</span><span class="n">foo</span>
+            <span class="err">其它域没有指定</span><span class="p">,</span><span class="err">默认</span><span class="n">section</span><span class="o">=%</span><span class="n">ds</span>
+
+    <span class="nl">EXAMPLE3:</span><span class="n">foo</span><span class="p">(,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nl">EXPLAIN3:</span>
+            <span class="err">这个表达式引用的是指针</span> <span class="n">foo</span> <span class="err">指向的地址所存放的值</span>
+            <span class="err">这是一种异常语法</span><span class="p">,</span><span class="err">但却合法</span>
+
+    <span class="nl">EXAMPLE4:</span><span class="o">%</span><span class="n">gs</span><span class="o">:</span><span class="n">foo</span>
+    <span class="nl">EXPLAIN4:</span>
+            <span class="err">表达式引用的是放置于</span><span class="o">%</span><span class="n">gs</span> <span class="err">段里变量</span> <span class="n">foo</span> <span class="err">的值</span>
+</pre></div>
+
+
+<h3 id="_5">内联汇编</h3>
+<hr />
+<ul>
+<li>暂停</li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'AT&T汇编速览',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-20 12:19:55</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

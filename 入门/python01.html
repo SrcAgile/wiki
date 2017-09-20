@@ -49,7 +49,7 @@
 
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#919">9.19更新</a><ul>
+<li><a href="#920">9.20更新</a><ul>
 <li><a href="#_1">特性</a></li>
 <li><a href="#_2">命令行特性</a></li>
 <li><a href="#_3">脚本书写</a></li>
@@ -62,45 +62,50 @@
 </li>
 <li><a href="#_8">语法</a><ul>
 <li><a href="#_9">书写</a></li>
-<li><a href="#_10">运算</a><ul>
-<li><a href="#_11">运算符</a></li>
-<li><a href="#_12">操作数</a></li>
+<li><a href="#_10">变量</a></li>
+<li><a href="#_11">运算</a><ul>
+<li><a href="#_12">运算符</a></li>
+<li><a href="#_13">操作数</a></li>
 </ul>
 </li>
-<li><a href="#_13">控制结构</a><ul>
-<li><a href="#_14">循环</a></li>
+<li><a href="#_14">控制结构</a><ul>
+<li><a href="#_15">循环</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_15">函数</a><ul>
-<li><a href="#_16">分类</a></li>
-<li><a href="#_17">常见内建函数</a></li>
-<li><a href="#_18">参数问题</a></li>
+<li><a href="#_16">函数</a><ul>
+<li><a href="#_17">分类</a></li>
+<li><a href="#_18">常见内建函数</a></li>
+<li><a href="#_19">参数问题</a></li>
 </ul>
 </li>
-<li><a href="#_19">类</a></li>
-<li><a href="#_20">使用</a><ul>
-<li><a href="#_21">方法</a></li>
-<li><a href="#_22">对象</a></li>
+<li><a href="#_20">类</a></li>
+<li><a href="#_21">使用</a><ul>
+<li><a href="#_22">方法</a></li>
+<li><a href="#_23">对象</a></li>
 </ul>
 </li>
-<li><a href="#_23">模块</a><ul>
-<li><a href="#_24">常见</a></li>
+<li><a href="#_24">模块</a><ul>
+<li><a href="#_25">常见</a></li>
 </ul>
 </li>
-<li><a href="#_25">开发程序</a><ul>
-<li><a href="#_26">文档</a></li>
-<li><a href="#_27">异常控制</a></li>
+<li><a href="#_26">软件工程</a><ul>
+<li><a href="#_27">语言风格</a></li>
+<li><a href="#_28">模块结构和布局</a></li>
+<li><a href="#_29">文档</a></li>
+<li><a href="#_30">异常控制</a></li>
+<li><a href="#_31">优化</a></li>
 </ul>
 </li>
-<li><a href="#_28">高级特性</a></li>
-<li><a href="#_29">获取帮助</a></li>
+<li><a href="#_32">高级特性</a></li>
+<li><a href="#_33">获取帮助</a></li>
+<li><a href="#_34">更新日志</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="919">9.19更新</h2>
+<h2 id="920">9.20更新</h2>
 <h3 id="_1">特性</h3>
 <hr />
 <ul>
@@ -181,8 +186,15 @@
 <li><code>:</code>将代码头体分离</li>
 <li>缩进</li>
 </ul>
-<h4 id="_10">运算</h4>
-<h5 id="_11">运算符</h5>
+<h4 id="_10">变量</h4>
+<ul>
+<li>命名<br />
+<code>_xxx   --&gt;不用'from module import 导入'</code><br />
+<code>__xx__ --&gt;系统定义名字</code><br />
+<code>__xx   --&gt;类中私有变量名</code></li>
+</ul>
+<h4 id="_11">运算</h4>
+<h5 id="_12">运算符</h5>
 <ul>
 <li><code>**(乘方)</code></li>
 <li><code>//</code>浮点除法(四舍五入)真正的除法</li>
@@ -195,7 +207,7 @@
 <code>x,y = y,x[不明觉厉]显然赋值之前已经做好了计算</code></li>
 <li>友情提示:多使用括号,增强代码可读性</li>
 </ul>
-<h5 id="_12">操作数</h5>
+<h5 id="_13">操作数</h5>
 <ul>
 <li>注意complex虽然不常用</li>
 <li>字符串知识(切片,索引,克莱尼星号,连接)&lt;-[只读]</li>
@@ -203,24 +215,24 @@
 <li>元组元素个数和值不可变(可切片,克莱尼星号,索引,连接)&lt;-[只读]</li>
 <li>字典 (<b style='color:red'>有重点待续...</b>)</li>
 </ul>
-<h4 id="_13">控制结构</h4>
+<h4 id="_14">控制结构</h4>
 <ul>
 <li><del>没什么好讲的</del></li>
 <li>注意缩进</li>
 </ul>
-<h5 id="_14">循环</h5>
+<h5 id="_15">循环</h5>
 <p><del>不值得专门一节写</del></p>
 <ul>
 <li>搞清可迭代对象(序列/迭代器)</li>
 </ul>
-<h3 id="_15">函数</h3>
+<h3 id="_16">函数</h3>
 <hr />
-<h4 id="_16">分类</h4>
+<h4 id="_17">分类</h4>
 <ol>
 <li>有副作用</li>
 <li>无副作用</li>
 </ol>
-<h4 id="_17">常见内建函数</h4>
+<h4 id="_18">常见内建函数</h4>
 <ul>
 <li>abs()<br />
 <code>取绝对值</code></li>
@@ -242,37 +254,37 @@
 <li>type(obj)<br />
 <code>返回对象类型</code></li>
 </ul>
-<h4 id="_18">参数问题</h4>
+<h4 id="_19">参数问题</h4>
 <p><code>暂时书写架构</code><br />
 - 默认参数<br />
 - 可变参数<br />
 - 关键字参数<br />
 - etc</p>
-<h3 id="_19">类</h3>
+<h3 id="_20">类</h3>
 <hr />
-<h3 id="_20">使用</h3>
+<h3 id="_21">使用</h3>
 <ul>
 <li>定义<br />
 <code>class classname(baseclass[es]):</code></li>
 <li>创建<br />
 <code>a = classB(pram)</code></li>
 </ul>
-<h4 id="_21">方法</h4>
+<h4 id="_22">方法</h4>
 <p><code>做到访问权限控制</code><br />
 1. 特殊方法<br />
 <code>__method__()</code><br />
     ``</p>
-<h4 id="_22">对象</h4>
+<h4 id="_23">对象</h4>
 <ul>
 <li>自身实例引用<br />
 <code>self类似this</code></li>
 </ul>
-<h3 id="_23">模块</h3>
+<h3 id="_24">模块</h3>
 <hr />
 <p><code>这个是我现在还比较方的东西</code><br />
 1. 每个python脚本文件都可以当做一个模块<br />
 2. 模块太大?可以自己<b style='color:red'>拆</b></p>
-<h4 id="_24">常见</h4>
+<h4 id="_25">常见</h4>
 <ul>
 <li>sys<ul>
 <li>platform</li>
@@ -281,15 +293,94 @@
 </ul>
 </li>
 </ul>
-<h3 id="_25">开发程序</h3>
+<h3 id="_26">软件工程</h3>
 <hr />
-<h4 id="_26">文档</h4>
+<h4 id="_27">语言风格</h4>
+<ul>
+<li>(见变量命名准则)</li>
+<li><a href="http://www.Python.org/dev/peps/pep-0007/">pythonic</a></li>
+</ul>
+<div class="hlcode"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">this</span>
+<span class="n">The</span> <span class="n">Zen</span> <span class="n">of</span> <span class="n">Python</span><span class="p">,</span> <span class="n">by</span> <span class="n">Tim</span> <span class="n">Peters</span>
+
+<span class="n">Beautiful</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">ugly</span><span class="o">.</span>
+<span class="n">Explicit</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">implicit</span><span class="o">.</span>
+<span class="n">Simple</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="nb">complex</span><span class="o">.</span>
+<span class="n">Complex</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">complicated</span><span class="o">.</span>
+<span class="n">Flat</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">nested</span><span class="o">.</span>
+<span class="n">Sparse</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">dense</span><span class="o">.</span>
+<span class="n">Readability</span> <span class="n">counts</span><span class="o">.</span>
+<span class="n">Special</span> <span class="n">cases</span> <span class="n">aren</span><span class="s">&#39;t special enough to break the rules.</span>
+<span class="n">Although</span> <span class="n">practicality</span> <span class="n">beats</span> <span class="n">purity</span><span class="o">.</span>
+<span class="n">Errors</span> <span class="n">should</span> <span class="n">never</span> <span class="k">pass</span> <span class="n">silently</span><span class="o">.</span>
+<span class="n">Unless</span> <span class="n">explicitly</span> <span class="n">silenced</span><span class="o">.</span>
+<span class="n">In</span> <span class="n">the</span> <span class="n">face</span> <span class="n">of</span> <span class="n">ambiguity</span><span class="p">,</span> <span class="n">refuse</span> <span class="n">the</span> <span class="n">temptation</span> <span class="n">to</span> <span class="n">guess</span><span class="o">.</span>
+<span class="n">There</span> <span class="n">should</span> <span class="n">be</span> <span class="n">one</span><span class="o">--</span> <span class="ow">and</span> <span class="n">preferably</span> <span class="n">only</span> <span class="n">one</span> <span class="o">--</span><span class="n">obvious</span> <span class="n">way</span> <span class="n">to</span> <span class="n">do</span> <span class="n">it</span><span class="o">.</span>
+<span class="n">Although</span> <span class="n">that</span> <span class="n">way</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">obvious</span> <span class="n">at</span> <span class="n">first</span> <span class="n">unless</span> <span class="n">you</span><span class="s">&#39;re Dutch.</span>
+<span class="n">Now</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">never</span><span class="o">.</span>
+<span class="n">Although</span> <span class="n">never</span> <span class="ow">is</span> <span class="n">often</span> <span class="n">better</span> <span class="n">than</span> <span class="o">*</span><span class="n">right</span><span class="o">*</span> <span class="n">now</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">implementation</span> <span class="ow">is</span> <span class="n">hard</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span><span class="s">&#39;s a bad idea.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">implementation</span> <span class="ow">is</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.</span>
+<span class="n">Namespaces</span> <span class="n">are</span> <span class="n">one</span> <span class="n">honking</span> <span class="n">great</span> <span class="n">idea</span> <span class="o">--</span> <span class="n">let</span><span class="s">&#39;s do more of those!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h4 id="_28">模块结构和布局</h4>
+<div class="hlcode"><pre><span class="err">结构示意图</span><span class="o">:</span>
+
+<span class="cp"># (1) 起始行(Unix)</span>
+        <span class="o">|</span><span class="n">___</span><span class="p">[</span><span class="err">有起始行就能够仅输入脚本名字来执行脚本</span><span class="p">]</span>
+<span class="cp"># (2) 模块文档</span>
+        <span class="o">|</span><span class="n">___</span><span class="p">[</span><span class="err">简要介绍模块的功能及重要全局变量的含义</span><span class="p">,</span>
+             <span class="err">模块外可通过</span> <span class="n">module</span><span class="p">.</span><span class="n">__doc__</span> <span class="err">访问这些内容</span><span class="p">]</span>
+<span class="cp"># (3) 模块导入</span>
+        <span class="o">|</span><span class="n">___</span><span class="p">[</span><span class="err">导入当前模块的代码需要的所有模块</span><span class="p">;</span><span class="err">每个模块仅导入一次</span><span class="p">(</span><span class="err">当前模块被加载时</span><span class="p">);</span>
+             <span class="err">函数内部的模块导入代码不会被执行</span><span class="p">,</span> <span class="err">除非该函数正在执行</span><span class="p">]</span>
+<span class="cp"># (4) 变量定义</span>
+        <span class="o">|</span><span class="n">___</span><span class="p">[</span><span class="err">这里定义的变量为全局变量</span><span class="p">,</span><span class="err">除非必须</span><span class="p">,</span><span class="err">否则就要尽量使用局部变量代替全局变量</span><span class="p">]</span>
+<span class="cp"># (5) 类定义</span>
+        <span class="o">|</span><span class="n">___</span><span class="p">[</span><span class="err">所有的类都需要在这里定义。当模块被导入时</span> <span class="n">class</span> <span class="err">语句会被执行</span><span class="p">,</span> <span class="err">类也就会被定义</span>
+             <span class="err">类的文档变量是</span> <span class="n">class</span><span class="p">.</span><span class="n">__doc__</span><span class="p">]</span>
+<span class="cp"># (6) 函数定义</span>
+        <span class="o">|</span><span class="n">___</span><span class="p">[</span><span class="err">此处定义的函数可以通过</span> <span class="n">module</span><span class="p">.</span><span class="n">function</span><span class="p">()</span><span class="err">在外部被访问到</span><span class="p">,</span><span class="err">当模块被导入时</span>
+             <span class="n">def</span> <span class="err">语句会被执行</span><span class="p">,</span> <span class="err">函数也就都会定义好</span><span class="p">,</span><span class="err">函数的文档变量是</span> <span class="n">function</span><span class="p">.</span><span class="n">__doc__</span><span class="p">]</span>
+<span class="cp"># (7) 主程序</span>
+        <span class="o">|</span><span class="n">___</span><span class="p">[</span><span class="err">论这个模块是被别的模块导入还是作为脚本直接执行</span><span class="p">,</span><span class="err">都会执行这部分代码</span>
+             <span class="err">不会有太多功能性代码</span><span class="p">,</span><span class="err">而是根据执行的模式调用不同的函数</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="n">EXAMPLE</span><span class="p">:</span><span class="n">hello</span><span class="o">.</span><span class="n">py</span>
+<span class="c">#!/usr/bin/env python            [1]#$ chmod +x;./hello.py</span>
+
+<span class="p">[</span><span class="s">&quot;document&quot;</span><span class="o">|</span><span class="s">&#39;document&#39;</span><span class="p">]</span>                      <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>                     <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">debug</span> <span class="o">=</span><span class="n">true</span>                   <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">new</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>            <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="k">pass</span>           
+
+<span class="k">def</span> <span class="nf">real</span><span class="p">():</span>                  <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="c">#模块测试专用,决定了模块的运行导向</span>
+    <span class="n">real</span><span class="p">()</span>
+</pre></div>
+
+
+<h4 id="_29">文档</h4>
 <ul>
 <li>注释<br />
 <code>#单行</code><br />
 <code>自定义范围 ''' comment '''</code></li>
+<li>动态获得文档字串<br />
+<code>FORMAT:obj.__doc__</code><br />
+<code>EXAMPLE:print sys.__doc__</code></li>
 </ul>
-<h4 id="_27">异常控制</h4>
+<h4 id="_30">异常控制</h4>
 <ul>
 <li>捕获try-except</li>
 </ul>
@@ -302,17 +393,46 @@
 </pre></div>
 
 
-<h3 id="_28">高级特性</h3>
+<h4 id="_31">优化</h4>
+<ol>
+<li>尽量将模块变量替换为本地变量,降低询问时间</li>
+</ol>
+<div class="hlcode"><pre><span class="c">#如果经常使用 os.linesep,那就替换吧,因为每次使用 1.确认os是模块 2.确认linesep全局变量在os中存在太麻烦了</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">linesep</span>
+</pre></div>
+
+
+<h3 id="_32">高级特性</h3>
+<hr />
 <ul>
 <li>列表解析<br />
 <code>暂时不写 特牛x</code></li>
+<li>内存管理[我在python剖析里面会说]<br />
+<code>有本书上面写引用计数,应该不对,因为一旦出现引用环就出现故障,还有一个循环垃圾收集器吧</code><br />
+<code>但是无可厚非,python虚拟机实现了内存管理</code><br />
+<code>del的使用,显式销毁</code></li>
 </ul>
-<h3 id="_29">获取帮助</h3>
+<h3 id="_33">获取帮助</h3>
 <hr />
 <ol>
 <li>使用help(函数名)<code>交互模式使用</code></li>
 <li>什么是PEP?<br />
 <code>PYTHON增强提案</code></li>
+<li>查询关键字<br />
+<code>keyword模块</code><br />
+<code>|___iskeyword()</code><br />
+<code>|___关键字列表</code></li>
+<li>查询系统保留字(build_in)<br />
+<code>__builtins__模块</code></li>
+<li>获得模块文档帮助<br />
+<code>print module.__doc__</code></li>
+<li><a href="../Language/pythonkey.html">关键字帮助</a></li>
+</ol>
+<h3 id="_34">更新日志</h3>
+<hr />
+<ol>
+<li>9/19添加大量知识框架,属于低级水平知识</li>
+<li>9/20</li>
 </ol>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -346,7 +466,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-19 20:36:39</p>
+        <p>Site Generated 2017-09-20 12:19:55</p>
       </span>
     </div>
 
