@@ -99,6 +99,7 @@
 </ul>
 </li>
 <li><a href="#_32">高级特性</a></li>
+<li><a href="#faq">FAQ</a></li>
 <li><a href="#_33">获取帮助</a></li>
 <li><a href="#_34">更新日志</a></li>
 </ul>
@@ -382,17 +383,22 @@
 </ul>
 <h4 id="_30">异常控制</h4>
 <ul>
-<li>捕获try-except</li>
+<li>捕获try-except-else</li>
 </ul>
 <div class="hlcode"><pre>  <span class="k">try</span><span class="p">:</span>
     <span class="n">expression</span><span class="p">;</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="n">expression</span><span class="p">;</span>
-
-<span class="o">-</span> <span class="err">生成</span><span class="sb">`raise()`</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">when</span> <span class="k">try</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">has</span> <span class="nb">any</span> <span class="n">error</span><span class="p">;</span>
 </pre></div>
 
 
+<ul>
+<li>生成<code>raise()</code></li>
+<li>检验文件存在<br />
+<code>os.path.exists()</code></li>
+</ul>
 <h4 id="_31">优化</h4>
 <ol>
 <li>尽量将模块变量替换为本地变量,降低询问时间</li>
@@ -412,6 +418,13 @@
 <code>但是无可厚非,python虚拟机实现了内存管理</code><br />
 <code>del的使用,显式销毁</code></li>
 </ul>
+<h3 id="faq">FAQ</h3>
+<hr />
+<ol>
+<li>为什么python不需要变量名和变量类型声明?<br />
+2.不太了解元组赋值机制呢?<br />
+3.如何修改python命令提示符?</li>
+</ol>
 <h3 id="_33">获取帮助</h3>
 <hr />
 <ol>
@@ -427,6 +440,12 @@
 <li>获得模块文档帮助<br />
 <code>print module.__doc__</code></li>
 <li><a href="../Language/pythonkey.html">关键字帮助</a></li>
+<li>工具<ul>
+<li>Debugger ---&gt;pdb</li>
+<li>logger   ---&gt;logging[five layer log system]</li>
+<li>Profilers---&gt;profile,hotshot,cProfile//性能测试</li>
+</ul>
+</li>
 </ol>
 <h3 id="_34">更新日志</h3>
 <hr />
@@ -466,7 +485,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-20 12:19:55</p>
+        <p>Site Generated 2017-09-21 21:12:39</p>
       </span>
     </div>
 

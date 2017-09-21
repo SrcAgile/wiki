@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>[java纲]Java(三) - Meta's Wiki</title>
+    <title>VIM大法 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,19 +23,19 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;[java纲]Java(三)
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Tool">Tool</a>&nbsp;&#187;&nbsp;VIM大法
     <span class="updated">Page Updated&nbsp;
-      2017-09-02 21:00:00
+      2017-09-20 02:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">[java纲]Java(三)</div>
+<div class="page_title">VIM大法</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
 <blockquote>
-<p>完备的系统在演变中浑然天成,要想在系统中添加新的功能,必须能够忍受带来的递归增长的问题.</p>
+<p>EMACSer们,亮剑吧!</p>
 </blockquote>
 <hr />
 <ul>
@@ -49,20 +49,47 @@
 
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#_1">浮点数存储</a></li>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#_1">问题集</a></li>
+<li><a href="#_2">起源</a><ul>
+<li><a href="#root">root保存权限问题</a></li>
+</ul>
+</li>
 </ul>
 </div>
-<h3 id="_1">浮点数存储</h3>
+<h3 id="intro">Intro</h3>
+<hr />
+<p>宇宙第一不介绍</p>
+<h3 id="_1">问题集</h3>
+<hr />
+<h3 id="_2">起源</h3>
+<p>事情是这样的,那是大一的春天,有一天我打开vim进行保存的时候,呵呵.<br />
+<b style='color:white; background-color:red'>"m" E212: Can't open file for writing</b></p>
+<p>有<del>毛病</del>错误?爸爸来整你!</p>
+<ol>
+<li>开始<code>:help E212</code></li>
+<li>得到答案</li>
+</ol>
+<p style='background-color:black; color:green'>                                                       <b>*E190* *E212*
+  Cannot open "{filename}" for writing
+  Can't open file for writing For some reason the file you are writing to cannot be created or overwritten.
+The reason could be that you do not have permission to write in the directory
+or the file name is not valid.
+</b></p>
+
+<ol>
+<li>搜了得出使用 <code>w !sudo tee %</code>,从此踏上不归路</li>
+</ol>
+<h4 id="root">root保存权限问题</h4>
 <ul>
-<li>JAVA中的浮点数是如何存储的？<br />
-见本站<a href="../编码/进制.html">进制</a>讨论</li>
+<li>1</li>
 </ul>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '[java纲]Java(三)',
+    title: 'VIM大法',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

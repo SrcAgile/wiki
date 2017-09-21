@@ -1,0 +1,606 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>LAB1 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;LAB1
+    <span class="updated">Page Updated&nbsp;
+      2017-09-20 02:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">LAB1</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#lab1-erport">Lab1 erport</a><ul>
+<li><a href="#1">[练习1]</a></li>
+<li><a href="#2">[练习2]</a></li>
+<li><a href="#3">[练习3]</a></li>
+<li><a href="#4">[练习4]</a></li>
+<li><a href="#5">[练习5]</a></li>
+<li><a href="#6">[练习6]</a></li>
+<li><a href="#7">[练习7]</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="lab1-erport">Lab1 erport</h1>
+<h2 id="1">[练习1]</h2>
+<p>[练习1.1] 操作系统镜像文件 ucore.img 是如何一步一步生成的?(需要比较详细地解释 Makefile 中<br />
+每一条相关命令和命令参数的含义,以及说明命令导致的结果)</p>
+<div class="hlcode"><pre><span class="nx">bin</span><span class="p">/</span><span class="nx">ucore.img</span>
+<span class="o">|</span> <span class="err">生成</span><span class="nx">ucore.img</span><span class="err">的相关代码为</span>
+<span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nx">UCOREIMG</span><span class="p">):</span> <span class="err">$</span><span class="p">(</span><span class="nx">kernel</span><span class="p">)</span> <span class="err">$</span><span class="p">(</span><span class="nx">bootblock</span><span class="p">)</span>
+<span class="o">|</span>   <span class="err">$</span><span class="p">(</span><span class="nx">V</span><span class="p">)</span><span class="nx">dd</span> <span class="k">if</span><span class="o">=/</span><span class="nx">dev</span><span class="p">/</span><span class="nx">zero</span> <span class="n">of</span><span class="o">=</span><span class="err">$</span><span class="p">@</span> <span class="n">count</span><span class="o">=</span><span class="mi">10000</span>
+<span class="o">|</span>   <span class="err">$</span><span class="p">(</span><span class="nx">V</span><span class="p">)</span><span class="nx">dd</span> <span class="k">if</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="nx">bootblock</span><span class="p">)</span> <span class="n">of</span><span class="o">=</span><span class="err">$</span><span class="p">@</span> <span class="n">conv</span><span class="o">=</span><span class="nx">notrunc</span>
+<span class="o">|</span>   <span class="err">$</span><span class="p">(</span><span class="nx">V</span><span class="p">)</span><span class="nx">dd</span> <span class="k">if</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="nx">kernel</span><span class="p">)</span> <span class="n">of</span><span class="o">=</span><span class="err">$</span><span class="p">@</span> <span class="n">seek</span><span class="o">=</span><span class="mi">1</span> <span class="n">conv</span><span class="o">=</span><span class="nx">notrunc</span>
+<span class="o">|</span>
+<span class="o">|</span> <span class="err">为了生成</span><span class="nx">ucore.img</span><span class="err">，首先需要生成</span><span class="nx">bootblock</span><span class="err">、</span><span class="nx">kernel</span>
+<span class="o">|</span>
+<span class="o">|&gt;</span>  <span class="nx">bin</span><span class="p">/</span><span class="nx">bootblock</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">生成</span><span class="nx">bootblock</span><span class="err">的相关代码为</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nx">bootblock</span><span class="p">):</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">toobj</span><span class="p">,</span><span class="err">$</span><span class="p">(</span><span class="nx">bootfiles</span><span class="p">))</span> <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">totarget</span><span class="p">,</span><span class="nx">sign</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="p">@</span><span class="nx">echo</span> <span class="o">+</span> <span class="nx">ld</span> <span class="err">$</span><span class="p">@</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="err">$</span><span class="p">(</span><span class="nx">V</span><span class="p">)</span><span class="err">$</span><span class="p">(</span><span class="nx">LD</span><span class="p">)</span> <span class="err">$</span><span class="p">(</span><span class="nx">LDFLAGS</span><span class="p">)</span> <span class="na">-N</span> <span class="na">-e</span> <span class="nb">start</span> <span class="na">-Ttext</span> <span class="mh">0x7C00</span> <span class="err">$</span><span class="p">^</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="na">-o</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">toobj</span><span class="p">,</span><span class="nx">bootblock</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="p">@</span><span class="err">$</span><span class="p">(</span><span class="nx">OBJDUMP</span><span class="p">)</span> <span class="na">-S</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">objfile</span><span class="p">,</span><span class="nx">bootblock</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">asmfile</span><span class="p">,</span><span class="nx">bootblock</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="p">@</span><span class="err">$</span><span class="p">(</span><span class="nx">OBJCOPY</span><span class="p">)</span> <span class="na">-S</span> <span class="na">-O</span> <span class="nx">binary</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">objfile</span><span class="p">,</span><span class="nx">bootblock</span><span class="p">)</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">outfile</span><span class="p">,</span><span class="nx">bootblock</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="p">@</span><span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">totarget</span><span class="p">,</span><span class="nx">sign</span><span class="p">)</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">outfile</span><span class="p">,</span><span class="nx">bootblock</span><span class="p">)</span> <span class="err">$</span><span class="p">(</span><span class="nx">bootblock</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">为了生成</span><span class="nx">bootblock</span><span class="err">，首先需要生成</span><span class="nx">bootasm.o</span><span class="err">、</span><span class="nx">bootmain.o</span><span class="err">、</span><span class="nx">sign</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|&gt;</span>  <span class="nx">obj</span><span class="p">/</span><span class="nx">boot</span><span class="p">/</span><span class="nx">bootasm.o</span><span class="p">,</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">boot</span><span class="p">/</span><span class="nx">bootmain.o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">生成</span><span class="nx">bootasm.o</span><span class="p">,</span><span class="nx">bootmain.o</span><span class="err">的相关</span><span class="nx">makefile</span><span class="err">代码为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="n">bootfiles</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">listf_cc</span><span class="p">,</span><span class="nx">boot</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nb">foreach</span> <span class="nb">f</span><span class="p">,</span><span class="err">$</span><span class="p">(</span><span class="nx">bootfiles</span><span class="p">),</span><span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">cc_compile</span><span class="p">,</span><span class="err">$</span><span class="p">(</span><span class="nb">f</span><span class="p">),</span><span class="err">$</span><span class="p">(</span><span class="nb">CC</span><span class="p">),</span><span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="err">$</span><span class="p">(</span><span class="nx">CFLAGS</span><span class="p">)</span> <span class="na">-Os</span> <span class="na">-nostdinc</span><span class="p">))</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">实际代码由宏批量生成</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">生成</span><span class="nx">bootasm.o</span><span class="err">需要</span><span class="nx">bootasm.S</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">实际命令为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="nx">gcc</span> <span class="na">-Iboot</span><span class="o">/</span> <span class="na">-fno-builtin</span> <span class="na">-Wall</span> <span class="na">-ggdb</span> <span class="na">-m32</span> <span class="na">-gstabs</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-nostdinc</span>  <span class="na">-fno-stack-protector</span> <span class="na">-Ilibs</span><span class="o">/</span> <span class="na">-Os</span> <span class="na">-nostdinc</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-c</span> <span class="nx">boot</span><span class="p">/</span><span class="nx">bootasm.S</span> <span class="na">-o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">boot</span><span class="p">/</span><span class="nx">bootasm.o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">其中关键的参数为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-ggdb</span>  <span class="err">生成可供</span><span class="nx">gdb</span><span class="err">使用的调试信息。这样才能用</span><span class="nx">qemu</span><span class="o">+</span><span class="nx">gdb</span><span class="err">来调试</span><span class="nx">bootloader</span> <span class="ow">or</span> <span class="nx">ucore</span><span class="err">。</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-m32</span>  <span class="err">生成适用于</span><span class="mi">32</span><span class="err">位环境的代码。我们用的模拟硬件是</span><span class="mi">32</span><span class="nx">bit</span><span class="err">的</span><span class="mi">80386</span><span class="err">，所以</span><span class="nx">ucore</span><span class="err">也要是</span><span class="mi">32</span><span class="err">位的软件。</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-gstabs</span>  <span class="err">生成</span><span class="nx">stabs</span><span class="err">格式的调试信息。这样要</span><span class="nx">ucore</span><span class="err">的</span><span class="nx">monitor</span><span class="err">可以显示出便于开发者阅读的函数调用栈信息</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-nostdinc</span>  <span class="err">不使用标准库。标准库是给应用程序用的，我们是编译</span><span class="nx">ucore</span><span class="err">内核，</span><span class="nx">OS</span><span class="err">内核是提供服务的，所以所有的服务要自给自足。</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-fno-stack-protector</span>  <span class="err">不生成用于检测缓冲区溢出的代码。这是</span><span class="nb">for</span> <span class="err">应用程序的，我们是编译内核，</span><span class="nx">ucore</span><span class="err">内核好像还用不到此功能。</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-Os</span>  <span class="err">为减小代码大小而进行优化。根据硬件</span><span class="nx">spec</span><span class="err">，主引导扇区只有</span><span class="mi">512</span><span class="err">字节，我们写的简单</span><span class="nx">bootloader</span><span class="err">的最终大小不能大于</span><span class="mi">510</span><span class="err">字节。</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-I</span><span class="o">&lt;</span><span class="nb">dir</span><span class="o">&gt;</span>  <span class="err">添加搜索头文件的路径</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">生成</span><span class="nx">bootmain.o</span><span class="err">需要</span><span class="nx">bootmain.c</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">实际命令为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="nx">gcc</span> <span class="na">-Iboot</span><span class="o">/</span> <span class="na">-fno-builtin</span> <span class="na">-Wall</span> <span class="na">-ggdb</span> <span class="na">-m32</span> <span class="na">-gstabs</span> <span class="na">-nostdinc</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-fno-stack-protector</span> <span class="na">-Ilibs</span><span class="o">/</span> <span class="na">-Os</span> <span class="na">-nostdinc</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-c</span> <span class="nx">boot</span><span class="p">/</span><span class="nx">bootmain.c</span> <span class="na">-o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">boot</span><span class="p">/</span><span class="nx">bootmain.o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">新出现的关键参数有</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-fno-builtin</span>  <span class="err">除非用</span><span class="nx">__builtin_</span><span class="err">前缀，</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>                 <span class="err">否则不进行</span><span class="nx">builtin</span><span class="err">函数的优化</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|&gt;</span>  <span class="nx">bin</span><span class="p">/</span><span class="nx">sign</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">生成</span><span class="nx">sign</span><span class="err">工具的</span><span class="nx">makefile</span><span class="err">代码为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">add_files_host</span><span class="p">,</span><span class="nx">tools</span><span class="p">/</span><span class="nx">sign.c</span><span class="p">,</span><span class="nx">sign</span><span class="p">,</span><span class="nx">sign</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">create_target_host</span><span class="p">,</span><span class="nx">sign</span><span class="p">,</span><span class="nx">sign</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">实际命令为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="nx">gcc</span> <span class="na">-Itools</span><span class="o">/</span> <span class="na">-g</span> <span class="na">-Wall</span> <span class="na">-O2</span> <span class="na">-c</span> <span class="nx">tools</span><span class="p">/</span><span class="nx">sign.c</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="na">-o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">sign</span><span class="p">/</span><span class="nx">tools</span><span class="p">/</span><span class="nx">sign.o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="nx">gcc</span> <span class="na">-g</span> <span class="na">-Wall</span> <span class="na">-O2</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">sign</span><span class="p">/</span><span class="nx">tools</span><span class="p">/</span><span class="nx">sign.o</span> <span class="na">-o</span> <span class="nx">bin</span><span class="p">/</span><span class="nx">sign</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">首先生成</span><span class="nx">bootblock.o</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="nx">ld</span> <span class="na">-m</span>    <span class="nx">elf_i386</span> <span class="na">-nostdlib</span> <span class="na">-N</span> <span class="na">-e</span> <span class="nb">start</span> <span class="na">-Ttext</span> <span class="mh">0x7C00</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">boot</span><span class="p">/</span><span class="nx">bootasm.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">boot</span><span class="p">/</span><span class="nx">bootmain.o</span> <span class="na">-o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">bootblock.o</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">其中关键的参数为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-m</span> <span class="o">&lt;</span><span class="nx">emulation</span><span class="o">&gt;</span>  <span class="err">模拟为</span><span class="nx">i386</span><span class="err">上的连接器</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-nostdlib</span>  <span class="err">不使用标准库</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-N</span>  <span class="err">设置代码段和数据段均可读写</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-e</span> <span class="o">&lt;</span><span class="nb">entry</span><span class="o">&gt;</span>  <span class="err">指定入口</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-Ttext</span>  <span class="err">制定代码段开始位置</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">拷贝二进制代码</span><span class="nx">bootblock.o</span><span class="err">到</span><span class="nx">bootblock.out</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="nx">objcopy</span> <span class="na">-S</span> <span class="na">-O</span> <span class="nx">binary</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">bootblock.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">bootblock.out</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">其中关键的参数为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-S</span>  <span class="err">移除所有符号和重定位信息</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-O</span> <span class="o">&lt;</span><span class="nx">bfdname</span><span class="o">&gt;</span>  <span class="err">指定输出格式</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">使用</span><span class="nx">sign</span><span class="err">工具处理</span><span class="nx">bootblock.out</span><span class="err">，生成</span><span class="nx">bootblock</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="nx">bin</span><span class="p">/</span><span class="nx">sign</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">bootblock.out</span> <span class="nx">bin</span><span class="p">/</span><span class="nx">bootblock</span>
+<span class="o">|</span>
+<span class="o">|&gt;</span>  <span class="nx">bin</span><span class="p">/</span><span class="nx">kernel</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">生成</span><span class="nx">kernel</span><span class="err">的相关代码为</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nx">kernel</span><span class="p">):</span> <span class="nx">tools</span><span class="p">/</span><span class="nx">kernel.ld</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nx">kernel</span><span class="p">):</span> <span class="err">$</span><span class="p">(</span><span class="nx">KOBJS</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="p">@</span><span class="nx">echo</span> <span class="o">+</span> <span class="nx">ld</span> <span class="err">$</span><span class="p">@</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="err">$</span><span class="p">(</span><span class="nx">V</span><span class="p">)</span><span class="err">$</span><span class="p">(</span><span class="nx">LD</span><span class="p">)</span> <span class="err">$</span><span class="p">(</span><span class="nx">LDFLAGS</span><span class="p">)</span> <span class="na">-T</span> <span class="nx">tools</span><span class="p">/</span><span class="nx">kernel.ld</span> <span class="na">-o</span> <span class="err">$</span><span class="p">@</span> <span class="err">$</span><span class="p">(</span><span class="nx">KOBJS</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="p">@</span><span class="err">$</span><span class="p">(</span><span class="nx">OBJDUMP</span><span class="p">)</span> <span class="na">-S</span> <span class="err">$</span><span class="p">@</span> <span class="o">&gt;</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">asmfile</span><span class="p">,</span><span class="nx">kernel</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="p">@</span><span class="err">$</span><span class="p">(</span><span class="nx">OBJDUMP</span><span class="p">)</span> <span class="na">-t</span> <span class="err">$</span><span class="p">@</span> <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nx">SED</span><span class="p">)</span> <span class="s1">&#39;1,/SYMBOL TABLE/d; s/ .* / /; </span><span class="se">\</span><span class="s1"></span>
+<span class="s1">|   |       /^$$/d&#39;</span> <span class="o">&gt;</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">symfile</span><span class="p">,</span><span class="nx">kernel</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">为了生成</span><span class="nx">kernel</span><span class="err">，首先需要</span> <span class="nx">kernel.ld</span> <span class="nx">init.o</span> <span class="nx">readline.o</span> <span class="nx">stdio.o</span> <span class="nx">kdebug.o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">kmonitor.o</span> <span class="nx">panic.o</span> <span class="nx">clock.o</span> <span class="nx">console.o</span> <span class="nx">intr.o</span> <span class="nx">picirq.o</span> <span class="nx">trap.o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">trapentry.o</span> <span class="nx">vectors.o</span> <span class="nx">pmm.o</span>  <span class="nx">printfmt.o</span> <span class="kt">string</span><span class="bp">.</span><span class="nx">o</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="nx">kernel.ld</span><span class="err">已存在</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|&gt;</span>  <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="o">/*/*</span><span class="bp">.</span><span class="nx">o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">生成这些</span><span class="bp">.</span><span class="nx">o</span><span class="err">文件的相关</span><span class="nx">makefile</span><span class="err">代码为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">add_files_cc</span><span class="p">,</span><span class="err">$</span><span class="p">(</span><span class="nb">call</span> <span class="nx">listf_cc</span><span class="p">,</span><span class="err">$</span><span class="p">(</span><span class="nx">KSRCDIR</span><span class="p">)),</span><span class="nx">kernel</span><span class="p">,</span><span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="err">$</span><span class="p">(</span><span class="nx">KCFLAGS</span><span class="p">))</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">这些</span><span class="bp">.</span><span class="nx">o</span><span class="err">生成方式和参数均类似，仅举</span><span class="nx">init.o</span><span class="err">为例，其余不赘述</span>
+<span class="o">|</span>   <span class="o">|&gt;</span>  <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nb">init</span><span class="p">/</span><span class="nx">init.o</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">编译需要</span><span class="nx">init.c</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> <span class="err">实际命令为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="nx">gcc</span> <span class="na">-Ikern</span><span class="p">/</span><span class="nb">init</span><span class="o">/</span> <span class="na">-fno-builtin</span> <span class="na">-Wall</span> <span class="na">-ggdb</span> <span class="na">-m32</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>       <span class="na">-gstabs</span> <span class="na">-nostdinc</span>  <span class="na">-fno-stack-protector</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>       <span class="na">-Ilibs</span><span class="o">/</span> <span class="na">-Ikern</span><span class="p">/</span><span class="nb">debug</span><span class="o">/</span> <span class="na">-Ikern</span><span class="p">/</span><span class="nx">driver</span><span class="o">/</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>       <span class="na">-Ikern</span><span class="p">/</span><span class="nx">trap</span><span class="o">/</span> <span class="na">-Ikern</span><span class="p">/</span><span class="nx">mm</span><span class="o">/</span> <span class="na">-c</span> <span class="nx">kern</span><span class="p">/</span><span class="nb">init</span><span class="p">/</span><span class="nx">init.c</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>       <span class="na">-o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nb">init</span><span class="p">/</span><span class="nx">init.o</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">生成</span><span class="nx">kernel</span><span class="err">时，</span><span class="nx">makefile</span><span class="err">的几条指令中有</span><span class="p">@</span><span class="err">前缀的都不必需</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">必需的命令只有</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="nx">ld</span> <span class="na">-m</span>    <span class="nx">elf_i386</span> <span class="na">-nostdlib</span> <span class="na">-T</span> <span class="nx">tools</span><span class="p">/</span><span class="nx">kernel.ld</span> <span class="na">-o</span> <span class="nx">bin</span><span class="p">/</span><span class="nx">kernel</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nb">init</span><span class="p">/</span><span class="nx">init.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">libs</span><span class="p">/</span><span class="nx">readline.o</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">libs</span><span class="p">/</span><span class="nx">stdio.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nb">debug</span><span class="p">/</span><span class="nx">kdebug.o</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nb">debug</span><span class="p">/</span><span class="nx">kmonitor.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nb">debug</span><span class="p">/</span><span class="nx">panic.o</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">driver</span><span class="p">/</span><span class="nx">clock.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">driver</span><span class="p">/</span><span class="nx">console.o</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">driver</span><span class="p">/</span><span class="nx">intr.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">driver</span><span class="p">/</span><span class="nx">picirq.o</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">trap</span><span class="p">/</span><span class="nx">trap.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">trap</span><span class="p">/</span><span class="nx">trapentry.o</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">trap</span><span class="p">/</span><span class="nx">vectors.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">kern</span><span class="p">/</span><span class="nx">mm</span><span class="p">/</span><span class="nx">pmm.o</span> <span class="o">\</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="nx">obj</span><span class="p">/</span><span class="nx">libs</span><span class="p">/</span><span class="nx">printfmt.o</span> <span class="nx">obj</span><span class="p">/</span><span class="nx">libs</span><span class="p">/</span><span class="nx">string.o</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="err">其中新出现的关键参数为</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="na">-T</span> <span class="o">&lt;</span><span class="nx">scriptfile</span><span class="o">&gt;</span>  <span class="err">让连接器使用指定的脚本</span>
+<span class="o">|</span>
+<span class="o">|</span> <span class="err">生成一个有</span><span class="mi">10000</span><span class="err">个块的文件，每个块默认</span><span class="mi">512</span><span class="err">字节，用</span><span class="mi">0</span><span class="err">填充</span>
+<span class="o">|</span> <span class="nx">dd</span> <span class="k">if</span><span class="o">=/</span><span class="nx">dev</span><span class="p">/</span><span class="nx">zero</span> <span class="n">of</span><span class="o">=</span><span class="nx">bin</span><span class="p">/</span><span class="nx">ucore.img</span> <span class="n">count</span><span class="o">=</span><span class="mi">10000</span>
+<span class="o">|</span>
+<span class="o">|</span> <span class="err">把</span><span class="nx">bootblock</span><span class="err">中的内容写到第一个块</span>
+<span class="o">|</span> <span class="nx">dd</span> <span class="k">if</span><span class="o">=</span><span class="nx">bin</span><span class="p">/</span><span class="nx">bootblock</span> <span class="n">of</span><span class="o">=</span><span class="nx">bin</span><span class="p">/</span><span class="nx">ucore.img</span> <span class="n">conv</span><span class="o">=</span><span class="nx">notrunc</span>
+<span class="o">|</span>
+<span class="o">|</span> <span class="err">从第二个块开始写</span><span class="nx">kernel</span><span class="err">中的内容</span>
+<span class="o">|</span> <span class="nx">dd</span> <span class="k">if</span><span class="o">=</span><span class="nx">bin</span><span class="p">/</span><span class="nx">kernel</span> <span class="n">of</span><span class="o">=</span><span class="nx">bin</span><span class="p">/</span><span class="nx">ucore.img</span> <span class="n">seek</span><span class="o">=</span><span class="mi">1</span> <span class="n">conv</span><span class="o">=</span><span class="nx">notrunc</span>
+</pre></div>
+
+
+<p>[练习1.2] 一个被系统认为是符合规范的硬盘主引导扇区的特征是什么?</p>
+<p>从sign.c的代码来看，一个磁盘主引导扇区只有512字节。且<br />
+第510个（倒数第二个）字节是0x55，<br />
+第511个（倒数第一个）字节是0xAA。</p>
+<h2 id="2">[练习2]</h2>
+<p>[练习2.1] 从 CPU 加电后执行的第一条指令开始,单步跟踪 BIOS 的执行。</p>
+<p>练习2可以单步跟踪，方法如下：</p>
+<p>1 修改 lab1/tools/gdbinit,内容为:</p>
+<div class="hlcode"><pre><span class="n">set</span> <span class="n">architecture</span> <span class="n">i8086</span>
+<span class="n">target</span> <span class="n">remote</span> <span class="o">:</span><span class="mi">1234</span>
+</pre></div>
+
+
+<p>2 在 lab1目录下，执行</p>
+<div class="hlcode"><pre><span class="n">make</span> <span class="n">debug</span>
+</pre></div>
+
+
+<p>3 在看到gdb的调试界面(gdb)后，在gdb调试界面下执行如下命令</p>
+<div class="hlcode"><pre><span class="n">si</span>
+</pre></div>
+
+
+<p>即可单步跟踪BIOS了。</p>
+<p>4 在gdb界面下，可通过如下命令来看BIOS的代码</p>
+<div class="hlcode"><pre> <span class="n">x</span> <span class="o">/</span><span class="mi">2</span><span class="n">i</span> <span class="err">$</span><span class="n">pc</span>  <span class="c1">//显示当前eip处的汇编指令</span>
+</pre></div>
+
+
+<blockquote>
+<p>[进一步的补充]</p>
+</blockquote>
+<div class="hlcode"><pre><span class="err">改写</span><span class="n">Makefile</span><span class="err">文件</span>
+    <span class="nl">debug:</span> <span class="err">$</span><span class="p">(</span><span class="n">UCOREIMG</span><span class="p">)</span>
+        <span class="err">$</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="err">$</span><span class="p">(</span><span class="n">TERMINAL</span><span class="p">)</span> <span class="o">-</span><span class="n">e</span> <span class="s">&quot;$(QEMU) -S -s -d in_asm -D $(BINDIR)/q.log -parallel stdio -hda $&lt; -serial null&quot;</span>
+        <span class="err">$</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="n">sleep</span> <span class="mi">2</span>
+        <span class="err">$</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="err">$</span><span class="p">(</span><span class="n">TERMINAL</span><span class="p">)</span> <span class="o">-</span><span class="n">e</span> <span class="s">&quot;gdb -q -tui -x tools/gdbinit&quot;</span>
+</pre></div>
+
+
+<p>在调用qemu时增加<code>-d in_asm -D q.log</code>参数，便可以将运行的汇编指令保存在q.log中。<br />
+为防止qemu在gdb连接后立即开始执行，删除了<code>tools/gdbinit</code>中的<code>continue</code>行。</p>
+<p>[练习2.2] 在初始化位置0x7c00 设置实地址断点,测试断点正常。</p>
+<p>在tools/gdbinit结尾加上</p>
+<div class="hlcode"><pre>    <span class="n">set</span> <span class="n">architecture</span> <span class="n">i8086</span>  <span class="c1">//设置当前调试的CPU是8086</span>
+    <span class="n">b</span> <span class="o">*</span><span class="mh">0x7c00</span>  <span class="c1">//在0x7c00处设置断点。此地址是bootloader入口点地址，可看boot/bootasm.S的start地址处</span>
+    <span class="n">c</span>          <span class="c1">//continue简称，表示继续执行</span>
+    <span class="n">x</span> <span class="o">/</span><span class="mi">2</span><span class="n">i</span> <span class="err">$</span><span class="n">pc</span>  <span class="c1">//显示当前eip处的汇编指令</span>
+    <span class="n">set</span> <span class="n">architecture</span> <span class="n">i386</span>  <span class="c1">//设置当前调试的CPU是80386</span>
+</pre></div>
+
+
+<p>运行"make debug"便可得到</p>
+<div class="hlcode"><pre>    <span class="n">Breakpoint</span> <span class="mi">2</span><span class="p">,</span> <span class="mh">0x00007c00</span> <span class="n">in</span> <span class="o">??</span> <span class="p">()</span>
+    <span class="o">=&gt;</span> <span class="mh">0x7c00</span><span class="o">:</span>      <span class="n">cli</span>    
+       <span class="mh">0x7c01</span><span class="o">:</span>      <span class="n">cld</span>    
+       <span class="mh">0x7c02</span><span class="o">:</span>      <span class="n">xor</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+       <span class="mh">0x7c04</span><span class="o">:</span>      <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">ds</span>
+       <span class="mh">0x7c06</span><span class="o">:</span>      <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">es</span>
+       <span class="mh">0x7c08</span><span class="o">:</span>      <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">ss</span>
+       <span class="mh">0x7c0a</span><span class="o">:</span>      <span class="n">in</span>     <span class="err">$</span><span class="mh">0x64</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+       <span class="mh">0x7c0c</span><span class="o">:</span>      <span class="n">test</span>   <span class="err">$</span><span class="mh">0x2</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+       <span class="mh">0x7c0e</span><span class="o">:</span>      <span class="n">jne</span>    <span class="mh">0x7c0a</span>
+       <span class="mh">0x7c10</span><span class="o">:</span>      <span class="n">mov</span>    <span class="err">$</span><span class="mh">0xd1</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+</pre></div>
+
+
+<p>[练习2.3] 在调用qemu 时增加-d in_asm -D q.log 参数，便可以将运行的汇编指令保存在q.log 中。<br />
+将执行的汇编代码与bootasm.S 和 bootblock.asm 进行比较，看看二者是否一致。</p>
+<p>在tools/gdbinit结尾加上</p>
+<div class="hlcode"><pre>    <span class="n">b</span> <span class="o">*</span><span class="mh">0x7c00</span>
+    <span class="n">c</span>
+    <span class="n">x</span> <span class="o">/</span><span class="mi">10</span><span class="n">i</span> <span class="err">$</span><span class="n">pc</span>
+</pre></div>
+
+
+<p>便可以在q.log中读到"call bootmain"前执行的命令</p>
+<div class="hlcode"><pre>    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c00</span><span class="o">:</span>  <span class="n">cli</span>    
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c01</span><span class="o">:</span>  <span class="n">cld</span>    
+    <span class="mh">0x00007c02</span><span class="o">:</span>  <span class="n">xor</span>    <span class="o">%</span><span class="n">ax</span><span class="p">,</span><span class="o">%</span><span class="n">ax</span>
+    <span class="mh">0x00007c04</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">ax</span><span class="p">,</span><span class="o">%</span><span class="n">ds</span>
+    <span class="mh">0x00007c06</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">ax</span><span class="p">,</span><span class="o">%</span><span class="n">es</span>
+    <span class="mh">0x00007c08</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">ax</span><span class="p">,</span><span class="o">%</span><span class="n">ss</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c0a</span><span class="o">:</span>  <span class="n">in</span>     <span class="err">$</span><span class="mh">0x64</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c0c</span><span class="o">:</span>  <span class="n">test</span>   <span class="err">$</span><span class="mh">0x2</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+    <span class="mh">0x00007c0e</span><span class="o">:</span>  <span class="n">jne</span>    <span class="mh">0x7c0a</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c10</span><span class="o">:</span>  <span class="n">mov</span>    <span class="err">$</span><span class="mh">0xd1</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+    <span class="mh">0x00007c12</span><span class="o">:</span>  <span class="n">out</span>    <span class="o">%</span><span class="n">al</span><span class="p">,</span><span class="err">$</span><span class="mh">0x64</span>
+    <span class="mh">0x00007c14</span><span class="o">:</span>  <span class="n">in</span>     <span class="err">$</span><span class="mh">0x64</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+    <span class="mh">0x00007c16</span><span class="o">:</span>  <span class="n">test</span>   <span class="err">$</span><span class="mh">0x2</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+    <span class="mh">0x00007c18</span><span class="o">:</span>  <span class="n">jne</span>    <span class="mh">0x7c14</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c1a</span><span class="o">:</span>  <span class="n">mov</span>    <span class="err">$</span><span class="mh">0xdf</span><span class="p">,</span><span class="o">%</span><span class="n">al</span>
+    <span class="mh">0x00007c1c</span><span class="o">:</span>  <span class="n">out</span>    <span class="o">%</span><span class="n">al</span><span class="p">,</span><span class="err">$</span><span class="mh">0x60</span>
+    <span class="mh">0x00007c1e</span><span class="o">:</span>  <span class="n">lgdtw</span>  <span class="mh">0x7c6c</span>
+    <span class="mh">0x00007c23</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">cr0</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+    <span class="mh">0x00007c26</span><span class="o">:</span>  <span class="n">or</span>     <span class="err">$</span><span class="mh">0x1</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+    <span class="mh">0x00007c2a</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">cr0</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c2d</span><span class="o">:</span>  <span class="n">ljmp</span>   <span class="err">$</span><span class="mh">0x8</span><span class="p">,</span><span class="err">$</span><span class="mh">0x7c32</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c32</span><span class="o">:</span>  <span class="n">mov</span>    <span class="err">$</span><span class="mh">0x10</span><span class="p">,</span><span class="o">%</span><span class="n">ax</span>
+    <span class="mh">0x00007c36</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">ds</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c38</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">es</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c3a</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">fs</span>
+    <span class="mh">0x00007c3c</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">gs</span>
+    <span class="mh">0x00007c3e</span><span class="o">:</span>  <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="o">%</span><span class="n">ss</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c40</span><span class="o">:</span>  <span class="n">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="n">ebp</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007c45</span><span class="o">:</span>  <span class="n">mov</span>    <span class="err">$</span><span class="mh">0x7c00</span><span class="p">,</span><span class="o">%</span><span class="n">esp</span>
+    <span class="mh">0x00007c4a</span><span class="o">:</span>  <span class="n">call</span>   <span class="mh">0x7d0d</span>
+
+    <span class="o">----------------</span>
+    <span class="nl">IN:</span>
+    <span class="mh">0x00007d0d</span><span class="o">:</span>  <span class="n">push</span>   <span class="o">%</span><span class="n">ebp</span>
+</pre></div>
+
+
+<p>其与bootasm.S和bootblock.asm中的代码相同。</p>
+<h2 id="3">[练习3]</h2>
+<p>分析bootloader 进入保护模式的过程。</p>
+<p>从<code>%cs=0 $pc=0x7c00</code>，进入后</p>
+<p>首先清理环境：包括将flag置0和将段寄存器置0</p>
+<div class="hlcode"><pre>    <span class="p">.</span><span class="n">code16</span>
+        <span class="n">cli</span>
+        <span class="n">cld</span>
+        <span class="n">xorw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">ax</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">ds</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">es</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">ss</span>
+</pre></div>
+
+
+<p>开启A20：通过将键盘控制器上的A20线置于高电位，全部32条地址线可用，<br />
+可以访问4G的内存空间。</p>
+<div class="hlcode"><pre>    <span class="n">seta20</span><span class="mf">.1</span><span class="o">:</span>               <span class="err">#</span> <span class="err">等待</span><span class="mi">8042</span><span class="err">键盘控制器不忙</span>
+        <span class="n">inb</span> <span class="err">$</span><span class="mh">0x64</span><span class="p">,</span> <span class="o">%</span><span class="n">al</span>      <span class="err">#</span>
+        <span class="n">testb</span> <span class="err">$</span><span class="mh">0x2</span><span class="p">,</span> <span class="o">%</span><span class="n">al</span>     <span class="err">#</span>
+        <span class="n">jnz</span> <span class="n">seta20</span><span class="mf">.1</span>        <span class="err">#</span>
+
+        <span class="n">movb</span> <span class="err">$</span><span class="mh">0xd1</span><span class="p">,</span> <span class="o">%</span><span class="n">al</span>     <span class="err">#</span> <span class="err">发送写</span><span class="mi">8042</span><span class="err">输出端口的指令</span>
+        <span class="n">outb</span> <span class="o">%</span><span class="n">al</span><span class="p">,</span> <span class="err">$</span><span class="mh">0x64</span>     <span class="err">#</span>
+
+    <span class="n">seta20</span><span class="mf">.1</span><span class="o">:</span>               <span class="err">#</span> <span class="err">等待</span><span class="mi">8042</span><span class="err">键盘控制器不忙</span>
+        <span class="n">inb</span> <span class="err">$</span><span class="mh">0x64</span><span class="p">,</span> <span class="o">%</span><span class="n">al</span>      <span class="err">#</span>
+        <span class="n">testb</span> <span class="err">$</span><span class="mh">0x2</span><span class="p">,</span> <span class="o">%</span><span class="n">al</span>     <span class="err">#</span>
+        <span class="n">jnz</span> <span class="n">seta20</span><span class="mf">.1</span>        <span class="err">#</span>
+
+        <span class="n">movb</span> <span class="err">$</span><span class="mh">0xdf</span><span class="p">,</span> <span class="o">%</span><span class="n">al</span>     <span class="err">#</span> <span class="err">打开</span><span class="n">A20</span>
+        <span class="n">outb</span> <span class="o">%</span><span class="n">al</span><span class="p">,</span> <span class="err">$</span><span class="mh">0x60</span>     <span class="err">#</span>
+</pre></div>
+
+
+<p>初始化GDT表：一个简单的GDT表和其描述符已经静态储存在引导区中，载入即可</p>
+<div class="hlcode"><pre>        <span class="n">lgdt</span> <span class="n">gdtdesc</span>
+</pre></div>
+
+
+<p>进入保护模式：通过将cr0寄存器PE位置1便开启了保护模式</p>
+<div class="hlcode"><pre>        <span class="n">movl</span> <span class="o">%</span><span class="n">cr0</span><span class="p">,</span> <span class="o">%</span><span class="n">eax</span>
+        <span class="n">orl</span> <span class="err">$</span><span class="n">CR0_PE_ON</span><span class="p">,</span> <span class="o">%</span><span class="n">eax</span>
+        <span class="n">movl</span> <span class="o">%</span><span class="n">eax</span><span class="p">,</span> <span class="o">%</span><span class="n">cr0</span>
+</pre></div>
+
+
+<p>通过长跳转更新cs的基地址</p>
+<div class="hlcode"><pre>     <span class="n">ljmp</span> <span class="err">$</span><span class="n">PROT_MODE_CSEG</span><span class="p">,</span> <span class="err">$</span><span class="n">protcseg</span>
+    <span class="p">.</span><span class="n">code32</span>
+    <span class="nl">protcseg:</span>
+</pre></div>
+
+
+<p>设置段寄存器，并建立堆栈</p>
+<div class="hlcode"><pre>        <span class="n">movw</span> <span class="err">$</span><span class="n">PROT_MODE_DSEG</span><span class="p">,</span> <span class="o">%</span><span class="n">ax</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">ds</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">es</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">fs</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">gs</span>
+        <span class="n">movw</span> <span class="o">%</span><span class="n">ax</span><span class="p">,</span> <span class="o">%</span><span class="n">ss</span>
+        <span class="n">movl</span> <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span> <span class="o">%</span><span class="n">ebp</span>
+        <span class="n">movl</span> <span class="err">$</span><span class="n">start</span><span class="p">,</span> <span class="o">%</span><span class="n">esp</span>
+</pre></div>
+
+
+<p>转到保护模式完成，进入boot主方法</p>
+<div class="hlcode"><pre>        <span class="n">call</span> <span class="n">bootmain</span>
+</pre></div>
+
+
+<h2 id="4">[练习4]</h2>
+<p>分析bootloader加载ELF格式的OS的过程。</p>
+<p>首先看readsect函数，<br />
+<code>readsect</code>从设备的第secno扇区读取数据到dst位置</p>
+<div class="hlcode"><pre>    <span class="k">static</span> <span class="kt">void</span>
+    <span class="nf">readsect</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">dst</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">secno</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">waitdisk</span><span class="p">();</span>
+
+        <span class="n">outb</span><span class="p">(</span><span class="mh">0x1F2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>                         <span class="c1">// 设置读取扇区的数目为1</span>
+        <span class="n">outb</span><span class="p">(</span><span class="mh">0x1F3</span><span class="p">,</span> <span class="n">secno</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">);</span>
+        <span class="n">outb</span><span class="p">(</span><span class="mh">0x1F4</span><span class="p">,</span> <span class="p">(</span><span class="n">secno</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">);</span>
+        <span class="n">outb</span><span class="p">(</span><span class="mh">0x1F5</span><span class="p">,</span> <span class="p">(</span><span class="n">secno</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">);</span>
+        <span class="n">outb</span><span class="p">(</span><span class="mh">0x1F6</span><span class="p">,</span> <span class="p">((</span><span class="n">secno</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xF</span><span class="p">)</span> <span class="o">|</span> <span class="mh">0xE0</span><span class="p">);</span>
+            <span class="c1">// 上面四条指令联合制定了扇区号</span>
+            <span class="c1">// 在这4个字节线联合构成的32位参数中</span>
+            <span class="c1">//   29-31位强制设为1</span>
+            <span class="c1">//   28位(=0)表示访问&quot;Disk 0&quot;</span>
+            <span class="c1">//   0-27位是28位的偏移量</span>
+        <span class="n">outb</span><span class="p">(</span><span class="mh">0x1F7</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">);</span>                      <span class="c1">// 0x20命令，读取扇区</span>
+
+        <span class="n">waitdisk</span><span class="p">();</span>
+
+        <span class="n">insl</span><span class="p">(</span><span class="mh">0x1F0</span><span class="p">,</span> <span class="n">dst</span><span class="p">,</span> <span class="n">SECTSIZE</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>         <span class="c1">// 读取到dst位置，</span>
+                                                <span class="c1">// 幻数4因为这里以DW为单位</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>readseg简单包装了readsect，可以从设备读取任意长度的内容。</p>
+<div class="hlcode"><pre>    <span class="k">static</span> <span class="kt">void</span>
+    <span class="nf">readseg</span><span class="p">(</span><span class="kt">uintptr_t</span> <span class="n">va</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">uintptr_t</span> <span class="n">end_va</span> <span class="o">=</span> <span class="n">va</span> <span class="o">+</span> <span class="n">count</span><span class="p">;</span>
+
+        <span class="n">va</span> <span class="o">-=</span> <span class="n">offset</span> <span class="o">%</span> <span class="n">SECTSIZE</span><span class="p">;</span>
+
+        <span class="kt">uint32_t</span> <span class="n">secno</span> <span class="o">=</span> <span class="p">(</span><span class="n">offset</span> <span class="o">/</span> <span class="n">SECTSIZE</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="c1">// 加1因为0扇区被引导占用</span>
+        <span class="c1">// ELF文件从1扇区开始</span>
+
+        <span class="k">for</span> <span class="p">(;</span> <span class="n">va</span> <span class="o">&lt;</span> <span class="n">end_va</span><span class="p">;</span> <span class="n">va</span> <span class="o">+=</span> <span class="n">SECTSIZE</span><span class="p">,</span> <span class="n">secno</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">readsect</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">va</span><span class="p">,</span> <span class="n">secno</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>在bootmain函数中，</p>
+<div class="hlcode"><pre>    <span class="kt">void</span>
+    <span class="nf">bootmain</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 首先读取ELF的头部</span>
+        <span class="n">readseg</span><span class="p">((</span><span class="kt">uintptr_t</span><span class="p">)</span><span class="n">ELFHDR</span><span class="p">,</span> <span class="n">SECTSIZE</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">// 通过储存在头部的幻数判断是否是合法的ELF文件</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ELFHDR</span><span class="o">-&gt;</span><span class="n">e_magic</span> <span class="o">!=</span> <span class="n">ELF_MAGIC</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">goto</span> <span class="n">bad</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">struct</span> <span class="n">proghdr</span> <span class="o">*</span><span class="n">ph</span><span class="p">,</span> <span class="o">*</span><span class="n">eph</span><span class="p">;</span>
+
+        <span class="c1">// ELF头部有描述ELF文件应加载到内存什么位置的描述表，</span>
+        <span class="c1">// 先将描述表的头地址存在ph</span>
+        <span class="n">ph</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">proghdr</span> <span class="o">*</span><span class="p">)((</span><span class="kt">uintptr_t</span><span class="p">)</span><span class="n">ELFHDR</span> <span class="o">+</span> <span class="n">ELFHDR</span><span class="o">-&gt;</span><span class="n">e_phoff</span><span class="p">);</span>
+        <span class="n">eph</span> <span class="o">=</span> <span class="n">ph</span> <span class="o">+</span> <span class="n">ELFHDR</span><span class="o">-&gt;</span><span class="n">e_phnum</span><span class="p">;</span>
+
+        <span class="c1">// 按照描述表将ELF文件中数据载入内存</span>
+        <span class="k">for</span> <span class="p">(;</span> <span class="n">ph</span> <span class="o">&lt;</span> <span class="n">eph</span><span class="p">;</span> <span class="n">ph</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">readseg</span><span class="p">(</span><span class="n">ph</span><span class="o">-&gt;</span><span class="n">p_va</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFF</span><span class="p">,</span> <span class="n">ph</span><span class="o">-&gt;</span><span class="n">p_memsz</span><span class="p">,</span> <span class="n">ph</span><span class="o">-&gt;</span><span class="n">p_offset</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// ELF文件0x1000位置后面的0xd1ec比特被载入内存0x00100000</span>
+        <span class="c1">// ELF文件0xf000位置后面的0x1d20比特被载入内存0x0010e000</span>
+
+        <span class="c1">// 根据ELF头部储存的入口信息，找到内核的入口</span>
+        <span class="p">((</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">void</span><span class="p">))(</span><span class="n">ELFHDR</span><span class="o">-&gt;</span><span class="n">e_entry</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFF</span><span class="p">))();</span>
+
+    <span class="nl">bad:</span>
+        <span class="n">outw</span><span class="p">(</span><span class="mh">0x8A00</span><span class="p">,</span> <span class="mh">0x8A00</span><span class="p">);</span>
+        <span class="n">outw</span><span class="p">(</span><span class="mh">0x8A00</span><span class="p">,</span> <span class="mh">0x8E00</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h2 id="5">[练习5]</h2>
+<p>实现函数调用堆栈跟踪函数</p>
+<p>ss:ebp指向的堆栈位置储存着caller的ebp，以此为线索可以得到所有使用堆栈的函数ebp。<br />
+ss:ebp+4指向caller调用时的eip，ss:ebp+8等是（可能的）参数。</p>
+<p>输出中，堆栈最深一层为</p>
+<div class="hlcode"><pre>    <span class="nx">ebp</span><span class="p">:</span><span class="mh">0x00007bf8</span> <span class="nx">eip</span><span class="p">:</span><span class="mh">0x00007d68</span> <span class="o">\</span>
+        <span class="nx">args</span><span class="p">:</span><span class="mh">0x00000000</span> <span class="mh">0x00000000</span> <span class="mh">0x00000000</span> <span class="mh">0x00007c4f</span>
+        <span class="o">&lt;</span><span class="nx">unknow</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">--</span> <span class="mh">0x00007d67</span> <span class="o">--</span>
+</pre></div>
+
+
+<p>其对应的是第一个使用堆栈的函数，bootmain.c中的bootmain。<br />
+bootloader设置的堆栈从0x7c00开始，使用"call bootmain"转入bootmain函数。<br />
+call指令压栈，所以bootmain中ebp为0x7bf8。</p>
+<h2 id="6">[练习6]</h2>
+<p>完善中断初始化和处理</p>
+<p>[练习6.1] 中断向量表中一个表项占多少字节？其中哪几位代表中断处理代码的入口？</p>
+<p>中断向量表一个表项占用8字节，其中2-3字节是段选择子，0-1字节和6-7字节拼成位移，<br />
+两者联合便是中断处理程序的入口地址。</p>
+<p>[练习6.2] 请编程完善kern/trap/trap.c中对中断向量表进行初始化的函数idt_init。</p>
+<p>见代码</p>
+<p>[练习6.3] 请编程完善trap.c中的中断处理函数trap，在对时钟中断进行处理的部分填写trap函数</p>
+<p>见代码</p>
+<h2 id="7">[练习7]</h2>
+<p>增加syscall功能，即增加一用户态函数（可执行一特定系统调用：获得时钟计数值），<br />
+当内核初始完毕后，可从内核态返回到用户态的函数，而用户态的函数又通过系统调用得到内核态的服务</p>
+<p>在idt_init中，将用户态调用SWITCH_TOK中断的权限打开。<br />
+    SETGATE(idt[T_SWITCH_TOK], 1, KERNEL_CS, __vectors[T_SWITCH_TOK], 3);</p>
+<p>在trap_dispatch中，将iret时会从堆栈弹出的段寄存器进行修改<br />
+    对TO User</p>
+<div class="hlcode"><pre>        <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_cs</span> <span class="o">=</span> <span class="n">USER_CS</span><span class="p">;</span>
+        <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_ds</span> <span class="o">=</span> <span class="n">USER_DS</span><span class="p">;</span>
+        <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_es</span> <span class="o">=</span> <span class="n">USER_DS</span><span class="p">;</span>
+        <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_ss</span> <span class="o">=</span> <span class="n">USER_DS</span><span class="p">;</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="err">对</span><span class="n">TO</span> <span class="n">Kernel</span>
+</pre></div>
+
+
+<div class="hlcode"><pre>        <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_cs</span> <span class="o">=</span> <span class="n">KERNEL_CS</span><span class="p">;</span>
+        <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_ds</span> <span class="o">=</span> <span class="n">KERNEL_DS</span><span class="p">;</span>
+        <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_es</span> <span class="o">=</span> <span class="n">KERNEL_DS</span><span class="p">;</span>
+</pre></div>
+
+
+<p>在lab1_switch_to_user中，调用T_SWITCH_TOU中断。<br />
+注意从中断返回时，会多pop两位，并用这两位的值更新ss,sp，损坏堆栈。<br />
+所以要先把栈压两位，并在从中断返回后修复esp。</p>
+<div class="hlcode"><pre>    <span class="n">asm</span> <span class="nf">volatile</span> <span class="p">(</span>
+        <span class="s">&quot;sub $0x8, %%esp </span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="s">&quot;int %0 </span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="s">&quot;movl %%ebp, %%esp&quot;</span>
+        <span class="o">:</span>
+        <span class="o">:</span> <span class="s">&quot;i&quot;</span><span class="p">(</span><span class="n">T_SWITCH_TOU</span><span class="p">)</span>
+    <span class="p">);</span>
+</pre></div>
+
+
+<p>在lab1_switch_to_kernel中，调用T_SWITCH_TOK中断。<br />
+注意从中断返回时，esp仍在TSS指示的堆栈中。所以要在从中断返回后修复esp。</p>
+<div class="hlcode"><pre>    <span class="n">asm</span> <span class="nf">volatile</span> <span class="p">(</span>
+        <span class="s">&quot;int %0 </span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="s">&quot;movl %%ebp, %%esp </span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="o">:</span>
+        <span class="o">:</span> <span class="s">&quot;i&quot;</span><span class="p">(</span><span class="n">T_SWITCH_TOK</span><span class="p">)</span>
+    <span class="p">);</span>
+</pre></div>
+
+
+<p>但这样不能正常输出文本。根据提示，在trap_dispatch中转User态时，将调用io所需权限降低。</p>
+<div class="hlcode"><pre>    <span class="n">tf</span><span class="o">-&gt;</span><span class="n">tf_eflags</span> <span class="o">|=</span> <span class="mh">0x3000</span><span class="p">;</span>
+</pre></div>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'LAB1',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-21 21:12:39</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
