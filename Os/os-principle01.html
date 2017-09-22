@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>寻址方式 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;寻址方式
+    <span class="updated">Page Updated&nbsp;
+      2017-09-22 09:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">寻址方式</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=286999&auto=0&height=66"></iframe></li>
+</ul>
+<hr />
+<blockquote>
+<p>寻址的意义重大</p>
+</blockquote>
+<hr />
+<p><b style="color:red"></b></p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">寻址方式</a><ul>
+<li><a href="#8086">8086</a><ul>
+<li><a href="#_2">分类方式</a></li>
+<li><a href="#_3">立即寻址</a><ul>
+<li><a href="#ex">EX</a></li>
+<li><a href="#_4">设计角度</a></li>
+</ul>
+</li>
+<li><a href="#_5">寄存器寻址</a><ul>
+<li><a href="#ex_1">EX</a></li>
+<li><a href="#_6">设计角度</a></li>
+<li><a href="#_7">疑问</a></li>
+</ul>
+</li>
+<li><a href="#_8">直接寻址</a><ul>
+<li><a href="#ex_2">EX</a></li>
+<li><a href="#_9">设计角度</a></li>
+<li><a href="#_10">说明</a></li>
+<li><a href="#_11">疑问</a></li>
+</ul>
+</li>
+<li><a href="#_12">寄存器间接寻址</a><ul>
+<li><a href="#ex_3">EX</a></li>
+<li><a href="#_13">说明</a></li>
+<li><a href="#_14">设计角度</a></li>
+</ul>
+</li>
+<li><a href="#_15">变址寻址</a><ul>
+<li><a href="#ex_4">EX</a></li>
+<li><a href="#_16">说明</a></li>
+<li><a href="#_17">设计角度</a></li>
+</ul>
+</li>
+<li><a href="#_18">基址寻址</a><ul>
+<li><a href="#ex_5">EX</a></li>
+<li><a href="#_19">说明</a></li>
+<li><a href="#_20">设计角度</a></li>
+</ul>
+</li>
+<li><a href="#_21">基址+变址寻址</a><ul>
+<li><a href="#ex_6">EX</a></li>
+<li><a href="#_22">说明</a></li>
+<li><a href="#_23">设计角度</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="_1">寻址方式</h1>
+<blockquote>
+<p>通常是指cpu指令中规定的寻找&lt;操作数&gt;所在地址的方式.</p>
+</blockquote>
+<h2 id="8086">8086</h2>
+<hr />
+<h3 id="_2">分类方式</h3>
+<hr />
+<ul>
+<li>按照用什么载体去寻址划分[寄存器|内存|直接数]</li>
+<li>按照寻操作数种类划分[寄存器|内存|直接数]</li>
+<li>书上写过寻址方式扩大寻址空间这种事情,感觉说起来好别扭,寻址空间能有多大,不是地址线的数量决定的吗?难道不应该说增强了寻址的层次性.</li>
+<li>上面的三点谈论存在<b style='color:red'>issue</b>,所以只能作为参考依据</li>
+</ul>
+<hr />
+<h3 id="_3">立即寻址</h3>
+<hr />
+<h4 id="ex">EX</h4>
+<div class="hlcode"><pre><span class="nl">EX:</span>
+  <span class="n">MOV</span> <span class="n">CL</span><span class="p">,</span> <span class="mo">05</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="mi">3100</span><span class="n">H</span>
+</pre></div>
+
+
+<p>由上可以看出,操作数直接在指令中,直接取出来了</p>
+<h4 id="_4">设计角度</h4>
+<ul>
+<li>好处<br />
+<code>[1]. 因为操作数在指令中,访存次数为1[取指令的时候,也可以认为在取指完访存为0],速度很快</code><br />
+<code>[2]. 书写很方便,一目了然</code></li>
+<li>
+<p>坏处<br />
+<code>[1]. 硬编码,不利于工程使用</code><br />
+<code>[2]. 好像有字节限制[待修改...]</code></p>
+</li>
+<li>
+<p>主要应用<br />
+<code>[1]. 寄存器赋初值</code><br />
+<code>[2]. 存储单元赋初值</code></p>
+</li>
+<li>注意事项<br />
+<code>暂无</code></li>
+</ul>
+<hr />
+<h3 id="_5">寄存器寻址</h3>
+<hr />
+<h4 id="ex_1">EX</h4>
+<div class="hlcode"><pre><span class="nl">EX:</span>
+  <span class="n">MOV</span> <span class="n">SS</span><span class="p">,</span> <span class="n">AX</span>
+</pre></div>
+
+
+<p>指定某些cpu寄存器存放操作数.<br />
+这些寄存器可能为:<br />
+1. 通用数据寄存器(8/16bit)<br />
+2. [地址指针/变址]寄存器<br />
+3. 段寄存器</p>
+<h4 id="_6">设计角度</h4>
+<ul>
+<li>好处<br />
+<code>[1]. 速度快</code><br />
+<code>[2]. /*暂停*/</code></li>
+<li>
+<p>坏处<br />
+<code>[1]. 存储值大小问题</code><br />
+<code>[2]. 不能实现内存读取数据</code></p>
+</li>
+<li>
+<p>特点<br />
+<code>[1]. cpu内部执行,不占用总线周期</code><br />
+<code>[2]. 不用访问内存,</code></p>
+</li>
+</ul>
+<h4 id="_7">疑问</h4>
+<ul>
+<li>段寄存器能用来寄存器寻址?</li>
+</ul>
+<hr />
+<h3 id="_8">直接寻址</h3>
+<hr />
+<h4 id="ex_2">EX</h4>
+<div class="hlcode"><pre><span class="nl">EX:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="p">[</span><span class="mi">3100</span><span class="n">H</span><span class="p">]</span><span class="err">#最好写够</span><span class="mi">16</span><span class="n">bit</span>
+
+<span class="err">等价于</span><span class="o">:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="n">DS</span><span class="o">:</span><span class="p">[</span><span class="mi">3100</span><span class="n">H</span><span class="p">]</span>
+<span class="err">计算</span><span class="o">:</span>
+  <span class="p">(</span><span class="n">DS</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="n">H</span><span class="o">+</span><span class="mi">3100</span><span class="n">H</span><span class="o">--&gt;</span><span class="n">AX</span>
+</pre></div>
+
+
+<h4 id="_9">设计角度</h4>
+<ul>
+<li>好处<br />
+<code>[1]. 不知道实现了内存寻址的功能算不算</code></li>
+<li>
+<p>坏处<br />
+<code>[1]. 寻址范围受限于[]内长度,因为(DS)*10H已经做到极限了</code><br />
+<code>[2]. 访问主存获取操作数,不利于指令速度的提高</code><br />
+<code>[3]. 当数据的地址改变的时候,因为[3100H]为硬编码,需要修改</code></p>
+</li>
+<li>
+<p>应用<br />
+<code>[1]. 自我感觉是操作那些内存地址固定的地方比如0x7c00</code></p>
+</li>
+</ul>
+<h4 id="_10">说明</h4>
+<p>[8086特性,不要随意推广]</p>
+<ul>
+<li>隐含寄存器为DS</li>
+<li>允许段超越<br />
+<code>[1]. CS</code><br />
+<code>[2]. SS</code><br />
+<code>[3]. ES</code><br />
+<code>EX:  MOV AX, ES:[3100H]</code></li>
+</ul>
+<p><b style='color:red'>注意了</b>由于选定4个寄存器作为间接寻址的工具,所以隐含寄存器不是唯一的,如上所示,还能进行SS:BP寻址.</p>
+<h4 id="_11">疑问</h4>
+<ul>
+<li>暂时没有</li>
+</ul>
+<hr />
+<h3 id="_12">寄存器间接寻址</h3>
+<hr />
+<h4 id="ex_3">EX</h4>
+<div class="hlcode"><pre><span class="nl">EX:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="p">[</span><span class="n">DI</span><span class="p">]</span>
+
+<span class="err">等价于</span><span class="o">:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="n">DS</span><span class="o">:</span><span class="p">[</span><span class="n">DI</span><span class="p">]</span>
+<span class="err">计算</span><span class="o">:</span>
+  <span class="p">(</span><span class="n">DS</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="n">H</span><span class="o">+</span><span class="p">(</span><span class="n">DI</span><span class="p">)</span><span class="o">--&gt;</span><span class="n">AX</span>
+</pre></div>
+
+
+<h4 id="_13">说明</h4>
+<p>[8086特性,不要随意推广]</p>
+<ul>
+<li>寄存器选用范围<br />
+<code>|SI--&gt;DS|</code><br />
+<code>|DI--&gt;DS|</code><br />
+<code>|BX--&gt;DS|</code><br />
+<code>|-------|</code><br />
+<code>|BP--&gt;SS|</code></li>
+<li>应该允许段超越吧</li>
+</ul>
+<h4 id="_14">设计角度</h4>
+<ul>
+<li>好处<br />
+<code>[1]. 和传统的间接寻址不一样,使用寄存器暂存偏移地址,减少了访问内存的次数</code><br />
+<code>[2]. 修正了直接寻址坏处[3], 消除硬编码问题</code><br />
+<code>[3]. 增大了寻址空间(目前还不太清楚)</code></li>
+<li>坏处<br />
+<code>[1]. 暂无</code></li>
+</ul>
+<hr />
+<h3 id="_15">变址寻址</h3>
+<hr />
+<h4 id="ex_4">EX</h4>
+<div class="hlcode"><pre><span class="nl">EX:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="p">[</span><span class="n">SI</span><span class="o">+</span><span class="mi">3100</span><span class="n">H</span><span class="p">]</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="p">[</span><span class="n">SI</span><span class="o">+</span><span class="n">LABEL</span><span class="p">]</span>
+<span class="err">等价于</span><span class="o">:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="n">DS</span><span class="o">:</span><span class="p">[</span><span class="n">SI</span><span class="o">+</span><span class="mi">3100</span><span class="n">H</span><span class="p">]</span>
+<span class="err">计算</span><span class="o">:</span>
+  <span class="p">(</span><span class="n">DS</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="n">H</span><span class="o">+</span><span class="p">(</span><span class="n">SI</span><span class="p">)</span><span class="o">+</span><span class="mi">3100</span><span class="n">H</span><span class="o">--&gt;</span><span class="n">AX</span>
+</pre></div>
+
+
+<h4 id="_16">说明</h4>
+<p>[8086特性,不要随意推广]</p>
+<ul>
+<li>
+<p>[学长实践]SI和DI最好放在指定的位置,有的机器会出错<br />
+<code>MOV BX, [SI+2100H]     |---&gt;SI(SOURCE)</code><br />
+<code>MOV [DI+1000H],  BX    |---&gt;DI[DESTINATION]</code></p>
+</li>
+<li>
+<p>书写格式<br />
+<code>可以有很多种书写格式</code><br />
+<code>[1]. MOV AX, TABLE[SI]</code><br />
+<code>[2]. MOV AX, [SI+TABLE]</code><br />
+<code>[3]. MOV AX, [SI]+TABLE</code></p>
+</li>
+<li>
+<p>隐含寄存器 DS</p>
+</li>
+<li>允许段超越</li>
+</ul>
+<h4 id="_17">设计角度</h4>
+<ul>
+<li>好处<br />
+<code>[1]. 应该可以作为模块化的基础吧,可以实现段内的层次性寻址</code></li>
+<li>坏处<br />
+<code>[1]. 暂无</code></li>
+<li>应用<br />
+<code>[1]. 是面向用户设计的</code><br />
+<code>[2]. 用来解决程序在主存中的定位和扩大寻址空间问题</code></li>
+</ul>
+<hr />
+<h3 id="_18">基址寻址</h3>
+<hr />
+<h4 id="ex_5">EX</h4>
+<div class="hlcode"><pre><span class="nl">EX:</span>
+  <span class="n">MOV</span> <span class="n">SI</span><span class="p">,</span> <span class="n">DATA</span><span class="p">[</span><span class="n">BX</span><span class="p">]</span>
+  <span class="n">MOV</span> <span class="n">BLOCK</span><span class="p">[</span><span class="n">BP</span><span class="p">],</span> <span class="n">AX</span>
+<span class="err">等价于</span><span class="o">:</span>
+  <span class="n">MOV</span> <span class="n">SI</span><span class="p">,</span> <span class="n">DS</span><span class="o">:</span><span class="p">[</span><span class="n">SI</span><span class="o">+</span><span class="n">DATA</span><span class="p">]</span>
+<span class="err">计算</span><span class="o">:</span>
+  <span class="p">(</span><span class="n">DS</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="n">H</span><span class="o">+</span><span class="p">(</span><span class="n">SI</span><span class="p">)</span><span class="o">+</span><span class="n">DATA</span><span class="o">--&gt;</span><span class="n">SI</span>
+</pre></div>
+
+
+<h4 id="_19">说明</h4>
+<p>[8086特性,不要随意推广]</p>
+<ul>
+<li>基址寄存器只使用BX/BP</li>
+<li>隐含寄存器 BX--&gt;DS, BP---&gt;SS</li>
+<li>允许段超越</li>
+<li>多种书写方式</li>
+</ul>
+<h4 id="_20">设计角度</h4>
+<ul>
+<li>好处<br />
+    `[1]. 暂时没看出和变址寻址有什么卵区别,反正大家都允许段超越,可能对更高层次的抽象设计有影响吧</li>
+<li>应用<br />
+<code>[1]. 是面向系统设计的</code><br />
+<code>[2]. 访问字符向量和数组成的批数据</code></li>
+</ul>
+<hr />
+<h3 id="_21">基址+变址寻址</h3>
+<hr />
+<h4 id="ex_6">EX</h4>
+<div class="hlcode"><pre><span class="nl">EX:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="n">DATA</span><span class="p">[</span><span class="n">BX</span><span class="p">][</span><span class="n">SI</span><span class="p">]</span>
+<span class="err">等价于</span><span class="o">:</span>
+  <span class="n">MOV</span> <span class="n">AX</span><span class="p">,</span> <span class="n">DS</span><span class="o">:</span><span class="p">[</span><span class="n">BX</span><span class="o">+</span><span class="n">SI</span><span class="o">+</span><span class="n">DATA</span><span class="p">]</span>
+<span class="err">计算</span><span class="o">:</span>
+  <span class="p">(</span><span class="n">DS</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="n">H</span><span class="o">+</span><span class="p">(</span><span class="n">BX</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">SI</span><span class="p">)</span><span class="o">+</span><span class="n">DATA</span><span class="o">--&gt;</span><span class="n">SI</span>
+</pre></div>
+
+
+<h4 id="_22">说明</h4>
+<p>[8086特性,不要随意推广]</p>
+<p><code>指令中规定一个基址寄存器和一个变址寄存器,两个不能同时出现</code><br />
+- 只允许一个基址寄存器和一个变址寄存器<br />
+- 隐含寄存器取决使用的基址寄存器 BX--&gt;DS, BP---&gt;SS<br />
+- 允许段超越<br />
+- 多种书写方式[以后补加]</p>
+<h4 id="_23">设计角度</h4>
+<ul>
+<li>好处<br />
+<code>[1]. MMP,只看出对高级语言的二维数组设计有好处</code></li>
+<li>坏处<br />
+<code>[1]. 暂无</code></li>
+<li>应用<br />
+<code>[1]. 二维数组的访问</code></li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '寻址方式',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-22 17:03:05</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

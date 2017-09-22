@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>指令[8086] - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;指令[8086]
+    <span class="updated">Page Updated&nbsp;
+      2017-09-22 19:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">指令[8086]</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=286999&auto=0&height=66"></iframe></li>
+</ul>
+<hr />
+<blockquote>
+<p>...</p>
+</blockquote>
+<hr />
+<p><b style="color:red"></b></p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#8086">8086</a><ul>
+<li><a href="#_1">分类</a></li>
+<li><a href="#_2">数据传输(送)类</a><ul>
+<li><a href="#_3">分类</a></li>
+</ul>
+</li>
+<li><a href="#mov">MOV</a></li>
+<li><a href="#pushpop">PUSH/POP</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="8086">8086</h1>
+<hr />
+<h3 id="_1">分类</h3>
+<hr />
+<ol>
+<li>数据传送指令</li>
+<li>算术运算指令</li>
+<li>逻辑运算和移位指令</li>
+<li>串操作指令</li>
+<li>控制转移指令</li>
+<li>处理器控制指令</li>
+</ol>
+<blockquote>
+<p>粗略划分的话,分为三大类指令,数据传输,操作控制,数据运算</p>
+</blockquote>
+<hr />
+<h3 id="_2">数据传输(送)类</h3>
+<hr />
+<h4 id="_3">分类</h4>
+<ol>
+<li>通用数据传送指令<br />
+<code>[1]. MOV[一般传送]</code><br />
+<code>[2]. PUSH/POP[堆栈操作]</code><br />
+<code>[3]. XCHG(Exchange)[交换]</code><br />
+<code>[4]. XLAT(Translate)[查表转换]</code></li>
+<li>输入输出指令<br />
+<code>[1]. IN</code><br />
+<code>[2]. OUT</code></li>
+<li>目标地址传送指令<br />
+<code>[1]. LEA(Load Effective Address)</code><br />
+<code>[2]. LDS(Load pointer using DS)</code><br />
+<code>[3]. LES(Load pointer using ES)</code></li>
+<li>标志传送指令<br />
+<code>[1]. LAHF(Load AH from Flags)</code><br />
+<code>[2]. SAHF(Store AH into Flags)</code><br />
+<code>[3]. PUSHF(Push Flags onto stack)</code><br />
+<code>[4]. POPF(Pop Flags off stack)</code></li>
+</ol>
+<hr />
+<h3 id="mov">MOV</h3>
+<hr />
+<ul>
+<li>格式<br />
+<code>mov dest, src; (src)-&gt;(dest)</code></li>
+<li>
+<p>特点<br />
+<code>[1]. 即可按字节(byte)传送,亦可按字[word]传送</code><br />
+<code>[2]. 可使用七大寻址方式</code><br />
+<code>[3]. 可以实现以下的传送</code><br />
+<code>|____寄存器&lt;--&gt;(寄存器|存储器)</code><br />
+<code>|____立即数 --&gt;(寄存器|存储器)</code><br />
+<code>|____段寄存器&lt;--&gt;(寄存器|存储器)</code></p>
+</li>
+<li>
+<p>注意<br />
+<code>[1]. 不可以修改CS的值，即CS不可以作为[目的操作数],[原因]-&gt;CS存储的是当前所在段的段地址，一旦修改会造成麻烦.[这样做合法,但容易导致错误,因此不能这么做.]</code><br />
+<code>[2]. 传送立即数时，一定要注意和目的操作数的数据类型进行匹配。尤其是传送到存储器的时候</code><br />
+<code>[3]. 不可以在段寄存器间或内存单元间传送数据</code><br />
+<code>[4]. 不可以修改或读取IP和标志位寄存器的数值，因此有专门的标志位传送指令</code><br />
+<code>[5]. 不可以把立即数直接传送到段寄存器中[拒绝用户自己划分段]</code></p>
+</li>
+<li>
+<p>EXTENSION<br />
+<code>MOVSX &amp; MOVZX[80386CPU]</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="pushpop">PUSH/POP</h3>
+<hr />
+<ul>
+<li>格式<br />
+<code>POP  DEST</code><br />
+<code>PUSH SRC</code></li>
+<li>特点<br />
+<code>[1]. 操作的数据类型长度为16位[8086]</code><br />
+<code>[2]. push cs合法, pop cs不合法</code><br />
+<code>[3]. 栈底在高地址</code><br />
+<code>[4]. push压数据由高地址向低地址存放</code></li>
+</ul>
+<hr />
+<p>[至于先sp-=2还是先存先pop都是为了方便存储与扔出]</p>
+<p>PUSH执行分两步<br />
+1. SP = SP - 2，SS:SP指向当前栈顶前面的单元，以当前栈顶前面的单元为新的栈顶<br />
+2. 将ax中的内容送到 SS:SP 指向的内存单元处，SS:SP 此时指向栈顶</p>
+<hr />
+<p><center style="position:relative; "><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/push.png" /><br />
+</center></p>
+<hr />
+<p>POP见图中</p>
+<hr />
+<p><center style="position:relative; "><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/pop.png" /><br />
+</center></p>
+<hr />
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '指令[8086]',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-22 17:03:05</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
