@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>python对象入门 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;python对象入门
+    <span class="updated">Page Updated&nbsp;
+      2017-09-21 18:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">python对象入门</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>object与type的关系就像是鸡与鸡蛋的关系,充满设计的思想问题</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">对象</a><ul>
+<li><a href="#_2">三大特性</a><ul>
+<li><a href="#_3">身份</a></li>
+<li><a href="#_4">类型</a></li>
+<li><a href="#_5">值</a></li>
+<li><a href="#_6">对象属性</a></li>
+</ul>
+</li>
+<li><a href="#_7">标准类型</a></li>
+<li><a href="#_8">其他内建类型</a></li>
+<li><a href="#nonepythonnull">None[PYTHON的Null对象]</a></li>
+<li><a href="#_9">内部类型</a></li>
+<li><a href="#_10">对象运算</a><ul>
+<li><a href="#_11">对象值比较</a></li>
+<li><a href="#_12">对象身份比较</a></li>
+<li><a href="#_13">布尔类型</a></li>
+</ul>
+</li>
+<li><a href="#_14">内建函数</a><ul>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</li>
+<li><a href="#_15">类型工厂函数</a></li>
+<li><a href="#_16">标准类型分类</a></li>
+<li><a href="#typeobject">type与object详解</a><ul>
+<li><a href="#_17">设计思想</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">对象</h2>
+<hr />
+<h3 id="_2">三大特性</h3>
+<hr />
+<h4 id="_3">身份</h4>
+<p><code>内建函数id()</code></p>
+<div class="hlcode"><pre>    <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="mi">42533160</span>
+    <span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h4 id="_4">类型</h4>
+<p><code>内建函数type()</code></p>
+<h4 id="_5">值</h4>
+<div class="hlcode"><pre><span class="err">`除了值之外</span><span class="p">,</span><span class="err">以上两个特性是只读的`</span>
+</pre></div>
+
+
+<blockquote>
+<p>上面三个特性在对象创建时就被赋值,对于新风格的类型,对象的类型其实也是可以改变的</p>
+</blockquote>
+<h4 id="_6">对象属性</h4>
+<ul>
+<li>函数</li>
+<li>方法</li>
+<li>数据</li>
+</ul>
+<hr />
+<h3 id="_7">标准类型</h3>
+<hr />
+<blockquote>
+<p>python中的基本数据类型不想多写</p>
+</blockquote>
+<hr />
+<h3 id="_8">其他内建类型</h3>
+<hr />
+<ul>
+<li>类型()</li>
+<li>NULL对象(None)</li>
+<li>文件</li>
+<li>集合/固定集合</li>
+<li>函数/方法</li>
+<li>模块</li>
+<li>类</li>
+</ul>
+<hr />
+<h3 id="nonepythonnull">None[PYTHON的Null对象]</h3>
+<hr />
+<ul>
+<li>值为none</li>
+</ul>
+<hr />
+<h3 id="_9">内部类型</h3>
+<hr />
+<blockquote>
+<p>内建类型是python类库提供给你的基本数据类型<br />
+内部类型是面向对象的，类的内部类型，它是类内部使用的</p>
+</blockquote>
+<ul>
+<li>代码[core_python.c14]<br />
+<code>代码对象是编译过的 Python 源代码片段,它是可执行对象</code><br />
+<code>通过调用内建函数 compile()可以得到代码对象</code><br />
+<code>代码对象可以被 exec 命令或 eval()内建函数来执行</code><br />
+<code>[事实上代码对象是函数的一个属性]</code></li>
+<li>帧<br />
+<code>帧对象表示 Python 的执行栈帧</code><br />
+<code>帧对象包含 Python 解释器在运行时所需要知道的所有信息</code><br />
+<code>它的属性包括指向上一帧的链接,正在被执行的代码对象(参见上文),本地及全局名字空间字典以及当前指令等</code><br />
+<code>每次函数调用产生一个新的帧,每一个帧对象都会相应创建一个 C 栈帧</code></li>
+<li>跟踪记录<br />
+<code>当异常发生时,一个包含针对异常的栈跟踪信息的跟踪记录对象被创建</code><br />
+<code>如果一个异常有自己的处理程序,处理程序就可以访问这个跟踪记录对象</code></li>
+<li>切片<br />
+<code>当使用 Python 扩展的切片语法时,就会创建切片对象</code><br />
+<code>包括步进切片, 多维切片,及省略切片</code><br />
+<code>切片对象也可以由内建函 数 slice() 来 生 成</code></li>
+<li>省略<br />
+<code>省略对象用于扩展切片语法中,起记号作用</code><br />
+<code>这个对象在切片语法中表示省略号</code><br />
+<code>类似Null 对象 None, 省略对象有一个唯一的名字 Ellipsis, 它的布尔值始终为 True.</code></li>
+<li>Xrange[core_python c8]<br />
+<code>调用内建函数 xrange() 会生成一个 Xrange 对象</code><br />
+<code>xrange()是内建函数 range()的兄弟版本</code><br />
+<code>用于需要节省内存使用或 range()无法完成的超大数据集场合</code></li>
+</ul>
+<hr />
+<h3 id="_10">对象运算</h3>
+<hr />
+<h4 id="_11">对象值比较</h4>
+<ul>
+<li><code>&gt;</code></li>
+<li><code>&lt;</code></li>
+<li><code>==</code></li>
+<li><code>&gt;=</code></li>
+<li><code>&lt;&gt;</code></li>
+<li><code>!=</code></li>
+</ul>
+<div class="hlcode"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;</span><span class="mi">4</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h4 id="_12">对象身份比较</h4>
+<ul>
+<li>is</li>
+<li>is not</li>
+<li><code>==</code></li>
+</ul>
+<h4 id="_13">布尔类型</h4>
+<ul>
+<li>or<br />
+<code>expr1 or expr2</code></li>
+<li>and<br />
+<code>expr1 and expr2</code></li>
+<li>not<br />
+<code>not expr</code></li>
+</ul>
+<hr />
+<h3 id="_14">内建函数</h3>
+<hr />
+<ul>
+<li>cmp</li>
+<li>repr</li>
+<li>str<br />
+<code>str比repr返回的可读性好</code></li>
+<li><code>'str'</code><br />
+<code>准确的说这是一个运算符</code><br />
+<code>&gt;&gt; '[1,2,3,4]'</code><br />
+<code>&gt;&gt; '[1,2,3,4]'</code></li>
+<li>type<br />
+<code>返回类型对象,是object的子对象</code></li>
+</ul>
+<h4 id="faq">FAQ</h4>
+<blockquote>
+<p>为什么我们有了 repr()还需要``</p>
+</blockquote>
+<p>语法糖</p>
+<hr />
+<h3 id="_15">类型工厂函数</h3>
+<hr />
+<p>Python 2.2 统一了类型和类, 所有的内建类型现在也都是类, 在这基础之上, 原来的<br />
+所谓内建转换函数象 int(), type(), list() 等等, 现在都成了工厂函数。 也就是说虽然他<br />
+们看上去有点象函数, 实质上他们是类。当你调用它们时, 实际上是生成了该类型的一个实<br />
+例, 就象工厂生产货物一样.</p>
+<hr />
+<h3 id="_16">标准类型分类</h3>
+<hr />
+<p>如果让我们最啰嗦的描述标准类型,我们也许会称它们是 Python 的“基本内建数据对象原<br />
+始类型”。</p>
+<ul>
+<li>“基本”<br />
+<code>是指这些类型都是 Python 提供的标准或核心类型</code></li>
+<li>“内建”<br />
+<code>是由于这些类型是 Python 默认就提供的</code></li>
+<li>“数据”<br />
+<code>因为他们用于一般数据存储</code></li>
+<li>“对象”<br />
+<code>因为对象是数据和功能的默认抽象</code></li>
+<li>“原始”<br />
+<code>因为这些类型提供的是最底层的粒度数据存储</code></li>
+<li>“类型”<br />
+<code>因为他们就是数据类型</code></li>
+</ul>
+<hr />
+<h3 id="typeobject">type与object详解</h3>
+<hr />
+<h4 id="_17">设计思想</h4>
+<p>这里不谈代码只是说设计思想<br />
+首先万物有源,物质有所谓的通性,python说万物皆对象,那么追溯其源头,总会出现一个object源头,但是python也说了对象具有三大特性其一就有类型,那么问题来了,既然万物皆对象,那么类型也就会是对象,object作为元对象拥有类型,就意味着object是其子对象的实例</p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'python对象入门',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-23 17:01:08</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
