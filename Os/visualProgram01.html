@@ -42,12 +42,147 @@
 <p>沉浸在思想的牢笼里.</p>
 </blockquote>
 <hr />
-<p><b style="color:red">电脑维修中,只能先备份了...</b><br />
-windows 编程是基于消息驱动的,当消息到来时,应用程序就调用消息映射函数,但他是如何做到的？<br />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#win">Win图形设计与接口</a><ul>
+<li><a href="#_1">设备接口[图形]</a></li>
+</ul>
+</li>
+<li><a href="#_2">代码实现</a></li>
+<li><a href="#_3">效果</a></li>
+</ul>
+</div>
+<p>windows 编程是基于消息驱动的,当消息到来时,应用程序就调用消息映射函数,但他是如何做到的？<br />
     - [乱答]这个应该是把消息的调用方提升给了操作系统,操作系统驱动API？<br />
     - 找到答案了，果然出现了控制权的移交<br />
 <code>在程序执行时,系统会创建一个能控制他运行的数据结构,叫做pcb,pcb不断的查询消息队列</code><br />
 <code>一旦出现消息,就会根据相应的消息号去调用消息映射函数</code></p>
+<h3 id="win">Win图形设计与接口</h3>
+<h4 id="_1">设备接口[图形]</h4>
+<ul>
+<li>图形设备接口[GDI]</li>
+<li>[K1]GDI提供了一系列函数与数据结构<br />
+<code>[作用] 实现了程序开发者与硬件设备的隔离</code><br />
+<code>[1].  GDI管理了一个结构叫做设备环境，其中包含一些有关设备的信息</code></li>
+<li>[K2]应用程序可以使用属性函数设置设备的<b>操作方式</b>和<b>当前的选择</b><br />
+<code>[操作方式] 文本和背景颜色/混色方式/映射方式</code><br />
+<code>[当前选择] 指绘图时使用哪个绘图对象</code></li>
+<li>[K3] 映像模式储存在设备环境中    </li>
+<li>[FAQ1]GDI为什么能够实现相关函数？<br />
+<code>[1]. windows下图形图像和文字设备驱动和硬件都支持这些函数，这些设备驱动都实现图形设备函数</code><br />
+<code>[2]. 所以绘图前要加载驱动程序</code></li>
+<li>
+<p>[FAQ2]什么是设备描述表？它是怎样被创建的<br />
+<code>[1]. 简称DC，定义了一系列的图形对象及其属性的结构</code><br />
+<code>[2]. 应用程序使用设备环境函数创建DC来获得设备环境句柄，设备环境句柄指向设备相关信息，用户通过设备环境句柄来访问输出设备</code></p>
+</li>
+<li>
+<p>[FAQ3]窗口与视口的关系<br />
+<code>窗口依赖于逻辑坐标，可以是程序员想要的规定的所有尺度，由映像模式确定</code><br />
+<code>视口依赖于设备坐标，由输出设备决定（如像素点）</code><br />
+<code>窗口与视口的原点和范围都可以由程序员指定</code></p>
+</li>
+<li>
+<p>[FAQ4]窗口实例与窗口句柄有什么关系<br />
+<code>HWND与HINSTANCE</code></p>
+</li>
+</ul>
+<h3 id="_2">代码实现</h3>
+<div class="hlcode"><pre><span class="cm">/*You should concern about the window &#39;class&#39;, it&#39;s not the concept of OOP</span>
+<span class="cm">*if you are familar with c programing,it&#39;s easy for you to know the meaning</span>
+<span class="cm">*of the &#39;class&#39; , JUST A &#39;Struct&#39; type....</span>
+<span class="cm">*</span>
+<span class="cm">*/</span>
+
+<span class="cp">#include &lt;windows.h&gt;</span>
+<span class="n">LRESULT</span> <span class="n">CALLBACK</span> <span class="nf">WndProc</span><span class="p">(</span><span class="n">HWND</span><span class="p">,</span><span class="n">UINT</span><span class="p">,</span><span class="n">WPARAM</span><span class="p">,</span><span class="n">LPARAM</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">Ipaint</span><span class="p">(</span><span class="n">HWND</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">WINAPI</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span> <span class="n">HINSTANCE</span> <span class="n">hPreInst</span><span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdLine</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">){</span>
+    <span class="n">MSG</span> <span class="n">msg</span><span class="p">;</span>
+    <span class="n">WNDCLASS</span> <span class="n">wndclass</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">classname</span><span class="p">[]</span> <span class="o">=</span><span class="s">&quot;painting....&quot;</span><span class="p">;</span>
+
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">style</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//defalut type</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">lpfnWndProc</span> <span class="o">=</span> <span class="n">WndProc</span><span class="p">;</span><span class="c1">//msg resolve function bundle</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">cbClsExtra</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//no extends for window class</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">cbWndExtra</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//not extends for window instance</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">hInstance</span> <span class="o">=</span> <span class="n">hInstance</span><span class="p">;</span><span class="c1">// current instance handle</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">hIcon</span> <span class="o">=</span> <span class="n">LoadIcon</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="n">IDI_APPLICATION</span><span class="p">);</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">hCursor</span> <span class="o">=</span> <span class="n">LoadCursor</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">IDI_APPLICATION</span><span class="p">);</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">hbrBackground</span> <span class="o">=</span> <span class="p">(</span><span class="n">HBRUSH</span><span class="p">)</span><span class="n">GetStockObject</span><span class="p">(</span><span class="n">WHITE_BRUSH</span><span class="p">);</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">lpszClassName</span> <span class="o">=</span> <span class="n">classname</span><span class="p">;</span>
+    <span class="n">wndclass</span><span class="p">.</span><span class="n">lpszMenuName</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// NO MENU</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">RegisterClass</span><span class="p">(</span><span class="o">&amp;</span><span class="n">wndclass</span><span class="p">)){</span><span class="c1">//register window class</span>
+        <span class="n">MessageBox</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="s">&quot;register fault!!!&quot;</span><span class="p">,</span><span class="s">&quot;提示&quot;</span><span class="p">,</span><span class="n">MB_ICONERROR</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+    <span class="p">}</span>
+    <span class="n">HWND</span> <span class="n">hwnd</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">lpszTitle</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;绘图&quot;</span><span class="p">;</span>
+    <span class="n">hwnd</span><span class="o">=</span> <span class="n">CreateWindow</span><span class="p">(</span>
+                <span class="n">classname</span><span class="p">,</span>
+                <span class="n">lpszTitle</span><span class="p">,</span>
+                <span class="n">WS_OVERLAPPEDWINDOW</span><span class="p">,</span><span class="c1">// window type</span>
+                <span class="n">CW_USEDEFAULT</span><span class="p">,</span>
+                <span class="n">CW_USEDEFAULT</span><span class="p">,</span>
+                <span class="n">CW_USEDEFAULT</span><span class="p">,</span>
+                <span class="n">CW_USEDEFAULT</span><span class="p">,</span>
+                <span class="nb">NULL</span><span class="p">,</span>
+                <span class="nb">NULL</span><span class="p">,</span>
+                <span class="n">hInstance</span><span class="p">,</span>
+                <span class="nb">NULL</span>
+        <span class="p">);</span>
+    <span class="n">ShowWindow</span><span class="p">(</span><span class="n">hwnd</span><span class="p">,</span><span class="n">nCmdShow</span><span class="p">);</span><span class="c1">//nCmdShow---&gt; the type of appearence</span>
+    <span class="n">UpdateWindow</span><span class="p">(</span><span class="n">hwnd</span><span class="p">);</span><span class="c1">// paint the user area</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">GetMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)){</span>
+        <span class="n">TranslateMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">);</span>
+        <span class="n">DispatchMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">msg</span><span class="p">.</span><span class="n">wParam</span><span class="p">;</span><span class="c1">// additional message</span>
+<span class="p">}</span>
+
+<span class="n">LRESULT</span> <span class="n">CALLBACK</span> <span class="nf">WndProc</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hwnd</span><span class="p">,</span> <span class="n">UINT</span> <span class="n">message</span><span class="p">,</span> <span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">LPARAM</span> <span class="n">lParam</span><span class="p">){</span>
+    <span class="k">switch</span><span class="p">(</span><span class="n">message</span><span class="p">){</span>
+        <span class="k">case</span> <span class="n">WM_PAINT</span>:
+            <span class="n">Ipaint</span><span class="p">(</span><span class="n">hwnd</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">WM_DESTROY</span>:
+            <span class="n">PostQuitMessage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="nl">default:</span>
+            <span class="k">return</span> <span class="n">DefWindowProc</span><span class="p">(</span><span class="n">hwnd</span><span class="p">,</span><span class="n">message</span><span class="p">,</span><span class="n">wParam</span><span class="p">,</span><span class="n">lParam</span><span class="p">);</span>
+
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Ipaint</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hwnd</span><span class="p">){</span>
+    <span class="n">PAINTSTRUCT</span> <span class="n">pt</span><span class="p">;</span>
+    <span class="n">HDC</span> <span class="n">hdc</span><span class="p">;</span>
+    <span class="n">HPEN</span> <span class="n">hpen</span><span class="p">;</span>
+    <span class="n">HBRUSH</span> <span class="n">hbrushHatch</span><span class="p">;</span>
+    <span class="n">HBRUSH</span> <span class="n">hbrush</span><span class="p">;</span>
+    <span class="n">hdc</span> <span class="o">=</span> <span class="n">BeginPaint</span><span class="p">(</span><span class="n">hwnd</span><span class="p">,</span><span class="o">&amp;</span><span class="n">pt</span><span class="p">);</span><span class="c1">// get device context handle</span>
+    <span class="n">hpen</span> <span class="o">=</span> <span class="p">(</span><span class="n">HPEN</span><span class="p">)</span><span class="n">GetStockObject</span><span class="p">(</span><span class="n">BLACK_PEN</span><span class="p">);</span><span class="c1">// get sys&#39;s black brush</span>
+    <span class="n">SelectObject</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span><span class="n">hpen</span><span class="p">);</span><span class="c1">// choose the hpen in hdc</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
+    <span class="n">hbrush</span> <span class="o">=</span> <span class="n">CreateSolidBrush</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+    <span class="n">SelectObject</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span><span class="n">hbrush</span><span class="p">);</span>
+    <span class="n">RoundRect</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span><span class="c1">// paint round rect</span>
+    <span class="n">DeleteObject</span><span class="p">(</span><span class="n">hbrush</span><span class="p">);</span>
+    <span class="c1">// create cross-shaped shade brush</span>
+    <span class="n">hbrushHatch</span> <span class="o">=</span> <span class="n">CreateHatchBrush</span><span class="p">(</span><span class="n">HS_CROSS</span><span class="p">,</span><span class="n">RGB</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">));</span>
+    <span class="n">SelectObject</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span><span class="n">hbrushHatch</span><span class="p">);</span>
+    <span class="n">Ellipse</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
+    <span class="n">DeleteObject</span><span class="p">(</span><span class="n">hbrushHatch</span><span class="p">);</span>
+    <span class="n">EndPaint</span><span class="p">(</span><span class="n">hwnd</span><span class="p">,</span><span class="o">&amp;</span><span class="n">pt</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_3">效果</h3>
+<p><center style="position:relative;"><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/EX2.2.png" /><br />
+</center></p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -80,7 +215,7 @@ windows 编程是基于消息驱动的,当消息到来时,应用程序就调用�
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-23 17:01:08</p>
+        <p>Site Generated 2017-09-25 11:28:57</p>
       </span>
     </div>
 

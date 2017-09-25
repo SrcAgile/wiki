@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>进程同步与互斥问题 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;进程同步与互斥问题
+    <span class="updated">Page Updated&nbsp;
+      2017-09-23 17:09:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">进程同步与互斥问题</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=286999&auto=0&height=66"></iframe></li>
+</ul>
+<hr />
+<blockquote>
+<p>...</p>
+</blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#intro">Intro[起因]</a></li>
+<li><a href="#_1">四大准则</a></li>
+<li><a href="#_2">同步机制</a><ul>
+<li><a href="#_3">硬件同步机制</a></li>
+<li><a href="#_4">信号量机制</a></li>
+<li><a href="#_5">信号量的应用</a></li>
+</ul>
+</li>
+<li><a href="#_6">外延</a></li>
+</ul>
+</div>
+<h3 id="intro">Intro[起因]</h3>
+<p>每个策略的引进都是为了解决所面临的一定的问题，同步策略的原因也是为了解决改善利用率，提高系统吞吐量，如同在算法学习中一样，无非是性能与功能的权衡，灵活性与复杂性的抉择。<br />
+权衡不久引入了同步机制，</p>
+<h3 id="_1">四大准则</h3>
+<ul>
+<li>空闲让进</li>
+<li>忙则等待</li>
+<li>有限等待</li>
+<li>让权等待<br />
+<code>‘权’--&gt;处理机</code></li>
+</ul>
+<p><strong>准则就类似于范式</strong></p>
+<h3 id="_2">同步机制</h3>
+<blockquote>
+<p>宏观上的同步包括互斥和微观上的同步</p>
+</blockquote>
+<h4 id="_3">硬件同步机制</h4>
+<ul>
+<li>关中断<br />
+<code>实现互斥</code><br />
+<code>自我认为关中断并不是为计算机提高资源利用准备的，因为关了中断不仅降低了计算机与外界的交互能力而且大大削弱了资源利用率</code></li>
+<li>
+<p>TS[Test-and-Set]</p>
+</li>
+<li>
+<p>SWAP</p>
+</li>
+</ul>
+<h4 id="_4">信号量机制</h4>
+<blockquote>
+<p>发展:整型信号量-&gt;记录型信号量-&gt;信号量集<br />
+应用:单处理机，多处理机，计算机网络</p>
+</blockquote>
+<ul>
+<li><strong>整型信号量机制</strong></li>
+</ul>
+<div class="hlcode"><pre>  <span class="c1">//P操作</span>
+  <span class="n">wait</span><span class="p">(</span><span class="n">S</span><span class="p">){</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">S</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">);</span> <span class="cm">/*DO-NO-OP*/</span>  <span class="cm">/*注意出现死循环忙等*/</span>
+    <span class="n">S</span><span class="o">--</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c1">//V操作</span>
+  <span class="n">signal</span><span class="p">(</span><span class="n">S</span><span class="p">){</span>
+    <span class="n">S</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<p>有人看出来了当进程操作时如果s&lt;=0,在这个时间片他就会一直问S&lt;=0吗？什么都没有做，正所谓占着<em>不</em>,当时有一个学弟问我直接把wait改成<code>if(S&gt;=0) S--;</code>不就行了嘛？WOC，脑回路清奇，你的意思是，当S&lt;0时，即使我有进程也不做了，看见有人占着就跑路了？不过这种想法还是很好的，至少他是希望出现让权等待，但是不要为了让权等待让它失去了进程同步的意义，如果我们认真想的话，while实际上类似一种运行中的信息阻塞，我们不如引入阻塞，如果发现资源被占直接阻塞进程，当资源释放后，然后唤醒进程，那么问题来了，谁去唤醒，去哪唤醒？是一个很重要的问题，因为一旦P操作使进程A阻塞了，A便不具有消息通知的能力，这时候不要说轮询比较占用资源了，没人通知它，和上面的学弟说的有什么区别，所以我们应该打算，专门添加唤醒操作，在每个进程运行结束后，就去唤醒沉睡的进程们，至于去哪里唤醒这个很简单，申请一块公共空间(<span style='color:green'>喂我叫PCB<del>我怎么绿了</del></span>)存放沉睡的进程们，然后唤醒他们，其实这相当于去通知他们，signal()的由来也可以解释了，因为你不通知，他们都会阻塞到死...由此也可以看出PV为什么必须在一起！<del>[FFF!!!!]</del></p>
+<ul>
+<li><strong>记录型信号量机制</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="c1">//修正后的信号量机制</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">value</span><span class="p">;</span><span class="c1">//资源数量</span>
+  <span class="n">Struct</span> <span class="n">PCB</span> <span class="o">*</span> <span class="n">list</span><span class="p">;</span><span class="c1">//阻塞列表</span>
+<span class="p">}</span>
+<span class="n">wait</span><span class="p">(</span><span class="n">S</span><span class="p">){</span>
+  <span class="n">S</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">--</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">S</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="n">block</span><span class="p">(</span><span class="n">S</span><span class="o">-&gt;</span><span class="n">list</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">signal</span><span class="p">(</span><span class="n">S</span><span class="p">){</span>
+  <span class="n">S</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">S</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="n">wakeup</span><span class="p">(</span><span class="n">S</span><span class="o">-&gt;</span><span class="n">list</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//改个名字吧，叫做记录型信号量</span>
+</pre></div>
+
+
+<ul>
+<li>AND型信号量</li>
+<li>信号量集</li>
+</ul>
+<h4 id="_5">信号量的应用</h4>
+<ul>
+<li><b style="color:red">暂停中....</b></li>
+<li>实现互斥</li>
+</ul>
+<div class="hlcode"><pre><span class="c1">//先码为敬</span>
+<span class="n">semaphore</span> <span class="n">mutex</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">PA</span><span class="p">(){</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">wait</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span>
+    <span class="cm">/*互斥资源代码*/</span>
+    <span class="n">signal</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="n">PB</span><span class="p">(){</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">wait</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span>
+    <span class="cm">/*互斥资源代码*/</span>
+    <span class="n">signal</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li>实现前趋</li>
+</ul>
+<hr />
+<h3 id="_6">外延</h3>
+<hr />
+<p>OK</p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '进程同步与互斥问题',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-09-25 11:28:57</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
