@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>随机变量 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Math">Math</a>&nbsp;&#187;&nbsp;随机变量
+    <span class="updated">Page Updated&nbsp;
+      2016-02-25 11:02:20
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">随机变量</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray"><b>待修正....</b></a></p>
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">一个问题</a></li>
+<li><a href="#_2">概念</a></li>
+<li><a href="#_3">关系讨论</a></li>
+</ul>
+</div>
+<h3 id="_1">一个问题</h3>
+<hr />
+<p><center style="position:relative "><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/probab.png" /><br />
+</center></p>
+<hr />
+<h3 id="_2">概念</h3>
+<hr />
+<ol>
+<li>
+<p>随机事件</p>
+<blockquote>
+<p>在概率论中，随机事件（或简称事件）指的是一个被赋予机率的事物集合，也就是样本空间中的一个子集。</p>
+</blockquote>
+</li>
+<li>
+<p>事件<br />
+<del>哲学范畴不予讨论</del></p>
+</li>
+<li>
+<p>随机变量</p>
+</li>
+</ol>
+<p><b></p>
+<p>给定样本空间 $({\displaystyle (S,\mathbb {F} )} )$ ，如果其上的实值函数 $({\displaystyle X:S\to \mathbb {R} } )$ 是 $({\displaystyle \mathbb {F} } )$ (实值)可测函数，则称 $({\displaystyle X})$ 为（实值）随机变量。初等概率论中通常不涉及到可测性的概念，而直接把任何 $({\displaystyle X:S\to \mathbb {R} } )$ 的函数称为随机变量。<br />
+如果 $({\displaystyle X})$ 指定给概率空间 $({\displaystyle S})$ 中每一个事件 $({\displaystyle e})$ 有一个实数 $({\displaystyle X(e)})$ ，同时针对每一个实数 $({\displaystyle r})$ 都有一个事件集合 $({\displaystyle A_{r}} )$ 与其相对应，其中 $( A_{r}= {  e:X(e) ≤ r })$ ，那么 $({\displaystyle X} )$ 被称作随机变量。随机变量一般用大写拉丁字母或小写希腊字母（比如 $({\displaystyle X,Y,Z,\xi ,\eta })$ )来表示，从上面的定义注意到，随机变量实质上是函数，不能把它的定义与变量的定义相混淆，另外概率函数 $({\displaystyle P})$ 并没有在考虑之中。</p>
+<p></b></p>
+<hr />
+<h3 id="_3">关系讨论</h3>
+<hr />
+<p><div style='font-weight:bold;text-decoration: line-through; color:green' >随机事件的解释很明显，随机事件是可以用样本点来描述的，即事件 $(A)$ = {具有特征的某些点}，此处出现一层抽象，现实世界的通过在时间上的独立实验得到的结果通过降维到一个样本空间中，样本空间中的样本是具有多种属性的，而我们通常需要得到样本的某一属性在统计上的结果，于是又出现一层降维，那就是通过事件中样本的某一属性作为样本的标识符，然后向一维几何空间投影到实数轴，这个投影函数被称作<span style='color:red'> 随机变量</span>，投影到实数轴上的目的很单纯 ，当然是<span style='color:red'> 方便数理运算</span>，有人谈到样本的属性值是不是必须要是数值类的才能投影呢？这个实在是小看人类的抽象能力了，比如 骰子6面6种颜色，假设事件 $(B)$ 为当前投掷的骰子的落地面的颜色，难道这就不能进行一维空间的映射了吗？不！我们可以假设某一种颜色投影为实数域上的数值1，其他颜色为0，此时的我们就很容易计算 $(B)$ 的数学期望了，算法学习中有一种东西叫做<span style='color:red'> 指示器变量</span>，是一个很好的应用！</div></p>
+<blockquote>
+<p><strong>此处应该存在一个很大的灵感,目前没有想出来</strong></p>
+</blockquote>
+<hr />
+<blockquote>
+<p>从排列组合的淤泥中飞升到数值运算中？</p>
+</blockquote>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '随机变量',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-10-09 11:00:13</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

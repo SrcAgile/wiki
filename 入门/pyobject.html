@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>python对象入门 - Meta's Wiki</title>
+    <title>对象类型 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,14 +23,14 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;python对象入门
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;对象类型
     <span class="updated">Page Updated&nbsp;
-      2017-09-21 18:00:00
+      2015-09-21 18:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">python对象入门</div>
+<div class="page_title">对象类型</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
@@ -57,26 +57,34 @@
 <li><a href="#_6">对象属性</a></li>
 </ul>
 </li>
-<li><a href="#_7">标准类型</a></li>
-<li><a href="#_8">其他内建类型</a></li>
-<li><a href="#nonepythonnull">None[PYTHON的Null对象]</a></li>
-<li><a href="#_9">内部类型</a></li>
-<li><a href="#_10">对象运算</a><ul>
-<li><a href="#_11">对象值比较</a></li>
-<li><a href="#_12">对象身份比较</a></li>
-<li><a href="#_13">布尔类型</a></li>
 </ul>
 </li>
-<li><a href="#_14">内建函数</a><ul>
+<li><a href="#_7">类型</a><ul>
+<li><a href="#_8">标准类型</a></li>
+<li><a href="#_9">其他内建类型</a></li>
+<li><a href="#nonepythonnull">None[PYTHON的Null对象]</a></li>
+<li><a href="#_10">内部类型</a></li>
+<li><a href="#_11">对象运算</a><ul>
+<li><a href="#_12">对象值比较</a></li>
+<li><a href="#_13">对象身份比较</a></li>
+<li><a href="#_14">布尔类型</a></li>
+</ul>
+</li>
+<li><a href="#_15">内建函数</a><ul>
 <li><a href="#faq">FAQ</a></li>
 </ul>
 </li>
-<li><a href="#_15">类型工厂函数</a></li>
-<li><a href="#_16">标准类型分类</a></li>
-<li><a href="#typeobject">type与object详解</a><ul>
-<li><a href="#_17">设计思想</a></li>
+<li><a href="#_16">类型工厂函数</a></li>
+<li><a href="#_17">标准类型分类</a><ul>
+<li><a href="#_18"><span style='color:red'>分类</span></a></li>
 </ul>
 </li>
+<li><a href="#python">Python的选择</a></li>
+<li><a href="#typeobject">type与object详解</a><ul>
+<li><a href="#_19">设计思想</a></li>
+</ul>
+</li>
+<li><a href="#_20">待解决</a></li>
 </ul>
 </li>
 </ul>
@@ -110,14 +118,18 @@
 <li>方法</li>
 <li>数据</li>
 </ul>
+<h2 id="_7">类型</h2>
 <hr />
-<h3 id="_7">标准类型</h3>
+<h3 id="_8">标准类型</h3>
 <hr />
 <blockquote>
 <p>python中的基本数据类型不想多写</p>
 </blockquote>
 <hr />
-<h3 id="_8">其他内建类型</h3>
+<ol>
+<li>也称作基本数据类型，因为这些类型是Python内建的基本数据类型</li>
+</ol>
+<h3 id="_9">其他内建类型</h3>
 <hr />
 <ul>
 <li>类型()</li>
@@ -135,7 +147,7 @@
 <li>值为none</li>
 </ul>
 <hr />
-<h3 id="_9">内部类型</h3>
+<h3 id="_10">内部类型</h3>
 <hr />
 <blockquote>
 <p>内建类型是python类库提供给你的基本数据类型<br />
@@ -169,9 +181,9 @@
 <code>用于需要节省内存使用或 range()无法完成的超大数据集场合</code></li>
 </ul>
 <hr />
-<h3 id="_10">对象运算</h3>
+<h3 id="_11">对象运算</h3>
 <hr />
-<h4 id="_11">对象值比较</h4>
+<h4 id="_12">对象值比较</h4>
 <ul>
 <li><code>&gt;</code></li>
 <li><code>&lt;</code></li>
@@ -186,13 +198,13 @@
 </pre></div>
 
 
-<h4 id="_12">对象身份比较</h4>
+<h4 id="_13">对象身份比较</h4>
 <ul>
 <li>is</li>
 <li>is not</li>
 <li><code>==</code></li>
 </ul>
-<h4 id="_13">布尔类型</h4>
+<h4 id="_14">布尔类型</h4>
 <ul>
 <li>or<br />
 <code>expr1 or expr2</code></li>
@@ -202,7 +214,7 @@
 <code>not expr</code></li>
 </ul>
 <hr />
-<h3 id="_14">内建函数</h3>
+<h3 id="_15">内建函数</h3>
 <hr />
 <ul>
 <li>cmp</li>
@@ -222,14 +234,14 @@
 </blockquote>
 <p>语法糖</p>
 <hr />
-<h3 id="_15">类型工厂函数</h3>
+<h3 id="_16">类型工厂函数</h3>
 <hr />
 <p>Python 2.2 统一了类型和类, 所有的内建类型现在也都是类, 在这基础之上, 原来的<br />
 所谓内建转换函数象 int(), type(), list() 等等, 现在都成了工厂函数。 也就是说虽然他<br />
 们看上去有点象函数, 实质上他们是类。当你调用它们时, 实际上是生成了该类型的一个实<br />
 例, 就象工厂生产货物一样.</p>
 <hr />
-<h3 id="_16">标准类型分类</h3>
+<h3 id="_17">标准类型分类</h3>
 <hr />
 <p>如果让我们最啰嗦的描述标准类型,我们也许会称它们是 Python 的“基本内建数据对象原<br />
 始类型”。</p>
@@ -247,18 +259,49 @@
 <li>“类型”<br />
 <code>因为他们就是数据类型</code></li>
 </ul>
+<h4 id="_18"><span style='color:red'>分类</span></h4>
+<blockquote>
+<p>可以按照增改查三大基本操作对类型进行分类</p>
+</blockquote>
+<ul>
+<li>[增/存储]存储模型<br />
+<code>[容器]------&gt;元组，列表，字典</code><br />
+<code>[标量/原子]--&gt;数字，字符串</code></li>
+<li>[改/更新]更新模型<br />
+<code>[可变]----&gt;列表，字典</code><br />
+<code>[不可变]--&gt;数字，字符串，元组</code></li>
+<li>[查/访问]访问模型<br />
+<code>[直接存取]--&gt;数字</code><br />
+<code>[顺序存取]--&gt;元组，字符串，列表</code><br />
+<code>[映射访问]--&gt;字典</code></li>
+</ul>
+<hr />
+<h3 id="python">Python的选择</h3>
+<hr />
+<ol>
+<li>不适用char，byte</li>
+<li>int统一世界</li>
+<li>放弃double<br />
+<code>感觉double带来的坏处比好处多</code></li>
+</ol>
 <hr />
 <h3 id="typeobject">type与object详解</h3>
 <hr />
-<h4 id="_17">设计思想</h4>
+<h4 id="_19">设计思想</h4>
 <p>这里不谈代码只是说设计思想<br />
 首先万物有源,物质有所谓的通性,python说万物皆对象,那么追溯其源头,总会出现一个object源头,但是python也说了对象具有三大特性其一就有类型,那么问题来了,既然万物皆对象,那么类型也就会是对象,object作为元对象拥有类型,就意味着object是其子对象的实例</p>
+<hr />
+<h3 id="_20">待解决</h3>
+<hr />
+<ol>
+<li>没有完全融会贯通<code>Object</code>与<code>Type</code>的关系</li>
+</ol>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: 'python对象入门',
+    title: '对象类型',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {
@@ -285,7 +328,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-25 11:28:57</p>
+        <p>Site Generated 2017-10-09 11:00:13</p>
       </span>
     </div>
 

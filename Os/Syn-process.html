@@ -52,12 +52,18 @@
 <li><a href="#_5">信号量的应用</a></li>
 </ul>
 </li>
-<li><a href="#_6">外延</a></li>
+<li><a href="#_6">思索</a><ul>
+<li><a href="#_7">杂.想</a></li>
+</ul>
+</li>
+<li><a href="#_8">外延</a></li>
 </ul>
 </div>
 <h3 id="intro">Intro[起因]</h3>
 <p>每个策略的引进都是为了解决所面临的一定的问题，同步策略的原因也是为了解决改善利用率，提高系统吞吐量，如同在算法学习中一样，无非是性能与功能的权衡，灵活性与复杂性的抉择。<br />
-权衡不久引入了同步机制，</p>
+权衡不久引入了同步机制，<br />
+<b style='color:red'>[补]:</b><b>同步本身就是一种通信</b><br />
+<b style='color:red'>[补]:</b><b>因为同步可以实现互斥，所以互斥可以回归到同步中</b></p>
 <h3 id="_1">四大准则</h3>
 <ul>
 <li>空闲让进</li>
@@ -159,7 +165,25 @@
 <li>实现前趋</li>
 </ul>
 <hr />
-<h3 id="_6">外延</h3>
+<h3 id="_6">思索</h3>
+<hr />
+<blockquote>
+<p>这正是我最头痛的事情，在课堂上一直对同步机制建模，也许是大一修的离散数学基础不够好，我依旧没有将其通过通信原理映射到图论中，所以有点passive,但是不能有始无终，我仍然准备建立模型，通信原理抛了～，图论抛了～我只是准备用自己不成熟的思想去非合理描述同步机制在通信机制的解释</p>
+</blockquote>
+<h4 id="_7">杂.想</h4>
+<p><b style='color:red'>[知识点1]:</b>前面提到的信号量本质是一种进程间的<b>异步通信方式</b>，进程不是通过轮询获得资源的，而是通过被通知的方式获得资源.<br />
+<b style='color:red'>[知识点2]:</b>通过在通信部分对<b>死锁</b>的原因探索可以得到很有用的信息<br />
+<b style='color:red'>[知识点3]:</b>二维的图形加上操作者[我]通过使用笔延伸通信数据流引入三维时间概念足以描述整个系统进程的运行。<br />
+<b style='color:red'>[知识点4]:</b>通过分析边界问题很容易发现死锁所在处</p>
+<p>先放两张图</p>
+<p><center style="position:relative; "><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/real.gif" /><br />
+</center></p>
+<p><center style="position:relative; "><br />
+<img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/false.gif" /><br />
+</center></p>
+<hr />
+<h3 id="_8">外延</h3>
 <hr />
 <p>OK</p>
   <div id="comments"></div>
@@ -194,7 +218,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-09-25 11:28:57</p>
+        <p>Site Generated 2017-10-09 11:00:13</p>
       </span>
     </div>
 

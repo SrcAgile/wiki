@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>序列 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;序列
+    <span class="updated">Page Updated&nbsp;
+      2015-10-07 20:20:37
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">序列</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>...</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#intro">Intro</a><ul>
+<li><a href="#_1">包含</a></li>
+<li><a href="#_2">特性</a></li>
+<li><a href="#_3">操作</a><ul>
+<li><a href="#_4">操作符</a></li>
+</ul>
+</li>
+<li><a href="#_5">输出</a></li>
+<li><a href="#_6">内建函数</a><ul>
+<li><a href="#_7">字符串转义</a></li>
+<li><a href="#unicode">Unicode字符串</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="intro">Intro</h2>
+<hr />
+<h3 id="_1">包含</h3>
+<hr />
+<ol>
+<li>列表</li>
+<li>字符串<br />
+<code>分好几种,因为存在编码问题</code></li>
+<li>元组</li>
+</ol>
+<hr />
+<h3 id="_2">特性</h3>
+<hr />
+<ol>
+<li>有序的</li>
+<li>可以通过下标偏移量访问到它的一个或者几个成员</li>
+</ol>
+<hr />
+<h3 id="_3">操作</h3>
+<hr />
+<h4 id="_4">操作符</h4>
+<ul>
+<li>标准类型操作符<a href="">core_python4.5</a></li>
+<li>序列类型操作符</li>
+</ul>
+<hr />
+<h3 id="_5">输出</h3>
+<hr />
+<ul>
+<li>格式化输出</li>
+<li>字符串模板</li>
+</ul>
+<p>鉴于使用%d%s%u等等标识占位符类型实在是太...,比如又一次我就判断类型出错，不如使用字符串模板</p>
+<div class="hlcode"><pre><span class="c">#from string import Template</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&#39;hello ${name}, i am a ${sex}&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">me</span> <span class="o">=</span><span class="s">&#39;lyc&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mysex</span><span class="o">=</span><span class="s">&#39;male&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">me</span><span class="p">,</span><span class="n">sex</span><span class="o">=</span><span class="n">mysex</span><span class="p">)</span>
+<span class="s">&#39;hello lyc, i am a male&#39;</span>
+<span class="o">//</span><span class="n">caution</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">safe_substitute</span><span class="p">(</span><span class="n">sex</span><span class="o">=</span><span class="n">mysex</span><span class="p">)</span>
+<span class="s">&#39;hello ${name}, i am a male&#39;</span>
+</pre></div>
+
+
+<hr />
+<h3 id="_6">内建函数</h3>
+<hr />
+<blockquote>
+<p>关于字符串操作的函数</p>
+</blockquote>
+<ol>
+<li>标准类型<br />
+<code>[1]. cmp</code></li>
+<li>序列类型<br />
+<code>[1]. enumrate</code><br />
+<code>[2]. len</code><br />
+<code>[3]. max/min</code><br />
+<code>[4]. zip</code></li>
+</ol>
+<div class="hlcode"><pre>  <span class="c">#zip use</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="s">&#39;helloa&#39;</span><span class="p">,</span><span class="s">&#39;iamb&#39;</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+  <span class="s">&#39;helloa&#39;</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+  <span class="s">&#39;iamb&#39;</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+  <span class="p">[(</span><span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;i&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;e&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;l&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;l&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)]</span>
+  <span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<ol>
+<li>字符串函数</li>
+<li>raw_input()/input</li>
+<li>str/unicode</li>
+<li>chr[ASCII 0-255]<br />
+<code>print (chr(65))--&gt;A</code></li>
+<li>unichr[unicode]<br />
+    ``</li>
+<li>
+<p>ord</p>
+</li>
+<li>
+<p>字符串内建函数</p>
+</li>
+<li>string.expandtabs(num)</li>
+<li>string.capitalize()</li>
+<li>对string内容检索类函数<br />
+<code>string.isdigit()</code><br />
+<code>string.islower()</code><br />
+<code>string.strip</code><br />
+<code>string.leftstrip</code><br />
+<code>etc</code></li>
+</ol>
+<h4 id="_7">字符串转义</h4>
+<ol>
+<li>特殊字符串与控制字符</li>
+<li>\x,\num</li>
+</ol>
+<h4 id="unicode">Unicode字符串</h4>
+<blockquote>
+<p>Python 已经可以应付大部分应用对 Unicode 的存储、访问、操作的需要了</p>
+</blockquote>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '序列',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-10-09 11:00:13</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

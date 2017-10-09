@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>数字序列 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;数字序列
+    <span class="updated">Page Updated&nbsp;
+      2015-09-27 07:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">数字序列</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>...</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">数字</a><ul>
+<li><a href="#_2">数字类型</a></li>
+<li><a href="#_3">整型</a></li>
+<li><a href="#_4">浮点型</a></li>
+<li><a href="#_5">运算符</a><ul>
+<li><a href="#_6">分类</a></li>
+<li><a href="#_7">算数运算符</a></li>
+<li><a href="#_8">位运算符[适用整数]</a></li>
+</ul>
+</li>
+<li><a href="#_9">数字相关的函数</a><ul>
+<li><a href="#_10">非针对数字类型</a></li>
+<li><a href="#_11">针对数字类型的内建</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">数字</h2>
+<hr />
+<h3 id="_2">数字类型</h3>
+<hr />
+<ul>
+<li>
+<p>按照<a href="./pyobject.html">对象类型</a>中对类型分类,可知数字的使用操作会产生新对象，但对程序员是透明的</p>
+</li>
+<li>
+<p>操作<br />
+<code>删</code><br />
+<code>改</code><br />
+<code>查</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="_3">整型</h3>
+<hr />
+<blockquote>
+<p>整型与长整型统一了吗？<br />
+整型与长整型对程序员来说迟早会透明</p>
+</blockquote>
+<ul>
+<li>布尔型</li>
+<li>标准整型<br />
+<code>32位机32位</code><br />
+<code>64位机64位</code></li>
+<li>长整型[注意了]<br />
+<code>和机器长度无关，和虚拟内存大小有关</code></li>
+</ul>
+<div class="hlcode"><pre>    <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span><span class="il">99999999999999999999999999999L</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+    <span class="il">99999999999999999999999999999L</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">a</span>
+    <span class="mi">99999999999999999999999999999</span>
+    <span class="o">&gt;&gt;&gt;</span>
+    <span class="err">！在这里我们也看出了</span><span class="nb">str</span><span class="p">()</span><span class="err">的人性化，不输出‘</span><span class="n">L</span><span class="err">’</span>
+      <span class="err">而</span><span class="nb">repr</span><span class="err">输出了‘</span><span class="n">L</span><span class="err">’</span>
+</pre></div>
+
+
+<ul>
+<li>移位错误[已经消除]</li>
+</ul>
+<div class="hlcode"><pre>  <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">&lt;&lt;</span><span class="mi">23123</span>
+  <span class="mi">1041</span><span class="o">*****</span><span class="il">34793216L</span><span class="p">[</span><span class="err">汗！输出了</span><span class="p">]</span>
+  <span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<hr />
+<h3 id="_4">浮点型</h3>
+<hr />
+<ul>
+<li>没有double但<b style='color:red'>好像</b>和double精度差不多</li>
+<li><b style='color:green'>注意一下会使用科学计数法就行</b></li>
+</ul>
+<p><b style='color:orange'>复数就不想写了，我会在科学计算章节谢写一点</b></p>
+<hr />
+<h3 id="_5">运算符</h3>
+<hr />
+<h4 id="_6">分类</h4>
+<ul>
+<li>算术运算符</li>
+<li>位运算符</li>
+</ul>
+<h4 id="_7">算数运算符</h4>
+<ul>
+<li>地板除[向下取整]</li>
+</ul>
+<div class="hlcode"><pre>    <span class="n">Python</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">12</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Nov</span> <span class="mi">19</span> <span class="mi">2015</span><span class="p">,</span> <span class="mo">06</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span>
+    <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+    <span class="mi">0</span>
+    <span class="o">&gt;&gt;</span><span class="mi">1</span><span class="o">//</span><span class="mi">2</span>
+    <span class="mi">0</span>
+    <span class="o">&gt;&gt;</span><span class="mf">1.0</span><span class="o">%</span><span class="mf">2.0</span>
+    <span class="mf">0.5</span>
+    <span class="p">[</span><span class="err">类似</span><span class="n">c</span><span class="err">语言</span><span class="p">]</span>
+    <span class="o">===============================================</span>
+    <span class="n">Python</span> <span class="mf">3.5</span><span class="o">.</span><span class="mi">2</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Nov</span> <span class="mi">17</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">17</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mi">23</span><span class="p">)</span>
+    <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+    <span class="mf">0.5</span>
+    <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="o">//</span><span class="mi">2</span>
+    <span class="mi">0</span>
+    <span class="p">[</span><span class="o">//</span><span class="err">成功作为地板除符号</span><span class="p">]</span>
+</pre></div>
+
+
+<ul>
+<li><code>**</code>优先级<b style='color:red'>高于</b>单目运算符</li>
+</ul>
+<h4 id="_8">位运算符[适用整数]</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">位运算符</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">~num</td>
+<td align="center">单目运算,对数的每一位取反</td>
+</tr>
+<tr>
+<td align="center">num1   &lt;&lt; num2</td>
+<td align="center">Num1 左移 num2 位</td>
+</tr>
+<tr>
+<td align="center">num1 &gt;&gt; num2</td>
+<td align="center">Num1 右移 num2 位</td>
+</tr>
+<tr>
+<td align="center">num1 &amp; num2</td>
+<td align="center">num1 与 num2 按位 与</td>
+</tr>
+<tr>
+<td align="center">num1 ^ num2</td>
+<td align="center">num1 异或 num2</td>
+</tr>
+<tr>
+<td align="center">num1 <code>|</code> num2</td>
+<td align="center">num1 与 num2 按位或</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<ul>
+<li>负数会被当成正数的 2 进制补码处理。</li>
+<li>左移和右移 N 位等同于无溢出检查的 2 的 N 次幂运算: 2**N。</li>
+<li>对长整数来说, 位运算符使用一种经修改的 2 进制补码形式,使得符号位可以无限的向左扩展。</li>
+</ul>
+<hr />
+<h3 id="_9">数字相关的函数</h3>
+<hr />
+<ul>
+<li>功能函数</li>
+<li>转换函数</li>
+</ul>
+<h4 id="_10">非针对数字类型</h4>
+<ul>
+<li>cmp<br />
+<code>python3已经取消</code></li>
+<li>str<br />
+<code>str(0xee)</code></li>
+</ul>
+<h4 id="_11">针对数字类型的内建</h4>
+<ul>
+<li>转换工厂函数</li>
+</ul>
+<div class="hlcode"><pre>  <span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s">&#39;11&#39;</span><span class="p">,</span><span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+  <span class="mi">3</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s">&#39;ff&#39;</span><span class="p">,</span><span class="n">base</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+  <span class="mi">255</span>
+  <span class="o">&gt;&gt;&gt;</span>
+  <span class="c">#返回十进制</span>
+</pre></div>
+
+
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">类(工厂函数)</th>
+<th align="center">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">bool(obj)</td>
+<td align="center">返回obj对象的布尔值,也就是obj.<strong>nonzero</strong>()方法的返回值</td>
+</tr>
+<tr>
+<td align="center">int(obj, base=10)</td>
+<td align="center">返回一个字符串或数值对象的整数表示,  类似string.atoi()从Python 1.6起,引入了可选的进制参数。</td>
+</tr>
+<tr>
+<td align="center">long(obj, base=10)</td>
+<td align="center">返回一个字符或数据对象的长整数表示,类似string.atol(),  从Python1.6起, 引入了可选的进制参数</td>
+</tr>
+<tr>
+<td align="center">float(obj)</td>
+<td align="center">返回一个字符串或数据对象的浮点数表示,类似string.atof()</td>
+</tr>
+<tr>
+<td align="center">complex(str) or complex(real, imag=0.0)</td>
+<td align="center">返回一个字符串的复数表示,或者根据给定的实数(及一个可选的虚数部分)生成一个复数对象。</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<ul>
+<li>功能函数</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">abs(num)</td>
+<td align="center">返回 num 的绝对值</td>
+</tr>
+<tr>
+<td align="center">coerce(num1, num2)</td>
+<td align="center">将num1和num2转换为同一类型,然后以一个元组的形式返回。</td>
+</tr>
+<tr>
+<td align="center">divmod(num1, num2)</td>
+<td align="center">除法-取余运算的结合。返回一个元组(num1/num2,num1 % num2)。对浮点数和复数的商进行下舍入(复数仅取实数部分的商)</td>
+</tr>
+<tr>
+<td align="center">pow(num1, num2, mod=1)</td>
+<td align="center">取 num1 的 num2 次方,如果提供 mod 参数,则计算结果再对 mod 进行取余运算</td>
+</tr>
+<tr>
+<td align="center">round(flt, ndig=0)</td>
+<td align="center">接受一个浮点数  flt  并对其四舍五入,保存  ndig位小数。若不提供ndig  参数,则默认小数点后0位。</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<div class="hlcode"><pre>    <span class="nb">abs</span><span class="p">(),</span> <span class="nb">coerce</span><span class="p">(),</span> <span class="nb">divmod</span><span class="p">(),</span> <span class="nb">pow</span><span class="p">(),</span> <span class="nb">pow</span><span class="p">()</span> <span class="err">和</span> <span class="nb">round</span><span class="p">()</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span> <span class="nb">abs</span><span class="o">-----&gt;</span><span class="err">取绝对值</span>
+     <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span> <span class="nb">coerce</span><span class="o">--&gt;</span><span class="err">函数</span> <span class="nb">coerce</span><span class="p">()</span><span class="err">为程序员提供了不依赖</span> <span class="n">Python</span> <span class="err">解释器</span><span class="p">,</span> <span class="err">而是自定义两个数值类型转换的方法。对一种新创建的数值类型来说</span><span class="p">,</span> <span class="err">这个特性非常有用。函数</span> <span class="nb">coerce</span><span class="p">()</span><span class="err">仅回一个包含类型转换完毕的两个数值元素的元组</span>
+     <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span> <span class="nb">divmod</span><span class="p">()</span><span class="err">内建函数把除法和取余运算结合起来</span><span class="p">,</span> <span class="err">返回一个包含商和余数的元组。对整数来说</span><span class="p">,</span><span class="err">它的返回值就是地板除和取余操作的结果。对浮点数来说</span><span class="p">,</span> <span class="err">返回的商部分是</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">num1</span><span class="o">/</span><span class="n">num2</span><span class="p">),</span><span class="err">对复数来说</span><span class="p">,</span> <span class="err">商部分是</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">num1</span><span class="o">/</span><span class="n">num2</span><span class="p">)</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+     <span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span> <span class="err">在</span> <span class="n">Python</span> <span class="mf">1.5</span> <span class="err">之前</span><span class="p">,</span><span class="err">并没有</span> <span class="o">**</span> <span class="err">运算符。内建函数</span> <span class="nb">pow</span><span class="p">()</span><span class="err">还接受第三个可选的参数</span><span class="p">,</span><span class="err">一个余数参数。如果有这个参数的</span><span class="p">,</span> <span class="nb">pow</span><span class="p">()</span> <span class="err">先进行指数运算</span><span class="p">,</span><span class="err">然后将运算结果和第三个参数进行取余运算。这个特性主要用于密码运算</span><span class="p">,</span><span class="err">并且比</span> <span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="n">z</span> <span class="err">性能更好</span><span class="p">,</span> <span class="err">这是因为这个函数的实现类似于</span> <span class="n">C</span> <span class="err">函数</span> <span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+     <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span> <span class="err">内建函数</span> <span class="nb">round</span><span class="p">()</span><span class="err">用于对浮点数进行四舍五入运算。它有一个可选的小数位数参数。如果不提供小数位参数</span><span class="p">,</span> <span class="err">它返回与第一个参数最接近的整数</span><span class="p">(</span><span class="err">但仍然是浮点类型</span><span class="p">)</span><span class="err">。第二个参数告诉</span> <span class="nb">round</span> <span class="err">函数将结果精确到小数点后指定位数</span>
+     <span class="p">[</span><span class="err">注意</span><span class="p">]:</span><span class="nb">int</span><span class="p">()</span><span class="o">--&gt;</span> <span class="err">小数截断</span>
+           <span class="n">floor</span><span class="p">()</span><span class="o">--&gt;</span><span class="err">向下取整</span>
+           <span class="nb">round</span><span class="p">()</span><span class="o">--&gt;</span><span class="err">四舍五入</span>
+</pre></div>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '数字序列',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-10-09 11:00:13</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
