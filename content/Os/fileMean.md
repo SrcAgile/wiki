@@ -1,7 +1,7 @@
 ---
 title: "文件介绍"
 layout:  page
-collection: "[linux目]"
+collection: "[L-File]"
 date: 2017-09-08 21:00:00
 ---
 
@@ -20,3 +20,5 @@ date: 2017-09-08 21:00:00
 
 
 - [/etc/services] 存放服务器服务及其占用端口号
+- [/usr/share/fonts ] 字体存放处
+- [/usr/share/fonts/truetype]

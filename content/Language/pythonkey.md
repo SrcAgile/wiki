@@ -1,5 +1,5 @@
 ---
-title: "[词法目][python目]关键字/特殊概念"
+title: "关键字[P]概念"
 layout: page
 collection: "[三代目]"
 date: 2017-08-28 21:00:00
@@ -178,10 +178,29 @@ Exception
 ####<b>`__name__`</b>
 ```python
 #hello.py
-1.if __name__=='__main__':
-2.    hello()
+1. def hello():
+2.    print "hello"
+3.if __name__=='__main__':
+4.    hello()
 ```
 当我们在命令行运行hello模块文件时，Python解释器把一个特殊变量`__name__`置为`__main__`，而如果在其他地方导入该hello模块时，if判断将失败，因此，这种if测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是<b style='color:green'>运行测试</b>。
+
+```python
+正经测试:
+1. 模块导入测试
+>>> import hello
+>>> hello.__name__
+'hello'
+>>>
+
+2. 模块运行测试
+$ python hello
+$ hello
+
+答案:
+可以证明导入时 __name__为模块名字
+直接运行脚本时 __name__为__main__
+```
 
 - 测试
 ```bash

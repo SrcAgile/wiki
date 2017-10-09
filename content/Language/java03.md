@@ -1,5 +1,5 @@
 ---
-title: "[java纲]Java(三)"
+title: "数据[J]类型"
 layout: page
 collection: "[三代目]"
 date: 2017-09-02 21:00:00

@@ -1,5 +1,5 @@
 ---
-title: "regex(一)"
+title: "数学[R]背景"
 layout: page
 collection: "[四代目]"
 date: 2017-08-26 21:00:00

@@ -1,5 +1,5 @@
 ---
-title: "python源码分析"
+title: "源码[P]分析"
 layout: page
 collection: "[分析目]"
 date: 2017-08-27 21:00:00

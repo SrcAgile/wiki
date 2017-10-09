@@ -1,5 +1,5 @@
 ---
-title: "[java纲]Java(一)"
+title: "创建[J]清理"
 layout: page
 collection: "[三代目]"
 date: 2017-09-02 21:00:00

@@ -17,6 +17,12 @@ date: 2017-08-25 21:00:00
 ```
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27317272&auto=0&height=66"></iframe>
 ---
+**Language目录下的文章均属于[工具类](../Tool)的子集,语言本身就是描述与研究世界现象的工具.
+由于选用的此Wiki暂时没有建立页面目录分级功能,故只能将其分离出来
+**
+
+
+---
 
 [TOC]
 

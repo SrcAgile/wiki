@@ -1,7 +1,7 @@
 ---
 title: "装饰器模式DP"
 layout: page
-collection: "[设计模式目]"
+collection: "[设计目]"
 date: 2017-08-26 21:00:00
 ---
 **文档状态：**<a style="color:red;background-color:gray">编辑中....</a>

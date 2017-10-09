@@ -1,5 +1,5 @@
 ---
-title: "[java纲]Java概论"
+title: "语言[J]概论"
 layout: page
 collection: "[三代目]"
 date: 2017-09-01 21:00:00

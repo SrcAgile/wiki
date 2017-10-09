@@ -1,5 +1,5 @@
 ---
-title: "[Regex纲]Regex概论"
+title: "语言[R]概论"
 layout: page
 collection: "[四代目]"
 date: 2017-08-31 21:00:00
