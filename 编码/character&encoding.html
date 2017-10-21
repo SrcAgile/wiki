@@ -47,6 +47,7 @@
 <li><a href="#_2">什么是字符编码</a></li>
 <li><a href="#utf-8unicode">UTF-8和Unicode的关系</a></li>
 <li><a href="#utf-8">UTF-8编码简介</a></li>
+<li><a href="#_3">实践环节</a></li>
 </ul>
 </div>
 <hr />
@@ -99,6 +100,42 @@
 </ul>
 <p>具体每个字节的特征可见下表，其中x代表序号部分，把各个字节中的所有x部分拼接在一起就组成了在Unicode字库中的序号</p>
 <p><a href="http://cenalulu.github.io/linux/character-encoding/">点击查看</a></p>
+<hr />
+<h3 id="_3">实践环节</h3>
+<hr />
+<div class="hlcode"><pre><span class="n">meta</span><span class="nd">@meta</span><span class="err">$</span>  <span class="n">LC_CTYPE</span><span class="o">=</span><span class="s">&quot;zh_CN.GBK&quot;</span>
+<span class="n">meta</span><span class="nd">@meta</span><span class="err">$</span>  <span class="n">locale</span>
+<span class="n">LANG</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LANGUAGE</span><span class="o">=</span><span class="n">en_US</span>
+<span class="n">LC_CTYPE</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">GBK</span>
+<span class="n">LC_NUMERIC</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_TIME</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_COLLATE</span><span class="o">=</span><span class="s">&quot;en_US.UTF-8&quot;</span>
+<span class="n">LC_MONETARY</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_MESSAGES</span><span class="o">=</span><span class="s">&quot;en_US.UTF-8&quot;</span>
+<span class="n">LC_PAPER</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_NAME</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_ADDRESS</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_TELEPHONE</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_MEASUREMENT</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_IDENTIFICATION</span><span class="o">=</span><span class="n">zh_CN</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">LC_ALL</span><span class="o">=</span>
+<span class="n">meta</span><span class="nd">@meta</span><span class="err">$</span> <span class="n">mkdir</span> <span class="err">哈</span>
+<span class="n">meta</span><span class="nd">@meta</span><span class="err">$</span> <span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+<span class="o">.</span>
+<span class="o">..</span>
+<span class="err">???</span>
+<span class="n">meta</span><span class="nd">@meta</span><span class="err">$</span>  <span class="n">LC_CTYPE</span><span class="o">=</span><span class="s">&quot;zh_CN.UTF-8&quot;</span>
+<span class="n">meta</span><span class="nd">@meta</span><span class="err">$</span>  <span class="n">ls</span>
+<span class="o">.</span>
+<span class="o">..</span>
+<span class="err">哈</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="n">String</span> <span class="n">reqValue1</span><span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">reqValue</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="s">&quot;UTF-8&quot;</span><span class="o">),</span><span class="s">&quot;GBK&quot;</span><span class="o">);</span>
+<span class="err">#表示以</span><span class="n">utf8</span><span class="err">的方式获取一个含特定数量字节的序列然后以</span><span class="n">gbk</span><span class="err">的方式进行编码</span>
+</pre></div>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -131,7 +168,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-10-09 11:00:13</p>
+        <p>Site Generated 2017-10-21 10:27:31</p>
       </span>
     </div>
 

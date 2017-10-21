@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>处理机调度 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;处理机调度
+    <span class="updated">Page Updated&nbsp;
+      2017-09-23 17:09:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">处理机调度</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<blockquote>
+<p>...</p>
+</blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#intro">Intro</a><ul>
+<li><a href="#messy-pool">messy pool</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="intro">Intro</h2>
+<p>这是一个很重要的问题</p>
+<ul>
+<li>调度的实质是资源分配，这里的资源指的是可运行实体</li>
+</ul>
+<h3 id="messy-pool">messy pool</h3>
+<p>作业是由用户提交，以用户任务为单位；进程是由系统自动生成，是操作系统控制的单位<br />
+作业（Job）是一个总任务，进程（Process）是总任务中的各个子项。<br />
+例如：课室大扫除是一项总任务，它是一个作业；而其中擦桌子、扫地是各个子任务，擦桌子需要多次执行（每桌子执行一次），扫地只需要执行一次，这些就是在作业中调度的进程。<br />
+作业与进程的区别：<br />
+    一个进程是一个程序对某个数据集的执行过程，是分配资源的基本单位。作业是用户需要计算机完成的某项任务，是要求计算机所做工作的集合。一个作业的完成要经过作业提交、作业收容、作业执行和作业完成4个阶段。而进程是对已提交完毕的程序所执行过程的描述，是资源分配的基本单位。其主要区别如下。<br />
+   （1）作业是用户向计算机提交任务的任务实体。在用户向计算机提交作业后，系统将它放入外存中的作业等待队列中等待执行。而进程则是完成用户任务的执行实体，是向系统申请分配资源的基本单位。任一进程，只要它被创建，总有相应的部分存在于内存中。<br />
+   （2）一个作业可由多个进程组成，且必须至少由一个进程组成，反过来则不成立。<br />
+   （3）作业的概念主要用在批处理系统中，像UNIX这样的分时系统中就没有作业的概念。而进程的概念则用在几乎所有的多道程序系统中。</p>
+<p>a,严格地说，在分时系统中，从系统角度来看甚至没有作业的概念。因此，这里主要介绍批处理系统的作              业建立过程。</p>
+<p>操作系统的三种基本类型：多道批处理系统、分时系统、实时系统。</p>
+<p>具有多种类型操作特征的操作系统。可以同时兼有多道批处理、分时、实时处理的功能，或其中两种以上的功能。<br />
+例如：实时处理+批处理=实时批处理系统。首先保证优先处理实时任务，插空进行批处理作业。常把实时任务称为前台作业，批作业称为后台作业。<br />
+再如：批处理+分时处理=分时批处理系统。即：时间要求不强的作业放入“后台”（批处理）处理，需频繁交互的作业在“前台”（以去银行办理业务，这个银行只有一个窗口可以办理业务。离业务窗口不远的地方是等候区，两者之间走路需要1分钟。分时）处理，处理机优先运行“前台”作业。<br />
+从上世纪60年代中期，国际上开始研制一些大型的通用操作系统。这些系统试图达到功能齐全、可适应各种应用范围和操作方式变化多端的环境的目标。但是，这些系统过于复杂和庞大，不仅付出了巨大的代价，且在解决其可靠性、可维护性和可理解性方面都遇到很大的困难。</p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '处理机调度',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-10-21 10:27:31</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

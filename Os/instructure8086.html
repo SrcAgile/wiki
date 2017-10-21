@@ -46,20 +46,37 @@
 <p><b style="color:red"></b></p>
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#8086">8086</a><ul>
-<li><a href="#_1">分类</a></li>
-<li><a href="#_2">数据传输(送)类</a><ul>
-<li><a href="#_3">分类</a></li>
+<li><a href="#_1">前提</a></li>
+<li><a href="#_2">分类</a></li>
+<li><a href="#_3">数据传输(送)类</a><ul>
+<li><a href="#_4">分类</a></li>
 </ul>
 </li>
 <li><a href="#mov">MOV</a></li>
 <li><a href="#pushpop">PUSH/POP</a></li>
+<li><a href="#xchgexchange">XCHG(exchange)</a></li>
+<li><a href="#xlat">XLAT</a></li>
+<li><a href="#inout">IN/OUT</a></li>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#faq">FAQ</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <h1 id="8086">8086</h1>
 <hr />
-<h3 id="_1">分类</h3>
+<h3 id="_1">前提</h3>
+<hr />
+<blockquote>
+<p>先介绍一下常使用的非标准化的符号</p>
+</blockquote>
+<p>我们应该会常见(ax),((ax))等等<br />
+仔细说一下<br />
+- 0层括号 取地址<br />
+- 1层括号 取数值<br />
+- 2曾括号 做指针</p>
+<hr />
+<h3 id="_2">分类</h3>
 <hr />
 <ol>
 <li>数据传送指令</li>
@@ -73,9 +90,9 @@
 <p>粗略划分的话,分为三大类指令,数据传输,操作控制,数据运算</p>
 </blockquote>
 <hr />
-<h3 id="_2">数据传输(送)类</h3>
+<h3 id="_3">数据传输(送)类</h3>
 <hr />
-<h4 id="_3">分类</h4>
+<h4 id="_4">分类</h4>
 <ol>
 <li>通用数据传送指令<br />
 <code>[1]. MOV[一般传送]</code><br />
@@ -152,6 +169,87 @@
 <img alt="" src="https://raw.githubusercontent.com/srcmit/source/wiki/photo/pop.png" /><br />
 </center></p>
 <hr />
+<hr />
+<h3 id="xchgexchange">XCHG(exchange)</h3>
+<hr />
+<ul>
+<li>目的<br />
+<code>值交换</code></li>
+<li>格式<br />
+<code>XCHG dest,src</code></li>
+<li>要求<br />
+<code>寄存器&lt;--&gt;(存储器|寄存器)</code></li>
+<li>例子<br />
+<code>XCHG BL,DL</code><br />
+<code>XCHG AX,SI</code><br />
+<code>XCHG COUNT[DI],AX</code></li>
+</ul>
+<hr />
+<h3 id="xlat">XLAT</h3>
+<hr />
+<ul>
+<li>目的<br />
+<code>指定内存空间取值[查表转换]</code><br />
+<code>数制转换</code><br />
+<code>编码系统转换</code></li>
+<li>格式<br />
+<code>XLAT SRC_TABLE</code></li>
+<li>效果<br />
+<code>(AL)&lt;--((BX)+(AL))</code></li>
+<li>例子<br />
+<code>[Step1]. MOV BX, OFFSET SRC_TABLE</code><br />
+<code>[Step2]. MOV AL,0AH</code><br />
+<code>[Step3]. XLAT SRC_TABLE</code></li>
+<li>附加<br />
+<code>有的人说,这种效果也可以使用其他指令实现,而且并不比你的这个执行效率差</code><br />
+<code>其实这个指令有一个很重要的前提,那就是*表*,没错,这个命令过于工程性,例如ascii码转换</code></li>
+</ul>
+<hr />
+<p>------------------------------------------------类型分界----------------------------------------------</p>
+<hr />
+<blockquote>
+<p>输入输出指令注重的是外设与cpu的数据传送,他们都是累加器专用指令.</p>
+</blockquote>
+<hr />
+<h3 id="inout">IN/OUT</h3>
+<hr />
+<ul>
+<li>格式<br />
+<code>IN ACC,PORT;(ACC)&lt;--(PORT)</code></li>
+<li>作用<br />
+<code>从io端口输入数据到累加器</code></li>
+<li>限制<br />
+<code>port 的使用定义域{8位立即数,16位寄存器DX}</code><br />
+<code>ACC8位则读8位,ACC16位则读16位</code></li>
+<li>
+<p>例子<br />
+<code>IN AL,DATA;(AL)&lt;--(DATA)//DATA直接寻址,但不需要加'[]'</code><br />
+<code>IN AX,DATA;(AX)&lt;--((DATA)+1:(DATA))</code><br />
+<code>IN AL,BX;  (AL)&lt;--((DX))</code><br />
+<code>IN AX,BX;  (AX)&lt;--((DX)+1:(DX))</code></p>
+</li>
+<li>
+<p>说明<br />
+<code>OUT除了数据传输方向与IN相反,规则不变</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="problem">Problem</h3>
+<hr />
+<p><code>暂时未解决</code></p>
+<ul>
+<li>为什么将段寄存器,ip,内部通信寄存器放在BIU</li>
+<li>为什么内存与内存之间(段寄存器与段寄存器)不能传输数据</li>
+</ul>
+<hr />
+<h3 id="faq">FAQ</h3>
+<hr />
+<ul>
+<li>在执行指令期间，EU能直接访问存储器吗?为什么?<br />
+<code>不能，因为在指令执行期间，执行指令所需的操作数由BIU从相应的内存区域或I\O端口中取出，传送给执行单元EU</code></li>
+<li>简述8086的分段机制<br />
+<code>因为基址寄存器是16位的,所以可以有64k个节,每个节对应一个段基址,且每个段大小为16字节</code></li>
+</ul>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -184,7 +282,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2017-10-09 11:00:13</p>
+        <p>Site Generated 2017-10-21 10:27:31</p>
       </span>
     </div>
 

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>死锁介绍 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;死锁介绍
+    <span class="updated">Page Updated&nbsp;
+      2017-10-15 21:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">死锁介绍</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<hr />
+<blockquote></blockquote>
+<hr />
+<hr />
+<h3 id="_1">开始</h3>
+<hr />
+<blockquote>
+<p>首先我不得不说操作系统开发者的高瞻远瞩以及见识透彻,当我看文章时出现的果然是乐器和鸣般的感受</p>
+</blockquote>
+<ol>
+<li>
+<p>首先我看见了<b style='color:red'>可能</b>出现死锁<br />
+<code>可能这个词语在数学学科的一大分支中出现,没错就是概率论,那么说现在计算机出现死锁具有随机性,那么这个随机性有没有办法去发现规律或者提出解决方案?在解决死锁的方案中我发现了预防死锁方案,那么可以提前知道答案,死锁是可以预防的,这个随机性是可以被抹除的,那么到底是引起这个随机性的起源?哪里存在一种未知性?宏观上来说是:时间线,细致来说,就是进程的推进顺序,看起来进程的推进顺序是影响死锁的主要原因之一!此时可以将这个问题数学化,将进程的推进顺序看作是算法的随机输入序列,通过特化随机序列,消去其随机特性,那么得到死锁的可能性要么是0,要么是1,既然就这两种情况,那么通过程序控制结构便可以将程序的流向引向非死锁结果.</code></p>
+</li>
+<li>
+<p>一句话:<b style='color:red'>起因</b>:死锁是多个进程对资源争夺形成的<br />
+<code>两个对象 进程 &amp; 资源 ,那么对资源进行分类(p104)</code></p>
+</li>
+<li>
+<p>计算机对死锁的<b style='color:red'>定义</b>[就是对这个状态的文字化或者数字化表述]<br />
+<code>一组进程中的每一个进程都在等待仅有该组进程的其他进程才能引发的事件</code></p>
+</li>
+<li>
+<p>既然出现了<b style='color:red'>状态</b>这个字,那么按照unix哲学,一切皆文件,谈论一下.<br />
+<code>状态在计算机中可以称为context,它是选取计算机中某几个具有代表性的数据结构,通过其值的意义来判断其处于何种状态</code><br />
+<code>有人问为什么要了解状态的定义,因为我们要创造状态</code></p>
+</li>
+</ol>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">策略</th>
+<th align="center">机器状态</th>
+<th align="center">进程状态</th>
+<th align="center">人为设置状态特征量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">预防策略</td>
+<td align="center">没有死锁</td>
+<td align="center">未运行</td>
+<td align="center">不需要</td>
+</tr>
+<tr>
+<td align="center">避免策略</td>
+<td align="center">可能有死锁</td>
+<td align="center">已经运行</td>
+<td align="center">需要</td>
+</tr>
+<tr>
+<td align="center">检测解除策略</td>
+<td align="center">已经有死锁</td>
+<td align="center">死锁中</td>
+<td align="center">不需要</td>
+</tr>
+<tr>
+<td align="center"></center></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="question">question</h3>
+<hr />
+<ol>
+<li>进程通信出现的死锁的能够预防吗?</li>
+</ol>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '死锁介绍',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-10-21 10:27:31</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

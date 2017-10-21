@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>做什么 - Meta's Wiki</title>
+    <title>工程[M]开发 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,23 +23,45 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#About">About</a>&nbsp;&#187;&nbsp;做什么
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;工程[M]开发
     <span class="updated">Page Updated&nbsp;
-      2017-08-26 21:00:00
+      2017-09-11 21:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">做什么</div>
+<div class="page_title">工程[M]开发</div>
 
-  <p>计算机的创造以及在其上一层又一层抽象的发展均是为解决问题而出现的,而非为创造问题的.<br />
-艰难的问题是原本存在的,但为了解决艰难的问题,所以使用分治的思想去拆分为大同小异的问题,但并非不可解决的.</p>
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+NONE</li>
+</ul>
+<hr />
+<blockquote></blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#order">order</a></li>
+</ul>
+</div>
+<h3 id="order">order</h3>
+<hr />
+<p>编译--&gt;链接--&gt;运行<br />
+- 编译<br />
+<code>生成.o</code><br />
+<code>编译器只检测程序语法和函数、变量是否被声明如果函数未被声明，编译器会给出一个警告，但可以生成Object File。</code><br />
+- 链接<br />
+<code>可能因为有太多.o文件难以书写,引入Archive File[.a文件][window 是.lib文件]</code><br />
+<code>链接器会在所有的Object File中找寻函数的实
+现，如果找不到，那到就会报链接错误码（Linker Error），在VC下，这种错误一般是： Link2001错误 ，意思说是说，链接器未能找到函数的实现。你需要指定函数的Object File。</code></p>
+<p><em>_</em>好多东西要写啊,那我把pdf上传吧!</p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '做什么',
+    title: '工程[M]开发',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

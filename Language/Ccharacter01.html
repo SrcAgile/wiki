@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>数据[J]类型 - Meta's Wiki</title>
+    <title>语言[C]特性 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,20 +23,18 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;数据[J]类型
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;语言[C]特性
     <span class="updated">Page Updated&nbsp;
-      2017-09-02 21:00:00
+      2017-09-11 23:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">数据[J]类型</div>
+<div class="page_title">语言[C]特性</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
-<blockquote>
-<p>完备的系统在演变中浑然天成,要想在系统中添加新的功能,必须能够忍受带来的递归增长的问题.</p>
-</blockquote>
+<blockquote></blockquote>
 <hr />
 <ul>
 <li><strong>今日音乐</strong></li>
@@ -45,24 +43,45 @@
 </pre></div>
 
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
-
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#_1">浮点数存储</a></li>
+<li><a href="#_1">位域</a></li>
 </ul>
 </div>
-<h3 id="_1">浮点数存储</h3>
-<ul>
-<li>JAVA中的浮点数是如何存储的？<br />
-见本站<a href="../编码/进制.html">进制</a>讨论</li>
-</ul>
+<h3 id="_1">位域</h3>
+<ol>
+<li>一个位域必须存储在同一个字节中，不能跨两个字节。如一个字节所剩空间不够存放另一位域时，应从下一单元起存放该位域。也可以有意使某位域从下一单元开始。</li>
+</ol>
+<div class="hlcode"><pre>  <span class="nl">EX:</span>
+  <span class="k">struct</span> <span class="n">bs</span>
+  <span class="p">{</span>
+      <span class="kt">unsigned</span> <span class="n">a</span><span class="o">:</span><span class="mi">4</span><span class="p">;</span>
+      <span class="kt">unsigned</span> <span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+      <span class="kt">unsigned</span> <span class="n">b</span><span class="o">:</span><span class="mi">4</span><span class="p">;</span>
+      <span class="kt">unsigned</span> <span class="n">c</span><span class="o">:</span><span class="mi">4</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<ol>
+<li>由于位域不允许跨两个字节，因此位域的长度不能大于一个字节的长度，也就是说不能超过8位二进位</li>
+<li>位域可以无位域名，这时它只用来作填充或调整位置。无名的位域是不能使用的。例：</li>
+</ol>
+<div class="hlcode"><pre>  <span class="nl">EX:</span>
+  <span class="k">struct</span> <span class="n">k</span>
+  <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">a</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="o">:</span><span class="mi">2</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">b</span><span class="o">:</span><span class="mi">3</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">c</span><span class="o">:</span><span class="mi">2</span><span class="p">;</span>
+  <span class="p">};</span>
+</pre></div>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '数据[J]类型',
+    title: '语言[C]特性',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {
