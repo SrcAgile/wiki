@@ -54,3 +54,43 @@ date: 2016-11-12 12:10:33
 具体每个字节的特征可见下表，其中x代表序号部分，把各个字节中的所有x部分拼接在一起就组成了在Unicode字库中的序号
 
 [点击查看](http://cenalulu.github.io/linux/character-encoding/)
+
+
+---
+###实践环节
+---
+
+```python
+meta@meta$  LC_CTYPE="zh_CN.GBK"
+meta@meta$  locale
+LANG=en_US.UTF-8
+LANGUAGE=en_US
+LC_CTYPE=zh_CN.GBK
+LC_NUMERIC=zh_CN.UTF-8
+LC_TIME=zh_CN.UTF-8
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY=zh_CN.UTF-8
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER=zh_CN.UTF-8
+LC_NAME=zh_CN.UTF-8
+LC_ADDRESS=zh_CN.UTF-8
+LC_TELEPHONE=zh_CN.UTF-8
+LC_MEASUREMENT=zh_CN.UTF-8
+LC_IDENTIFICATION=zh_CN.UTF-8
+LC_ALL=
+meta@meta$ mkdir 哈
+meta@meta$ ls -a
+.
+..
+???
+meta@meta$  LC_CTYPE="zh_CN.UTF-8"
+meta@meta$  ls
+.
+..
+哈
+```
+
+```java
+String reqValue1=new String(reqValue.getBytes("UTF-8"),"GBK");
+#表示以utf8的方式获取一个含特定数量字节的序列然后以gbk的方式进行编码
+```
