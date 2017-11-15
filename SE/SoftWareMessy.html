@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>文件介绍 - Meta's Wiki</title>
+    <title>软件开发 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,36 +23,37 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;文件介绍
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;软件开发
     <span class="updated">Page Updated&nbsp;
-      2017-09-08 21:00:00
+      2017-10-21 16:14:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">文件介绍</div>
+<div class="page_title">软件开发</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
 <hr />
-<ul>
-<li><strong>今日音乐</strong><br />
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=286999&auto=0&height=66"></iframe></li>
-</ul>
-<hr />
 <blockquote></blockquote>
 <hr />
-<p><b style="color:red">电脑维修中,只能先备份了...</b></p>
-<ul>
-<li>[/etc/services] 存放服务器服务及其占用端口号</li>
-<li>[/usr/share/fonts ] 字体存放处</li>
-<li>[/usr/share/fonts/truetype]</li>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">用例图</a></li>
 </ul>
+</div>
+<h3 id="_1">用例图</h3>
+<p>参与者是开发系统信息的提供与消费者,参与者提供的信息具有数据信息,状态信息与控制信息,系统虽然是自动化的但是如果系统是为人或者其他系统过于复杂的服务的,那么这种系统需要具有一定的交互性(当然系统也可以不具有交互性),而交互性的体现来源于参与者与系统数据的交换.<br />
+- 数据信息<br />
+<code>比如给好友转账金额,金额是可以自定义的</code><br />
+- 状态信息<br />
+<code>web应用中,服务器对用户登录状态的验证,需要用户提供状态信息</code><br />
+<code>wechat中对方用户可以看见用户的状态,正在输入...</code><br />
+<code>状态信息常用于</code></p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '文件介绍',
+    title: '软件开发',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

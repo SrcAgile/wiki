@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>映射类型 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;映射类型
+    <span class="updated">Page Updated&nbsp;
+      2015-11-07 20:20:37
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">映射类型</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>...</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#sets">集合[sets]</a><ul>
+<li><a href="#_1">分类</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="intro">Intro</h3>
+<p>PYTHON中唯一的映射类型字典,字典是无序的,因为他不需要顺序,他是通过键值进行索引的,他的键必须是不可更改的,因为受哈希算法的约束,一旦更换对象后,根据哈希算法就再也需找不到索引的对象了.</p>
+<ul>
+<li>
+<p>与list&amp;tuple的关系<br />
+<code>通过keys() or values() 返回一个列表</code><br />
+<code>通过items()返回一个[(key1,value1),(key2,value2),....]的以元组为列表项</code><br />
+<code>sorted(dict)返回一个list对象,当然只是key的排序</code></p>
+</li>
+<li>
+<p>相关联的内建函数<br />
+<code>fromkeys()可以创建一个默认字典,字典key可以有相同的value</code><br />
+<code>&gt;&gt; {}.fromkeys(('x','y'),-1)</code><br />
+<code>如果不提供value则默认NONE</code></p>
+</li>
+<li>键值检测[获取状态信息]<br />
+<code>dict1.has_key('server')</code></li>
+<li>键值获得[获得数据信息]<br />
+<code>dict1[key]</code></li>
+<li>更新&amp;添加<br />
+<code>dict1[key]=new value</code></li>
+<li>删除<br />
+<code>del dict1[key1] #delete a specific value</code><br />
+<code>dict1.clear()   #del whole dict</code><br />
+<code>dict1.pop(key1) #del and return</code></li>
+<li>操作符[分为标准类型和映射类型 只介绍映射类型操作符]<br />
+<code>[]   键查找操作符</code><br />
+<code>in/not in 键成员操作符</code></li>
+<li>内建函数和工厂函数<br />
+<code>不谈标准类型函数</code><br />
+<code>dict工厂函数很有意思,可以迭代初始化参数生成字典 见-&gt;EX1</code></li>
+</ul>
+<p><b>映射类型相关函数</b></p>
+<div class="hlcode"><pre><span class="err">`</span><span class="n">dict</span><span class="p">()</span>     <span class="err">工厂函数`</span>
+<span class="err">`</span><span class="n">len</span><span class="p">()</span>      <span class="err">返回键值对的数目`</span>
+<span class="err">`</span><span class="n">hash</span><span class="p">()</span>     <span class="err">可哈希化判断返回哈希值</span><span class="p">,</span><span class="err">就是判断一个对象是否可以作为</span><span class="n">key</span><span class="p">,</span><span class="err">如果可以返回</span><span class="n">hash</span><span class="err">值</span><span class="p">,</span><span class="err">否则返回</span><span class="n">error</span><span class="err">错误栈`</span>
+</pre></div>
+
+
+<div class="hlcode"><pre>  <span class="n">EX1</span><span class="p">:</span>
+    <span class="o">&gt;&gt;&gt;</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">{</span><span class="s">&#39;y&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s">&#39;x&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
+    <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li><b style='color:red'>再谈几个字典类型函数</b><br />
+<code>dict.clear() 全部清空</code><br />
+<code>dict.copy()  浅拷贝</code><br />
+<code>[重要]dict.get(key,defalut=NONE)---&gt;对字典 dict 中的键 key,返回它对应的值 value,如果字典中不存在此键,则返回 default 的值(注意默认值为NONE)</code><br />
+<code>dict.pop(key[,default])   ---&gt;类似get方法,但是其一default没有给出,其二这个是删除并且返回,如果没有defalut则return ERR</code><br />
+<code>dict.iter()</code><br />
+<code>[重要]dict.update(dict2) 将字典 dict2 的键-值对添加到字典 dict,注意因为dict是可变对象,对可变对象的修改并不会返回值,还要注意的是更新时遇到key一样但value不一样的会出现更新失败</code><br />
+<code>dict.setdefault(key,default=None) 若存在key则返回其value,否则添加或者&lt;del&gt;更新&lt;/del&gt;键值对,如果存在却没有返回证明插入键值对出现键相同值冲突现象,此种情况默认存储原有对象</code></li>
+<li>
+<p>字典比较算法[单独讲]<br />
+<code>step1: 比较长度    return max else step2</code><br />
+<code>step2: 依次比较key return max else step3</code><br />
+<code>step3: 依次比较val return max</code></p>
+</li>
+<li>
+<p>拷贝<br />
+<code>//[写错地方了]从浅拷贝和深拷贝角度上来看,class也是一种type,和其他的序列类型</code></p>
+</li>
+</ul>
+<h3 id="sets">集合[sets]</h3>
+<h4 id="_1">分类</h4>
+<ul>
+<li>可变集合[set]<br />
+<code>可增删</code><br />
+<code>不可哈希</code></li>
+<li>
+<p>不可变集合[frozenset]<br />
+<code>不可增删</code><br />
+<code>可哈希[故可以作为字典键]</code></p>
+</li>
+<li>
+<p>两个工厂函数<br />
+<code>set(object)</code><br />
+<code>frozenset(object)</code><br />
+<code>[Caution]提供的object必须是可迭代的(序列或者迭代器或者支持迭代的对象例如文件或者字典)</code></p>
+</li>
+<li>
+<p>一个特殊方法<br />
+<code>a^b  对称差分,返回一个要么只属于a,要么只属于b的集合元素组成的集合</code></p>
+</li>
+<li><b>混合运算[科学人员需要知道]</b><br />
+<code>指的是参与运算的左值和右值一个是set and the other is frozenset</code><br />
+<code>混合运算的结果的类型取决于运算符的左值</code></li>
+</ul>
+<div class="hlcode"><pre>  <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s">&quot;abcdw&quot;</span><span class="p">)</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="s">&quot;ahijk&quot;</span><span class="p">)</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">|</span><span class="n">b</span>
+  <span class="nb">set</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;i&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="s">&#39;j&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">])</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">|</span><span class="n">a</span>
+  <span class="nb">frozenset</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;i&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="s">&#39;j&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">])</span>
+  <span class="c">#[!]因为运算产生新对象,所以不必考虑frozenset变不变的问题了!</span>
+</pre></div>
+
+
+<ul>
+<li>
+<p>仅可以运用在可变集合的操作<br />
+<code>涉及科学运算而不牵扯工程过多,仅列举</code><br />
+<code>[1] (Union) Update ( |= )   这个更新方法从已存在的集合中添加(可能多个)成员,此方法和 update()等价.</code><br />
+<code>[2] 保留/交集更新( &amp;= )       保留(或交集更新)操作保留与其他集合的共有成员。此方法和 intersection_update()等价</code><br />
+<code>[3] 差更新 ( –= )  对集合 s 和 t 进行差更新操作 s-=t,差更新操作会返回一个集合,该集合中的成员是集合 s 去除掉集合 t 中元素后剩余的元素。此方法和 difference_update()等价.</code><br />
+<code>[4] 对称差分更新( ^= )对集合 s 和 t 进行对称差分更新操作(s^=t),对称差分更新操作会返回一个集合,该集合中的成员仅是原集合 s 或仅是另一集合 t 中的成员。此方法和 symmetric_difference_update()等价.</code></p>
+</li>
+<li>
+<p><b style='color:red'>集合的内建方法</b><br />
+<code>[!]其实我并不是原因写关于集合的内建方法的,因为他是面向对象的产物,功能大部分都是对集合类型运算符的函数化实现,至于形成方法自然是有它的好处的,但是这些功能我们已经在运算符里面看到,所以他们的好处到底是什么?</code><br />
+<code>本来我以为好处就是将返回值覆盖原有对象,但是通过测试发现并没有覆盖,关于这个问题以后再谈论</code></p>
+<p><b style='color:red'>像你看到的, 很多内建的方法几乎和操作符等价。我们说"几乎等价",意思是它们间是有一个重要区别: 当用操作符时,操作符两边的操作数必须是集合。 在使用内建方法时,对象也可以是迭 代 类 型 的 。 为 什 么 要 用 这 种 方 式 来 实 现 呢 ? Python 的 文 档 里 写 明 : 采 用 易 懂 的set('abc').intersection('cbs') 可以避免用 set('abc') [and] 'cbs' 这样容易出错的构建方法。</b><b style='color:green'>这里说的对象就是指集合中的元素对象.</b><br />
+表 7.5 可变集合类型的方法<br />
+方法名<br />
+操作<br />
+s.update(t)<br />
+用 t 中的元素修改 s, 即,s 现在包含 s 或 t 的成员<br />
+s.intersection_update(t) s 中的成员是共同属于 s 和 t 的元素。<br />
+s.difference_update(t)<br />
+s 中的成员是属于 s 但不包含在 t 中的元素<br />
+s.symmetric_difference_update(t) s 中的成员更新为那些包含在 s 或 t 中,但不<br />
+是s<br />
+和 t 共有的元素<br />
+s.add(obj)<br />
+在集合 s 中添加对象 obj<br />
+s.remove(obj)<br />
+从集合 s 中删除对象 obj;如果 obj 不是集合 s 中的元素(obj not<br />
+in s),将引发 KeyError 错误<br />
+s.discard(obj)<br />
+如果 obj 是集合 s 中的元素,从集合 s 中删除对象 obj;<br />
+s.pop()<br />
+删除集合 s 中的任意一个对象,并返回它<br />
+s.clear()<br />
+删除集合 s 中的所有元素</p>
+</li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '映射类型',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-11-15 11:30:31</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

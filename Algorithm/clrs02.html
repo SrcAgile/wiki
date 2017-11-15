@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>排序和顺序统计量 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Algorithm">Algorithm</a>&nbsp;&#187;&nbsp;排序和顺序统计量
+    <span class="updated">Page Updated&nbsp;
+      2017-10-28 16:19:32
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">排序和顺序统计量</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27845056&auto=0&height=66"></iframe></li>
+</ul>
+<hr />
+<blockquote></blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">开</a></li>
+<li><a href="#_2">排序类型</a></li>
+<li><a href="#_3">堆排序</a></li>
+</ul>
+</div>
+<h3 id="_1">开</h3>
+<ul>
+<li>排序</li>
+</ul>
+<div class="hlcode"><pre><span class="k">struct</span> <span class="n">item</span><span class="p">{</span>
+  <span class="n">type</span> <span class="n">key</span><span class="p">;</span><span class="c1">//排序关键字</span>
+  <span class="n">type</span> <span class="n">satellite_data</span><span class="p">;</span><span class="c1">//记录集相关数据</span>
+<span class="p">}</span>
+
+<span class="err">排序是对</span><span class="n">key</span><span class="err">进行排序</span><span class="p">,</span><span class="err">但是有时候</span><span class="n">satellite</span><span class="err">比较大</span><span class="p">,</span><span class="err">则对所有</span><span class="n">item</span><span class="err">添加一个指针集合</span><span class="p">,</span><span class="err">然后仅仅对指针集合进行排序</span><span class="p">,</span><span class="err">因为数据太大的话进行数据交换实在是太慢了</span><span class="o">!</span>
+<span class="err">所以我们关注的是</span><span class="n">key</span><span class="err">的排序</span><span class="p">,</span><span class="err">我们关注的是算法策略的形成而非工程细节的优化</span><span class="o">!</span>
+<span class="err">有所达故无所不至</span><span class="o">!</span>
+</pre></div>
+
+
+<ul>
+<li><b style='color:red'>为什么要用排序</b><br />
+<code>[不清晰]可以利用排序问题的下界来证明其他问题的下界,我们可以证明一个排序问题的费平凡下界</code><br />
+<code>[清晰]应用本身的需求</code><br />
+<code>为了解决工程中将要面临的问题</code></li>
+</ul>
+<h3 id="_2">排序类型</h3>
+<ul>
+<li>原址排序<br />
+<code>插入排序O(n^2)[比较排序]</code><br />
+<code>堆排序 O(nlgn)[比较排序]</code><br />
+<code>快速排序[比较排序]</code></li>
+<li>变址排序<br />
+<code>归并排序O(nlgn)[比较排序]</code></li>
+</ul>
+<p>决策树可以用来研究比较排序的局限,决策树模型证明了所有比较排序算法的最坏运行时间下界为<br />
+Ω(nlgn),从而证明堆排序和归并排序是渐进最优的比较排序算法.</p>
+<p>于是为了打破Ω(nlgn)的界限,计数排序,基数排序,桶排序被引入了,其中设计到了变量k,d,d一般是key的位宽,到时候我们再进行详细介绍.</p>
+<h3 id="_3">堆排序</h3>
+<ul>
+<li>equ 归并排序(速度)+插入排序(空间)</li>
+<li>注意堆(二叉堆)是一个数组,除了最底层该树是完全充满的,该二叉树堆是按照广度遍历将节点存放在数组中的即A[0]为ROOT,所以其父节点和子节点可以很简单的计算出,parent i/2向下取整,左子为2i,右子为2i+1,对于学过计算机组成原理的同学自然明白,通过左移右移占用的cpu周期短,可以大大提升效率,所以一些良好的堆排序,使用<strong>宏</strong>,或者<strong>内联函数</strong>实现寻</li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '排序和顺序统计量',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-11-15 11:30:31</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

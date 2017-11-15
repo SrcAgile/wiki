@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>软件测试 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;软件测试
+    <span class="updated">Page Updated&nbsp;
+      2017-10-21 16:14:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">软件测试</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<blockquote></blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#messy">messy</a><ul>
+<li><a href="#_1">软件项目成员</a></li>
+<li><a href="#_2">软件开发生命周期模式</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="intro">Intro</h2>
+<ul>
+<li>与<a href="softwareTest.html">[复习目]</a>不同,本文主要介绍一些在软件工程实际应用的概念涉及</li>
+</ul>
+<h2 id="messy">messy</h2>
+<ul>
+<li><b style='color:red'></b></li>
+<li>
+<p>软件测试员的<b style='color:red'>目标</b>是<b style='color:red'>尽可能尽早找出软件缺陷</b>并确保其得以<b style='color:red'>修复</b><br />
+<code>[修复]: 这是一个用户与产品相互适应的过程,并非说一定要软件开发人员对缺陷部分重新编码,我们也可以通过修改产品说明说或者培训用户使用方法来达到修复目的!</code><br />
+<code>此时对修复理解有误解的可以看一看软件缺陷的定义的五大概念</code></p>
+</li>
+<li>
+<p>要搞清软件产品的组成部分,下面写了几个</p>
+</li>
+<li>
+<p>在软件行业中,用于描述制造出来并交付他人的软件产品组件的术语是<b style='color:red'>可交付部分(deliverable)</b><br />
+<code>解释所有可交付部分的内容的最简便方法就是分门别类</code></p>
+</li>
+<li>
+<p>软件产品的一个关键部分就是进度表<br />
+<code>常见表格类型[Gantt]</code></p>
+</li>
+<li>
+<p>软件设计文档<br />
+<code>[结构文档]  主要部分描述以及相互之间的交互</code><br />
+<code>[数据流图]  表示数据在程序中如何流动正规示意图</code><br />
+<code>[状态转换图] 把软件分解为基本状态或者条件的另一种正规示意图</code><br />
+<code>[流程图]    图形描述程序逻辑的传统方式(不常用)</code><br />
+<code>[代码注释]  便于维护</code></p>
+</li>
+<li>
+<p>测试文档<br />
+<code>[测试计划]</code><br />
+<code>[测试用例]</code><br />
+<code>[缺陷报告] 存在数据库或者写在纸上</code><br />
+<code>[测试工具]/[自动测试] 不管是买的还是自己做的都要有文档</code><br />
+<code>[度量/统计/总结] 测试过程的汇总,illustrate/report/graphic</code></p>
+</li>
+</ul>
+<h3 id="_1">软件项目成员</h3>
+<ul>
+<li>项目经理,程序经理或者监制人员<br />
+<code>编写产品说明书</code><br />
+<code>管理进度</code><br />
+<code>进行重大决策</code></li>
+<li>体系架构师/系统工程师<br />
+<code>设计整个系统体系架构</code><br />
+<code>与程序员关系密切</code></li>
+<li>程序员<br />
+<code>编写代码和修复软件</code><br />
+<code>与项目经理和架构师合作开发</code><br />
+<code>与项目经理和测试员合作修复软件</code></li>
+<li>测试员/QA(质量保证员)<br />
+<code>负责找出并报告软件产品的问题</code><br />
+<code>注意测试员与QA的区别</code></li>
+<li>技术作者/用户协助专员/手册编写员<br />
+<code>编写产品附带文件和联机文档</code></li>
+<li>配置员<br />
+<code>负责组装代码和文档合为软件包</code></li>
+</ul>
+<h3 id="_2">软件开发生命周期模式</h3>
+<blockquote>
+<p>注意是开发生命周期</p>
+</blockquote>
+<ul>
+<li>大爆炸模式<br />
+<code>几乎不需要测试员,避免争吵</code></li>
+<li>
+<p>边写边改模式<br />
+    &gt; 也可以认为是快速原型模式</p>
+<p><code>没有时间做好,总有时间完成</code><br />
+<code>测试和编码人员陷入无尽的迭代直至想发布了</code><br />
+- 瀑布模式<br />
+<code>瀑布模型式是最典型的预见性的方法，严格遵循预先计划的需求分析、设计、编码、集成、测试、维护的步骤顺序进行</code><br />
+<code>注重软件定义的精准性</code><br />
+<code>无法回溯</code><br />
+<code>步骤分离没有交加</code><br />
+<code>测试在最后,基本型错误可能最后才发现,软件的修复费用被拉长</code><br />
+<code>从设计到编码，从编码到测试，从测试到提交,要求每一个开发阶段都要做到最好.</code><br />
+<code>过于依赖前期的完美性</code><br />
+- 迭代式开发</p>
+<blockquote>
+<p>迭代式开发也被称作迭代增量式开发或迭代进化式开发，是一种与传统的瀑布式开发相反的软件开发过程，它弥补了传统开发方式中的一些弱点，具有更高的成功率和生产率</p>
+</blockquote>
+<p><code>[what]每次只设计和实现这个产品的一部分, 逐步逐步完成的方法叫迭代开发</code><br />
+<code>[how] 在迭代式开发方法中，整个开发工作被组织为一系列的短小的、固定长度（如3周）的小项目，被称为一系列的迭代。每一次迭代都包括了需求分析、设计、实现与测试</code><br />
+<code>[why] 采用这种方法，开发工作可以在需求被完整地确定之前启动，并在一次迭代中完成系统的一部分功能或业务逻辑的开发工作。再通过客户的反馈来细化需求，并开始新一轮的迭代。</code><br />
+迭代式开发的优点：<br />
+　　1、降低风险<br />
+　　2、得到早期用户反馈<br />
+　　3、持续的测试和集成<br />
+　　4、使用变更<br />
+　　5、提高复用性</p>
+</li>
+<li>
+<p>螺旋模式<br />
+    看图</p>
+<p><code>[1] 它将瀑布模型和快速原型模型结合起来，强调了其他模型所忽视的风险分析，特别适合于大型复杂的系统</code><br />
+<code>[2] 螺旋模型”刚开始规模很小，当项目被定义得更好、更稳定时，逐渐展开</code><br />
+<code>[3] “螺旋模型”的核心就在于您不需要在刚开始的时候就把所有事情都定义的清清楚楚。您轻松上阵，定义最重要的功能，实现它，然后听取客户的意见，之后再进入到下一个阶段。如此不断轮回重复，直到得到您满意的最终产品</code></p>
+<p><code>很大程度上是一种风险驱动的方法体系,因为在每个阶段之前及经常发生的循环之前，都必须首先进行风险评估</code></p>
+<p><code>1)制定计划：确定软件目标，选定实施方案，弄清项目开发的限制条件</code><br />
+<code>2)风险分析：分析评估所选方案，考虑如何识别和消除风险</code><br />
+<code>3)实施工程：实施软件开发和验证</code><br />
+<code>4)客户评估：评价开发工作，提出修正建议，制定下一步计划</code><br />
+- 敏捷开发<br />
+人和交互 重于过程和工具。<br />
+可以工作的软件 重于求全而完备的文档。<br />
+客户协作重于合同谈判。<br />
+随时应对变化重于循规蹈矩。</p>
+<p>其中位于右边的内容虽然也有其价值，但是左边的内容最为重要。<br />
+人员彼此信任 人少但是精干 可以面对面的沟通</p>
+<p>项目的敏捷开发：<br />
+敏捷开发小组主要的工作方式可以归纳为：作为一个整体工作； 按短迭代周期工作； 每次迭代交付一些成果；<br />
+关注业务优先级； 检查与调整。</p>
+<p>最重要的因素恐怕是项目的规模。规模增长，面对面的沟通就愈加困难，<br />
+因此敏捷方法更适用于较小的队伍，40、30、20、10人或者更少。<br />
+大规模的敏捷软件开发尚处于积极研究的领域。</p>
+</li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '软件测试',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2017-11-15 11:30:31</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
