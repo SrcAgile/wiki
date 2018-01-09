@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>linux概论 - Meta's Wiki</title>
+    <title>文件系统原理 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,56 +23,58 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;linux概论
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;文件系统原理
     <span class="updated">Page Updated&nbsp;
-      2017-08-30 21:00:00
+      2018-01-08 21:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">linux概论</div>
+<div class="page_title">文件系统原理</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
-<blockquote>
-<p>维基百科讲过许多,过分谈论反倒是令人厌烦,为什么使用linux那是有原因的</p>
-</blockquote>
+<blockquote></blockquote>
 <hr />
 <ul>
 <li><strong>今日音乐</strong></li>
 </ul>
-<div class="hlcode"><pre><span class="k">[网评]</span>
-<span class="err">谢谢网易云音乐让我知道真相.</span>
+<div class="hlcode"><pre><span class="p">[</span><span class="err">网评</span><span class="p">]</span>
 </pre></div>
 
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=624751&auto=0&height=66"></iframe>
-
-<hr />
-<h2 id="_1">起始</h2>
-<h3 id="_2">认识</h3>
-<p>我是从大一开始接触linux的,在这个时间段也就是2015-2016,linux发行版早已经不是以前的交互性差,难以操纵的命令行模式,他也有了自己的开源图像引擎,开始有很多软件在他的平台上进行开发,金山、网易、各种著名IDE都在Linux有了自己的dev Branch,Linux早已经不再难学,鼠标交互,主题美化,游戏软件,连终端也不放过,linux看起来像一件艺术品,更小的内存需求,更完备的开发环境,更简洁的操作模式,我身边也有很多人投身于linux的”开发“中,然而这正是错误的开始,过于依赖于图形交互模式,就类似于学了一个类似的windows系统,到头来什么也不会,也许只是能在不懂的人面前装13,但是这如果是你学习的意义的话,linux没什么好学的.</p>
-<h3 id="_3">名词</h3>
+<h3 id="messy">messy</h3>
+<h3 id="_1">文件访问控制的演变</h3>
 <ul>
-<li>OpenGL</li>
-<li>Directx</li>
-<li>Unity</li>
-<li>opencv</li>
-<li>gnome</li>
-<li>kde</li>
-<li>
-<p>gtk</p>
-</li>
-<li>
-<p>竟然有人搞混<code>&gt;</code>和<code>|</code>，<code>&gt;</code>是用来重定向IO，<code>|</code>是用来将数据作为参数流向管道的另一端</p>
-</li>
+<li>访问类型<br />
+需要<b> 控制访问（controlled access）</b> 来限制可以进行的文件访问类型，访问类型包括：<b>读、写、执行、添加、删除、列表清单（获取文件名称、属性等）<b>。更多操作（重命名、编辑等）都是这些底层操作的组合，因此保护只需要在底层提供，高层操作涉及的底层操作如果不满足保护的要求就会被拒绝。</li>
 </ul>
+<h4 id="_2">访问策略</h4>
+<ol>
+<li>
+<p>添加ACL(access-control list)即访问控制列表</p>
+<ul>
+<li>优:自主选择让谁用,不让谁用</li>
+<li>缺:需事先知道系统的用户列表,且列表长度会扩大</li>
+<li>应用范围:用户数量较少且固定已知身份id的系统 比如(局域网络系统)</li>
+</ul>
+</li>
+<li>
+<p>用户组控制</p>
+<ul>
+<li>优:用户多时方便统一授权,不必每个用户单独设置访问权限</li>
+<li>缺:不能说有缺点吧</li>
+<li>局限:需要联合用户授权机制使用,系统应该提供用户默认的用户组</li>
+<li>应用范围:大量用户,需要对数据严格控制的系统.比如:(数据库管理系统)</li>
+</ul>
+</li>
+</ol>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: 'linux概论',
+    title: '文件系统原理',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>软件测试 - Meta's Wiki</title>
+    <title>内存管理 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,30 +23,28 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;软件测试
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;内存管理
     <span class="updated">Page Updated&nbsp;
-      2017-10-10 21:00:00
+      2017-11-29 21:16:30
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">软件测试</div>
+<div class="page_title">内存管理</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
 <hr />
-<blockquote></blockquote>
+<blockquote>
+<p>pstack好像出现了x84-64相关性问题，目前问题倾向于ELF格式程序32的问题，好像是高位不兼容，待解决：</p>
+</blockquote>
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#intro">Intro</a></li>
-<li><a href="#_1">软件测试</a><ul>
-<li><a href="#_2">黑盒测试</a><ul>
-<li><a href="#_3">目的</a></li>
-</ul>
-</li>
-<li><a href="#_4">白盒测试</a><ul>
-<li><a href="#_5">目的</a></li>
-<li><a href="#_6">测试用例设计</a></li>
-<li><a href="#_7">基本路径测试</a></li>
+<li><a href="#intro">Intro</a><ul>
+<li><a href="#_1">什么是管理</a></li>
+<li><a href="#_2">内存管理目标</a></li>
+<li><a href="#_3">需求细节</a></li>
+<li><a href="#_4">设计</a><ul>
+<li><a href="#_5">连续分配类型</a></li>
 </ul>
 </li>
 </ul>
@@ -54,42 +52,52 @@
 </ul>
 </div>
 <h2 id="intro">Intro</h2>
+<p>在谈内存管理时，不谈论其他的问题，管理实质上就是为了达到目标而利用策略进行组织、控制、领导、计划的全过程。<br />
+而内存管理属于一个很明显现实生活的类别，即<b>资源分配</b>,所以进行管理的前提，我们必须明确我们的目标，然后确定需求细节。</p>
+<h3 id="_1">什么是管理</h3>
+<p>管理是在特定的环境下，对组织所拥有的资源进行有效的计划、组织、领导和控制，以便达成既定的组织目标的过程。</p>
+<h3 id="_2">内存管理目标</h3>
 <ul>
-<li>本文的主要目的还是为了复习软件工程用.</li>
+<li>独立性(程序之间的地址空间是互不干扰的,程序发出的地址应该与物理主存地址无关)<br />
+    间接包含虚拟性</li>
+<li>安全性(一个程序不能访问另一个程序地址空间)</li>
 </ul>
-<h2 id="_1">软件测试</h2>
-<hr />
-<h3 id="_2">黑盒测试</h3>
-<hr />
-<h4 id="_3">目的</h4>
-<p>进行功能完备性以及接口的可靠性的测试</p>
-<hr />
-<h3 id="_4">白盒测试</h3>
-<hr />
-<h4 id="_5">目的</h4>
-<p>进行内部逻辑细节的测试，是对软件的过程性细节做细致的检查，避免依赖与因系统的偶然性引发的"结果正确"而得出系统有效的结论。</p>
-<h4 id="_6">测试用例设计</h4>
+<h3 id="_3">需求细节</h3>
 <ul>
-<li>逻辑覆盖</li>
-<li>语句覆盖</li>
-<li>判定覆盖</li>
-<li>条件覆盖[询问老师中...]</li>
-<li>判定条件覆盖</li>
-<li>条件组合覆盖</li>
-<li>路径覆盖</li>
-<li>路径测试</li>
+<li>速度快</li>
+<li>空间利用率高</li>
 </ul>
-<h4 id="_7">基本路径测试</h4>
-<p><b style='color:red'>考试划重点</b></p>
-<ul>
-<li>McCabe方法</li>
-</ul>
+<h3 id="_4">设计</h3>
+<h4 id="_5">连续分配类型</h4>
+<ol>
+<li>
+<p>单道时代<br />
+    策略：划两块-系统区+程序区<br />
+    目标：实现(静态编译地址)<br />
+    细节：需求细节不需要实现，因为根本没必要</p>
+</li>
+<li>
+<p>多道时代<br />
+    策略A：固定分区<br />
+    目标：实现（动态编译地址）<br />
+    细节：速度较快(取决于分配算法)<br />
+         利用率-引入内碎片</p>
+<p>策略B：变长分区<br />
+目标：实现（动态编译地址）<br />
+细节：速度慢（分配算法不好，因为产生大量无规律外碎片，维护起来虽然说还行，但是扫描起来太费时间）<br />
+     利用率-引入外碎片(Modify-内存回收机制)<br />
+策略C：策略B升级版-伙伴系统<br />
+目标：实现（动态编译地址）<br />
+细节：速度较快(因为从一开始制定严格的分配策略，所以产生大量有规律碎片，便于分类重整，提高了扫描速度)<br />
+     利用率-外碎片问题</p>
+</li>
+</ol>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '软件测试',
+    title: '内存管理',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

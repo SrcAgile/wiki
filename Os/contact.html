@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>工程[M]开发 - Meta's Wiki</title>
+    <title>异种机通讯 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,53 +23,98 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;工程[M]开发
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;异种机通讯
     <span class="updated">Page Updated&nbsp;
-      2017-09-11 21:00:00
+      2017-11-13 07:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">工程[M]开发</div>
+<div class="page_title">异种机通讯</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
 <hr />
-<ul>
-<li><strong>今日音乐</strong><br />
-NONE</li>
-</ul>
-<hr />
-<blockquote></blockquote>
+<blockquote>
+<p>...</p>
+</blockquote>
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#order">order</a></li>
-<li><a href="#command">command</a></li>
+<li><a href="#intro">Intro</a><ul>
+<li><a href="#knowledge">Knowledge</a><ul>
+<li><a href="#_1">两种场景</a></li>
+</ul>
+</li>
+<li><a href="#ssh">SSH</a><ul>
+<li><a href="#ssh_1">单向ssh</a></li>
+<li><a href="#ssh_2">双向ssh</a></li>
+</ul>
+</li>
+<li><a href="#_2">乱入序列化</a></li>
+</ul>
+</li>
 </ul>
 </div>
-<h3 id="order">order</h3>
-<hr />
-<p>编译--&gt;链接--&gt;运行<br />
-- 编译<br />
-<code>生成.o</code><br />
-<code>编译器只检测程序语法和函数、变量是否被声明如果函数未被声明，编译器会给出一个警告，但可以生成Object File。</code><br />
-- 链接<br />
-<code>可能因为有太多.o文件难以书写,引入Archive File[.a文件][window 是.lib文件]</code><br />
-<code>链接器会在所有的Object File中找寻函数的实
-现，如果找不到，那到就会报链接错误码（Linker Error），在VC下，这种错误一般是： Link2001错误 ，意思说是说，链接器未能找到函数的实现。你需要指定函数的Object File。</code></p>
-<hr />
-<h3 id="command">command</h3>
+<h2 id="intro">Intro</h2>
+<p>介绍一下常见的异种机通讯方式,同时简单的描述一下有关加密的知识</p>
+<h3 id="knowledge">Knowledge</h3>
+<h4 id="_1">两种场景</h4>
 <ul>
-<li>特殊命令解释</li>
-<li>-C 大写，切换到指定目录再执行 make 过程，makefile 在这个指定目录里面</li>
-<li>-c 小写，表示只编译，不链接</li>
+<li>公钥加密私钥解密称为<b style='color:red'>解密</b></li>
+<li>私钥加密公钥解密称为<b style='color:red'>签名</b></li>
 </ul>
-<p><em>_</em>好多东西要写啊,那我把pdf上传吧!</p>
+<h3 id="ssh">SSH</h3>
+<h4 id="ssh_1">单向ssh</h4>
+<ul>
+<li>安装ssh-client&amp;ssh-server</li>
+<li>本地生成公钥私钥<br />
+<code>0. 保证机器能够互相ping通</code><br />
+<code>1. ssh-keygen -t [rsa|dsa] #个人选用rsa</code><br />
+<code>2. copy  id_dsa.pub 到目标机器中</code><br />
+<code>3. 目标机器执行 cat  id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys</code></li>
+</ul>
+<h4 id="ssh_2">双向ssh</h4>
+<ul>
+<li>安装ssh-client&amp;ssh-server<br />
+<code>0. 保证机器能够互相ping通</code><br />
+<code>1. 两个节点都执行操作ssh-keygen -t [rsa|dsa] #个人选用rsa</code><br />
+<code>2. copy  id_dsa.pub 到对方机器中</code><br />
+<code>3. 对方机器执行 cat  id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys</code><br />
+<code>4. chmod 600 authorized_keys</code><br />
+<code>5. chmod 700 -R .ssh</code></li>
+</ul>
+<h3 id="_2">乱入序列化</h3>
+<table>
+<thead>
+<tr>
+<th align="center">序列化组件</th>
+<th align="center">数据库组件</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">IDL</td>
+<td align="center">DDL</td>
+<td align="center">用于建表或者模型的语言</td>
+</tr>
+<tr>
+<td align="center">DL file</td>
+<td align="center">DB Schema</td>
+<td align="center">表创建文件或模型文件</td>
+</tr>
+<tr>
+<td align="center">Stub/Skeleton</td>
+<td align="center">lib O/R mapping</td>
+<td align="center">将class和Table或者数据模型进行映射</td>
+</tr>
+</tbody>
+</table>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '工程[M]开发',
+    title: '异种机通讯',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

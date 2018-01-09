@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>Makefile实例 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;Makefile实例
+    <span class="updated">Page Updated&nbsp;
+      2017-11-11 11:11:11
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">Makefile实例</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+NONE</li>
+</ul>
+<hr />
+<blockquote></blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#instance">Instance</a></li>
+<li><a href="#_1">几个命令</a></li>
+<li><a href="#_2">问题</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+<h3 id="instance">Instance</h3>
+<blockquote>
+<p>以下为内核模块编译链接的一个实例，虽然很多人会写但是对具体的含义还是不太了解，因为我接触的也不够多，所以仅仅是写出自己理解的。</p>
+</blockquote>
+<div class="hlcode"><pre><span class="c">#makefile.hello</span>
+<span class="cp">ifneq ($(KERNELRELEASE),)</span>
+<span class="nv">obj-m</span><span class="o">:=</span>hello.o
+<span class="cp">else</span>
+<span class="nv">KERNELDIR</span><span class="o">:=</span>/lib/modules/<span class="k">$(</span>shell uname -r<span class="k">)</span>/build
+<span class="nv">PWD</span><span class="o">:=</span><span class="k">$(</span>shell <span class="nb">pwd</span><span class="k">)</span>
+<span class="nf">default</span><span class="o">:</span>
+        <span class="k">$(</span>MAKE<span class="k">)</span> -C <span class="k">$(</span>KERNELDIR<span class="k">)</span>  <span class="nv">M</span><span class="o">=</span><span class="k">$(</span>PWD<span class="k">)</span> modules
+<span class="nf">clean</span><span class="o">:</span>
+        rm -rf *.o *.mod.c *.mod.o *.ko
+<span class="cp">endif</span>
+</pre></div>
+
+
+<ul>
+<li>[始]. 在shell执行<code>$  make</code></li>
+<li>[0]. 整个阶段我们会执行两次<code>makefile.hello</code>，不理解？细细道来。</li>
+<li>[1]. 第一次加载<code>makefile.hello</code>，首先因为我们没有定义<code>KERNELRELEASE</code>所以一开始<code>obj-m:=hello.o</code>不会执行</li>
+<li>[2]. 所以开始从else执行，其中因为[始]中输入的只是<code>make</code>,所以默认执行<code>default</code>，其中要理解<code>-C</code>&amp;<code>M</code>的作用见<a href="./makefile01.html">makefile01</a>我所写的<br />
+<code>[引]# Use make M=dir to specify directory of external module to build</code></li>
+<li>[3]. 好了精彩部分来了，make 在-C链接到的目录下执行makefile，然后寻找<code>modules</code>对象开始进行构造所以就跳转到找<code>Modules</code>，很好我们找到了</li>
+</ul>
+<div class="hlcode"><pre><span class="nv">PHONY</span> <span class="o">+=</span> modules
+<span class="nf">modules</span><span class="o">:</span> <span class="m">$(vmlinux-dirs) $(if $(KBUILD_BUILTIN)</span><span class="p">,</span><span class="m">vmlinux)</span>
+    <span class="k">$(</span>Q<span class="k">)$(</span>AWK<span class="k">)</span> <span class="s1">&#39;!x[$$0]++&#39;</span> <span class="k">$(</span>vmlinux-dirs:%<span class="o">=</span><span class="k">$(</span>objtree<span class="k">)</span>/%/modules.order<span class="k">)</span> &gt;
+
+<span class="k">$(</span>objtree<span class="k">)</span>/modules.order
+    @<span class="k">$(</span>kecho<span class="k">)</span> <span class="s1">&#39;  Building modules, stage 2.&#39;</span>;
+    <span class="k">$(</span>Q<span class="k">)$(</span>MAKE<span class="k">)</span> -f <span class="k">$(</span>srctree<span class="k">)</span>/scripts/Makefile.modpost
+    <span class="k">$(</span>Q<span class="k">)$(</span>MAKE<span class="k">)</span> -f <span class="k">$(</span>srctree<span class="k">)</span>/scripts/Makefile.fwinst <span class="nv">obj</span><span class="o">=</span>firmware __fw_modbuild
+</pre></div>
+
+
+<ul>
+<li>[4]. 当执行到<code>$(Q)$(MAKE) -f $(srctree)/scripts/Makefile.modpost</code>我们要看看<code>Makefile.modpost</code>为何方神圣</li>
+</ul>
+<div class="hlcode"><pre><span class="c">#意思是如果在KBUILD_EXTMOD路径下找到Kbuild就include $(KBUILD_EXTMOD)/Kbuild,</span>
+<span class="c">#否则include $(KBUILD_EXTMOD)/Makefile。这个路径正好包括我们自己的代码路径，</span>
+<span class="c">#因此，模块顺利的被编译链接。</span>
+<span class="cp">include $(if $(wildcard $(KBUILD_EXTMOD)/Kbuild), \</span>
+<span class="cp">             $(KBUILD_EXTMOD)/Kbuild, $(KBUILD_EXTMOD)/Makefile)</span>
+</pre></div>
+
+
+<ul>
+<li>[5]. 那么问题来了我到底是引入<code>$(KBUILD_EXTMOD)/Kbuild</code>，还是<code>$(KBUILD_EXTMOD)/Makefile)</code>？另外<code>$(KBUILD_EXTMOD)</code>是什么鬼啊？</li>
+</ul>
+<div class="hlcode"><pre><span class="c">#`$(KBUILD_EXTMOD)`是这种鬼啊</span>
+<span class="c"># Use make M=dir to specify directory of external module to build</span>
+<span class="c"># Old syntax make ... SUBDIRS=$PWD is still supported</span>
+<span class="c"># Setting the environment variable KBUILD_EXTMOD take precedence</span>
+<span class="cp">ifdef SUBDIRS</span>
+<span class="nv">KBUILD_EXTMOD</span> <span class="o">?=</span> <span class="k">$(</span>SUBDIRS<span class="k">)</span>
+<span class="cp">endif</span>
+
+<span class="cp">ifeq (&quot;$(origin M)&quot;, &quot;command line&quot;)</span>
+<span class="nv">KBUILD_EXTMOD</span> <span class="o">:=</span> <span class="k">$(</span>M<span class="k">)</span>
+<span class="cp">endif</span>
+<span class="c">#大致意思就是如果使用make命令且带有命令行参数 M=&quot;XXX&quot;,那就用M初始化这个KBUILD_EXTMOD := $(M)，好了最开始我们设置的M是什么？原来是$(shell pwd)，就是一开始执行命令的当前目录，那就好说了，现在我特喵又执行了一次makefile，而这一次我们的KERNELRELEASE已经被定义了，所以只执行obj-m就好了，什么不知道为什么已经定义了，因为-C指向的/lib/modules/$(shell uname -r)/build是一个软连接指向/usr/src/linux，而/usr/src/linux目录下就有一个makefile里面写了</span>
+<span class="nv">KERNELRELEASE</span><span class="o">=</span><span class="k">$(</span>VERSION<span class="k">)</span>.<span class="k">$(</span>PATCHLEVEL<span class="k">)</span>.<span class="k">$(</span>SUBLEVEL<span class="k">)$(</span>EXTRAVERSION<span class="k">)$(</span>LOCALVERSION<span class="k">)</span>
+<span class="err">ok至此已经执行到obj-m了</span>
+</pre></div>
+
+
+<ul>
+<li>[6]. obj-m干了什么?<br />
+<code>obj-m +=xxx.o该模块不会编译到zImage 但会生成一个独立的xxx.ko 静态编译,至于obj-m在哪里声明，我暂时不清楚，但是你可用make -n测试</code></li>
+</ul>
+<h3 id="_1">几个命令</h3>
+<blockquote>
+<p>这几个命令对模块使用时有用，但是什么用还是不要做伸手党了</p>
+</blockquote>
+<ul>
+<li>modinfo</li>
+<li>dmesg |tail -1#查看最后一条就行了</li>
+</ul>
+<h3 id="_2">问题</h3>
+<ul>
+<li>有人说为什么我的insmod之后内核没有打印而卸载(rmmmod)就全部打印出来了？<br />
+<code>这个问题和缓冲区的机制有关系，直接在printk("")后面加个\n就行了即printk("***\n"),强制缓冲区刷新即可！</code><br />
+<code>关于这个缓冲区的问题我会再讲的.</code></li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="http://m.blog.csdn.net/lixiangminghate/article/details/49340527">make M option</a></li>
+<li><a href="http://blog.csdn.net/isnipe/article/details/3933941">make refer</a></li>
+<li><a href="https://www.cnblogs.com/cyc2009/p/3954249.html">refer2</a></li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'Makefile实例',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-01-09 14:51:49</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
