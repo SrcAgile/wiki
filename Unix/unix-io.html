@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>包与模块 - Meta's Wiki</title>
+    <title>unix io - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,63 +23,39 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;包与模块
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Unix">Unix</a>&nbsp;&#187;&nbsp;unix io
     <span class="updated">Page Updated&nbsp;
-      2015-09-27 20:20:37
+      2018-01-28 12:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">包与模块</div>
+<div class="page_title">unix io</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
-<blockquote>
-<p>...</p>
-</blockquote>
-<hr />
-<ul>
-<li><strong>今日音乐</strong></li>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#question">Question</a></li>
 </ul>
-<div class="hlcode"><pre><span class="err">暂无评论</span>
+</div>
+<h3 id="question">Question</h3>
+<ol>
+<li>if u want to avoid overwriting an existing file,you can use <code>(O_CREATE|0_EXCL)</code><br />
+首先应该知道，当文件存在时，使用open("filename",O_CREATE,0666)是会重写一个文件的，所以引入了(O_CREATE|0_EXCL)，但是有的人认为多此一举，可以使用</li>
+</ol>
+<div class="hlcode"><pre><span class="k">if</span><span class="p">(</span><span class="n">access</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span><span class="n">R_OK</span><span class="p">)</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span><span class="err">#如果文件不存在</span>
+    <span class="n">open</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span><span class="n">O_CREATE</span><span class="o">|</span><span class="mi">0</span><span class="n">_RDWR</span><span class="p">,</span><span class="mo">0666</span><span class="p">);</span>
 </pre></div>
 
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
-
-<hr />
-<div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#intro">Intro</a><ul>
-<li><a href="#messy">messy</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<h2 id="intro">Intro</h2>
-<p>本Blog目的</p>
-<ul>
-<li>什么是模块</li>
-<li>如果把数据从模块导入到程序</li>
-</ul>
-<p>短暂说明</p>
-<ul>
-<li>包组织模块</li>
-<li>模块组织代码</li>
-</ul>
-<h3 id="messy">messy</h3>
-<ul>
-<li>作用域的规则是名称空间实现的</li>
-<li>名称空间可以实体化一张内存结构表</li>
-<li>Python 加入的一个新特性允许你把一个已经安装的模块作为脚本执行</li>
-<li>不会发生级联导入模块</li>
-<li>from module import * 过来的全局变量是值拷贝</li>
-</ul>
+<p>但是在操作系统课程老师讲过，系统调用是具有原子性的，即执行开始到结束不会切换进程，所以<br />
+<code>open("filename",O_CREATE|O_RDWR|O_EXCL,0666)</code>多了一个好处，当多道环境下只允许一个进程去打开文件，例如socket，此时便用原语实现了。</p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '包与模块',
+    title: 'unix io',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

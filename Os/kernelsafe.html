@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>内核安全基础 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;内核安全基础
+    <span class="updated">Page Updated&nbsp;
+      2018-01-03 17:09:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">内核安全基础</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<blockquote>
+<p>...</p>
+</blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">绪论</a></li>
+<li><a href="#0x001">0X001</a></li>
+</ul>
+</div>
+<h3 id="_1">绪论</h3>
+<p>操作系统的总体功能的设计中考虑过系统的安全性这一条,一开始的安全性的考虑仅仅是防止用户的错误操作对资源进行滥用或者是破坏性操作致使系统无法正常运行,所以这也是开发的初衷,尽管再后来的过程中已经逐步演变为与hack斗智斗勇,不再是用户行为上的误操作,而是恶意寻找内核维护资源控制上的疏忽漏洞,进行非法提权,恶意对用户信息进行操作致使原用户在经济以及其他领域造成一定的损失,所以本篇的讲解着重于理论的形成与发展过程,因为篇幅过长,所以不可能在阶段时间内完成,至于其中的历史阶段自行百度.</p>
+<h3 id="0x001">0X001</h3>
+<p><strong>通过调用门的跳转</strong><br />
+先讲述<code>CPL[Current Privilege   Level]</code>,<code>DPL[Descriptor Privilege   Level]</code>,<code>RPL[Request    Privilege   Level]</code><br />
+- <b style='color:green'>公式:{<code>max(RPL,CPL)&lt;=DPL</code> }</b><br />
+<code>含义:rpl与cpl中权限最小的比dpl权限大或者相等则可以访问具有dpl的段</code><br />
+这里详细说一下:<br />
+1. rpl<strong>存储在</strong>选择子的最低两位,即请求特权级.RPL说明的是<strong>进程对段访问的请求权限</strong>.<br />
+2. cpl<strong>存储在</strong>cs寄存器中,即当前特权级,表示当前执行的<strong>代码段</strong>的特权级.<br />
+3. dpl<strong>存储在</strong>段描述符中的权限位,即<strong>要访问对应段</strong>所属的特权等级,也就是段本身真正的特权级.</p>
+<blockquote>
+<p>三者分别是现在拥有的权限,想要做事的权限以及做事所需要最低的权限.</p>
+</blockquote>
+<p>有人说既然rpl能够程序员自定义,那不意味着什么权限都能得到,这样怎么起到内核安全性的保障,这里仔细看一下上面写的公式[绿色的],可以说rpl想要起到操纵真正的比较权限的前提是比当前的cpl的权限要低,这就很好的限制住了,因为其他的是用户不能自定义的.</p>
+<p><b>Q:有人说,既然高了都会被cpl限制住,那么rpl还有什么用,申请权限不就是越高越好吗,既然不会高了,那么还有什么用?</b><br />
+A:先说答案四个字"攘外安内".所以说,<strong>分析问题的角度很重要</strong>,<code>申请权限不就是越高越好吗</code>这句话显然是hack或者是一些对高权限有非系统规则的需求的人,系统的规则是对资源整体管理目前最优的规则,同时系统为使用者提供了所有应该提供的,而妄图破坏这个规则的就是<strong>破坏者</strong>,所以这个问题是以系统破坏者身份提出的,那么很明显他们的目的没有达到,如果达到了怎么还会问这个问题,明显cpl限制了rpl的疯狂影响,<strong>这个就是攘外</strong>!,即从<strong>系统角度</strong>对外部的防御.那么什么又是安内呢?回想我们在做读写文件程序的时候,明明能够读写权限都能获得,但是为什么偏偏有时候选择只是读呢?很明显,我们怕自己出现过失,导致系统文件的破坏,此时设置rpl为较低权限则可降低对资源的控制力度,这是从<strong>用户角度</strong>上实现了保护即安内!当然hack们总是会利用内部的机制进行伪装欺骗从而骗过内核的安保系统,这就是后话了.</p>
+<p><b style='color:red'>以上写的内容存在纰漏,会在后续过程中进行改正.</b><br />
+如果仅仅以为就是这么简单,那就大错特错了,详情参考一下<b><a href="http://blog.csdn.net/feijj2002_/article/details/4597174">CPL,RPL,DPL</a></b>因为这方面讲起来实在是...</p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '内核安全基础',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-04 21:42:13</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

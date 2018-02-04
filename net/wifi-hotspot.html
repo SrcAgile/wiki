@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>linux WIFI指南 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#net">net</a>&nbsp;&#187;&nbsp;linux WIFI指南
+    <span class="updated">Page Updated&nbsp;
+      2015-01-01 01:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">linux WIFI指南</div>
+
+  <h2 id="_1"><strong>文档状态：</strong><a style="color:red;background-color:gray">新年快乐....</a></h2>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">文档状态：<a style="color:red;background-color:gray">新年快乐....</a></a><ul>
+<li><a href="#_2">更新日志</a></li>
+<li><a href="#_3">网站链接</a></li>
+<li><a href="#_4">方式</a></li>
+<li><a href="#_5">词汇</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="_2">更新日志</h3>
+<ul>
+<li>2016.10.11 添加简便方式开启wifi热点</li>
+</ul>
+<h3 id="_3">网站链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/king-ding/archive/2016/10/09/ubuntuWIFI.html">Ubuntu开启wifi热点</a></li>
+<li><a href="http://blog.csdn.net/lbyyy/article/details/51392629">无线信号解析</a></li>
+<li><a href="https://www.bbsmax.com/A/x9J2O9ZZ56/">关于wifi工作模式</a></li>
+</ul>
+<h3 id="_4">方式</h3>
+<ol>
+<li>点击右上角的网络，然后选择下拉菜单中的edit connections</li>
+<li>点击增加，连接类型选接Wi-Fi，再点新建</li>
+<li>WIFI的设置<br />
+<code>第一个连接名称是指保存在本地的文件名称，SSID是别的电脑搜索到的你wifi的名称,模式设置成hotspot</code></li>
+<li>设置Wi-Fi安全性wpa&amp;wpa2(person)</li>
+<li>此时生成wifi配置文件在<code>/etc/NetworkManager/system-connections/</code>下</li>
+<li>查看一下配置文件</li>
+</ol>
+<div class="hlcode"><pre>  <span class="p">[</span><span class="n">wifi</span><span class="p">]</span>
+  <span class="n">mac</span><span class="o">-</span><span class="n">address</span><span class="o">-</span><span class="n">blacklist</span><span class="o">=</span> <span class="err">#设置物理地址黑名单</span>
+  <span class="n">mac</span><span class="o">-</span><span class="n">address</span><span class="o">-</span><span class="n">randomization</span><span class="o">=</span><span class="mi">1</span>
+  <span class="n">mode</span><span class="o">=</span><span class="n">ap</span>     <span class="err">#一定设置为</span><span class="n">ap</span>
+  <span class="n">seen</span><span class="o">-</span><span class="n">bssids</span><span class="o">=</span>
+  <span class="n">ssid</span><span class="o">=</span><span class="n">your</span> <span class="n">ssid</span>
+</pre></div>
+
+
+<h3 id="_5">词汇</h3>
+<ul>
+<li>ap<br />
+<code>此处的ap是wirelessAccessPoint，无线网络接入点，类似有线网络中的集线器hub</code></li>
+</ul>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'linux WIFI指南',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-04 21:42:13</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
