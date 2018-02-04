@@ -1,7 +1,7 @@
 ---
 title: "软件测试"
 layout:  page
-collection: "[工程目]"
+collection: "[复习目]"
 date: 2017-10-10 21:00:00
 ---
 
