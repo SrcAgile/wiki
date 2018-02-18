@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>特殊文件 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Unix">Unix</a>&nbsp;&#187;&nbsp;特殊文件
+    <span class="updated">Page Updated&nbsp;
+      2017-03-23 11:10:20
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">特殊文件</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#pipe">管道[PIPE]</a></li>
+<li><a href="#tips">tips</a><ul>
+<li><a href="#unix">使用方式[UNIX]</a></li>
+</ul>
+</li>
+<li><a href="#messy">MESSY</a></li>
+</ul>
+</div>
+<h3 id="pipe">管道[PIPE]</h3>
+<p>我对管道的理解即存在于内核空间中可以向多个用户空间进行映射的文件<b style="background-color: black;color:black; ">生成这种思考的起因很简单,但是我目前的想法不一定对,因为管道可以实现多进程之间实现通信,但是因为进程各自占有自己的进程空间,有自己的文件描述符表,但是管道的文件的描述符可以在多个进程中实现公用,所以我认为</b><b style="color: red">由管道的创建方式我们很容易看出,只有创建它的进程和fork出的进程才能使用</b><b style="background-color: black;color:black; ">你会发现在linux的shell中运行的多个程序看起来就是单独运行的,但是却能使用<code>|</code>进行通信,事实很清晰,他们都是当前shell衍生的子进程,你可以使用ps -ef 和lsof -p parentid联合查看</b><br />
+[阻塞性IO]对管道进行read:<br />
+1. 管道不为空 立即返回<br />
+2. 管道为空<br />
+     |<strong><em>存在进程为写操作打开管道,阻塞到数据写入管道<br />
+     |</em></strong>不存在进程为写操作打开管道,返回0,表示遇到文件尾</p>
+<h3 id="tips">tips</h3>
+<p>无论是对一般文件还是特殊文件进行原生的read,write读写,都存在一个非常令人厌恶的小问题,即操作的原子性,虽然很多应用层的封装的读写函数实现了原子锁确保读写的原子性,但是read和write这种系统调用不能实现原子性,所以在进行操作的过程中难免因为一些高级别的软硬中断打断,对于这种现象,存在两种解决方案,<code>1.</code>自己写重启库<code>2.</code>使用原子锁对操作进行同步</p>
+<h4 id="unix">使用方式[UNIX]</h4>
+<div class="hlcode"><pre><span class="cp">#include &lt;unistd.h&gt;</span>
+<span class="kt">int</span> <span class="n">fd</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="k">if</span><span class="p">(</span><span class="n">pipe</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">perror</span><span class="p">(</span><span class="s">&quot;****&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<h3 id="messy">MESSY</h3>
+<ol>
+<li>pipe和fifo都有一个重要的特性----他们都能保证不超过PIPE-BUF个的写入字节操作是原子的，不会出现在使用fprintf做原子日志的时候的各种考虑，很显然fprintf不是原子的。适合在cs模型中使用，来自多个客户机的消息片断都有可能发生交错。[在这里我认为的原子性是多进程竞争时的原子即必须等次操作完才可以执行进程切换或者是其他中断]</li>
+</ol>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '特殊文件',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-18 22:49:45</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

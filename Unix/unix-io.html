@@ -25,7 +25,7 @@
 <div id="header">
   <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Unix">Unix</a>&nbsp;&#187;&nbsp;unix io
     <span class="updated">Page Updated&nbsp;
-      2018-01-28 12:00:00
+      2017-01-28 12:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
@@ -35,12 +35,67 @@
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#concept">concept</a><ul>
+<li><a href="#fprintf">fprintf</a></li>
+<li><a href="#write">write</a></li>
+<li><a href="#eof">EOF</a></li>
+</ul>
+</li>
 <li><a href="#question">Question</a></li>
+<li><a href="#messy">messy</a></li>
 </ul>
 </div>
+<h3 id="concept">concept</h3>
+<h4 id="fprintf">fprintf</h4>
+<p>先看代码</p>
+<div class="hlcode"><pre><span class="o">&lt;!--</span> <span class="n">glibc</span><span class="o">-</span><span class="mf">2.6</span><span class="err">\</span><span class="n">stdio</span><span class="o">-</span><span class="n">common</span><span class="err">\</span><span class="n">vfprintf</span><span class="p">.</span><span class="n">c</span> <span class="o">--&gt;</span>
+  <span class="n">_IO_flockfile</span> <span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="err">……</span>
+  <span class="n">f</span> <span class="o">=</span> <span class="n">lead_str_end</span> <span class="o">=</span> <span class="n">__find_specwc</span> <span class="p">((</span><span class="k">const</span> <span class="n">UCHAR_T</span> <span class="o">*</span><span class="p">)</span> <span class="n">format</span><span class="p">);</span>
+<span class="err">……</span>
+  <span class="cm">/* Process whole format string.  */</span>
+  <span class="k">do</span>
+    <span class="p">{</span>
+<span class="err">……</span>
+    <span class="cm">/* Write the following constant string.  */</span>
+    <span class="n">outstring</span> <span class="p">(</span><span class="n">specs</span><span class="p">[</span><span class="n">nspecs_done</span><span class="p">].</span><span class="n">end_of_fmt</span><span class="p">,</span>
+           <span class="n">specs</span><span class="p">[</span><span class="n">nspecs_done</span><span class="p">].</span><span class="n">next_fmt</span>
+           <span class="o">-</span> <span class="n">specs</span><span class="p">[</span><span class="n">nspecs_done</span><span class="p">].</span><span class="n">end_of_fmt</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nl">all_done:</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">__builtin_expect</span> <span class="p">(</span><span class="n">workstart</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">free</span> <span class="p">(</span><span class="n">workstart</span><span class="p">);</span>
+  <span class="cm">/* Unlock the stream.  */</span>
+  <span class="n">_IO_funlockfile</span> <span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="n">_IO_cleanup_region_end</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+
+<blockquote>
+<p>glibc的做法就是化整为零，在处理一个格式化输出的时候首先加锁，这里的“锁”位于FILE结构中，通过相同的FILE结构访问到相同的锁，共享相同的互斥。反过来说，就是FILE中使用的fd相同，只要它们封装在不同的FILE结构中，它们之间的写入也并不互斥。加上锁之后，glibc不再一次性把所有的字符格式化完成之后传递给write函数执行，而是只处理自己“基本职责”功能，就是扫描一个格式化字符串中的描述并逐个处理。对于上面的printf("%s%s", str1, str2)例子，vfpintf函数根据%s来讲str1的内容通过outstring传递给更底层的FILE结构缓冲管理层。这个缓冲的大小默认情况下在文件打开时通过stat函数获得文件所在的文件系统的block大小，FILE缓冲一个block作为自己的缓冲区大小</p>
+</blockquote>
+<p>看上面的描述,似乎是对进程描述符表进行上锁,总而言之,反正是针对进程内部的信息进行进行上锁,那么这种行为显而易见,fprintf只能在多线程之间实现,多进程之间完全无效,那么多进程情况应该使用对inode上锁的.<br />
+fprintf操作的是clib中一块缓冲区,这个缓冲回去结构中包括fd指向系统描述符表,这个前提是fopen打开文件,对于单纯的open打开只会返回fd(文件描述符),并不创建clib中的缓存区.</p>
+<h4 id="write">write</h4>
+<!-- mutex保证了单次的write调用不会存在数据不一致性,但这并不意味着write是原子性操作,写过程中仍可能存在被中断的可能性. -->
+
+<div class="hlcode"><pre> <span class="err">常规文件</span><span class="n">write</span><span class="err">调用实现关系图</span><span class="o">:</span>
+ <span class="n">write</span><span class="o">---&gt;</span><span class="p">(</span><span class="n">VFS</span> <span class="err">入口</span><span class="p">)</span><span class="n">sys_write</span><span class="o">--&gt;&gt;</span><span class="n">vfs_write</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">file</span><span class="o">-&gt;</span><span class="n">f_op</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="err">不同文件不同实现方式</span><span class="p">)]</span><span class="o">--&gt;&gt;&gt;</span><span class="p">(</span><span class="err">文件系统层入口</span><span class="p">)</span><span class="n">do_sync_write</span><span class="o">--&gt;&gt;</span><span class="n">generic_file_aio_write</span><span class="p">(</span><span class="err">根据</span><span class="n">filp</span><span class="o">-&gt;</span><span class="n">f_flags</span><span class="err">判断是否</span><span class="n">cache</span><span class="p">)</span><span class="o">----&gt;</span><span class="n">cache</span><span class="err">层</span><span class="o">--&gt;</span><span class="n">mpage_submit_bio</span><span class="o">-&gt;</span><span class="p">(</span><span class="err">通用块层入口将</span><span class="n">bio</span><span class="err">传送到</span><span class="n">IO</span><span class="err">调度层进行处理</span><span class="p">)</span><span class="n">generic_make_request</span><span class="o">---&gt;</span><span class="p">(</span><span class="n">io</span><span class="err">调度层</span><span class="p">)</span><span class="n">bio</span><span class="err">合并并选择适当的调度算法形成请求队列</span><span class="o">---&gt;</span><span class="p">(</span><span class="err">设备驱动层</span><span class="p">)</span><span class="n">request</span><span class="err">函数对请求队列中每个</span><span class="n">bio</span><span class="err">进行分别处理，根据</span><span class="n">bio</span><span class="err">中的信息向磁盘控制器发送命令。处理完成后，调用完成函数</span><span class="n">end_bio</span><span class="err">以通知上层完成</span><span class="p">.</span>
+
+ <span class="n">mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">inode</span><span class="o">-&gt;</span><span class="n">i_mutex</span><span class="p">);</span> 
+ <span class="n">ret</span> <span class="o">=</span> <span class="n">__generic_file_aio_write_nolock</span><span class="p">(</span><span class="n">iocb</span><span class="p">,</span> <span class="n">iov</span><span class="p">,</span> <span class="n">nr_segs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">iocb</span><span class="o">-&gt;</span><span class="n">ki_pos</span><span class="p">);</span> 
+ <span class="n">mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">inode</span><span class="o">-&gt;</span><span class="n">i_mutex</span><span class="p">);</span>
+</pre></div>
+
+
+<h4 id="eof">EOF</h4>
+<div class="hlcode"><pre><span class="err">最初的理解认为</span><span class="n">EOF</span><span class="err">只是每个文件放在文件结尾的字符，占有一定的存储空间，后来学习了设备文件才发现大错特错，最开始的时候</span><span class="n">EOF</span><span class="err">只是一个宏，定义为</span><span class="o">-</span><span class="mi">1</span><span class="err">，只是为了返回一个</span><span class="n">read</span><span class="err">调用的错误值，后来当操作终端设备文件时发现终端文件不能仅仅根据终端没有数据说明文件结束，所以使用了特殊的输入字符</span><span class="p">(</span><span class="n">CTRL</span><span class="o">+</span><span class="n">D</span><span class="p">[</span><span class="n">LINUX</span><span class="p">]</span><span class="o">&amp;</span><span class="n">CTRL</span><span class="o">+</span><span class="n">Z</span><span class="p">(</span><span class="n">WIN</span><span class="p">))</span><span class="err">表示终端文件输入结束，即说这种特殊字符为</span><span class="n">EOF</span><span class="err">字符。所以说在经验传播过程中存在了个人语言上的歧义性，致使经验不够严谨，所以说一个称职的工程人员应该兼具工程师的直觉和数学家的严谨。</span>
+</pre></div>
+
+
 <h3 id="question">Question</h3>
 <ol>
-<li>if u want to avoid overwriting an existing file,you can use <code>(O_CREATE|0_EXCL)</code><br />
+<li>if u want to avoid overwriting an existing file,you can use <code>(O_CREAT|0_EXCL)</code><br />
 首先应该知道，当文件存在时，使用open("filename",O_CREATE,0666)是会重写一个文件的，所以引入了(O_CREATE|0_EXCL)，但是有的人认为多此一举，可以使用</li>
 </ol>
 <div class="hlcode"><pre><span class="k">if</span><span class="p">(</span><span class="n">access</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span><span class="n">R_OK</span><span class="p">)</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span><span class="err">#如果文件不存在</span>
@@ -50,6 +105,8 @@
 
 <p>但是在操作系统课程老师讲过，系统调用是具有原子性的，即执行开始到结束不会切换进程，所以<br />
 <code>open("filename",O_CREATE|O_RDWR|O_EXCL,0666)</code>多了一个好处，当多道环境下只允许一个进程去打开文件，例如socket，此时便用原语实现了。</p>
+<h3 id="messy">messy</h3>
+<p>read调用对普通文件读取后没有字符返回eof，但是特殊设备文件却会阻塞等待数据？</p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -82,7 +139,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-02-04 21:42:13</p>
+        <p>Site Generated 2018-02-18 22:49:45</p>
       </span>
     </div>
 

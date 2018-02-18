@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>c++命名空间 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Language">Language</a>&nbsp;&#187;&nbsp;c++命名空间
+    <span class="updated">Page Updated&nbsp;
+      2017-01-17 01:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">c++命名空间</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>.</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">背景知识</a></li>
+<li><a href="#_2">开始</a></li>
+</ul>
+</div>
+<h3 id="_1">背景知识</h3>
+<ul>
+<li>c/c++从预处理到编译链接的全过程熟悉</li>
+<li>了解重载和命名空间奇技淫巧在编译器端的实现</li>
+</ul>
+<h3 id="_2">开始</h3>
+<ol>
+<li>code</li>
+</ol>
+<div class="hlcode"><pre><span class="cp">#include &lt;iostream&gt;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="n">nameA</span><span class="p">{</span>
+    <span class="kt">void</span> <span class="n">sayhello</span><span class="p">(){</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;hello i am nameA&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">namespace</span> <span class="n">nameB</span><span class="p">{</span>
+    <span class="kt">void</span> <span class="n">sayhello</span><span class="p">(){</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;hello i am nameB&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">nameB</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">sayhello</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ol>
+<li>查看符号表</li>
+</ol>
+<div class="hlcode"><pre>Symbol table <span class="s1">&#39;.symtab&#39;</span> contains 22 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS namespace.cpp
+     2: 0000000000000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 0000000000000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 0000000000000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 0000000000000000     1 OBJECT  LOCAL  DEFAULT    4 _ZStL8__ioinit
+     6: 0000000000000000     0 SECTION LOCAL  DEFAULT    5 
+     7: 000000000000003c    62 FUNC    LOCAL  DEFAULT    1 _Z41__static_initializati
+     8: 000000000000007a    21 FUNC    LOCAL  DEFAULT    1 _GLOBAL__sub_I__ZN5nameA8
+     9: 0000000000000000     0 SECTION LOCAL  DEFAULT    6 
+    10: 0000000000000000     0 SECTION LOCAL  DEFAULT    9 
+    11: 0000000000000000     0 SECTION LOCAL  DEFAULT   10 
+    12: 0000000000000000     0 SECTION LOCAL  DEFAULT    8 
+    13: 0000000000000000    22 FUNC    GLOBAL DEFAULT    1 _ZN5nameA8sayhelloEv
+    14: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND _ZSt4cout
+    15: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND _ZStlsISt11char_traitsIcE
+    16: 0000000000000016    22 FUNC    GLOBAL DEFAULT    1 _ZN5nameB8sayhelloEv
+    17: 000000000000002c    16 FUNC    GLOBAL DEFAULT    1 main
+    18: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND _ZNSt8ios_base4InitC1Ev
+    19: 0000000000000000     0 NOTYPE  GLOBAL HIDDEN   UND __dso_handle
+    20: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND _ZNSt8ios_base4InitD1Ev
+    21: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND __cxa_atexit
+</pre></div>
+
+
+<p>we can see the entry which named <code>_ZN5nameA8sayhelloEv</code>&amp;<code>_ZN5nameB8sayhelloEv</code>,so there is a door which could help us to explore the rule of namespace.<br />
+我们反汇编一下</p>
+<div class="hlcode"><pre><span class="nx">namespace.o</span><span class="p">:</span>     <span class="nb">file</span> <span class="nb">format</span> <span class="nx">elf64</span><span class="na">-x86</span><span class="o">-</span><span class="mi">64</span>
+
+
+<span class="nx">Disassembly</span> <span class="nx">of</span> <span class="nx">section</span> <span class="bp">.</span><span class="nx">text</span><span class="p">:</span>
+
+<span class="mi">0000000000000000</span> <span class="o">&lt;</span><span class="nx">_ZN5nameA8sayhelloEv</span><span class="o">&gt;</span><span class="p">:</span>
+   <span class="mi">0</span><span class="p">:</span>   <span class="mi">55</span>                      <span class="nb">push</span>   <span class="o">%</span><span class="nx">rbp</span>
+   <span class="mi">1</span><span class="p">:</span>   <span class="mi">48</span> <span class="mi">89</span> <span class="nx">e5</span>                <span class="nx">mov</span>    <span class="o">%</span><span class="nx">rsp</span><span class="p">,</span><span class="o">%</span><span class="nx">rbp</span>
+   <span class="mi">4</span><span class="p">:</span>   <span class="nx">be</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">esi</span>
+   <span class="mi">9</span><span class="p">:</span>   <span class="nx">bf</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">edi</span>
+   <span class="nx">e</span><span class="p">:</span>   <span class="nx">e8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">callq</span>  <span class="mi">13</span> <span class="o">&lt;</span><span class="nx">_ZN5nameA8sayhelloEv</span><span class="o">+</span><span class="mh">0x13</span><span class="o">&gt;</span>
+  <span class="mi">13</span><span class="p">:</span>   <span class="mi">90</span>                      <span class="nx">nop</span>
+  <span class="mi">14</span><span class="p">:</span>   <span class="mi">5</span><span class="nb">d</span>                      <span class="nb">pop</span>    <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">15</span><span class="p">:</span>   <span class="nx">c3</span>                      <span class="nx">retq</span>   
+
+<span class="mi">0000000000000016</span> <span class="o">&lt;</span><span class="nx">_ZN5nameB8sayhelloEv</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="mi">16</span><span class="p">:</span>   <span class="mi">55</span>                      <span class="nb">push</span>   <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">17</span><span class="p">:</span>   <span class="mi">48</span> <span class="mi">89</span> <span class="nx">e5</span>                <span class="nx">mov</span>    <span class="o">%</span><span class="nx">rsp</span><span class="p">,</span><span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">1</span><span class="nx">a</span><span class="p">:</span>   <span class="nx">be</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">esi</span>
+  <span class="mi">1</span><span class="nb">f</span><span class="p">:</span>   <span class="nx">bf</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">edi</span>
+  <span class="mi">24</span><span class="p">:</span>   <span class="nx">e8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">callq</span>  <span class="mi">29</span> <span class="o">&lt;</span><span class="nx">_ZN5nameB8sayhelloEv</span><span class="o">+</span><span class="mh">0x13</span><span class="o">&gt;</span>
+  <span class="mi">29</span><span class="p">:</span>   <span class="mi">90</span>                      <span class="nx">nop</span>
+  <span class="mi">2</span><span class="nx">a</span><span class="p">:</span>   <span class="mi">5</span><span class="nb">d</span>                      <span class="nb">pop</span>    <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">2</span><span class="nx">b</span><span class="p">:</span>   <span class="nx">c3</span>                      <span class="nx">retq</span>   
+
+<span class="mi">000000000000002</span><span class="nx">c</span> <span class="o">&lt;</span><span class="nx">main</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="mi">2</span><span class="nx">c</span><span class="p">:</span>   <span class="mi">55</span>                      <span class="nb">push</span>   <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">2</span><span class="nb">d</span><span class="p">:</span>   <span class="mi">48</span> <span class="mi">89</span> <span class="nx">e5</span>                <span class="nx">mov</span>    <span class="o">%</span><span class="nx">rsp</span><span class="p">,</span><span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">30</span><span class="p">:</span>   <span class="nx">e8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">callq</span>  <span class="mi">35</span> <span class="o">&lt;</span><span class="nx">main</span><span class="o">+</span><span class="mh">0x9</span><span class="o">&gt;</span>
+  <span class="mi">35</span><span class="p">:</span>   <span class="nx">b8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">eax</span>
+  <span class="mi">3</span><span class="nx">a</span><span class="p">:</span>   <span class="mi">5</span><span class="nb">d</span>                      <span class="nb">pop</span>    <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">3</span><span class="nx">b</span><span class="p">:</span>   <span class="nx">c3</span>                      <span class="nx">retq</span>   
+
+<span class="mi">000000000000003</span><span class="nx">c</span> <span class="o">&lt;</span><span class="nx">_Z41__static_initialization_and_destruction_0ii</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="mi">3</span><span class="nx">c</span><span class="p">:</span>   <span class="mi">55</span>                      <span class="nb">push</span>   <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">3</span><span class="nb">d</span><span class="p">:</span>   <span class="mi">48</span> <span class="mi">89</span> <span class="nx">e5</span>                <span class="nx">mov</span>    <span class="o">%</span><span class="nx">rsp</span><span class="p">,</span><span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">40</span><span class="p">:</span>   <span class="mi">48</span> <span class="mi">83</span> <span class="nx">ec</span> <span class="mi">10</span>             <span class="nb">sub</span>    <span class="err">$</span><span class="mh">0x10</span><span class="p">,</span><span class="o">%</span><span class="nx">rsp</span>
+  <span class="mi">44</span><span class="p">:</span>   <span class="mi">89</span> <span class="mi">7</span><span class="nb">d</span> <span class="nx">fc</span>                <span class="nx">mov</span>    <span class="o">%</span><span class="nx">edi</span><span class="p">,</span><span class="o">-</span><span class="mh">0x4</span><span class="p">(</span><span class="o">%</span><span class="nx">rbp</span><span class="p">)</span>
+  <span class="mi">47</span><span class="p">:</span>   <span class="mi">89</span> <span class="mi">75</span> <span class="nx">f8</span>                <span class="nx">mov</span>    <span class="o">%</span><span class="nx">esi</span><span class="p">,</span><span class="o">-</span><span class="mh">0x8</span><span class="p">(</span><span class="o">%</span><span class="nx">rbp</span><span class="p">)</span>
+  <span class="mi">4</span><span class="nx">a</span><span class="p">:</span>   <span class="mi">83</span> <span class="mi">7</span><span class="nb">d</span> <span class="nx">fc</span> <span class="mi">01</span>             <span class="nx">cmpl</span>   <span class="err">$</span><span class="mh">0x1</span><span class="p">,</span><span class="o">-</span><span class="mh">0x4</span><span class="p">(</span><span class="o">%</span><span class="nx">rbp</span><span class="p">)</span>
+  <span class="mi">4</span><span class="nx">e</span><span class="p">:</span>   <span class="mi">75</span> <span class="mi">27</span>                   <span class="nx">jne</span>    <span class="mi">77</span> <span class="o">&lt;</span><span class="nx">_Z41__static_initialization_and_destruction_0ii</span><span class="o">+</span><span class="mh">0x3b</span><span class="o">&gt;</span>
+  <span class="mi">50</span><span class="p">:</span>   <span class="mi">81</span> <span class="mi">7</span><span class="nb">d</span> <span class="nx">f8</span> <span class="nx">ff</span> <span class="nx">ff</span> <span class="mi">00</span> <span class="mi">00</span>    <span class="nx">cmpl</span>   <span class="err">$</span><span class="mh">0xffff</span><span class="p">,</span><span class="o">-</span><span class="mh">0x8</span><span class="p">(</span><span class="o">%</span><span class="nx">rbp</span><span class="p">)</span>
+  <span class="mi">57</span><span class="p">:</span>   <span class="mi">75</span> <span class="mi">1</span><span class="nx">e</span>                   <span class="nx">jne</span>    <span class="mi">77</span> <span class="o">&lt;</span><span class="nx">_Z41__static_initialization_and_destruction_0ii</span><span class="o">+</span><span class="mh">0x3b</span><span class="o">&gt;</span>
+  <span class="mi">59</span><span class="p">:</span>   <span class="nx">bf</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">edi</span>
+  <span class="mi">5</span><span class="nx">e</span><span class="p">:</span>   <span class="nx">e8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">callq</span>  <span class="mi">63</span> <span class="o">&lt;</span><span class="nx">_Z41__static_initialization_and_destruction_0ii</span><span class="o">+</span><span class="mh">0x27</span><span class="o">&gt;</span>
+  <span class="mi">63</span><span class="p">:</span>   <span class="nx">ba</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">edx</span>
+  <span class="mi">68</span><span class="p">:</span>   <span class="nx">be</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">esi</span>
+  <span class="mi">6</span><span class="nb">d</span><span class="p">:</span>   <span class="nx">bf</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="nx">edi</span>
+  <span class="mi">72</span><span class="p">:</span>   <span class="nx">e8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">callq</span>  <span class="mi">77</span> <span class="o">&lt;</span><span class="nx">_Z41__static_initialization_and_destruction_0ii</span><span class="o">+</span><span class="mh">0x3b</span><span class="o">&gt;</span>
+  <span class="mi">77</span><span class="p">:</span>   <span class="mi">90</span>                      <span class="nx">nop</span>
+  <span class="mi">78</span><span class="p">:</span>   <span class="nx">c9</span>                      <span class="nx">leaveq</span> 
+  <span class="mi">79</span><span class="p">:</span>   <span class="nx">c3</span>                      <span class="nx">retq</span>   
+
+<span class="mi">000000000000007</span><span class="nx">a</span> <span class="o">&lt;</span><span class="nx">_GLOBAL__sub_I__ZN5nameA8sayhelloEv</span><span class="o">&gt;</span><span class="p">:</span>
+  <span class="mi">7</span><span class="nx">a</span><span class="p">:</span>   <span class="mi">55</span>                      <span class="nb">push</span>   <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">7</span><span class="nx">b</span><span class="p">:</span>   <span class="mi">48</span> <span class="mi">89</span> <span class="nx">e5</span>                <span class="nx">mov</span>    <span class="o">%</span><span class="nx">rsp</span><span class="p">,</span><span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">7</span><span class="nx">e</span><span class="p">:</span>   <span class="nx">be</span> <span class="nx">ff</span> <span class="nx">ff</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0xffff</span><span class="p">,</span><span class="o">%</span><span class="nx">esi</span>
+  <span class="mi">83</span><span class="p">:</span>   <span class="nx">bf</span> <span class="mi">01</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="nx">mov</span>    <span class="err">$</span><span class="mh">0x1</span><span class="p">,</span><span class="o">%</span><span class="nx">edi</span>
+  <span class="mi">88</span><span class="p">:</span>   <span class="nx">e8</span> <span class="nx">af</span> <span class="nx">ff</span> <span class="nx">ff</span> <span class="nx">ff</span>          <span class="nx">callq</span>  <span class="mi">3</span><span class="nx">c</span> <span class="o">&lt;</span><span class="nx">_Z41__static_initialization_and_destruction_0ii</span><span class="o">&gt;</span>
+  <span class="mi">8</span><span class="nb">d</span><span class="p">:</span>   <span class="mi">5</span><span class="nb">d</span>                      <span class="nb">pop</span>    <span class="o">%</span><span class="nx">rbp</span>
+  <span class="mi">8</span><span class="nx">e</span><span class="p">:</span>   <span class="nx">c3</span>                      <span class="nx">retq</span>   
+</pre></div>
+
+
+<p>caution: e,29,30全都是e8 00 00 00 00，那么链接一下<br />
+贴一部分代码</p>
+<div class="hlcode"><pre><span class="mo">00000000004007</span><span class="mi">8</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">_ZN5nameB8sayhelloEv</span><span class="o">&gt;:</span>
+  <span class="mi">40078</span><span class="n">c</span><span class="o">:</span>   <span class="mi">55</span>                      <span class="n">push</span>   <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">40078</span><span class="n">d</span><span class="o">:</span>   <span class="mi">48</span> <span class="mi">89</span> <span class="n">e5</span>                <span class="n">mov</span>    <span class="o">%</span><span class="n">rsp</span><span class="p">,</span><span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">400790</span><span class="o">:</span>   <span class="n">be</span> <span class="n">a5</span> <span class="mi">08</span> <span class="mi">40</span> <span class="mo">00</span>          <span class="n">mov</span>    <span class="err">$</span><span class="mh">0x4008a5</span><span class="p">,</span><span class="o">%</span><span class="n">esi</span>
+  <span class="mi">400795</span><span class="o">:</span>   <span class="n">bf</span> <span class="mi">60</span> <span class="mi">10</span> <span class="mi">60</span> <span class="mo">00</span>          <span class="n">mov</span>    <span class="err">$</span><span class="mh">0x601060</span><span class="p">,</span><span class="o">%</span><span class="n">edi</span>
+  <span class="mi">40079</span><span class="n">a</span><span class="o">:</span>   <span class="n">e8</span> <span class="n">c1</span> <span class="n">fe</span> <span class="n">ff</span> <span class="n">ff</span>          <span class="n">callq</span>  <span class="mi">400660</span> <span class="o">&lt;</span><span class="n">_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc</span><span class="err">@</span><span class="n">plt</span><span class="o">&gt;</span>
+  <span class="mf">40079f</span><span class="o">:</span>   <span class="mi">90</span>                      <span class="n">nop</span>
+  <span class="mi">4007</span><span class="n">a0</span><span class="o">:</span>   <span class="mi">5</span><span class="n">d</span>                      <span class="n">pop</span>    <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">4007</span><span class="n">a1</span><span class="o">:</span>   <span class="n">c3</span>                      <span class="n">retq</span>   
+
+<span class="mo">00000000004007</span><span class="n">a2</span> <span class="o">&lt;</span><span class="n">main</span><span class="o">&gt;:</span>
+  <span class="mi">4007</span><span class="n">a2</span><span class="o">:</span>   <span class="mi">55</span>                      <span class="n">push</span>   <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">4007</span><span class="n">a3</span><span class="o">:</span>   <span class="mi">48</span> <span class="mi">89</span> <span class="n">e5</span>                <span class="n">mov</span>    <span class="o">%</span><span class="n">rsp</span><span class="p">,</span><span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">4007</span><span class="n">a6</span><span class="o">:</span>   <span class="n">e8</span> <span class="n">e1</span> <span class="n">ff</span> <span class="n">ff</span> <span class="n">ff</span>          <span class="n">callq</span>  <span class="mi">40078</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">_ZN5nameB8sayhelloEv</span><span class="o">&gt;</span>
+  <span class="mi">4007</span><span class="n">ab</span><span class="o">:</span>   <span class="n">b8</span> <span class="mo">00</span> <span class="mo">00</span> <span class="mo">00</span> <span class="mo">00</span>          <span class="n">mov</span>    <span class="err">$</span><span class="mh">0x0</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+  <span class="mi">4007</span><span class="n">b0</span><span class="o">:</span>   <span class="mi">5</span><span class="n">d</span>                      <span class="n">pop</span>    <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">4007</span><span class="n">b1</span><span class="o">:</span>   <span class="n">c3</span>                      <span class="n">retq</span>  
+</pre></div>
+
+
+<p>可知编译器记录了当前的namespace对函数名进行扩展后再寻找，看起来namespace是从名字角度上对变量进行分类，<a href="http://blog.csdn.net/u013230511/article/details/77427821">具体规则</a></p>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'c++命名空间',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-18 22:49:45</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

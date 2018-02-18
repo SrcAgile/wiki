@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>编程技巧 - Meta's Wiki</title>
+    <title>协议探索 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,31 +23,49 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Algorithm">Algorithm</a>&nbsp;&#187;&nbsp;编程技巧
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#net">net</a>&nbsp;&#187;&nbsp;协议探索
     <span class="updated">Page Updated&nbsp;
-      2017-09-01 16:19:32
+      2017-02-03 16:10:09
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">编程技巧</div>
+<div class="page_title">协议探索</div>
 
-  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
-<hr />
-<ul>
-<li><strong>今日音乐</strong><br />
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=461080452&auto=0&height=66"></iframe></li>
+  <h2 id="_1"><strong>文档状态：</strong><a style="color:red;background-color:gray">系统又崩溃了，攒一波.</a></h2>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">文档状态：<a style="color:red;background-color:gray">系统又崩溃了，攒一波.</a></a><ul>
+<li><a href="#_2">工具</a><ul>
+<li><a href="#wireshark">wireshark</a></li>
 </ul>
-<hr />
-<div class="toc"><span class="toctitle">Table of Contents</span><ul></ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-<p><a href="../Experience.html">详情见</a></p>
+<h3 id="_2">工具</h3>
+<blockquote>
+<p>工欲善其事必先利其器</p>
+</blockquote>
+<h4 id="wireshark">wireshark</h4>
+<p><code>$ sudo apt-get install wireshark</code><br />
+但是这样虽然安装上了，但是进程运行过程中需要root的权限，所以需要配置一下，鉴于以前经验，即使以超级用户运行又会出现，以本地用户安装的过程中产生的一些配置信息无法正常加载，作为强迫症，需要解决这个问题，值得一提的是，在linux内核2.x之后才有好的方案，即<code>能力</code>，摆脱用户要么有root权限，要么有普通权限的二态性，并且在wireshark加载中会出现使用<code>/usr/bin/dumpcap</code>，所以主要是配置这个。<br />
+脚本如下</p>
+<div class="hlcode"><pre>groupadd -g wireshark
+usermod -a -G wireshark &lt;用户名&gt;
+chgrp wireshark /usr/bin/dumpcap
+chmod 4750 /usr/bin/dumpcap       //chmod 750 /usr/bin/dumpcap也可以，多加了setuid
+setcap cap_net_raw,cap_net_admin<span class="o">=</span>eip /usr/bin/dumpcap  //
+<span class="k">if </span>setcap不能用<span class="o">{</span>
+    bash -c <span class="s2">&quot;sudo apt-get install libcap2-bin&quot;</span>
+<span class="o">}</span>
+</pre></div>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '编程技巧',
+    title: '协议探索',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

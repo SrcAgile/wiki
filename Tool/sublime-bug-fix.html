@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>sublime中文输入 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Tool">Tool</a>&nbsp;&#187;&nbsp;sublime中文输入
+    <span class="updated">Page Updated&nbsp;
+      2016-09-21 02:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">sublime中文输入</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<blockquote>
+<p>我打死都不会用sublime!<br />
+emmmm!<br />
+好用</p>
+</blockquote>
+<hr />
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<div class="hlcode"><pre><span class="err">暂无评论</span>
+</pre></div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=386830&auto=0&height=66"></iframe>
+
+<hr />
+<p><center style="position:relative; "><br />
+</center></p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#question">question</a></li>
+<li><a href="#work">work</a></li>
+<li><a href="#_1">出现问题</a></li>
+<li><a href="#_2">激活序列</a></li>
+</ul>
+</div>
+<h3 id="question">question</h3>
+<ol>
+<li>重装系统后安装sublime发现不能使用，仔细检查缺乏一些共享库文件，需要自己编译一下</li>
+</ol>
+<h3 id="work">work</h3>
+<ol>
+<li>安装Dev工具</li>
+</ol>
+<div class="hlcode"><pre>sudo apt-get install build-essential
+sudo apt-get install libgtk2.0-dev <span class="c">#含gtk/gtk.h</span>
+</pre></div>
+
+
+<ol>
+<li>coding</li>
+</ol>
+<div class="hlcode"><pre><span class="cm">/*</span>
+<span class="cm"> * name:  sublime-imfix.c</span>
+<span class="cm"> * make:  gcc -shared -o libsublime-imfix.so sublime-imfix.c `pkg-config --libs --cflags gtk+-2.0` -fPIC</span>
+<span class="cm">*/</span>
+<span class="cp">#include &lt;gtk/gtk.h&gt;</span>
+<span class="cp">#include &lt;gdk/gdkx.h&gt;</span>
+<span class="k">typedef</span> <span class="n">GdkSegment</span> <span class="n">GdkRegionBox</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">_GdkRegion</span>
+<span class="p">{</span>
+  <span class="kt">long</span> <span class="n">size</span><span class="p">;</span>
+  <span class="kt">long</span> <span class="n">numRects</span><span class="p">;</span>
+  <span class="n">GdkRegionBox</span> <span class="o">*</span><span class="n">rects</span><span class="p">;</span>
+  <span class="n">GdkRegionBox</span> <span class="n">extents</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">GtkIMContext</span> <span class="o">*</span><span class="n">local_context</span><span class="p">;</span>
+<span class="kt">void</span>
+<span class="nf">gdk_region_get_clipbox</span> <span class="p">(</span><span class="k">const</span> <span class="n">GdkRegion</span> <span class="o">*</span><span class="n">region</span><span class="p">,</span>
+            <span class="n">GdkRectangle</span>    <span class="o">*</span><span class="n">rectangle</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">g_return_if_fail</span> <span class="p">(</span><span class="n">region</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
+  <span class="n">g_return_if_fail</span> <span class="p">(</span><span class="n">rectangle</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
+  <span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="n">region</span><span class="o">-&gt;</span><span class="n">extents</span><span class="p">.</span><span class="n">x1</span><span class="p">;</span>
+  <span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">=</span> <span class="n">region</span><span class="o">-&gt;</span><span class="n">extents</span><span class="p">.</span><span class="n">y1</span><span class="p">;</span>
+  <span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">=</span> <span class="n">region</span><span class="o">-&gt;</span><span class="n">extents</span><span class="p">.</span><span class="n">x2</span> <span class="o">-</span> <span class="n">region</span><span class="o">-&gt;</span><span class="n">extents</span><span class="p">.</span><span class="n">x1</span><span class="p">;</span>
+  <span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">=</span> <span class="n">region</span><span class="o">-&gt;</span><span class="n">extents</span><span class="p">.</span><span class="n">y2</span> <span class="o">-</span> <span class="n">region</span><span class="o">-&gt;</span><span class="n">extents</span><span class="p">.</span><span class="n">y1</span><span class="p">;</span>
+  <span class="n">GdkRectangle</span> <span class="n">rect</span><span class="p">;</span>
+  <span class="n">rect</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span>
+  <span class="n">rect</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">;</span>
+  <span class="n">rect</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">rect</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+  <span class="c1">//The caret width is 2;</span>
+  <span class="c1">//Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">rectangle</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">GTK_IS_IM_CONTEXT</span><span class="p">(</span><span class="n">local_context</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">gtk_im_context_set_cursor_location</span><span class="p">(</span><span class="n">local_context</span><span class="p">,</span> <span class="n">rectangle</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//this is needed, for example, if you input something in file dialog and return back the edit area</span>
+<span class="c1">//context will lost, so here we set it again.</span>
+
+<span class="k">static</span> <span class="n">GdkFilterReturn</span> <span class="nf">event_filter</span> <span class="p">(</span><span class="n">GdkXEvent</span> <span class="o">*</span><span class="n">xevent</span><span class="p">,</span> <span class="n">GdkEvent</span> <span class="o">*</span><span class="n">event</span><span class="p">,</span> <span class="n">gpointer</span> <span class="n">im_context</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">XEvent</span> <span class="o">*</span><span class="n">xev</span> <span class="o">=</span> <span class="p">(</span><span class="n">XEvent</span> <span class="o">*</span><span class="p">)</span><span class="n">xevent</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">xev</span><span class="o">-&gt;</span><span class="n">type</span> <span class="o">==</span> <span class="n">KeyRelease</span> <span class="o">&amp;&amp;</span> <span class="n">GTK_IS_IM_CONTEXT</span><span class="p">(</span><span class="n">im_context</span><span class="p">))</span> <span class="p">{</span>
+       <span class="n">GdkWindow</span> <span class="o">*</span> <span class="n">win</span> <span class="o">=</span> <span class="n">g_object_get_data</span><span class="p">(</span><span class="n">G_OBJECT</span><span class="p">(</span><span class="n">im_context</span><span class="p">),</span><span class="s">&quot;window&quot;</span><span class="p">);</span>
+       <span class="k">if</span><span class="p">(</span><span class="n">GDK_IS_WINDOW</span><span class="p">(</span><span class="n">win</span><span class="p">))</span>
+         <span class="n">gtk_im_context_set_client_window</span><span class="p">(</span><span class="n">im_context</span><span class="p">,</span> <span class="n">win</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">GDK_FILTER_CONTINUE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">gtk_im_context_set_client_window</span> <span class="p">(</span><span class="n">GtkIMContext</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span>
+          <span class="n">GdkWindow</span>    <span class="o">*</span><span class="n">window</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">GtkIMContextClass</span> <span class="o">*</span><span class="n">klass</span><span class="p">;</span>
+  <span class="n">g_return_if_fail</span> <span class="p">(</span><span class="n">GTK_IS_IM_CONTEXT</span> <span class="p">(</span><span class="n">context</span><span class="p">));</span>
+  <span class="n">klass</span> <span class="o">=</span> <span class="n">GTK_IM_CONTEXT_GET_CLASS</span> <span class="p">(</span><span class="n">context</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">klass</span><span class="o">-&gt;</span><span class="n">set_client_window</span><span class="p">)</span>
+    <span class="n">klass</span><span class="o">-&gt;</span><span class="n">set_client_window</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">window</span><span class="p">);</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">GDK_IS_WINDOW</span> <span class="p">(</span><span class="n">window</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="n">g_object_set_data</span><span class="p">(</span><span class="n">G_OBJECT</span><span class="p">(</span><span class="n">context</span><span class="p">),</span><span class="s">&quot;window&quot;</span><span class="p">,</span><span class="n">window</span><span class="p">);</span>
+  <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">gdk_window_get_width</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
+  <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">gdk_window_get_height</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">width</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">height</span> <span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">gtk_im_context_focus_in</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+    <span class="n">local_context</span> <span class="o">=</span> <span class="n">context</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">gdk_window_add_filter</span> <span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">event_filter</span><span class="p">,</span> <span class="n">context</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ol>
+<li>修改/usr/share/applications/sublime_text.desktop文件</li>
+</ol>
+<div class="hlcode"><pre><span class="nv">Exec</span><span class="o">=</span>bash -c <span class="s2">&quot;LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec /opt/sublime_text/sublime_text %F&quot;</span>
+</pre></div>
+
+
+<ol>
+<li>重启打开即可</li>
+</ol>
+<h3 id="_1">出现问题</h3>
+<ol>
+<li>无法编译</li>
+</ol>
+<div class="hlcode"><pre><span class="cp">#直接下载已经编译好的链接库</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/MagicalBird/sublime-text-imfix.git</span>
+</pre></div>
+
+
+<h3 id="_2">激活序列</h3>
+<div class="hlcode"><pre><span class="err">—–</span> <span class="n">BEGIN</span> <span class="n">LICENSE</span> <span class="err">—–</span>
+<span class="n">Morin</span>
+<span class="mi">2</span> <span class="n">User</span> <span class="n">License</span>
+<span class="n">EA7E</span><span class="o">-</span><span class="mi">924018</span>
+<span class="mi">184</span><span class="n">B9FDB</span> <span class="mf">02612F</span><span class="mi">57</span> <span class="mi">33</span><span class="n">B15E69</span> <span class="n">BBC567F1</span>
+<span class="n">E20FA231</span> <span class="n">C077EA95</span> <span class="n">CC14B48B</span> <span class="mi">71</span><span class="n">DD2536</span>
+<span class="n">E209843A</span> <span class="mi">94</span><span class="n">D13692</span> <span class="mo">03</span><span class="n">AC2FAA</span> <span class="mi">895</span><span class="n">B688D</span>
+<span class="n">B8F4A0E6</span> <span class="n">FDC15964</span> <span class="n">A5573FD7</span> <span class="mi">6405</span><span class="n">ED1E</span>
+<span class="mf">6F</span><span class="mi">205469</span> <span class="mf">7F</span><span class="mi">34</span><span class="n">C69D</span> <span class="mi">3</span><span class="n">D36E475</span> <span class="mi">52</span><span class="n">AF6A5B</span>
+<span class="n">DFD15C31</span> <span class="mi">85</span><span class="n">BA64EF</span> <span class="n">F95DD592</span> <span class="mi">4</span><span class="n">B42C314</span>
+<span class="n">AC655762</span> <span class="n">C0F0F5A1</span> <span class="mf">018824E4</span> <span class="mi">17</span><span class="n">C56E16</span>
+<span class="n">AC5AA84C</span> <span class="mf">034F</span><span class="mi">7</span><span class="n">A53</span> <span class="mi">2</span><span class="n">C9A801B</span> <span class="mi">8</span><span class="n">AED239F</span>
+<span class="err">——</span> <span class="n">END</span> <span class="n">LICENSE</span> <span class="err">——</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="err">—–</span> <span class="n">BEGIN</span> <span class="n">LICENSE</span> <span class="err">—–</span>
+<span class="n">TwitterInc</span>
+<span class="mi">200</span> <span class="n">User</span> <span class="n">License</span>
+<span class="n">EA7E</span><span class="o">-</span><span class="mi">890007</span>
+<span class="mi">1</span><span class="n">D77F72E</span> <span class="mi">390</span><span class="n">CDD93</span> <span class="mi">4</span><span class="n">DCBA022</span> <span class="n">FAF60790</span>
+<span class="mi">61</span><span class="n">AA12C0</span> <span class="n">A37081C5</span> <span class="n">D0316412</span> <span class="mi">4584</span><span class="n">D136</span>
+<span class="mi">94</span><span class="n">D7F7D4</span> <span class="mi">95</span><span class="n">BC8C1C</span> <span class="mi">527</span><span class="n">DA828</span> <span class="mi">560</span><span class="n">BB037</span>
+<span class="n">D1EDDD8C</span> <span class="n">AE7B379F</span> <span class="mi">50</span><span class="n">C9D69D</span> <span class="n">B35179EF</span>
+<span class="mf">2F</span><span class="n">E898C4</span> <span class="mf">8E4277</span><span class="n">A8</span> <span class="mi">555</span><span class="n">CE714</span> <span class="n">E1FB0E43</span>
+<span class="n">D5D52613</span> <span class="n">C3D12E98</span> <span class="n">BC49967F</span> <span class="mi">7652</span><span class="n">EED2</span>
+<span class="mi">9</span><span class="n">D2D2E61</span> <span class="mi">67610860</span> <span class="mi">6</span><span class="n">D338B72</span> <span class="mi">5</span><span class="n">CF95C69</span>
+<span class="n">E36B85CC</span> <span class="mf">84991F</span><span class="mi">19</span> <span class="mi">7575</span><span class="n">D828</span> <span class="mi">470</span><span class="n">A92AB</span>
+<span class="err">——</span> <span class="n">END</span> <span class="n">LICENSE</span> <span class="err">——</span>
+</pre></div>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: 'sublime中文输入',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-18 22:49:45</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>命令工具 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Unix">Unix</a>&nbsp;&#187;&nbsp;命令工具
+    <span class="updated">Page Updated&nbsp;
+      2017-03-22 11:10:20
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">命令工具</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">常见问题</a></li>
+<li><a href="#_2">罗列</a><ul>
+<li><a href="#lsof">lsof</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="_1">常见问题</h3>
+<ul>
+<li><a href="#lsof">查看文件被什么进程占用</a></li>
+</ul>
+<h3 id="_2">罗列</h3>
+<h4 id="lsof">lsof</h4>
+<p><p id="lsof"></p></p>
+<div class="hlcode"><pre><span class="err">查看某个文件被哪些进程在读写</span>
+
+<span class="n">lsof</span><span class="err">是什么意思</span>
+
+<span class="n">list</span> <span class="n">open</span> <span class="n">files</span>
+
+<span class="err">查看某个文件被哪些进程在读写</span>
+
+<span class="n">lsof</span> <span class="err">文件名</span>
+
+<span class="err">查看某个进程打开了哪些文件</span>
+<span class="n">lsof</span> <span class="err">–</span><span class="n">c</span> <span class="err">进程名</span>
+<span class="n">lsof</span> <span class="err">–</span><span class="n">p</span> <span class="err">进程号</span>
+
+<span class="n">lsof</span><span class="err">用法小全</span>
+<span class="n">lsof</span> <span class="n">abc</span><span class="p">.</span><span class="n">txt</span> <span class="err">显示开启文件</span><span class="n">abc</span><span class="p">.</span><span class="n">txt</span><span class="err">的进程</span>
+<span class="n">lsof</span> <span class="o">-</span><span class="n">i</span> <span class="o">:</span><span class="mi">22</span> <span class="err">知道</span><span class="mi">22</span><span class="err">端口现在运行什么程序</span>
+<span class="n">lsof</span> <span class="o">-</span><span class="n">c</span> <span class="n">nsd</span> <span class="err">显示</span><span class="n">nsd</span><span class="err">进程现在打开的文件</span>
+<span class="n">lsof</span> <span class="o">-</span><span class="n">g</span> <span class="n">gid</span> <span class="err">显示归属</span><span class="n">gid</span><span class="err">的进程情况</span>
+<span class="n">lsof</span> <span class="o">+</span><span class="n">d</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span> <span class="err">显示目录下被进程开启的文件</span>
+<span class="n">lsof</span> <span class="o">+</span><span class="n">D</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span> <span class="err">同上，但是会搜索目录下的目录，时间较长</span>
+<span class="n">lsof</span> <span class="o">-</span><span class="n">d</span> <span class="mi">4</span> <span class="err">显示使用</span><span class="n">fd</span><span class="err">为</span><span class="mi">4</span><span class="err">的进程</span>
+<span class="n">lsof</span> <span class="o">-</span><span class="n">i</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="err">用以显示符合条件的进程情况</span>
+</pre></div>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '命令工具',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-18 22:49:45</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

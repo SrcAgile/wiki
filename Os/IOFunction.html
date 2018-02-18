@@ -25,14 +25,14 @@
 <div id="header">
   <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;IO层函数简易剖析
     <span class="updated">Page Updated&nbsp;
-      2017-08-30 21:00:00
+      2015-08-30 21:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
 <div class="page_title">IO层函数简易剖析</div>
 
-  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">等待大学开学中....</a></p>
 <hr />
 <blockquote></blockquote>
 <hr />
@@ -43,10 +43,16 @@
 </pre></div>
 
 
-<h3 id="_1">起因</h3>
+<h3 id="_1">日志</h3>
+<ul>
+<li>update 2017.03.21 <code>建议去看我写的io子系统的文章，这篇存在常识性错误</code></li>
+<li>update 2015.11.23</li>
+<li>update 2015.10.11 <code>修改</code></li>
+</ul>
+<h3 id="_2">起因</h3>
 <p>今天写了关于scanf的部分功能,起初只是简单的写一写关于最短代码实现对输入数字检测,为数字则通过,不为则清空重新输入,鉴于scanf并不是一个小小的函数加上编写代码的平台是linux,所以出现了很多疑问与思考,结合对操作系统本身知识与系统工具的了解我准备剖析一下内部原理.<br />
 附:内部有技能小彩蛋&lt;(<strong>_</strong>)&gt;</p>
-<h3 id="_2">开始</h3>
+<h3 id="_3">开始</h3>
 <ul>
 <li>功能要求:数字检测</li>
 </ul>
@@ -129,7 +135,7 @@ fetched from the underlying file, but has not been consumed by the application.<
 因为设备驱动层的存在,当内核开机执行时会把找到设备将其映射到设备文件夹下即<code>/dev</code>,然后用户角度才有了<code>stdin</code>,所以用户对stdin的操作会被翻译为 用户-&gt;设备驱动--&gt;硬件本身</p>
 <p>这样就有了整体的结构,所以我们得知,<code>fflush</code>只是将应用程序层的应用缓冲区的缓冲数据掉了,但是设备驱动层的缓冲区还在,至于硬件本身,我们针对键盘来说,它是无法存放数据的,只能依靠驱动层缓冲数据,所以,下一次读的时候,设备驱动层的数据缓冲残留还在,麻鸡,这样是不行的!所以会出现死循环!</p>
 <p>有人说vc提供的fflush怎么行,其实我对windows下的硬件布局不太清楚,但是可以肯定的是,他们的确清空了驱动层的数据,死循环并不会出现.</p>
-<h3 id="_3">怎么做</h3>
+<h3 id="_4">怎么做</h3>
 <p>知道原理了,我们应该怎么做?很简单,使用笨方法将数据全读出来!怎么读?<br />
 看着!</p>
 <div class="hlcode"><pre><span class="k">while</span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">num</span><span class="p">)</span><span class="o">!=</span><span class="mi">1</span><span class="p">){</span>
@@ -193,7 +199,7 @@ fetched from the underlying file, but has not been consumed by the application.<
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-02-04 21:42:13</p>
+        <p>Site Generated 2018-02-18 22:49:45</p>
       </span>
     </div>
 

@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>瓶颈性能调优 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;瓶颈性能调优
+    <span class="updated">Page Updated&nbsp;
+      2017-02-10 09:00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">瓶颈性能调优</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<ul>
+<li><strong>今日音乐</strong><br />
+歌曲名:<b style="color:red">生きていたんだよな</b><br />
+由于版权保护无法贴上外链.</li>
+</ul>
+<hr />
+<blockquote>
+<p>工具可以细化探讨问题的粒度。 </p>
+</blockquote>
+<hr />
+<p><b style="color:red"></b></p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">起源</a></li>
+<li><a href="#_2">背景知识</a><ul>
+<li><a href="#_3">关于处理器</a></li>
+<li><a href="#tracepoints">Tracepoints</a></li>
+</ul>
+</li>
+<li><a href="#_4">工具</a></li>
+<li><a href="#perf">perf</a></li>
+</ul>
+</div>
+<h3 id="_1">起源</h3>
+<ul>
+<li>在软件发布之后，软件管理人员若想良好的对软件进行升级，性能提升需要对软件运行过程中的各个部分进行有选择性的优化,这一过程对开发人员的基础知识要求十分高，涉及的之事广杂，细节繁琐，例如在大量代码的情况下分析<code>cpu bound</code>&amp;<code>io bound</code>,若是io密集，需要从io子系统的各个方面出发，比如在应用层添加缓冲，尽量减少系统调用消耗的时间，修改pagecache的writeback设置，使用mmap对内核内存进行应用态的映射减少系统调用，或者对块设备的io调度进行优化，例如针对数据库的系统上不能使用常用的cfq而应该切换为deadline，针对固态硬盘使用noop， 还有例如<code>上下文切换</code>,<code>cpu migration</code>,<code>page fault</code>,<code>cache miss</code>,<code>brach miss</code>等等等等，这篇文章应该需要很长时间。</li>
+</ul>
+<h3 id="_2">背景知识</h3>
+<h4 id="_3">关于处理器</h4>
+<ul>
+<li>需要熟悉掌握cache</li>
+<li>需要知道流水线，超标量体系结构对brach miss的影响，涉及BTB等<a href="https://software.intel.com/en-us/articles/branch-and-loop-reorganization-to-prevent-mispredicts/">指令分支预测</a><br />
+<code>不依赖上下文的指令和pipeline，避免指令出现上下文依赖</code></li>
+<li>了解PMU(performance monitor unit)<br />
+<code>PMU 允许软件针对某种硬件事件设置 counter，此后处理器便开始统计该事件的发生次数，当发生的次数超过 counter 内设置的值后，便产生中断。比如 cache miss 达到某个值后，PMU 便能产生相应的中断。</code></li>
+</ul>
+<h4 id="tracepoints">Tracepoints</h4>
+<blockquote>
+<p>散落在内核源代码中的一些 hook，一旦使能，它们便可以在特定的代码被运行到时被触发，这一特性可以被各种 trace/debug 工具所使用。Perf 就是该特性的用户之一</p>
+</blockquote>
+<p>比如说你想了解内核内存管理模块的行为，可以里用slab分配器的tracepoint hook，当然，我们可以<br />
+将hook来的数据进行分析生成报告便于诊断。所以可以方面了解程序的内部细节。</p>
+<h3 id="_4">工具</h3>
+<h3 id="perf">perf</h3>
+<div class="hlcode"><pre>  <span class="n">You</span> <span class="n">may</span> <span class="n">need</span> <span class="n">to</span> <span class="n">install</span> <span class="n">the</span> <span class="n">following</span> <span class="n">packages</span> <span class="k">for</span> <span class="n">this</span> <span class="n">specific</span> <span class="n">kernel</span><span class="o">:</span>
+    <span class="n">linux</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="mf">4.10.0</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">generic</span>
+    <span class="n">linux</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="mf">4.10.0</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">generic</span>
+
+  <span class="n">You</span> <span class="n">may</span> <span class="n">also</span> <span class="n">want</span> <span class="n">to</span> <span class="n">install</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">packages</span> <span class="n">to</span> <span class="n">keep</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span><span class="o">:</span>
+    <span class="n">linux</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="n">generic</span>
+    <span class="n">linux</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="n">generic</span>
+</pre></div>
+
+
+<p>作用:<br />
+- 分析硬件事件（instructions retired ，processor clock cycles ）<br />
+- 分析软件事件（ Page Fault 和进程切换）<br />
+- 分析断点事件<br />
+- 函数级别采样<br />
+- 做 benchmark 衡量调度器的好坏<br />
+运作机制:<br />
+- 通过对软硬中断以及hook出现时候的回调产生信息，这三种情况作为三大类采样点，可以根据选用采样点的不同，来了解程序执行的各个部分在此采样点上的分布律(简单的说，采样点相当于概率论中所说的事件，通过选择对特定事件进行监测，从而得知程序的不同部分对事件触发的概率，概率和当然为1)</p>
+<p><strong>常用命令</strong><br />
+1. perf list<br />
+<code>列出所有的事件[Hardware Event],[Software Event],[Tracepoint event]</code><br />
+2. perf stat<a href="http://www.lenky.info/archives/2012/10/2007">参考文章</a></p>
+<div class="hlcode"><pre><span class="cp">#hello.c</span>
+<span class="mi">1</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+  <span class="mi">2</span> <span class="kt">void</span> <span class="n">loop</span><span class="p">(){</span>
+  <span class="mi">3</span>     <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="mi">4</span>     <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="mi">5</span>         <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+  <span class="mi">6</span> <span class="p">}</span>
+  <span class="mi">7</span> <span class="kt">void</span> <span class="n">func1</span><span class="p">(){</span>
+  <span class="mi">8</span>     <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="mi">9</span>         <span class="n">loop</span><span class="p">();</span>
+ <span class="mi">10</span> <span class="p">}</span>
+ <span class="mi">11</span> <span class="kt">void</span> <span class="n">func2</span><span class="p">(){</span>
+ <span class="mi">12</span>     <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">1000</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+ <span class="mi">13</span>         <span class="n">loop</span><span class="p">();</span>
+ <span class="mi">14</span> <span class="p">}</span>
+ <span class="mi">15</span> <span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+ <span class="mi">16</span>     <span class="n">func1</span><span class="p">();</span>
+ <span class="mi">17</span>     <span class="nf">func2</span><span class="p">();</span>
+ <span class="mi">18</span>     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="mi">19</span> <span class="p">}</span>
+
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">gcc</span> <span class="o">-</span><span class="n">g</span> <span class="n">hello</span><span class="p">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">hello</span>
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">perf</span> <span class="n">stat</span> <span class="p">.</span><span class="o">/</span><span class="n">hello</span> <span class="mi">2</span><span class="o">&amp;&gt;</span> <span class="n">sys</span><span class="p">.</span><span class="n">data</span>
+ <span class="n">Performance</span> <span class="n">counter</span> <span class="n">stats</span> <span class="k">for</span> <span class="err">&#39;</span><span class="p">.</span><span class="o">/</span><span class="n">hello</span> <span class="mi">2</span><span class="err">&#39;</span><span class="o">:</span>
+ <span class="mf">0.464171</span>      <span class="n">task</span><span class="o">-</span><span class="n">clock</span> <span class="p">(</span><span class="n">msec</span><span class="p">)</span>         <span class="err">#</span>    <span class="mf">0.555</span> <span class="n">CPUs</span> <span class="n">utilized</span>          
+ <span class="mi">0</span>             <span class="n">context</span><span class="o">-</span><span class="n">switches</span>          <span class="err">#</span>    <span class="mf">0.000</span> <span class="n">K</span><span class="o">/</span><span class="n">sec</span>                  
+ <span class="mi">0</span>             <span class="n">cpu</span><span class="o">-</span><span class="n">migrations</span>            <span class="err">#</span>    <span class="mf">0.000</span> <span class="n">K</span><span class="o">/</span><span class="n">sec</span>                  
+<span class="mi">43</span>             <span class="n">page</span><span class="o">-</span><span class="n">faults</span>               <span class="err">#</span>    <span class="mf">0.093</span> <span class="n">M</span><span class="o">/</span><span class="n">sec</span>                  
+<span class="mi">750</span><span class="p">,</span><span class="mi">271</span>        <span class="n">cycles</span>                    <span class="err">#</span>    <span class="mf">1.616</span> <span class="n">GHz</span>                    
+<span class="mi">555</span><span class="p">,</span><span class="mi">199</span>        <span class="n">instructions</span>              <span class="err">#</span>    <span class="mf">0.74</span>  <span class="n">insn</span> <span class="n">per</span> <span class="n">cycle</span>         
+<span class="mi">112</span><span class="p">,</span><span class="mi">590</span>        <span class="n">branches</span>                  <span class="err">#</span>  <span class="mf">242.561</span> <span class="n">M</span><span class="o">/</span><span class="n">sec</span>                  
+<span class="mi">3</span><span class="p">,</span><span class="mi">717</span>          <span class="n">branch</span><span class="o">-</span><span class="n">misses</span>             <span class="err">#</span>    <span class="mf">3.30</span><span class="o">%</span> <span class="n">of</span> <span class="n">all</span> <span class="n">branches</span>        
+
+       <span class="mf">0.000836144</span> <span class="n">seconds</span> <span class="n">time</span> <span class="n">elapsed</span>
+<span class="cm">/*</span>
+<span class="cm">第一列是数据，第二列是第一列数据的单位，第三列多为以时间为量度进行统计单位时间发生的频率</span>
+<span class="cm">几个统计值的含义分别如下（）：</span>
+<span class="cm">task-clock-msecs：</span>
+<span class="cm">cpu运算在整个任务执行过程中消耗时间的比例，该值越高，说明花费越多时间在CPU计算上而非其它（比如I/O）；这里第一列数值为0.464171毫秒，而通过最后一行知道程序整个执行时间为0.000836144秒，所以百分比为0.464171 /(0.000836144×1000)=0.555，即第一行倒数第二列数值。</span>
+<span class="cm">context-switches：记录程序在运行过程中发生的进程切换次数，应该避免频繁的进程切换；这里为0次。</span>
+<span class="cm">CPU-migrations：  记录程序在运行过程中发生的CPU迁移次数，即被调度器从一个CPU转移到另外一个 CPU上运行；这里为0次。</span>
+<span class="cm">page-faults：     记录程序在运行过程中发生的缺页中断次数。</span>
+<span class="cm">cycles：          记录执行程序所发费的处理器周期数。</span>
+<span class="cm">instructions：    记录执行程序所花费的指令数。</span>
+<span class="cm">branches：        记录程序在运行过程中的分支指令数。</span>
+<span class="cm">branch-misses：   记录程序在运行过程中的分支预测失败次数。</span>
+<span class="cm">cache-references：记录程序在运行过程中的cache命中次数。</span>
+<span class="cm">cache-misses：    记录程序在运行过程中的cache失效次数。</span>
+<span class="cm">*/</span>
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">perf</span> <span class="n">stat</span> <span class="o">-</span><span class="n">r</span> <span class="n">n</span><span class="p">(</span><span class="err">次数</span><span class="p">)</span> <span class="p">.</span><span class="o">/</span><span class="n">hello</span> <span class="mi">2</span><span class="o">&amp;&gt;</span> <span class="n">sys</span><span class="p">.</span><span class="n">data</span>
+
+<span class="n">perf</span> <span class="n">record</span> <span class="o">-</span><span class="n">e</span> <span class="n">raw_syscalls</span><span class="o">:</span><span class="n">sys_enter</span> <span class="n">ls</span>
+<span class="cm">/*上述命令可以进行平均统计*/</span>
+</pre></div>
+
+
+<ol>
+<li>perf top</li>
+</ol>
+<div class="hlcode"><pre><span class="err">用过</span><span class="n">top</span><span class="err">的人都熟悉，这个命令可以根据三大类事件发生的频率进行排名你可以使用</span><span class="o">-</span><span class="n">e</span><span class="err">指定事件，至于事件选择哪个，可以通过`</span><span class="n">perf</span> <span class="n">list</span><span class="err">`列出</span>
+
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">perf</span> <span class="n">top</span> <span class="o">-</span><span class="n">e</span> <span class="n">cache</span><span class="o">-</span><span class="n">misses</span>
+<span class="nl">PerfTop:</span><span class="mi">88</span> <span class="n">irqs</span><span class="o">/</span><span class="n">sec</span> <span class="n">kernel</span><span class="o">:</span><span class="mf">64.8</span><span class="o">%</span> <span class="n">exact</span><span class="o">:</span><span class="mf">0.0</span><span class="o">%</span> <span class="p">[</span><span class="mi">3000</span><span class="n">Hz</span> <span class="n">cache</span><span class="o">-</span><span class="n">misses</span><span class="p">],(</span><span class="n">all</span><span class="p">,</span> <span class="mi">4</span> <span class="n">CPUs</span><span class="p">)</span>
+<span class="o">-------------------------------------------------------------------------------</span>
+
+    <span class="mf">18.35</span><span class="o">%</span>  <span class="n">perf</span>                <span class="p">[.]</span> <span class="mh">0x0000000000099837</span>
+     <span class="mf">5.28</span><span class="o">%</span>  <span class="n">libpthread</span><span class="o">-</span><span class="mf">2.23</span><span class="p">.</span><span class="n">so</span>  <span class="p">[.]</span> <span class="n">__pthread_rwlock_rdlock</span>
+     <span class="mf">4.58</span><span class="o">%</span>  <span class="n">perf</span>                <span class="p">[.]</span> <span class="mh">0x00000000000a5441</span>
+     <span class="mf">4.56</span><span class="o">%</span>  <span class="n">perf</span>                <span class="p">[.]</span> <span class="mh">0x00000000000a5446</span>
+     <span class="mf">2.55</span><span class="o">%</span>  <span class="n">perf</span>                <span class="p">[.]</span> <span class="mh">0x00000000000992d3</span>
+     <span class="mf">2.07</span><span class="o">%</span>  <span class="p">[</span><span class="n">kernel</span><span class="p">]</span>            <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">__bpf_prog_run</span>
+     <span class="mf">1.67</span><span class="o">%</span>  <span class="p">[</span><span class="n">kernel</span><span class="p">]</span>            <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">clear_page_c_e</span>
+     <span class="mf">1.49</span><span class="o">%</span>  <span class="n">chromium</span><span class="o">-</span><span class="n">browser</span>    <span class="p">[.]</span> <span class="mh">0x000000000479b2b1</span>
+     <span class="mf">1.45</span><span class="o">%</span>  <span class="n">perf</span>                <span class="p">[.]</span> <span class="mh">0x00000000000bef81</span>
+     <span class="mf">1.42</span><span class="o">%</span>  <span class="p">[</span><span class="n">kernel</span><span class="p">]</span>            <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">update_cfs_rq_load_avg</span><span class="p">.</span><span class="n">constprop</span><span class="mf">.90</span>
+     <span class="mf">1.32</span><span class="o">%</span>  <span class="n">perf</span><span class="o">-</span><span class="mf">25620.</span><span class="n">map</span>      <span class="p">[.]</span> <span class="mh">0x00002bba5db0bf60</span>
+     <span class="mf">1.30</span><span class="o">%</span>  <span class="n">libc</span><span class="o">-</span><span class="mf">2.23</span><span class="p">.</span><span class="n">so</span>        <span class="p">[.]</span> <span class="n">__strchr_sse2</span>
+     <span class="mf">1.16</span><span class="o">%</span>  <span class="n">perf</span><span class="o">-</span><span class="mf">7458.</span><span class="n">map</span>       <span class="p">[.]</span> <span class="mh">0x000016d9891b703f</span>
+     <span class="mf">1.16</span><span class="o">%</span>  <span class="n">chromium</span><span class="o">-</span><span class="n">browser</span>    <span class="p">[.]</span> <span class="mh">0x0000000002860517</span>
+     <span class="mf">1.12</span><span class="o">%</span>  <span class="p">[</span><span class="n">kernel</span><span class="p">]</span>            <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">sys_futex</span>
+     <span class="mf">1.07</span><span class="o">%</span>  <span class="p">[</span><span class="n">kernel</span><span class="p">]</span>            <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">filemap_map_pages</span>
+     <span class="mf">1.07</span><span class="o">%</span>  <span class="n">chromium</span><span class="o">-</span><span class="n">browser</span>    <span class="p">[.]</span> <span class="mh">0x0000000004957b80</span>
+     <span class="mf">1.04</span><span class="o">%</span>  <span class="p">[</span><span class="n">kernel</span><span class="p">]</span>            <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">__switch_to</span>
+</pre></div>
+
+
+<ol>
+<li>perf record</li>
+</ol>
+<div class="hlcode"><pre><span class="cm">/*上述的命令已经很不错了，但是列出的只是针对程序在硬件内核中某些事件执行的频率，针对程序进行分析时，我们要考虑单个函数级别在事件上的频率分布，perf可以进行函数级别查看*/</span>
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">perf</span> <span class="n">record</span> <span class="o">-</span><span class="n">e</span> <span class="n">cpu</span><span class="o">-</span><span class="n">clock</span> <span class="p">.</span><span class="o">/</span><span class="n">hello</span>
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">perf</span> <span class="n">report</span>
+<span class="cm">/*出错！can not open tips.txt</span>
+<span class="cm">检查一下*/</span>
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">strace</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">e</span> <span class="n">file</span> <span class="n">perf</span> <span class="n">report</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">tips</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">access</span><span class="p">(</span><span class="s">&quot;/usr/share/doc/perf-tip/tips.txt&quot;</span><span class="p">,</span> <span class="n">F_OK</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="n">ENOENT</span> <span class="p">(</span><span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span><span class="p">)</span>
+<span class="n">access</span><span class="p">(</span><span class="s">&quot;/build/linux-hwe-vH8Hlo/linux-hwe-4.10.0/debian/build/tools-perarch/tools/perf/Documentation/tips.txt&quot;</span><span class="p">,</span> <span class="n">F_OK</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="n">ENOENT</span> <span class="p">(</span><span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span><span class="p">)</span>
+<span class="cp"># (Cannot load tips.txt file, please install perf!)</span>
+
+<span class="cm">/*bug:没解决这个问题*/</span>
+
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">perf</span> <span class="n">record</span> <span class="err">–</span><span class="n">e</span> <span class="n">cpu</span><span class="o">-</span><span class="n">clock</span> <span class="err">–</span><span class="n">g</span> <span class="p">.</span><span class="o">/</span><span class="n">hello</span>
+<span class="o">-</span><span class="n">g</span><span class="err">选项可以显示调用栈</span>
+</pre></div>
+
+
+<ol>
+<li>perf probe schedule:12 cpu </li>
+</ol>
+<div class="hlcode"><pre><span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">perf</span> <span class="n">probe</span> <span class="n">schedule</span><span class="o">:</span><span class="mi">12</span> <span class="n">cpu</span> 
+<span class="n">meta</span><span class="err">@</span><span class="n">meta</span><span class="o">:~/</span><span class="n">workstation</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">performace</span><span class="err">$</span> <span class="n">perf</span> <span class="n">record</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">e</span> <span class="n">probe</span><span class="o">:</span><span class="n">schedule</span> <span class="o">-</span><span class="n">a</span> <span class="n">sleep</span> <span class="mi">1</span> 
+<span class="cm">/*上例利用 probe 命令在内核函数 schedule() 的第 12 行处加入了一个动态 probe 点，和 tracepoint 的功能一样，内核一旦运行到该 probe 点时，便会通知 perf。可以理解为动态增加了一个新的 tracepoint。*/</span>
+</pre></div>
+
+
+<ol>
+<li>Perf sched</li>
+<li>perf bench</li>
+<li>perf lock</li>
+<li>perf Kmem</li>
+<li>perf timechart</li>
+<li>firegraph<br />
+<strong>参照</strong><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-perf2/">perf2</a><br />
+<strong>Instance</strong></li>
+<li>针对branch-misses进行优化<a href="https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array#11227902">为什么有序数组在循环中速度比无序的快</a></li>
+<li></li>
+</ol>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '瓶颈性能调优',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-18 22:49:45</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

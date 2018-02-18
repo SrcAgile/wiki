@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>编程技巧 - Meta's Wiki</title>
+    <title>编程范式 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,31 +23,48 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Algorithm">Algorithm</a>&nbsp;&#187;&nbsp;编程技巧
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#paradigm">paradigm</a>&nbsp;&#187;&nbsp;编程范式
     <span class="updated">Page Updated&nbsp;
-      2017-09-01 16:19:32
+      2016-03-28 17:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">编程技巧</div>
+<div class="page_title">编程范式</div>
 
-  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<blockquote>
+<p>指常规科学所赖以运作的理论基础和实践规范，是从事某一科学的研究者群体所共同遵从的世界观和行为方式。开展科学研究、建立科学体系、运用科学思想的坐标、参照系与基本方式，科学体系的基本模式、基本结构与基本功能。</p>
+</blockquote>
 <hr />
-<ul>
-<li><strong>今日音乐</strong><br />
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=461080452&auto=0&height=66"></iframe></li>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">背景</a></li>
+<li><a href="#_2">概念</a></li>
 </ul>
-<hr />
-<div class="toc"><span class="toctitle">Table of Contents</span><ul></ul>
 </div>
-<p><a href="../Experience.html">详情见</a></p>
+<h3 id="_1">背景</h3>
+<ul>
+<li>CS107课程学习的思考感悟(Stanford university)</li>
+</ul>
+<h3 id="_2">概念</h3>
+<ol>
+<li>c通过泛化实现c++类似的模板</li>
+<li>通过静态作用域实现代码域的管理</li>
+<li>通过栈上指针回传函数实现类似对象方法的技能</li>
+<li>对类型系统有了一个模糊的了解，将类型拆分为地址与操作约束和空间大小，通过削弱类型限制以实现类型的拆分从而增大操作的灵活性，比如：</li>
+</ol>
+<div class="hlcode"><pre><span class="err">写一个函数</span> <span class="n">operBuf</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="n">buf</span><span class="p">;</span>
+
+<span class="err">将</span><span class="n">buf</span><span class="err">指针转为</span><span class="kt">void</span> <span class="o">*</span><span class="err">，获取缓冲区地址，然后传入单个</span><span class="n">buf</span><span class="err">单元的</span><span class="n">size</span><span class="err">，从而实现</span>
+</pre></div>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '编程技巧',
+    title: '编程范式',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {
