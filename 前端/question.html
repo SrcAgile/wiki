@@ -13,7 +13,7 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <title>linux概论 - Meta's Wiki</title>
+    <title>前端问题 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,56 +23,40 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;linux概论
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#前端">前端</a>&nbsp;&#187;&nbsp;前端问题
     <span class="updated">Page Updated&nbsp;
-      2017-08-30 21:00:00
+      2016-02-18 09:00:00
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">linux概论</div>
+<div class="page_title">前端问题</div>
 
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
-<blockquote>
-<p>维基百科讲过许多,过分谈论反倒是令人厌烦,为什么使用linux那是有原因的</p>
-</blockquote>
-<hr />
-<ul>
-<li><strong>今日音乐</strong></li>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#messy">messy</a></li>
+<li><a href="#_1">应用</a></li>
 </ul>
-<div class="hlcode"><pre><span class="k">[网评]</span>
-<span class="err">谢谢网易云音乐让我知道真相.</span>
+</div>
+<h3 id="messy">messy</h3>
+<p>AVC（H.264）编码的视频在FireFox和Chrome上都可以播放。而使用MPEG4编码的视频在FireFox不能播放，而在Chrome上则只有声音没有图像</p>
+<h3 id="_1">应用</h3>
+<ul>
+<li>插入视频</li>
+</ul>
+<div class="hlcode"><pre><span class="nt">&lt;video</span> <span class="na">width=</span><span class="s">&quot;160&quot;</span> <span class="na">height=</span><span class="s">&quot;48&quot;</span> <span class="na">controls</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;./1.mp4&quot;</span> <span class="na">type=</span><span class="s">&quot;video/mp4&quot;</span><span class="nt">&gt;</span>
+    您的浏览器不支持video标签。
+<span class="nt">&lt;/video&gt;</span>
+#火狐浏览器出错,谷歌正常
 </pre></div>
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=624751&auto=0&height=66"></iframe>
-
-<hr />
-<h2 id="_1">起始</h2>
-<h3 id="_2">认识</h3>
-<p>我是从大一开始接触linux的,在这个时间段也就是2015-2016,linux发行版早已经不是以前的交互性差,难以操纵的命令行模式,他也有了自己的开源图像引擎,开始有很多软件在他的平台上进行开发,金山、网易、各种著名IDE都在Linux有了自己的dev Branch,Linux早已经不再难学,鼠标交互,主题美化,游戏软件,连终端也不放过,linux看起来像一件艺术品,更小的内存需求,更完备的开发环境,更简洁的操作模式,我身边也有很多人投身于linux的”开发“中,然而这正是错误的开始,过于依赖于图形交互模式,就类似于学了一个类似的windows系统,到头来什么也不会,也许只是能在不懂的人面前装13,但是这如果是你学习的意义的话,linux没什么好学的.</p>
-<h3 id="_3">名词</h3>
-<ul>
-<li>OpenGL</li>
-<li>Directx</li>
-<li>Unity</li>
-<li>opencv</li>
-<li>gnome</li>
-<li>kde</li>
-<li>
-<p>gtk</p>
-</li>
-<li>
-<p>竟然有人搞混<code>&gt;</code>和<code>|</code>，<code>&gt;</code>是用来重定向IO，<code>|</code>是用来将数据作为参数流向管道的另一端</p>
-</li>
-</ul>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: 'linux概论',
+    title: '前端问题',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {

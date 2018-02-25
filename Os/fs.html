@@ -59,7 +59,7 @@
 </li>
 <li>
 <p>数据在磁盘上如何布局？数据在磁盘上的不同布局会对文件系统的性能产生很大的影响。<br />
-<code>如果元数据信息离数据很远，那么一次写操作将会导致剧烈的磁盘抖动。EXT3将整个磁盘空间划分成多个块组让元数据与数据信息离得很近</code></p>
+<code>如果元数据信息离数据很远，那么一次写操作将会导致剧烈的磁盘抖动。EXT3将整个磁盘空间划分成多个块组让元数据与数据信息离得很近.</code></p>
 </li>
 <li>
 <p>数据安全性如何保证？如果文件系统的元数据遭到了破坏，如何恢复文件数据？如果用户误删了文件，如何恢复用户的数据？这些都需要文件系统设计者进行仔细设计。</p>
@@ -116,7 +116,7 @@
 <li>根据小端法阅读superblock对照Inode count</li>
 </ol>
 <p>结果</p>
-<div class="hlcode"><pre><span class="mi">1</span> <span class="mo">00000000</span><span class="p">:</span> <span class="mo">0020</span> <span class="mi">7302</span> <span class="mo">0064</span> <span class="n">cc09</span> <span class="mi">666</span><span class="n">b</span> <span class="mi">7</span><span class="n">d00</span> <span class="mi">5726</span> <span class="mf">7e09</span>  <span class="o">.</span> <span class="n">s</span><span class="o">..</span><span class="n">d</span><span class="o">..</span><span class="n">fk</span><span class="p">}</span><span class="o">.</span><span class="n">W</span><span class="o">&amp;~.</span>
+<div class="hlcode"><pre>  <span class="mi">1</span> <span class="mo">00000000</span><span class="p">:</span> <span class="mo">0020</span> <span class="mi">7302</span> <span class="mo">0064</span> <span class="n">cc09</span> <span class="mi">666</span><span class="n">b</span> <span class="mi">7</span><span class="n">d00</span> <span class="mi">5726</span> <span class="mf">7e09</span>  <span class="o">.</span> <span class="n">s</span><span class="o">..</span><span class="n">d</span><span class="o">..</span><span class="n">fk</span><span class="p">}</span><span class="o">.</span><span class="n">W</span><span class="o">&amp;~.</span>
   <span class="mi">2</span> <span class="mo">00000010</span><span class="p">:</span> <span class="mi">8</span><span class="n">d4b</span> <span class="mf">6e02</span> <span class="mo">0000</span> <span class="mo">0000</span> <span class="mo">0200</span> <span class="mo">0000</span> <span class="mo">0200</span> <span class="mo">0000</span>  <span class="o">.</span><span class="n">Kn</span><span class="o">.............</span>
   <span class="mi">3</span> <span class="mo">00000020</span><span class="p">:</span> <span class="mo">00</span><span class="mi">80</span> <span class="mo">0000</span> <span class="mo">00</span><span class="mi">80</span> <span class="mo">0000</span> <span class="mo">0020</span> <span class="mo">0000</span> <span class="mi">8</span><span class="n">a6a</span> <span class="mi">7</span><span class="n">d5a</span>  <span class="o">.........</span> <span class="o">...</span><span class="n">j</span><span class="p">}</span><span class="n">Z</span>
   <span class="mi">4</span> <span class="mo">00000030</span><span class="p">:</span> <span class="mi">756</span><span class="n">a</span> <span class="mi">7</span><span class="n">d5a</span> <span class="mi">1</span><span class="n">b00</span> <span class="n">ffff</span> <span class="mi">53</span><span class="n">ef</span> <span class="mo">0100</span> <span class="mo">0100</span> <span class="mo">0000</span>  <span class="n">uj</span><span class="p">}</span><span class="n">Z</span><span class="o">....</span><span class="n">S</span><span class="o">.......</span>
@@ -146,11 +146,63 @@
 <p>dumpe2fs结果</p>
 <div class="hlcode"><pre><span class="n">dumpe2fs</span> <span class="mf">1.42.13</span> <span class="p">(</span><span class="mi">17</span><span class="o">-</span><span class="n">May</span><span class="o">-</span><span class="mi">2015</span><span class="p">)</span>
 <span class="n">Inode</span> <span class="n">count</span><span class="o">:</span>              <span class="mi">41099264</span>
+<span class="n">Journal</span> <span class="n">inode</span><span class="o">:</span>            <span class="mi">8</span>
 </pre></div>
 
 
 <p>ok!<br />
 自行对应数据结构</p>
+<h3 id="_5">日志系统</h3>
+<p>Ext3的日志特性主要是依靠其下层一个名为“日志块设备层”的中间设备来完成，叫做JBD(Journaling Block Device layer 简称JBD)。JBD并不是文件系统规范的一部分，它和ext3文件系统的规范是没有任何的关系的，而JBD正是文件系统事务处理功能的实现基础。简而言之，JBD被设计成在任何块设备上实现日志的特殊目的.<br />
+Ext3 通过“钩入（hooking in）”JBD的API 来实现其日志记录的功能。</p>
+<h3 id="inode">iNode</h3>
+<ol>
+<li>文件的时间戳，共有三个：</li>
+<li>ctime指inode上一次变动的时间</li>
+<li>mtime指文件内容上一次变动的时间</li>
+<li>atime指文件上一次打开的时间。</li>
+</ol>
+<h4 id="inode_1">inode大小</h4>
+<p>每个inode节点的大小，一般是128字节或256字节。inode节点的总数，在格式化时就给定，一般是每1KB或每2KB就设置一个inode。假定在一块1GB的硬盘中，每个inode节点的大小为128字节，每1KB就设置一个inode，那么inode table的大小就会达到128MB，占整块硬盘的12.8%。</p>
+<h4 id="tips">tips</h4>
+<ul>
+<li>
+<p><code>mount</code>命令查看文件系统的日志记录模式<br />
+<code>Ext3文件系统提供了三种记录日志的方式：</code><br />
+<code>日志模式data=journal：这种模式会记录所有对文件数据和元数据的修改.首先将元数据和数据写进日志，然后再写进相应的磁盘位置。该方式提供了很高安全性，不论系统在元数据写入日志阶段还是实际数据写入日志阶段发生崩溃，均不影响实际的主文件系统。这种模式将丢失数据的风险降到最低但也付出了效率的代价，因为所有数据都要写入两次.</code><br />
+<code>顺序模式data=ordered：这种模式只会记录对文件系统元数据的修改。首先将文件数据写入磁盘，然后将元数据写进日志，最后再把元数据写进磁盘。通过记录元数据的方式足以恢复磁盘文件系统数据结构的一致性，但由于文件数据不写入日志的原因，还是无法防止系统故障对文件内容造成的损害。</code><br />
+<code>回写模式data=writeback：这种模式也只记录对元数据的修改。先把数据写入磁盘，然后将元数据先写入日志再写入磁盘。但数据和元数据的写入没有固定的先后顺序。这种模式由于对文件数据的更改和文件元数据的修改时异步进行的，所以有可能出现文件系统中元数据不一致的情况</code></p>
+</li>
+<li>
+<p>dumpe2fs -h查看日志分区大小</p>
+</li>
+<li>根据Journal inode号查看信息<br />
+<code>echo "stat &lt;inode number&gt;" |debugfs /dev/sda7</code></li>
+<li>superblock损坏怎么办</li>
+<li>带参数程序修复[fsck]</li>
+<li>手动使用命令修复<br />
+<code>可以使用 dumpe2fs /dev/sda1 | grep -i superblock 来查看 sda1 分区的 superblock 备份有哪一份是可用的。我们假设 dumpe2fs 输出了这样一行：Backup superblock at 163840, Group descriptors at 163841-163841 ，通过这条信息，我们就可以尝试使用这个 superblock 备份：/sbin/fsck.ext3 -b 163840 -B 1024 /dev/sda1。请注意，这里我们假设 block 的大小为 1024 字节。</code></li>
+<li>format<br />
+<code>[meta@meta ~]# mkfs.ext4 -I 2048 -b 2048 /dev/sdb1</code><br />
+<code>[meta@meta ~]# dumpe2fs /dev/sdb1 |grep "Block size"</code><br />
+<code>Block size: 2048</code></li>
+<li>简单查看磁盘使用情况<br />
+<code>df -h</code></li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<ol>
+<li>一个100M的磁盘分区,分别写入1K和1M的文件,分别可以写多少个?</li>
+</ol>
+<div class="hlcode"><pre><span class="err">假设</span><span class="n">inode</span> <span class="n">size</span><span class="o">=</span><span class="mi">128</span><span class="n">byte</span>  <span class="n">block</span> <span class="n">size</span><span class="o">=</span><span class="mi">1024</span><span class="n">byte</span>  <span class="err">可写入</span><span class="mi">1</span><span class="n">k</span><span class="err">文件</span><span class="mi">100000000</span><span class="o">/</span><span class="p">(</span><span class="mi">128</span><span class="o">+</span><span class="mi">1024</span><span class="p">)</span> <span class="err">可写入</span><span class="mi">1</span><span class="n">M</span><span class="err">文件</span>  <span class="mi">100000000</span><span class="o">/</span><span class="p">(</span><span class="mi">1048576</span><span class="o">+</span><span class="mi">128</span><span class="p">)</span>  
+<span class="err">假设</span><span class="n">inode</span> <span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="n">byte</span>  <span class="n">block</span> <span class="n">size</span><span class="o">=</span><span class="mi">4096</span><span class="n">byte</span>  <span class="err">可写入</span><span class="mi">1</span><span class="n">k</span><span class="err">文件</span><span class="mi">100000000</span><span class="o">/</span><span class="p">(</span><span class="mi">256</span><span class="o">+</span><span class="mi">4096</span><span class="p">)</span>  <span class="err">可写入</span><span class="mi">1</span><span class="n">M</span><span class="err">文件</span> <span class="mi">100000000</span><span class="o">/</span><span class="err">（</span><span class="mi">1048576</span><span class="o">+</span><span class="mi">256</span><span class="p">)</span>  
+</pre></div>
+
+
+<ol>
+<li></li>
+</ol>
+<h3 id="reference">Reference</h3>
+<p>[1].<a href="http://blog.csdn.net/haiross/article/details/39157885">Inode</a></p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -183,7 +235,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-02-18 22:49:45</p>
+        <p>Site Generated 2018-02-25 20:19:14</p>
       </span>
     </div>
 
