@@ -2,7 +2,7 @@
 title: "指令[8086]"
 layout:  page
 collection: "[语法目]"
-date: 2017-09-22 19:00:00
+date: 2016-09-22 19:00:00
 ---
 
 **文档状态：**<a style="color:red;background-color:gray">编辑....</a>

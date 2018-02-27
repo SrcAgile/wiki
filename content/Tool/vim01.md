@@ -50,5 +50,13 @@ or the file name is not valid.
 
 3. 搜了得出使用 `w !sudo tee %`,从此踏上不归路
 
+
+
+###概念
+1. vim 窗口和缓冲区
+###tips
+1. :%!xxd转换成16进制形式
+    `问题起源于一直使用od -x 查看二进制文件，后来发现vim也可以`
+
 ####root保存权限问题
 - 1
