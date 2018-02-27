@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>爬虫开发 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;爬虫开发
+    <span class="updated">Page Updated&nbsp;
+      2017-09-11 06:51:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">爬虫开发</div>
+
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
+<hr />
+<blockquote></blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#package">package</a></li>
+<li><a href="#kits">kits</a></li>
+<li><a href="#_1">反爬虫系统的检测方法</a></li>
+<li><a href="#_2">反爬虫手段</a></li>
+<li><a href="#-">反-反爬虫手段</a></li>
+</ul>
+</div>
+<h3 id="package">package</h3>
+<ul>
+<li>selenium<br />
+<a href="http://blog.csdn.net/u013372487/article/details/46503169">scrollbar</a></li>
+<li>BeautifulSoup</li>
+<li>json</li>
+<li>requests</li>
+</ul>
+<h3 id="kits">kits</h3>
+<ul>
+<li>selenium+chrome/phantomjs</li>
+</ul>
+<h3 id="_1">反爬虫系统的检测方法</h3>
+<ol>
+<li>频率监测<br />
+有些网站会设置一种频率监测的机制，对于同一IP，若在一定时间内访问的速度超过了设置的阈值，那么便会判定该IP的源头是一个爬虫机器人，从而限制访问频率或暂时禁止IP对其的访问。</li>
+<li>频数监测<br />
+与1有些类似，但是是对用户访问页面的数量进行统计，并在监测结果超过阈值后进行限制操作。</li>
+<li>Headers识别<br />
+这里常用的是对UA的识别和对Referer的判断。UA就是前几讲有说过的User-Agent，是用户所使用的操作系统以及浏览器的标识。对于一些爬虫初学者来说，可能对于UA的作用理解的不是很深入，随便填了些字符进去，这就可能会因为无法识别浏览器而触发一些网站的反爬虫系统。另一个Referer表示请求是从哪个链接而来的，就比如我要出国去留学，那么我的头部文件里Referer的值就是我伟大的祖国。这个值除了用来反爬虫，也可以用来防盗链，比如作者在第二讲的时候本来想用另一个更好的网站来讲解静态网页的爬虫，但是目标网站的图片可能经常被宅男们批量下载，也被一些不良站点偷去引流，于是网站便加上了防盗链系统，其中的一个手段用到的就是这个Referer。</li>
+</ol>
+<h3 id="_2">反爬虫手段</h3>
+<ol>
+<li>封禁IP<br />
+对于一些来自同一IP的高频率、高频数的访问请求，往往很容易被作为爬虫，常见的防止这类请求的措施就是直接将IP拉入黑名单</li>
+<li>封禁ID<br />
+与1有些类似，这种手段往往是一些需要登录才能获取数据的网站，为避免误伤他人，将使用账号进行爬虫操作的用户ID封禁</li>
+<li>增设验证码<br />
+这个就比较常见了，但验证码最初的设计是用来防止暴力破解的，如果一般网站没有验证码的保护，那么黑客完全有可能通过程序手段发动暴力破解，即通过枚举猜测用户的密码，导致用户权益受损。在计算机和互联网功能愈发强大的今天，验证码也有了新的用途，就是反爬虫。常见的验证码有下列集中：<code>zh/en/滑动/点击/识图/验证</code></li>
+<li>异步请求参数加密<br />
+现在有很多网站对于异步请求的参数会进行加密处理，但是作为用户又无法知晓具体的加密算法，如果将参数原文写入，重新请求API，得到的结果也只会是”error”。</li>
+</ol>
+<h3 id="-">反-反爬虫手段</h3>
+<ol>
+<li>代理IP<br />
+价格昂贵,不够实用</li>
+<li>大量注册账号</li>
+<li>验证码识别</li>
+</ol>
+<div class="hlcode"><pre><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span> <span class="err">对于简单的中文、英文、数字的验证码，大部分在去除干扰线和图像二值化的处理之后</span><span class="p">(</span><span class="err">可以使用</span><span class="n">Python</span> <span class="mi">3</span><span class="err">的</span><span class="n">Pillow</span><span class="err">模块结合</span><span class="n">OpenCV</span><span class="err">处理，效果很理想</span><span class="p">)</span><span class="err">，通过一些训练软件，比如</span><span class="n">jTessBoxEditor</span><span class="err">，再结合</span><span class="n">Tesseract</span><span class="err">，就可以达到很好的识别效果，</span><span class="p">[</span><span class="err">作者也曾做过一次这个测试，是帮助老师爬取某网站的一个开放查询的信息，因为参数实在很多，人工点选太麻烦，所以用爬虫的方法来获取，但是该平台有验证码来反爬虫，于是我便用到了刚才提到的</span><span class="n">jTessBoxEditor</span><span class="err">和</span><span class="n">Tesseract</span><span class="err">工具，通过</span><span class="mi">300</span><span class="err">张图片的处理和训练，达到了</span><span class="mi">90</span><span class="o">%</span><span class="err">的识别率，最终顺利的爬取了</span><span class="mi">1700</span><span class="err">多条数据。</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="err">自行百度如何进行图片的处理以及如何进行简单的识别训练。</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span> <span class="err">打码平台：现在也有这么一种平台，开放接口，对于用户通过接口传来的无数验证码，发放给数以万计的人，进行手动的输入，你可能也做过或者听说过这么一种兼职，这就是打码平台，当然作者也不推荐，毕竟也是要花钱的，而且验证码数量比较大的情况下，对个人来说的确不划算。</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span> <span class="err">机器学习与人工智能：这是针对类似于某铁路部门网站的图像点选验证码、某乎的中文点选验证码以及某歌的</span><span class="n">reCAPTCHA</span><span class="err">验证码可能比较适用的解决方案，学习成本有点高</span><span class="o">.</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span> <span class="n">selenium</span><span class="o">+</span><span class="n">chrome</span><span class="o">/</span><span class="n">phantomjs</span><span class="err">：这一种方法适用于类似与某宝某东这类多种反爬虫手段混合的情况，作者曾经做过一个作业，就是爬取某宝全球购某家店铺的全部商品信息及评论信息，当时作者采用的是</span><span class="n">API</span><span class="err">请求的方法，因此遭受了反爬虫系统的巨大冲击，只能爬取十多页。如果当时采用</span><span class="n">selenium</span><span class="o">+</span><span class="n">chrome</span><span class="o">/</span><span class="n">phantomjs</span><span class="err">的模式去爬，可能结果会更理想一些。</span><span class="n">phantomjs</span><span class="err">是上一讲没有提到的一个工具。</span>
+</pre></div>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '爬虫开发',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-02-28 00:01:34</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>

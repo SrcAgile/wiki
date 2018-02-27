@@ -43,6 +43,10 @@
 </li>
 <li><a href="#question">Question</a></li>
 <li><a href="#messy">messy</a></li>
+<li><a href="#unix-io">unix io</a><ul>
+<li><a href="#ext3">ext3文件写操作</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <h3 id="concept">concept</h3>
@@ -107,6 +111,38 @@ fprintf操作的是clib中一块缓冲区,这个缓冲回去结构中包括fd指
 <code>open("filename",O_CREATE|O_RDWR|O_EXCL,0666)</code>多了一个好处，当多道环境下只允许一个进程去打开文件，例如socket，此时便用原语实现了。</p>
 <h3 id="messy">messy</h3>
 <p>read调用对普通文件读取后没有字符返回eof，但是特殊设备文件却会阻塞等待数据？</p>
+<h3 id="unix-io">unix io</h3>
+<h4 id="ext3">ext3文件写操作</h4>
+<p>IO会走到sys_write的地方，然后执行file-&gt;f_op-&gt;write方法。对于EXT3 ，该方法注册的是do_sync_write。Do_sync_write的实现如下：</p>
+<div class="hlcode"><pre><span class="kt">ssize_t</span> <span class="nf">do_sync_write</span><span class="p">(</span><span class="k">struct</span> <span class="n">file</span> <span class="o">*</span><span class="n">filp</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">__user</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">loff_t</span> <span class="o">*</span><span class="n">ppos</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">struct</span> <span class="n">iovec</span> <span class="n">iov</span> <span class="o">=</span> <span class="p">{</span> <span class="p">.</span><span class="n">iov_base</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="n">__user</span> <span class="o">*</span><span class="p">)</span><span class="n">buf</span><span class="p">,</span> <span class="p">.</span><span class="n">iov_len</span> <span class="o">=</span> <span class="n">len</span> <span class="p">};</span>
+  <span class="k">struct</span> <span class="n">kiocb</span> <span class="n">kiocb</span><span class="p">;</span>
+  <span class="kt">ssize_t</span> <span class="n">ret</span><span class="p">;</span>
+  <span class="n">init_sync_kiocb</span><span class="p">(</span><span class="o">&amp;</span><span class="n">kiocb</span><span class="p">,</span> <span class="n">filp</span><span class="p">);</span>
+  <span class="n">kiocb</span><span class="p">.</span><span class="n">ki_pos</span> <span class="o">=</span> <span class="o">*</span><span class="n">ppos</span><span class="p">;</span>
+  <span class="n">kiocb</span><span class="p">.</span><span class="n">ki_left</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">filp</span><span class="o">-&gt;</span><span class="n">f_op</span><span class="o">-&gt;</span><span class="n">aio_write</span><span class="p">(</span><span class="o">&amp;</span><span class="n">kiocb</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">iov</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kiocb</span><span class="p">.</span><span class="n">ki_pos</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="o">-</span><span class="n">EIOCBRETRY</span><span class="p">)</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="n">wait_on_retry_sync_kiocb</span><span class="p">(</span><span class="o">&amp;</span><span class="n">kiocb</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="n">EIOCBQUEUED</span> <span class="o">==</span> <span class="n">ret</span><span class="p">)</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">wait_on_sync_kiocb</span><span class="p">(</span><span class="o">&amp;</span><span class="n">kiocb</span><span class="p">);</span>
+<span class="o">*</span><span class="n">ppos</span> <span class="o">=</span> <span class="n">kiocb</span><span class="p">.</span><span class="n">ki_pos</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>对EXT3文件写操作主要考虑两种情况<br />
+1. DIRECT IO方式(直接绕过缓存处理机制)<br />
+2. page cache的写方式(性能会比Direct IO高出不少<br />
+<b>Radix Tree[PAT位树(Patricia Trie or crit bit tree)]</b></p>
+<blockquote>
+<p>对于每一个EXT3文件，都会在内存中维护一棵Radix tree，这棵radix tree就是用来管理来page cache页的.当IO想往磁盘上写入的时候，EXT3会查找其对应的radix tree，看是否已经存在与写入地址相匹配的page页，如果存在那么直接将数据合并到这个page 页中，并且结束一次IO过程，直接结束应用层请求。如果被访问的地址还没有对应的page页，那么需要为访问的地址空间分配page页，并且从磁盘上加载数据到page页内存，最后将这个page页加入到radix tree中。</p>
+</blockquote>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -139,7 +175,7 @@ fprintf操作的是clib中一块缓冲区,这个缓冲回去结构中包括fd指
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-02-25 20:28:18</p>
+        <p>Site Generated 2018-02-28 00:01:34</p>
       </span>
     </div>
 
