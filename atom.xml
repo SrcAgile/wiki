@@ -7,7 +7,7 @@
   <title>Meta's Wiki</title>
   <link href="/" />
   <link href="/atom.xml" rel="self" type="application/atom+xml" />
-  <updated>2018-02-28T00:01:34+08:00</updated>
+  <updated>2018-02-28T10:21:32+08:00</updated>
   <id></id>
   <author>
     <name>Guozhen Li</name>
@@ -279,122 +279,37 @@
   
     
   <entry>
-    <id>/前景分析/pattern.html</id>
-    <title>模式识别</title>
-    <link href="/前景分析/pattern.html" />
-    <published>2017-08-26T21:00:00+08:00</published>
+    <id>/SE/se_define.html</id>
+    <title>LAB1</title>
+    <link href="/SE/se_define.html" />
+    <published>2017-09-28T12:00:00+08:00</published>
 
     
-    <updated>2017-08-26T21:00:00+08:00</updated>
+    <updated>2017-09-28T12:00:00+08:00</updated>
     
 
     
-    <category term="前景分析" />
+    <category term="SE" />
     
 
     
     <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=356034&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;写在开始&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;什么是模式识别&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;百度指数查询&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;国内谷歌搜索指数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;国外谷歌搜索指数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;相关查询&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;前景&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;众说纷纭[注意讨论问题年份]&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;网络声音&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;个人见解&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;待遇&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;专业相关硕士博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;谈数据流图&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;_1&#34;&gt;写在开始&lt;/h2&gt;
-&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;本文涉及外链，如有数据显示问题，请自备梯子(VPN)&lt;/b&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_2&#34;&gt;什么是模式识别&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117384646629&#34;&gt;模式识别科学发展与现状(1.介绍) &lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117384850365/&#34;&gt;模式识别科学发展与现状(2.模式识别四种方法)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/1899340962011738515345/&#34;&gt;模式识别科学发展与现状(3.成就)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117385234298/&#34;&gt;模式识别科学发展与现状(4.展望)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117385437506/&#34;&gt;模式识别科学发展与现状(5.挑战)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117385625772/&#34;&gt;模式识别科学发展与现状(6.结束语)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;相关会议:CVPR[PR即为模式识别]&lt;/li&gt;
-&lt;li&gt;流行：20世纪70年代和80年代&lt;/li&gt;
-&lt;li&gt;强调:如何让一个计算机程序去做一些看起来很“智能”的事情,例如数字识别&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;_3&#34;&gt;百度指数查询&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://index.baidu.com/&#34;&gt;自行输入关键字&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;_4&#34;&gt;国内谷歌搜索指数&lt;/h2&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-  trends.embed.renderExploreWidget(&#34;TIMESERIES&#34;, {&#34;comparisonItem&#34;:[{&#34;keyword&#34;:&#34;模式识别&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;机器学习&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;深度学习&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;}],&#34;category&#34;:0,&#34;property&#34;:&#34;&#34;}, {&#34;exploreQuery&#34;:&#34;date=2004-01-01 2017-08-27&amp;q=%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB,%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0,%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0&#34;,&#34;guestPath&#34;:&#34;https://trends.google.com:443/trends/embed/&#34;});
-&lt;/script&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;code&gt;2014.1-2017.8的统计数据&lt;/code&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_5&#34;&gt;国外谷歌搜索指数&lt;/h2&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-  trends.embed.renderExploreWidget(&#34;TIMESERIES&#34;, {&#34;comparisonItem&#34;:[{&#34;keyword&#34;:&#34;pattern recognition&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;machine learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;deep learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;}],&#34;category&#34;:0,&#34;property&#34;:&#34;&#34;}, {&#34;exploreQuery&#34;:&#34;date=2004-01-01 2017-08-27&amp;q=pattern%20recognition,machine%20learning,deep%20learning&#34;,&#34;guestPath&#34;:&#34;https://trends.google.com:443/trends/embed/&#34;});
-&lt;/script&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;code&gt;2014.1-2017.8的统计数据&lt;/code&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_6&#34;&gt;相关查询&lt;/h2&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-  trends.embed.renderExploreWidget(&#34;RELATED_QUERIES_0&#34;, {&#34;comparisonItem&#34;:[{&#34;keyword&#34;:&#34;pattern recognition&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;machine learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;deep learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;}],&#34;category&#34;:0,&#34;property&#34;:&#34;&#34;}, {&#34;exploreQuery&#34;:&#34;date=2004-01-01 2017-08-27&amp;q=pattern%20recognition,machine%20learning,deep%20learning&#34;,&#34;guestPath&#34;:&#34;https://trends.google.com:443/trends/embed/&#34;});
-&lt;/script&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;code&gt;2014.1-2017.8的统计数据&lt;/code&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_7&#34;&gt;前景&lt;/h2&gt;
-&lt;h3 id=&#34;_8&#34;&gt;众说纷纭[注意讨论问题年份]&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.thinkface.cn/thread-3312-1-1.html&#34;&gt;浅谈模式识别/图像处理方向的就业前景&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ihowandwhy.com/z/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%93%E4%B8%9A%E8%AF%BB%E7%A0%94%E6%96%B9%E5%90%91%E7%9A%84%E9%80%89%E6%8B%A9(%E5%8F%8C%E6%8E%A7or%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB)&#34;&gt;双控or模式识别&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.leiphone.com/news/201610/XhSks5O93JVgrjjA.html&#34;&gt;大数据时代的模式识别&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_9&#34;&gt;网络声音&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;旧&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;文&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我也是学模式识别的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是研究方向是遥感图像处理和识别&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;总的来说这个方向是比较专&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;但也是目前图像处理中比较难做的一个方向&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因为遥感图像的复杂性超过我们所见过的任何图像&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;其实谈到就业问题&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我觉得如果研究方向比较适合&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;特别是读研期间能到斑竹谈的那些牛比的公司实习&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;了解企业真正需要的方向可能做起来有目标性&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[Quora.社论]&lt;/span&gt;
-    &lt;span class=&#34;err&#34;&gt;What&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;about&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;pattern&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;recognition?&lt;/span&gt;
-    &lt;span class=&#34;err&#34;&gt;What‘s&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;the&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;funture&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;about&lt;/span&gt;  &lt;span class=&#34;err&#34;&gt;pattern&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;recognition?&lt;/span&gt;
-    &lt;span class=&#34;err&#34;&gt;答案少之又少&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_10&#34;&gt;个人见解&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;[&lt;b style=&#39;color:red&#39;&gt;见解并不一定对&lt;/b&gt;]模式识别的温度并不算高,基于算法底蕴，就业貌似多数转向算法工程师&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;_11&#34;&gt;待遇&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://zhaopin.baidu.com/quanzhi?query=%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB&amp;amp;city=%E5%8C%97%E4%BA%AC&#34;&gt;百度招聘.北京&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.lagou.com/jobs/list_模式识别?labelWords=&amp;amp;fromSearch=true&amp;amp;suginput=&#34;&gt;拉勾网&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;_12&#34;&gt;专业相关硕士博客&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://johnhany.net/about/&#34;&gt;岳翰&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://liaoxl.github.io/about/&#34;&gt;廖祥俐&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;一切都是在上下文中的可计算问题的探究罢了...&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_1&#34;&gt;谈数据流图&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;今天思考了一下软件工程设计，在可行性分析中的数据流图的一些东西出现了和以前不一样的看法，但是由于思考的时间比较短，所以得到的信息比较混乱.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;自1900年Paris，从希尔伯特的问题到哥德尔不完备性定理再到图灵对计算建立的模型，&lt;/p&gt;</content>
     
     
   </entry>
@@ -1089,37 +1004,35 @@ setcap cap_net_raw,cap_net_admin&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;eip 
   
     
   <entry>
-    <id>/SE/se_define.html</id>
-    <title>LAB1</title>
-    <link href="/SE/se_define.html" />
-    <published>2017-09-28T12:00:00+08:00</published>
+    <id>/Os/fileMean.html</id>
+    <title>文件介绍</title>
+    <link href="/Os/fileMean.html" />
+    <published>2017-09-08T21:00:00+08:00</published>
 
     
-    <updated>2017-09-28T12:00:00+08:00</updated>
-    
-
-    
-    <category term="SE" />
+    <updated>2017-09-08T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+    <category term="Os" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;谈数据流图&lt;/a&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;一切都是在上下文中的可计算问题的探究罢了...&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;h3 id=&#34;_1&#34;&gt;谈数据流图&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li&gt;今天思考了一下软件工程设计，在可行性分析中的数据流图的一些东西出现了和以前不一样的看法，但是由于思考的时间比较短，所以得到的信息比较混乱.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;自1900年Paris，从希尔伯特的问题到哥德尔不完备性定理再到图灵对计算建立的模型，&lt;/p&gt;</content>
+&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;电脑维修中,只能先备份了...&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[/etc/services] 存放服务器服务及其占用端口号&lt;/li&gt;
+&lt;li&gt;[/usr/share/fonts ] 字体存放处&lt;/li&gt;
+&lt;li&gt;[/usr/share/fonts/truetype]&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -2614,44 +2527,6 @@ fetched from the underlying file, but has not been consumed by the application.&
   
     
   <entry>
-    <id>/Life/emotion-sum.html</id>
-    <title>情绪概论</title>
-    <link href="/Life/emotion-sum.html" />
-    <published>2017-08-26T19:00:00+08:00</published>
-
-    
-    <updated>2017-08-26T19:00:00+08:00</updated>
-    
-
-    
-    <category term="Life" />
-    
-
-    
-    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;情绪&lt;/strong&gt;，是对一系列主观认知经验的通称，是多种感觉、思想和行为综合产生的心理和生理状态。&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%83%85%E7%BB%AA&#34;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;包含&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;a&gt;情绪&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;a&gt;钦佩&lt;/a&gt; &lt;a&gt;爱意&lt;/a&gt; &lt;a&gt;畏&lt;/a&gt; &lt;a&gt;躁动&lt;/a&gt; &lt;a&gt;疼痛&lt;/a&gt; &lt;a&gt;滑稽&lt;/a&gt; &lt;a&gt;愤怒&lt;/a&gt; &lt;a&gt;精神痛苦&lt;/a&gt; &lt;a&gt;烦恼&lt;/a&gt; &lt;a&gt;焦虑&lt;/a&gt; &lt;a&gt;冷漠&lt;/a&gt; &lt;a&gt;警醒&lt;/a&gt; &lt;a&gt;人际吸引力&lt;/a&gt; &lt;a&gt;敬畏&lt;/a&gt; &lt;a&gt;厌烦&lt;/a&gt; &lt;a&gt;冷静&lt;a/&gt; &lt;a&gt;同情&lt;/a&gt; &lt;a&gt;轻视&lt;/a&gt; &lt;a&gt;满足&lt;/a&gt; &lt;a&gt;失败主义&lt;/a&gt; &lt;a&gt;抑郁&lt;/a&gt; &lt;a&gt;绝望&lt;/a&gt; &lt;a&gt;欲望&lt;/a&gt; &lt;a&gt;失望&lt;/a&gt; &lt;a&gt;厌恶&lt;/a&gt; &lt;a&gt;狂喜&lt;/a&gt; &lt;a&gt;尴尬&lt;/a&gt; &lt;a&gt;同理心&lt;/a&gt; &lt;a&gt;注意&lt;/a&gt; &lt;a&gt;热心&lt;/a&gt; &lt;a&gt;羡慕&lt;/a&gt; &lt;a&gt;欣快&lt;/a&gt; &lt;a&gt;兴奋&lt;/a&gt; &lt;a&gt;恐惧&lt;/a&gt; &lt;a&gt;挫折&lt;/a&gt; &lt;a&gt;感恩&lt;/a&gt; &lt;a&gt;丧恸&lt;/a&gt; &lt;a&gt;罪恶感&lt;/a&gt; &lt;a&gt;快乐&lt;/a&gt; &lt;a&gt;仇恨&lt;/a&gt; &lt;a&gt;思乡病&lt;/a&gt; &lt;a&gt;希望&lt;/a&gt; &lt;a&gt;恐怖 (Horror and terror)&lt;/a&gt; &lt;a&gt;敌意&lt;/a&gt; &lt;a&gt;羞辱&lt;/a&gt; &lt;a&gt;歇斯底里&lt;/a&gt; &lt;a&gt;迷恋&lt;/a&gt; &lt;a&gt;不安&lt;/a&gt; &lt;a&gt;侮辱&lt;/a&gt; &lt;a&gt;兴趣&lt;/a&gt; &lt;a&gt;应激性&lt;/a&gt; &lt;a&gt;孤立&lt;/a&gt; &lt;a&gt;妒忌&lt;/a&gt; &lt;a&gt;欢乐&lt;/a&gt; &lt;a&gt;孤单&lt;/a&gt; &lt;a&gt;爱&lt;/a&gt; &lt;a&gt;贪念&lt;/a&gt; &lt;a&gt;忧郁&lt;/a&gt; &lt;a&gt;物哀&lt;/a&gt; &lt;a&gt;忽视&lt;/a&gt; &lt;a&gt;怀旧&lt;/a&gt; &lt;a&gt;恐慌&lt;/a&gt; &lt;a&gt;激情&lt;/a&gt; &lt;a&gt;可惜&lt;/a&gt; &lt;a&gt;愉快&lt;/a&gt; &lt;a&gt;骄傲&lt;/a&gt;  &lt;a&gt;傲慢&lt;/a&gt;   &lt;a&gt;暴怒&lt;/a&gt; &lt;a&gt;后悔&lt;/a&gt; &lt;a&gt;排挤&lt;/a&gt; &lt;a&gt;悔恨&lt;/a&gt; &lt;a&gt;不满&lt;/a&gt; &lt;a&gt;报复&lt;/a&gt; &lt;a&gt;悲伤&lt;/a&gt; &lt;a&gt;萨乌达德&lt;/a&gt; &lt;a&gt;幸灾乐祸&lt;/a&gt; &lt;a&gt;怀念&lt;/a&gt; &lt;a&gt;感伤&lt;/a&gt; &lt;a&gt;羞耻&lt;/a&gt; &lt;a&gt;急性压力反应&lt;/a&gt; &lt;a&gt;害羞&lt;/a&gt; &lt;a&gt;忧伤&lt;/a&gt; &lt;a&gt;恼怒&lt;/a&gt; &lt;a&gt;压力&lt;/a&gt; &lt;a&gt;痛苦&lt;/a&gt; &lt;a&gt;惊讶&lt;/a&gt; &lt;a&gt;同感 (Sympathy)&lt;/a&gt; &lt;a&gt;慢性压力&lt;/a&gt; &lt;a&gt;好奇&lt;/a&gt; &lt;a&gt;担心&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
     <id>/编码/进制.html</id>
     <title>进制介绍</title>
     <link href="/编码/进制.html" />
@@ -2898,187 +2773,114 @@ float 占四个字节&lt;/p&gt;
   
     
   <entry>
-    <id>/Tool/conftool.html</id>
-    <title>系统配置</title>
-    <link href="/Tool/conftool.html" />
-    <published>2016-02-11T09:00:00+08:00</published>
+    <id>/SE/softwareengine01.html</id>
+    <title>软件工程</title>
+    <link href="/SE/softwareengine01.html" />
+    <published>2017-09-07T21:00:00+08:00</published>
 
     
-    <updated>2016-02-11T09:00:00+08:00</updated>
-    
-
-    
-    <category term="Tool" />
+    <updated>2017-09-07T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+    <category term="SE" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tool&#34;&gt;tool&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#source&#34;&gt;source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;外围概念&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#qusetion&#34;&gt;QUSETION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;软件生存期&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;tool&#34;&gt;tool&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;python3[mutil pip 共存]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;apt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;selenium&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//pypi.douban.com/simple/&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;---&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pip3&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;selenium&lt;/span&gt;
+&lt;h3 id=&#34;_1&#34;&gt;外围概念&lt;/h3&gt;
+&lt;p&gt;[WIKI]&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是存在于某个系统中的一组法律、规则与基本前提。这个体系中的其他事物，大体上都可以经由这个基本规律来推导、解释与预测；这个体系中的成员，都应该遵守这个基本规律，在这套规则下运作。经由了解这个体系的原理，可以了解到整个体系的基本特征，或是反映出这个体系被设计的目的。如果这个体系下的某个原理被忽略，可能造成体系无法运作，或是这个行为将无法达成其目的。&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;在哲学、数学及物理学中，都常使用这个名词。在数学中，以公理（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Axiom&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）及逻辑基础作为整个数学体系的原理。&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3 id=&#34;source&#34;&gt;source&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://pypi.doubanio.com/simple/&#34;&gt;豆瓣pypi&lt;/a&gt;&lt;br /&gt;
-&lt;code&gt;pip install *** -i https://pypi.doubanio.com/simple/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://npm.taobao.org/mirrors/chromedriver/&#34;&gt;chrome driver mirror&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;sudo mv chromedriver  /usr/local/bin/chromedriver
-&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;sudo chmod u+x,o+x   /usr/local/bin/chromedriver
+&lt;p&gt;[BaiDu]&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;自然科学和社会科学中具有普遍意义的基本规律。是在大量观察、实践的基础上，经过归纳、概括而得出的。既能指导实践，又必须经受实践的检验。&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;chromedriver版本&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;支持的Chrome版本&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.35&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v62-64&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.34&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v61-63&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.33&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v60-62&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.32&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v59-61&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.31&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v58-60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.30&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v58-60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.29&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.28&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v55-57&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.27&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v54-56&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.26&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v53-55&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.25&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v53-55&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.24&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v52-54&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.23&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v51-53&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.22&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v49-52&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.21&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v46-50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.20&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v43-48&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.19&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v43-47&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.18&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v43-46&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.17&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v42-43&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.13&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v42-45&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.15&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v40-43&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.14&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v39-42&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.13&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v38-41&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.12&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v36-40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.11&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v36-40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.10&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v33-36&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.9&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v31-34&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.8&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v30-33&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.7&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v30-33&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.6&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v29-32&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.5&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v29-32&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;v2.4&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v29-32&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content>
+&lt;h3 id=&#34;qusetion&#34;&gt;QUSETION&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;软件工程分为软件和工程&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;什么是软件？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;软件开发有什么特性？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;什么是软件工程？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;为什么要建立软件工程学科？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;既然引入软件工程去解决问题&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;那么它的目标是什么？&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;为了实现这些目标它有什么原理支撑？&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_2&#34;&gt;软件生存期&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;践行软件工程基本原理的第一条&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;按软件生存周期分阶段指定计划并认真实施&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;括号内代表任务&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;软件定义(任务:做什么)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;问题定义&lt;/li&gt;
+&lt;li&gt;可行性研究&lt;br /&gt;
+&lt;code&gt;任务细化:到底解决什么问题,不要把你的计算机牵扯进来,钱和时间都给了限制能不能在这种情况下开发出来,需要职员:软件分析员，一个软件行不行,要从好多角度看,在大学编程,看起来就像基础技术是否具备,课设截止时间是否能够做出来？但是在社会上仍需要考虑法律,宗教(在对方是穆斯林餐厅的话,你带入猪肉,那就玩完了),还有用户是否具有学会操作的本领()等等，&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;需求分析&lt;br /&gt;
+&lt;code&gt;任务细化:我的系统应该干什么？建立起从问题空间到解空间的映射，看个人的建模能力了,这里需要建立分析模型,从功能数据行为等方面去描述系统的静态特性和动态特性,对目标系统进一步细化,当然软件工程会给你提供参考&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;功能需求&lt;/li&gt;
+&lt;li&gt;非功能需求[性能等等]    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;软件开发(任务:怎么做)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;概要设计&lt;/li&gt;
+&lt;li&gt;详细设计&lt;br /&gt;
+&lt;code&gt;设计是软件工程的技术核心&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;任务细化:如何做出目标系统,这里具体做的就是将需求转化为相应的软件体系结构,结构中的每一组成部分都必须是意义明确的构件,这就是概要设计。进而描述构建应该做什么,以及做事的顺序这就是详细设计，基于设计编写出单元测试计划和集成测试计划提交评审部门。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;编码&lt;br /&gt;
+&lt;code&gt;选择一门好的语言会事半功倍&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;测试&lt;br /&gt;
+&lt;code&gt;单元模块测试,调试排错,保持与设计一致，与编码出现迭代&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;集成测试&lt;br /&gt;
+&lt;code&gt;已测试模块组装&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;系统测试&lt;br /&gt;
+&lt;code&gt;需求检测是否满足用户需求&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;维护(任务:使软件持久的满足用户需要)&lt;br /&gt;
+&lt;code&gt;最浪费人力物力&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改正性维护&lt;/li&gt;
+&lt;li&gt;适应性维护&lt;/li&gt;
+&lt;li&gt;完善性维护&lt;/li&gt;
+&lt;li&gt;预防性维护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是软件危机&lt;br /&gt;
+&lt;code&gt;分两个方面,软件本身与设计者&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -3382,6 +3184,128 @@ float 占四个字节&lt;/p&gt;
 &lt;p&gt;[1]. &lt;a href=&#34;http://man.linuxde.net/setpci&#34;&gt;setpci&lt;/a&gt;&lt;br /&gt;
 [2]. &lt;a href=&#34;https://linux.cn/article-2542-1.html&#34;&gt;ffmpeg1&lt;/a&gt;&lt;br /&gt;
 [3]. &lt;a href=&#34;http://blog.csdn.net/happydeer/article/details/45727227&#34;&gt;ffmpeg2&lt;/a&gt;&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/前景分析/pattern.html</id>
+    <title>模式识别</title>
+    <link href="/前景分析/pattern.html" />
+    <published>2017-08-26T21:00:00+08:00</published>
+
+    
+    <updated>2017-08-26T21:00:00+08:00</updated>
+    
+
+    
+    <category term="前景分析" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=356034&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;写在开始&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;什么是模式识别&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;百度指数查询&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;国内谷歌搜索指数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;国外谷歌搜索指数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;相关查询&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;前景&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;众说纷纭[注意讨论问题年份]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;网络声音&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;个人见解&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;待遇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;专业相关硕士博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;_1&#34;&gt;写在开始&lt;/h2&gt;
+&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;本文涉及外链，如有数据显示问题，请自备梯子(VPN)&lt;/b&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_2&#34;&gt;什么是模式识别&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117384646629&#34;&gt;模式识别科学发展与现状(1.介绍) &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117384850365/&#34;&gt;模式识别科学发展与现状(2.模式识别四种方法)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/1899340962011738515345/&#34;&gt;模式识别科学发展与现状(3.成就)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117385234298/&#34;&gt;模式识别科学发展与现状(4.展望)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117385437506/&#34;&gt;模式识别科学发展与现状(5.挑战)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phddreamer.blog.163.com/blog/static/18993409620117385625772/&#34;&gt;模式识别科学发展与现状(6.结束语)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;相关会议:CVPR[PR即为模式识别]&lt;/li&gt;
+&lt;li&gt;流行：20世纪70年代和80年代&lt;/li&gt;
+&lt;li&gt;强调:如何让一个计算机程序去做一些看起来很“智能”的事情,例如数字识别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;_3&#34;&gt;百度指数查询&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://index.baidu.com/&#34;&gt;自行输入关键字&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;_4&#34;&gt;国内谷歌搜索指数&lt;/h2&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  trends.embed.renderExploreWidget(&#34;TIMESERIES&#34;, {&#34;comparisonItem&#34;:[{&#34;keyword&#34;:&#34;模式识别&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;机器学习&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;深度学习&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;}],&#34;category&#34;:0,&#34;property&#34;:&#34;&#34;}, {&#34;exploreQuery&#34;:&#34;date=2004-01-01 2017-08-27&amp;q=%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB,%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0,%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0&#34;,&#34;guestPath&#34;:&#34;https://trends.google.com:443/trends/embed/&#34;});
+&lt;/script&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;code&gt;2014.1-2017.8的统计数据&lt;/code&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_5&#34;&gt;国外谷歌搜索指数&lt;/h2&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  trends.embed.renderExploreWidget(&#34;TIMESERIES&#34;, {&#34;comparisonItem&#34;:[{&#34;keyword&#34;:&#34;pattern recognition&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;machine learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;deep learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;}],&#34;category&#34;:0,&#34;property&#34;:&#34;&#34;}, {&#34;exploreQuery&#34;:&#34;date=2004-01-01 2017-08-27&amp;q=pattern%20recognition,machine%20learning,deep%20learning&#34;,&#34;guestPath&#34;:&#34;https://trends.google.com:443/trends/embed/&#34;});
+&lt;/script&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;code&gt;2014.1-2017.8的统计数据&lt;/code&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_6&#34;&gt;相关查询&lt;/h2&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  trends.embed.renderExploreWidget(&#34;RELATED_QUERIES_0&#34;, {&#34;comparisonItem&#34;:[{&#34;keyword&#34;:&#34;pattern recognition&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;machine learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;},{&#34;keyword&#34;:&#34;deep learning&#34;,&#34;geo&#34;:&#34;&#34;,&#34;time&#34;:&#34;2004-01-01 2017-08-27&#34;}],&#34;category&#34;:0,&#34;property&#34;:&#34;&#34;}, {&#34;exploreQuery&#34;:&#34;date=2004-01-01 2017-08-27&amp;q=pattern%20recognition,machine%20learning,deep%20learning&#34;,&#34;guestPath&#34;:&#34;https://trends.google.com:443/trends/embed/&#34;});
+&lt;/script&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;code&gt;2014.1-2017.8的统计数据&lt;/code&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_7&#34;&gt;前景&lt;/h2&gt;
+&lt;h3 id=&#34;_8&#34;&gt;众说纷纭[注意讨论问题年份]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.thinkface.cn/thread-3312-1-1.html&#34;&gt;浅谈模式识别/图像处理方向的就业前景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ihowandwhy.com/z/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%93%E4%B8%9A%E8%AF%BB%E7%A0%94%E6%96%B9%E5%90%91%E7%9A%84%E9%80%89%E6%8B%A9(%E5%8F%8C%E6%8E%A7or%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB)&#34;&gt;双控or模式识别&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.leiphone.com/news/201610/XhSks5O93JVgrjjA.html&#34;&gt;大数据时代的模式识别&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_9&#34;&gt;网络声音&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;旧&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;文&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我也是学模式识别的&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;但是研究方向是遥感图像处理和识别&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;总的来说这个方向是比较专&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;但也是目前图像处理中比较难做的一个方向&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;因为遥感图像的复杂性超过我们所见过的任何图像&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;其实谈到就业问题&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;我觉得如果研究方向比较适合&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;特别是读研期间能到斑竹谈的那些牛比的公司实习&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;了解企业真正需要的方向可能做起来有目标性&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[Quora.社论]&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;What&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;about&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;pattern&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;recognition?&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;What‘s&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;the&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;funture&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;about&lt;/span&gt;  &lt;span class=&#34;err&#34;&gt;pattern&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;recognition?&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;答案少之又少&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_10&#34;&gt;个人见解&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;b style=&#39;color:red&#39;&gt;见解并不一定对&lt;/b&gt;]模式识别的温度并不算高,基于算法底蕴，就业貌似多数转向算法工程师&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;_11&#34;&gt;待遇&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://zhaopin.baidu.com/quanzhi?query=%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB&amp;amp;city=%E5%8C%97%E4%BA%AC&#34;&gt;百度招聘.北京&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lagou.com/jobs/list_模式识别?labelWords=&amp;amp;fromSearch=true&amp;amp;suginput=&#34;&gt;拉勾网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;_12&#34;&gt;专业相关硕士博客&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://johnhany.net/about/&#34;&gt;岳翰&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://liaoxl.github.io/about/&#34;&gt;廖祥俐&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -5073,6 +4997,202 @@ s.clear()&lt;br /&gt;
   
     
   <entry>
+    <id>/About/aboutMe.html</id>
+    <title>关于我</title>
+    <link href="/About/aboutMe.html" />
+    <published>2017-08-25T21:00:00+08:00</published>
+
+    
+    <updated>2017-08-25T21:00:00+08:00</updated>
+    
+
+    
+    <category term="About" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png&#34; /&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;br /&gt;
+  &lt;p style=&#34;position:relative; left:80px;text-align:center&#34;&gt;&lt;br /&gt;
+    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
+    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
+    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
+  &lt;/p&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
+&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
+&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
+&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
+&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
+&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
+&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
+&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
+&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
+&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
+&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
+&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/Language/intro_language.html</id>
     <title>语言介绍</title>
     <link href="/Language/intro_language.html" />
@@ -6079,41 +6199,6 @@ or the file name is not valid.
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;暂停&lt;/li&gt;
-&lt;/ul&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/Os/fileMean.html</id>
-    <title>文件介绍</title>
-    <link href="/Os/fileMean.html" />
-    <published>2017-09-08T21:00:00+08:00</published>
-
-    
-    <updated>2017-09-08T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Os" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;电脑维修中,只能先备份了...&lt;/b&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[/etc/services] 存放服务器服务及其占用端口号&lt;/li&gt;
-&lt;li&gt;[/usr/share/fonts ] 字体存放处&lt;/li&gt;
-&lt;li&gt;[/usr/share/fonts/truetype]&lt;/li&gt;
 &lt;/ul&gt;</content>
     
     
@@ -8399,25 +8484,36 @@ maxsize=None就是不限制大小, 其实就变成是全部都cache下来, 不�
   
     
   <entry>
-    <id>/Life/precept.html</id>
-    <title>precept</title>
-    <link href="/Life/precept.html" />
-    <published>2017-08-25T19:00:00+08:00</published>
+    <id>/Demo/unix-demo.html</id>
+    <title>unix-demo</title>
+    <link href="/Demo/unix-demo.html" />
+    <published>2017-05-21T13:00:00+08:00</published>
 
     
-    <updated>2017-08-25T19:00:00+08:00</updated>
-    
-
-    
-    <category term="Life" />
+    <updated>2017-05-21T13:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
+    <category term="Demo" />
+    
+
+    
+    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;例子演示&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#list&#34;&gt;list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;[禁]10days restrict myself[十日限制]&lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;h3 id=&#34;_1&#34;&gt;例子演示&lt;/h3&gt;
+&lt;p&gt;&lt;b id=&#34;#list&#34;&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;h4 id=&#34;list&#34;&gt;list&lt;/h4&gt;
+&lt;p&gt;&lt;center&gt;&lt;br /&gt;
+&lt;video width=&#34;500&#34; height=&#34;348&#34; controls&gt;&lt;br /&gt;
+    &lt;source src=&#34;https://raw.githubusercontent.com/SrcAgile/unix_practice/master/chapter02/list/demo.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;br /&gt;
+    您的浏览器不支持video标签。&lt;br /&gt;
+&lt;/video&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;/p&gt;</content>
     
     
   </entry>
@@ -9331,196 +9427,38 @@ NONE&lt;/li&gt;
   
     
   <entry>
-    <id>/About/aboutMe.html</id>
-    <title>关于我</title>
-    <link href="/About/aboutMe.html" />
-    <published>2017-08-25T21:00:00+08:00</published>
+    <id>/Life/emotion-sum.html</id>
+    <title>情绪概论</title>
+    <link href="/Life/emotion-sum.html" />
+    <published>2017-08-26T19:00:00+08:00</published>
 
     
-    <updated>2017-08-25T21:00:00+08:00</updated>
-    
-
-    
-    <category term="About" />
+    <updated>2017-08-26T19:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+    <category term="Life" />
+    
+
+    
+    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;br /&gt;
-  &lt;p style=&#34;position:relative; left:80px;text-align:center&#34;&gt;&lt;br /&gt;
-    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
-    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
-    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
-  &lt;/p&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
-&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
-&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
-&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
-&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
-&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
-&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
-&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
-&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
-&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
-&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
-&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;情绪&lt;/strong&gt;，是对一系列主观认知经验的通称，是多种感觉、思想和行为综合产生的心理和生理状态。&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%83%85%E7%BB%AA&#34;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;包含&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a&gt;情绪&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a&gt;钦佩&lt;/a&gt; &lt;a&gt;爱意&lt;/a&gt; &lt;a&gt;畏&lt;/a&gt; &lt;a&gt;躁动&lt;/a&gt; &lt;a&gt;疼痛&lt;/a&gt; &lt;a&gt;滑稽&lt;/a&gt; &lt;a&gt;愤怒&lt;/a&gt; &lt;a&gt;精神痛苦&lt;/a&gt; &lt;a&gt;烦恼&lt;/a&gt; &lt;a&gt;焦虑&lt;/a&gt; &lt;a&gt;冷漠&lt;/a&gt; &lt;a&gt;警醒&lt;/a&gt; &lt;a&gt;人际吸引力&lt;/a&gt; &lt;a&gt;敬畏&lt;/a&gt; &lt;a&gt;厌烦&lt;/a&gt; &lt;a&gt;冷静&lt;a/&gt; &lt;a&gt;同情&lt;/a&gt; &lt;a&gt;轻视&lt;/a&gt; &lt;a&gt;满足&lt;/a&gt; &lt;a&gt;失败主义&lt;/a&gt; &lt;a&gt;抑郁&lt;/a&gt; &lt;a&gt;绝望&lt;/a&gt; &lt;a&gt;欲望&lt;/a&gt; &lt;a&gt;失望&lt;/a&gt; &lt;a&gt;厌恶&lt;/a&gt; &lt;a&gt;狂喜&lt;/a&gt; &lt;a&gt;尴尬&lt;/a&gt; &lt;a&gt;同理心&lt;/a&gt; &lt;a&gt;注意&lt;/a&gt; &lt;a&gt;热心&lt;/a&gt; &lt;a&gt;羡慕&lt;/a&gt; &lt;a&gt;欣快&lt;/a&gt; &lt;a&gt;兴奋&lt;/a&gt; &lt;a&gt;恐惧&lt;/a&gt; &lt;a&gt;挫折&lt;/a&gt; &lt;a&gt;感恩&lt;/a&gt; &lt;a&gt;丧恸&lt;/a&gt; &lt;a&gt;罪恶感&lt;/a&gt; &lt;a&gt;快乐&lt;/a&gt; &lt;a&gt;仇恨&lt;/a&gt; &lt;a&gt;思乡病&lt;/a&gt; &lt;a&gt;希望&lt;/a&gt; &lt;a&gt;恐怖 (Horror and terror)&lt;/a&gt; &lt;a&gt;敌意&lt;/a&gt; &lt;a&gt;羞辱&lt;/a&gt; &lt;a&gt;歇斯底里&lt;/a&gt; &lt;a&gt;迷恋&lt;/a&gt; &lt;a&gt;不安&lt;/a&gt; &lt;a&gt;侮辱&lt;/a&gt; &lt;a&gt;兴趣&lt;/a&gt; &lt;a&gt;应激性&lt;/a&gt; &lt;a&gt;孤立&lt;/a&gt; &lt;a&gt;妒忌&lt;/a&gt; &lt;a&gt;欢乐&lt;/a&gt; &lt;a&gt;孤单&lt;/a&gt; &lt;a&gt;爱&lt;/a&gt; &lt;a&gt;贪念&lt;/a&gt; &lt;a&gt;忧郁&lt;/a&gt; &lt;a&gt;物哀&lt;/a&gt; &lt;a&gt;忽视&lt;/a&gt; &lt;a&gt;怀旧&lt;/a&gt; &lt;a&gt;恐慌&lt;/a&gt; &lt;a&gt;激情&lt;/a&gt; &lt;a&gt;可惜&lt;/a&gt; &lt;a&gt;愉快&lt;/a&gt; &lt;a&gt;骄傲&lt;/a&gt;  &lt;a&gt;傲慢&lt;/a&gt;   &lt;a&gt;暴怒&lt;/a&gt; &lt;a&gt;后悔&lt;/a&gt; &lt;a&gt;排挤&lt;/a&gt; &lt;a&gt;悔恨&lt;/a&gt; &lt;a&gt;不满&lt;/a&gt; &lt;a&gt;报复&lt;/a&gt; &lt;a&gt;悲伤&lt;/a&gt; &lt;a&gt;萨乌达德&lt;/a&gt; &lt;a&gt;幸灾乐祸&lt;/a&gt; &lt;a&gt;怀念&lt;/a&gt; &lt;a&gt;感伤&lt;/a&gt; &lt;a&gt;羞耻&lt;/a&gt; &lt;a&gt;急性压力反应&lt;/a&gt; &lt;a&gt;害羞&lt;/a&gt; &lt;a&gt;忧伤&lt;/a&gt; &lt;a&gt;恼怒&lt;/a&gt; &lt;a&gt;压力&lt;/a&gt; &lt;a&gt;痛苦&lt;/a&gt; &lt;a&gt;惊讶&lt;/a&gt; &lt;a&gt;同感 (Sympathy)&lt;/a&gt; &lt;a&gt;慢性压力&lt;/a&gt; &lt;a&gt;好奇&lt;/a&gt; &lt;a&gt;担心&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content>
     
     
   </entry>
@@ -9557,114 +9495,85 @@ NONE&lt;/li&gt;
   
     
   <entry>
-    <id>/SE/softwareengine01.html</id>
-    <title>软件工程</title>
-    <link href="/SE/softwareengine01.html" />
-    <published>2017-09-07T21:00:00+08:00</published>
+    <id>/Tool/conftool.html</id>
+    <title>前端配置</title>
+    <link href="/Tool/conftool.html" />
+    <published>2016-02-11T09:00:00+08:00</published>
 
     
-    <updated>2017-09-07T21:00:00+08:00</updated>
-    
-
-    
-    <category term="SE" />
+    <updated>2016-02-11T09:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
+    <category term="Tool" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;外围概念&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#qusetion&#34;&gt;QUSETION&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;软件生存期&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tool&#34;&gt;tool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#source&#34;&gt;source&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;_1&#34;&gt;外围概念&lt;/h3&gt;
-&lt;p&gt;[WIKI]&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;是存在于某个系统中的一组法律、规则与基本前提。这个体系中的其他事物，大体上都可以经由这个基本规律来推导、解释与预测；这个体系中的成员，都应该遵守这个基本规律，在这套规则下运作。经由了解这个体系的原理，可以了解到整个体系的基本特征，或是反映出这个体系被设计的目的。如果这个体系下的某个原理被忽略，可能造成体系无法运作，或是这个行为将无法达成其目的。&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;在哲学、数学及物理学中，都常使用这个名词。在数学中，以公理（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Axiom&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）及逻辑基础作为整个数学体系的原理。&lt;/span&gt;
+&lt;h3 id=&#34;tool&#34;&gt;tool&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;python3[mutil pip 共存]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;apt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;selenium&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//pypi.douban.com/simple/&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;---&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pip3&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;selenium&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;[BaiDu]&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;原理&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;自然科学和社会科学中具有普遍意义的基本规律。是在大量观察、实践的基础上，经过归纳、概括而得出的。既能指导实践，又必须经受实践的检验。&lt;/span&gt;
+&lt;h3 id=&#34;source&#34;&gt;source&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pypi.doubanio.com/simple/&#34;&gt;豆瓣pypi&lt;/a&gt;&lt;br /&gt;
+&lt;code&gt;pip install *** -i https://pypi.doubanio.com/simple/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://npm.taobao.org/mirrors/chromedriver/&#34;&gt;chrome driver mirror&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;sudo mv chromedriver  /usr/local/bin/chromedriver
+&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;sudo chmod u+x,o+x   /usr/local/bin/chromedriver
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3 id=&#34;qusetion&#34;&gt;QUSETION&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;软件工程分为软件和工程&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;什么是软件？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;软件开发有什么特性？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;什么是软件工程？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;为什么要建立软件工程学科？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;既然引入软件工程去解决问题&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;那么它的目标是什么？&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;为了实现这些目标它有什么原理支撑？&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_2&#34;&gt;软件生存期&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;践行软件工程基本原理的第一条&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;按软件生存周期分阶段指定计划并认真实施&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;括号内代表任务&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;软件定义(任务:做什么)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;问题定义&lt;/li&gt;
-&lt;li&gt;可行性研究&lt;br /&gt;
-&lt;code&gt;任务细化:到底解决什么问题,不要把你的计算机牵扯进来,钱和时间都给了限制能不能在这种情况下开发出来,需要职员:软件分析员，一个软件行不行,要从好多角度看,在大学编程,看起来就像基础技术是否具备,课设截止时间是否能够做出来？但是在社会上仍需要考虑法律,宗教(在对方是穆斯林餐厅的话,你带入猪肉,那就玩完了),还有用户是否具有学会操作的本领()等等，&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;需求分析&lt;br /&gt;
-&lt;code&gt;任务细化:我的系统应该干什么？建立起从问题空间到解空间的映射，看个人的建模能力了,这里需要建立分析模型,从功能数据行为等方面去描述系统的静态特性和动态特性,对目标系统进一步细化,当然软件工程会给你提供参考&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;功能需求&lt;/li&gt;
-&lt;li&gt;非功能需求[性能等等]    &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;软件开发(任务:怎么做)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;概要设计&lt;/li&gt;
-&lt;li&gt;详细设计&lt;br /&gt;
-&lt;code&gt;设计是软件工程的技术核心&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;任务细化:如何做出目标系统,这里具体做的就是将需求转化为相应的软件体系结构,结构中的每一组成部分都必须是意义明确的构件,这就是概要设计。进而描述构建应该做什么,以及做事的顺序这就是详细设计，基于设计编写出单元测试计划和集成测试计划提交评审部门。&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;编码&lt;br /&gt;
-&lt;code&gt;选择一门好的语言会事半功倍&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;测试&lt;br /&gt;
-&lt;code&gt;单元模块测试,调试排错,保持与设计一致，与编码出现迭代&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;集成测试&lt;br /&gt;
-&lt;code&gt;已测试模块组装&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;系统测试&lt;br /&gt;
-&lt;code&gt;需求检测是否满足用户需求&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;维护(任务:使软件持久的满足用户需要)&lt;br /&gt;
-&lt;code&gt;最浪费人力物力&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;改正性维护&lt;/li&gt;
-&lt;li&gt;适应性维护&lt;/li&gt;
-&lt;li&gt;完善性维护&lt;/li&gt;
-&lt;li&gt;预防性维护&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;什么是软件危机&lt;br /&gt;
-&lt;code&gt;分两个方面,软件本身与设计者&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;p&gt;&lt;center&gt;&lt;br /&gt;
+|chromedriver版本 | 支持的Chrome版本|&lt;br /&gt;
+|:--:|:--:|&lt;br /&gt;
+|v2.35|   v62-64|&lt;br /&gt;
+|v2.34|   v61-63|&lt;br /&gt;
+|v2.33|   v60-62|&lt;br /&gt;
+|v2.32|   v59-61|&lt;br /&gt;
+|v2.31|   v58-60|&lt;br /&gt;
+|v2.30|   v58-60|&lt;br /&gt;
+|v2.29|   v56-58|&lt;br /&gt;
+|v2.28 |  v55-57|&lt;br /&gt;
+|v2.27 |  v54-56|&lt;br /&gt;
+|v2.26 |  v53-55|&lt;br /&gt;
+|v2.25  | v53-55|&lt;br /&gt;
+|v2.24  | v52-54|&lt;br /&gt;
+|v2.23|   v51-53|&lt;br /&gt;
+|v2.22|   v49-52|&lt;br /&gt;
+|v2.21|   v46-50|&lt;br /&gt;
+|v2.20|   v43-48|&lt;br /&gt;
+|v2.19 |  v43-47|&lt;br /&gt;
+|v2.18 |  v43-46|&lt;br /&gt;
+|v2.17 |  v42-43|&lt;br /&gt;
+|v2.13 |  v42-45|&lt;br /&gt;
+|v2.15  | v40-43|&lt;br /&gt;
+|v2.14  | v39-42|&lt;br /&gt;
+|v2.13  | v38-41|&lt;br /&gt;
+|v2.12  | v36-40|&lt;br /&gt;
+|v2.11   |v36-40|&lt;br /&gt;
+|v2.10   |v33-36|&lt;br /&gt;
+|v2.9    |v31-34|&lt;br /&gt;
+|v2.8    |v30-33|&lt;br /&gt;
+|v2.7|    v30-33|&lt;br /&gt;
+|v2.6 |   v29-32|&lt;br /&gt;
+|v2.5 |   v29-32|&lt;br /&gt;
+|v2.4 |   v29-32|&lt;/p&gt;
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;</content>
     
     
   </entry>
@@ -10316,153 +10225,43 @@ NONE&lt;/li&gt;
   
     
   <entry>
-    <id>/SE/SoftwareTest.html</id>
-    <title>软件测试</title>
-    <link href="/SE/SoftwareTest.html" />
-    <published>2017-10-21T16:14:00+08:00</published>
+    <id>/Algorithm/program.html</id>
+    <title>填坑</title>
+    <link href="/Algorithm/program.html" />
+    <published>2017-12-01T21:00:00+08:00</published>
 
     
-    <updated>2017-10-21T16:14:00+08:00</updated>
+    <updated>2017-12-01T21:00:00+08:00</updated>
     
 
     
-    <category term="SE" />
+    <category term="Algorithm" />
     
 
     
     <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;conflict&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#messy&#34;&gt;messy&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;软件项目成员&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;软件开发生命周期模式&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;陷阱&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;h3 id=&#34;_1&#34;&gt;陷阱&lt;/h3&gt;
+&lt;p&gt;明明比较掌握一个策略，在使用的时候总是思路缓慢，究其原因，是在语义上思路的条理不够清晰，但是明明已经投入深入思考，为什么还有这种现象，动手去做真的有那么重要么？是思路不够真正的正确还是但凡问题必需投入时间进行时间；&lt;br /&gt;
+暂时说一说在编码的时候遇到的现象吧！&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;与&lt;a href=&#34;softwareTest.html&#34;&gt;[复习目]&lt;/a&gt;不同,本文主要介绍一些在软件工程实际应用的概念涉及&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;messy&#34;&gt;messy&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;b style=&#39;color:red&#39;&gt;&lt;/b&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;软件测试员的&lt;b style=&#39;color:red&#39;&gt;目标&lt;/b&gt;是&lt;b style=&#39;color:red&#39;&gt;尽可能尽早找出软件缺陷&lt;/b&gt;并确保其得以&lt;b style=&#39;color:red&#39;&gt;修复&lt;/b&gt;&lt;br /&gt;
-&lt;code&gt;[修复]: 这是一个用户与产品相互适应的过程,并非说一定要软件开发人员对缺陷部分重新编码,我们也可以通过修改产品说明说或者培训用户使用方法来达到修复目的!&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;此时对修复理解有误解的可以看一看软件缺陷的定义的五大概念&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;要搞清软件产品的组成部分,下面写了几个&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在软件行业中,用于描述制造出来并交付他人的软件产品组件的术语是&lt;b style=&#39;color:red&#39;&gt;可交付部分(deliverable)&lt;/b&gt;&lt;br /&gt;
-&lt;code&gt;解释所有可交付部分的内容的最简便方法就是分门别类&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;软件产品的一个关键部分就是进度表&lt;br /&gt;
-&lt;code&gt;常见表格类型[Gantt]&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;软件设计文档&lt;br /&gt;
-&lt;code&gt;[结构文档]  主要部分描述以及相互之间的交互&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[数据流图]  表示数据在程序中如何流动正规示意图&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[状态转换图] 把软件分解为基本状态或者条件的另一种正规示意图&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[流程图]    图形描述程序逻辑的传统方式(不常用)&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[代码注释]  便于维护&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;测试文档&lt;br /&gt;
-&lt;code&gt;[测试计划]&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[测试用例]&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[缺陷报告] 存在数据库或者写在纸上&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[测试工具]/[自动测试] 不管是买的还是自己做的都要有文档&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[度量/统计/总结] 测试过程的汇总,illustrate/report/graphic&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_1&#34;&gt;软件项目成员&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;项目经理,程序经理或者监制人员&lt;br /&gt;
-&lt;code&gt;编写产品说明书&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;管理进度&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;进行重大决策&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;体系架构师/系统工程师&lt;br /&gt;
-&lt;code&gt;设计整个系统体系架构&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;与程序员关系密切&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;程序员&lt;br /&gt;
-&lt;code&gt;编写代码和修复软件&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;与项目经理和架构师合作开发&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;与项目经理和测试员合作修复软件&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;测试员/QA(质量保证员)&lt;br /&gt;
-&lt;code&gt;负责找出并报告软件产品的问题&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;注意测试员与QA的区别&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;技术作者/用户协助专员/手册编写员&lt;br /&gt;
-&lt;code&gt;编写产品附带文件和联机文档&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;配置员&lt;br /&gt;
-&lt;code&gt;负责组装代码和文档合为软件包&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;_2&#34;&gt;软件开发生命周期模式&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;注意是开发生命周期&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;大爆炸模式&lt;br /&gt;
-&lt;code&gt;几乎不需要测试员,避免争吵&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;边写边改模式&lt;br /&gt;
-    &amp;gt; 也可以认为是快速原型模式&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;没有时间做好,总有时间完成&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;测试和编码人员陷入无尽的迭代直至想发布了&lt;/code&gt;&lt;br /&gt;
-- 瀑布模式&lt;br /&gt;
-&lt;code&gt;瀑布模型式是最典型的预见性的方法，严格遵循预先计划的需求分析、设计、编码、集成、测试、维护的步骤顺序进行&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;注重软件定义的精准性&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;无法回溯&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;步骤分离没有交加&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;测试在最后,基本型错误可能最后才发现,软件的修复费用被拉长&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;从设计到编码，从编码到测试，从测试到提交,要求每一个开发阶段都要做到最好.&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;过于依赖前期的完美性&lt;/code&gt;&lt;br /&gt;
-- 迭代式开发&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;迭代式开发也被称作迭代增量式开发或迭代进化式开发，是一种与传统的瀑布式开发相反的软件开发过程，它弥补了传统开发方式中的一些弱点，具有更高的成功率和生产率&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;code&gt;[what]每次只设计和实现这个产品的一部分, 逐步逐步完成的方法叫迭代开发&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[how] 在迭代式开发方法中，整个开发工作被组织为一系列的短小的、固定长度（如3周）的小项目，被称为一系列的迭代。每一次迭代都包括了需求分析、设计、实现与测试&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[why] 采用这种方法，开发工作可以在需求被完整地确定之前启动，并在一次迭代中完成系统的一部分功能或业务逻辑的开发工作。再通过客户的反馈来细化需求，并开始新一轮的迭代。&lt;/code&gt;&lt;br /&gt;
-迭代式开发的优点：&lt;br /&gt;
-　　1、降低风险&lt;br /&gt;
-　　2、得到早期用户反馈&lt;br /&gt;
-　　3、持续的测试和集成&lt;br /&gt;
-　　4、使用变更&lt;br /&gt;
-　　5、提高复用性&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;螺旋模式&lt;br /&gt;
-    看图&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[1] 它将瀑布模型和快速原型模型结合起来，强调了其他模型所忽视的风险分析，特别适合于大型复杂的系统&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[2] 螺旋模型”刚开始规模很小，当项目被定义得更好、更稳定时，逐渐展开&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[3] “螺旋模型”的核心就在于您不需要在刚开始的时候就把所有事情都定义的清清楚楚。您轻松上阵，定义最重要的功能，实现它，然后听取客户的意见，之后再进入到下一个阶段。如此不断轮回重复，直到得到您满意的最终产品&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;很大程度上是一种风险驱动的方法体系,因为在每个阶段之前及经常发生的循环之前，都必须首先进行风险评估&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;1)制定计划：确定软件目标，选定实施方案，弄清项目开发的限制条件&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;2)风险分析：分析评估所选方案，考虑如何识别和消除风险&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;3)实施工程：实施软件开发和验证&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;4)客户评估：评价开发工作，提出修正建议，制定下一步计划&lt;/code&gt;&lt;br /&gt;
-- 敏捷开发&lt;br /&gt;
-人和交互 重于过程和工具。&lt;br /&gt;
-可以工作的软件 重于求全而完备的文档。&lt;br /&gt;
-客户协作重于合同谈判。&lt;br /&gt;
-随时应对变化重于循规蹈矩。&lt;/p&gt;
-&lt;p&gt;其中位于右边的内容虽然也有其价值，但是左边的内容最为重要。&lt;br /&gt;
-人员彼此信任 人少但是精干 可以面对面的沟通&lt;/p&gt;
-&lt;p&gt;项目的敏捷开发：&lt;br /&gt;
-敏捷开发小组主要的工作方式可以归纳为：作为一个整体工作； 按短迭代周期工作； 每次迭代交付一些成果；&lt;br /&gt;
-关注业务优先级； 检查与调整。&lt;/p&gt;
-&lt;p&gt;最重要的因素恐怕是项目的规模。规模增长，面对面的沟通就愈加困难，&lt;br /&gt;
-因此敏捷方法更适用于较小的队伍，40、30、20、10人或者更少。&lt;br /&gt;
-大规模的敏捷软件开发尚处于积极研究的领域。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;初始化问题，对状态机的状态描述比较差劲！&lt;/li&gt;
+&lt;li&gt;天生缺乏线性能力，明明很简单的图降维  &lt;/li&gt;
+&lt;li&gt;处理步骤到解空间的映射能力较差&lt;/li&gt;
+&lt;li&gt;书写过程中容易出现逻辑BUG&lt;/li&gt;
 &lt;/ul&gt;</content>
     
     
@@ -11384,36 +11183,25 @@ NONE&lt;/li&gt;
   
     
   <entry>
-    <id>/Demo/unix-demo.html</id>
-    <title>unix-demo</title>
-    <link href="/Demo/unix-demo.html" />
-    <published>2017-05-21T13:00:00+08:00</published>
+    <id>/Life/precept.html</id>
+    <title>precept</title>
+    <link href="/Life/precept.html" />
+    <published>2017-08-25T19:00:00+08:00</published>
 
     
-    <updated>2017-05-21T13:00:00+08:00</updated>
-    
-
-    
-    <category term="Demo" />
+    <updated>2017-08-25T19:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;例子演示&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#list&#34;&gt;list&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+    <category term="Life" />
+    
+
+    
+    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;_1&#34;&gt;例子演示&lt;/h3&gt;
-&lt;p&gt;&lt;b id=&#34;#list&#34;&gt;&lt;/b&gt;&lt;/p&gt;
-&lt;h4 id=&#34;list&#34;&gt;list&lt;/h4&gt;
-&lt;p&gt;&lt;center&gt;&lt;br /&gt;
-&lt;video width=&#34;500&#34; height=&#34;348&#34; controls&gt;&lt;br /&gt;
-    &lt;source src=&#34;https://raw.githubusercontent.com/SrcAgile/unix_practice/master/chapter02/list/demo.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;br /&gt;
-    您的浏览器不支持video标签。&lt;br /&gt;
-&lt;/video&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;/p&gt;</content>
+&lt;ol&gt;
+&lt;li&gt;[禁]10days restrict myself[十日限制]&lt;/li&gt;
+&lt;/ol&gt;</content>
     
     
   </entry>
@@ -11718,43 +11506,153 @@ NONE&lt;/li&gt;
   
     
   <entry>
-    <id>/Algorithm/program.html</id>
-    <title>填坑</title>
-    <link href="/Algorithm/program.html" />
-    <published>2017-12-01T21:00:00+08:00</published>
+    <id>/SE/SoftwareTest.html</id>
+    <title>软件测试</title>
+    <link href="/SE/SoftwareTest.html" />
+    <published>2017-10-21T16:14:00+08:00</published>
 
     
-    <updated>2017-12-01T21:00:00+08:00</updated>
+    <updated>2017-10-21T16:14:00+08:00</updated>
     
 
     
-    <category term="Algorithm" />
+    <category term="SE" />
     
 
     
     <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;conflict&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
 &lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;陷阱&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#messy&#34;&gt;messy&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;软件项目成员&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;软件开发生命周期模式&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;_1&#34;&gt;陷阱&lt;/h3&gt;
-&lt;p&gt;明明比较掌握一个策略，在使用的时候总是思路缓慢，究其原因，是在语义上思路的条理不够清晰，但是明明已经投入深入思考，为什么还有这种现象，动手去做真的有那么重要么？是思路不够真正的正确还是但凡问题必需投入时间进行时间；&lt;br /&gt;
-暂时说一说在编码的时候遇到的现象吧！&lt;/p&gt;
+&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;初始化问题，对状态机的状态描述比较差劲！&lt;/li&gt;
-&lt;li&gt;天生缺乏线性能力，明明很简单的图降维  &lt;/li&gt;
-&lt;li&gt;处理步骤到解空间的映射能力较差&lt;/li&gt;
-&lt;li&gt;书写过程中容易出现逻辑BUG&lt;/li&gt;
+&lt;li&gt;与&lt;a href=&#34;softwareTest.html&#34;&gt;[复习目]&lt;/a&gt;不同,本文主要介绍一些在软件工程实际应用的概念涉及&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;messy&#34;&gt;messy&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b style=&#39;color:red&#39;&gt;&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;软件测试员的&lt;b style=&#39;color:red&#39;&gt;目标&lt;/b&gt;是&lt;b style=&#39;color:red&#39;&gt;尽可能尽早找出软件缺陷&lt;/b&gt;并确保其得以&lt;b style=&#39;color:red&#39;&gt;修复&lt;/b&gt;&lt;br /&gt;
+&lt;code&gt;[修复]: 这是一个用户与产品相互适应的过程,并非说一定要软件开发人员对缺陷部分重新编码,我们也可以通过修改产品说明说或者培训用户使用方法来达到修复目的!&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;此时对修复理解有误解的可以看一看软件缺陷的定义的五大概念&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;要搞清软件产品的组成部分,下面写了几个&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在软件行业中,用于描述制造出来并交付他人的软件产品组件的术语是&lt;b style=&#39;color:red&#39;&gt;可交付部分(deliverable)&lt;/b&gt;&lt;br /&gt;
+&lt;code&gt;解释所有可交付部分的内容的最简便方法就是分门别类&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;软件产品的一个关键部分就是进度表&lt;br /&gt;
+&lt;code&gt;常见表格类型[Gantt]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;软件设计文档&lt;br /&gt;
+&lt;code&gt;[结构文档]  主要部分描述以及相互之间的交互&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[数据流图]  表示数据在程序中如何流动正规示意图&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[状态转换图] 把软件分解为基本状态或者条件的另一种正规示意图&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[流程图]    图形描述程序逻辑的传统方式(不常用)&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[代码注释]  便于维护&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测试文档&lt;br /&gt;
+&lt;code&gt;[测试计划]&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[测试用例]&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[缺陷报告] 存在数据库或者写在纸上&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[测试工具]/[自动测试] 不管是买的还是自己做的都要有文档&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[度量/统计/总结] 测试过程的汇总,illustrate/report/graphic&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_1&#34;&gt;软件项目成员&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;项目经理,程序经理或者监制人员&lt;br /&gt;
+&lt;code&gt;编写产品说明书&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;管理进度&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;进行重大决策&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;体系架构师/系统工程师&lt;br /&gt;
+&lt;code&gt;设计整个系统体系架构&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;与程序员关系密切&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;程序员&lt;br /&gt;
+&lt;code&gt;编写代码和修复软件&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;与项目经理和架构师合作开发&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;与项目经理和测试员合作修复软件&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;测试员/QA(质量保证员)&lt;br /&gt;
+&lt;code&gt;负责找出并报告软件产品的问题&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;注意测试员与QA的区别&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;技术作者/用户协助专员/手册编写员&lt;br /&gt;
+&lt;code&gt;编写产品附带文件和联机文档&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;配置员&lt;br /&gt;
+&lt;code&gt;负责组装代码和文档合为软件包&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;_2&#34;&gt;软件开发生命周期模式&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意是开发生命周期&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;大爆炸模式&lt;br /&gt;
+&lt;code&gt;几乎不需要测试员,避免争吵&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;边写边改模式&lt;br /&gt;
+    &amp;gt; 也可以认为是快速原型模式&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;没有时间做好,总有时间完成&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;测试和编码人员陷入无尽的迭代直至想发布了&lt;/code&gt;&lt;br /&gt;
+- 瀑布模式&lt;br /&gt;
+&lt;code&gt;瀑布模型式是最典型的预见性的方法，严格遵循预先计划的需求分析、设计、编码、集成、测试、维护的步骤顺序进行&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;注重软件定义的精准性&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;无法回溯&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;步骤分离没有交加&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;测试在最后,基本型错误可能最后才发现,软件的修复费用被拉长&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;从设计到编码，从编码到测试，从测试到提交,要求每一个开发阶段都要做到最好.&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;过于依赖前期的完美性&lt;/code&gt;&lt;br /&gt;
+- 迭代式开发&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;迭代式开发也被称作迭代增量式开发或迭代进化式开发，是一种与传统的瀑布式开发相反的软件开发过程，它弥补了传统开发方式中的一些弱点，具有更高的成功率和生产率&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;[what]每次只设计和实现这个产品的一部分, 逐步逐步完成的方法叫迭代开发&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[how] 在迭代式开发方法中，整个开发工作被组织为一系列的短小的、固定长度（如3周）的小项目，被称为一系列的迭代。每一次迭代都包括了需求分析、设计、实现与测试&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[why] 采用这种方法，开发工作可以在需求被完整地确定之前启动，并在一次迭代中完成系统的一部分功能或业务逻辑的开发工作。再通过客户的反馈来细化需求，并开始新一轮的迭代。&lt;/code&gt;&lt;br /&gt;
+迭代式开发的优点：&lt;br /&gt;
+　　1、降低风险&lt;br /&gt;
+　　2、得到早期用户反馈&lt;br /&gt;
+　　3、持续的测试和集成&lt;br /&gt;
+　　4、使用变更&lt;br /&gt;
+　　5、提高复用性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;螺旋模式&lt;br /&gt;
+    看图&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[1] 它将瀑布模型和快速原型模型结合起来，强调了其他模型所忽视的风险分析，特别适合于大型复杂的系统&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[2] 螺旋模型”刚开始规模很小，当项目被定义得更好、更稳定时，逐渐展开&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[3] “螺旋模型”的核心就在于您不需要在刚开始的时候就把所有事情都定义的清清楚楚。您轻松上阵，定义最重要的功能，实现它，然后听取客户的意见，之后再进入到下一个阶段。如此不断轮回重复，直到得到您满意的最终产品&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;很大程度上是一种风险驱动的方法体系,因为在每个阶段之前及经常发生的循环之前，都必须首先进行风险评估&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1)制定计划：确定软件目标，选定实施方案，弄清项目开发的限制条件&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;2)风险分析：分析评估所选方案，考虑如何识别和消除风险&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;3)实施工程：实施软件开发和验证&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;4)客户评估：评价开发工作，提出修正建议，制定下一步计划&lt;/code&gt;&lt;br /&gt;
+- 敏捷开发&lt;br /&gt;
+人和交互 重于过程和工具。&lt;br /&gt;
+可以工作的软件 重于求全而完备的文档。&lt;br /&gt;
+客户协作重于合同谈判。&lt;br /&gt;
+随时应对变化重于循规蹈矩。&lt;/p&gt;
+&lt;p&gt;其中位于右边的内容虽然也有其价值，但是左边的内容最为重要。&lt;br /&gt;
+人员彼此信任 人少但是精干 可以面对面的沟通&lt;/p&gt;
+&lt;p&gt;项目的敏捷开发：&lt;br /&gt;
+敏捷开发小组主要的工作方式可以归纳为：作为一个整体工作； 按短迭代周期工作； 每次迭代交付一些成果；&lt;br /&gt;
+关注业务优先级； 检查与调整。&lt;/p&gt;
+&lt;p&gt;最重要的因素恐怕是项目的规模。规模增长，面对面的沟通就愈加困难，&lt;br /&gt;
+因此敏捷方法更适用于较小的队伍，40、30、20、10人或者更少。&lt;br /&gt;
+大规模的敏捷软件开发尚处于积极研究的领域。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</content>
     
     
