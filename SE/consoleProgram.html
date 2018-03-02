@@ -34,7 +34,7 @@
       background-color: rgba(0,0,0,0.5)!important;
     }
 </style>
-    <title>重装 - Meta's Wiki</title>
+    <title>控制台编程 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -52,29 +52,44 @@
     <div id="container" style="color:yellow;background-color: rgba(0,0,0,0.8);">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;重装
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#SE">SE</a>&nbsp;&#187;&nbsp;控制台编程
     <span class="updated">Page Updated&nbsp;
-      2015-01-08 17:20:00
+      2015-11-01 16:00:00
     </span></div>
   
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">重装</div>
+<div class="page_title">控制台编程</div>
 <!-- <b>更改颜色：</b><input style="margin-left: 0px" type="color" id="onchange"> -->
-  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
-<blockquote>
-<p>同样事不要多次做.</p>
-</blockquote>
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
 <hr />
-<div class="toc"><span class="toctitle">Table of Contents</span><ul></ul>
+<blockquote></blockquote>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">参数处理</a></li>
+</ul>
 </div>
+<h3 id="_1">参数处理</h3>
+<ol>
+<li>确保输入的合法[词法检查]<br />
+<code>值合法</code><br />
+<code>组合合法</code></li>
+<li>确保形成语义不存在矛盾[语法检查]</li>
+<li>具有一定语义容错性[语义兼容]<br />
+<code>兼容自然语言的冗余</code></li>
+</ol>
+<p>[1]确保收到合理的参数,通过数据结构保存传递给[2],[2]通过[1]保存的数据结构(状态机)进行语法检查,此时可以略微修改检查规则使参数具有一定的自然语言的兼容[3]</p>
+<p><strong>这样就形成了控制台多参数程序的书写规则</strong><br />
+1. 构造optString参数集,里用exit in optString确保词法合适<br />
+2. 保存OptString检查之后的状态(值状态&amp;位置状态)形成状态机(利用数据结构保存词法判断后的词)<br />
+3. 根据状态机判断规则是否合理</p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '重装',
+    title: '控制台编程',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {
