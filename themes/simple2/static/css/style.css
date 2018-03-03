@@ -100,8 +100,8 @@ pre, code {
 }
 
 code {
-    color: #666;
-    background-color: #eee;
+    color:#6959CD!important;
+    font: bold!important
     margin: 0 2px;
     padding: 1px 3px;
 }
@@ -120,8 +120,8 @@ pre {
 pre code {
     border: 0px !important;
     padding: 0;
-    color: #000;
-    background-color: #f8f8f8;
+    color: #00ffff;
+    background-color: rgba(0,0,0,0.5)!important;
 }
 
 /* Custom Configuration */

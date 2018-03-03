@@ -13,14 +13,41 @@
        });
     </script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style type="text/css">.coll_list a{color:green!important;}
+    .toc{
+      color:green;
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    #header a{
+      color: red!important;
+      font: bold;
+    }
+    pre{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    code{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    textarea{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+</style>
     <title>{% block title %}{{ site.title }}{% endblock %}</title>
     <meta name="keywords" content="{{ site.keywords }}"/>
     <meta name="description" content="{{ site.description }}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   </head>
 
-  <body>
-    <div id="container">
+  <body style="margin: 0px;
+    padding: 0px;">
+    <img id="bg" style="width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    overflow:auto;
+    z-index: -1;" src="https://s1.ax1x.com/2018/03/03/9yiaUH.jpg" />
+    <div id="container" style="color:yellow;background-color: rgba(0,0,0,0.8);">
       {% block container %}
         {{ page.content }}
       {% endblock %}
@@ -44,3 +71,10 @@
   </body>
 
 </html>
+
+<!-- <script type="text/javascript">
+    document.getElementById('onchange').onchange = function(){
+        document.getElementById('onchange').click();
+        document.body.style.background = this.value;
+    };
+</script> -->

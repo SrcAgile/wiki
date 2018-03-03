@@ -1,5 +1,5 @@
 ---
-title: "系统配置"
+title: "前端配置"
 layout: page
 date: 2016-02-11 09:00:00
 collection: "[conf]"
@@ -27,6 +27,7 @@ $ sudo pip3 install selenium
 $ sudo mv chromedriver  /usr/local/bin/chromedriver
 $ sudo chmod u+x,o+x   /usr/local/bin/chromedriver
 ```
+
 |chromedriver版本 | 支持的Chrome版本|
 |:--:|:--:|
 |v2.35|   v62-64|
@@ -35,7 +36,7 @@ $ sudo chmod u+x,o+x   /usr/local/bin/chromedriver
 |v2.32|   v59-61|
 |v2.31|   v58-60|
 |v2.30|   v58-60|
-|v2.29|   |v56-58|
+|v2.29|   v56-58|
 |v2.28 |  v55-57|
 |v2.27 |  v54-56|
 |v2.26 |  v53-55|

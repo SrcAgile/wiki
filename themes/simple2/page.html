@@ -24,11 +24,12 @@
     </span>
     {%- endif -%}
   </div>
+  
 </div>
 <div class="clearfix"></div>
 
 <div class="page_title">{{ page.title }}</div>
-
+<!-- <b>更改颜色：</b><input style="margin-left: 0px" type="color" id="onchange"> -->
   {{ page.content }}
 
   {%- if page.relation %}
@@ -63,3 +64,4 @@
   // document.body.appendChild(gitment.render())
   </script>
 {%- endblock %}
+
