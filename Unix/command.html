@@ -63,13 +63,39 @@
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#base">Base</a></li>
 <li><a href="#_1">常见问题</a></li>
 <li><a href="#_2">罗列</a><ul>
 <li><a href="#lsof">lsof</a></li>
 </ul>
 </li>
+<li><a href="#gsettings">gsettings</a></li>
 </ul>
 </div>
+<h3 id="base">Base</h3>
+<ul>
+<li>manual</li>
+</ul>
+<div class="hlcode"><pre><span class="c"># 最基本是要会使用manual,分7类</span>
+1. 用户在shell环境中可以操作的命令或可执行文件
+2. 系统内核可调用的函数与工具等
+3. 一些常用的函数（function）与函数库（library），大部分为C的函数库（libc）
+4. 设备文件的说明，通常是在/dev下的文件
+5. 配置文件或者是某些文件的格式
+6. 游戏（games）
+7. 惯例与协议等，例如Linux文件系统、网络协议、ASCII code等说明
+8. 系统管理员可用的管理命令
+9. 跟kernel有关的文件
+上面这些内容可以通过输入“man 7 man”命令来获取更详细的说明。
+
+<span class="o">[</span>EXAMPLE<span class="o">]</span>
+➜  unix git:<span class="o">(</span>master<span class="o">)</span> ✗ man 1 <span class="o">[</span>Tab<span class="o">]</span>
+zsh: <span class="k">do </span>you wish to see all 2333 possibilities <span class="o">(</span>584 lines<span class="o">)</span>? 
+➜  unix git:<span class="o">(</span>master<span class="o">)</span> ✗ man 1 ls
+➜  unix git:<span class="o">(</span>master<span class="o">)</span> ✗ man 7 ascii
+</pre></div>
+
+
 <h3 id="_1">常见问题</h3>
 <ul>
 <li><a href="#lsof">查看文件被什么进程占用</a></li>
@@ -100,6 +126,19 @@
 <span class="n">lsof</span> <span class="o">+</span><span class="n">D</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span> <span class="err">同上，但是会搜索目录下的目录，时间较长</span>
 <span class="n">lsof</span> <span class="o">-</span><span class="n">d</span> <span class="mi">4</span> <span class="err">显示使用</span><span class="n">fd</span><span class="err">为</span><span class="mi">4</span><span class="err">的进程</span>
 <span class="n">lsof</span> <span class="o">-</span><span class="n">i</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="err">用以显示符合条件的进程情况</span>
+</pre></div>
+
+
+<h3 id="gsettings">gsettings</h3>
+<p><code>这个命令是因为每次接触不良的时候,电脑连接的手机都会激发电脑出现弹窗,网上有使用gconf-editor的但是貌似已经不管用了,所以找到了gsettings</code></p>
+<div class="hlcode"><pre>禁止自动挂载：
+<span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.media-handling automount <span class="nb">false</span>
+禁止自动挂载并打开
+<span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.media-handling automount-open <span class="nb">false</span>
+允许自动挂载
+<span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.media-handlingautomount <span class="nb">true</span>
+允许自动挂载并打开
+<span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.media-handling automount-open <span class="nb">true</span>
 </pre></div>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -133,7 +172,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-03-03 15:24:24</p>
+        <p>Site Generated 2018-03-06 13:18:42</p>
       </span>
     </div>
 
