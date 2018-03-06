@@ -7,7 +7,7 @@
   <title>Meta's Wiki</title>
   <link href="/" />
   <link href="/atom.xml" rel="self" type="application/atom+xml" />
-  <updated>2018-03-06T13:18:42+08:00</updated>
+  <updated>2018-03-06T19:43:26+08:00</updated>
   <id></id>
   <author>
     <name>Guozhen Li</name>
@@ -853,40 +853,97 @@ setcap cap_net_raw,cap_net_admin&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;eip 
   
     
   <entry>
-    <id>/net/net001.html</id>
-    <title>arp介绍</title>
-    <link href="/net/net001.html" />
-    <published>2017-09-01T11:00:00+08:00</published>
+    <id>/Algorithm/DP_egg.html</id>
+    <title>高楼抛蛋决策树</title>
+    <link href="/Algorithm/DP_egg.html" />
+    <published>2017-09-24T16:19:32+08:00</published>
 
     
-    <updated>2017-09-01T11:00:00+08:00</updated>
-    
-
-    
-    <category term="net" />
+    <updated>2017-09-24T16:19:32+08:00</updated>
     
 
     
-    <content type="html">&lt;h2 id=&#34;_1&#34;&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;电脑维修中....&lt;/a&gt;&lt;/h2&gt;
+    <category term="Algorithm" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=461080452&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;决策树是一个好东西&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;文档状态：&lt;a style=&#34;color:red;background-color:gray&#34;&gt;电脑维修中....&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;实现&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;电脑维修中,只能先备份了...&lt;/b&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;arp协议的具体，什么是arp，固定长度42？&lt;/li&gt;
-&lt;li&gt;广播&lt;ul&gt;
-&lt;li&gt;是只有网关发广播吗？[x]&lt;/li&gt;
-&lt;li&gt;一直不停地发广播吗&lt;/li&gt;
-&lt;li&gt;广播以什么样的形式发送出去？&lt;/li&gt;
-&lt;li&gt;发送广播的目的是什么？[建立ARP表？]&lt;ul&gt;
-&lt;li&gt;建立Arp的顺序是什么？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;什么是IGMPv3？&lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一般情况当我问讨论算法的效率时，有的人注重平均时间复杂度，有的人注重最坏时间复杂度，当注重最坏时间复杂度的时候，决策的路径就已经很明显了，引入决策树的办法还是很好的。&lt;/p&gt;
+&lt;p&gt;Problem[来源知乎]&lt;br /&gt;
+一幢 200 层的大楼,给你两个鸡蛋. 如果在第 n 层扔下鸡蛋,鸡蛋不碎,那么从前 n-1 层扔鸡蛋都不碎. 这两只鸡蛋一模一样,不碎的话可以扔无数次. 已知鸡蛋在0层扔不会碎.&lt;br /&gt;
+提出一个策略, 要保证能测出鸡蛋恰好会碎的楼层, 并使此策略在最坏情况下所扔次数最少.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最早看见这个问题是在&lt;a href=&#34;http://ppwwyyxx.com/2013/Problem-of-Two-Eggs/&#34;&gt;吴育昕&lt;/a&gt;学长的Blog中,他的解法很不错，贴上他的回答&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;面试Hulu的最后一轮, 是我现在的manager zhibing来面试, 他只问了我这一个问题. 不过把200层换成了100层, 把鸡蛋换成了瓶子(瓶子更科学!).&lt;/p&gt;
+&lt;p&gt;首先搞清楚这题的意思: 第一个瓶子用来试探, 只要它从 kk 层楼扔下去没碎, 则目标就在[k+1,100][k+1,100]之间了. 但一旦运气不好碎了, 对于已知的区间, 我们只能用剩下一个瓶子从小到大一层层试, 因为我们要保证策略必须成功, 不能冒险了.&lt;/p&gt;
+&lt;p&gt;面试时我得到的题目描述也不太严谨, 没有说&#34;最坏情况下代价最小&#34;, 因此我愚昧了一会才明白这题的意思.&lt;/p&gt;
+&lt;p&gt;&#34;最坏情况下代价最小&#34;这句话十分重要, 它已经反映了题目的数学结构:&lt;/p&gt;
+&lt;p&gt;我们如果把任何一种策略看成一个决策树, 每一次扔瓶子都会有两个子节点, 对应碎与不碎的情况下下一步应该扔的楼层. 那么, 策略的一次执行, 是树中的一条从根往下走的路, 当且仅当这条路上出现过形如 kk 没碎 与 k+1k+1碎了的一对节点时, 路停止, 当前节点不再扩展. 那么要找的是这么一棵树, 使得所有路里最长者尽量短, 也即, 要找一个最矮的决策树.&lt;/p&gt;
+&lt;p&gt;再看一个节点处, 选择楼层时会发生什么. 容易看出, 选择的楼层如果变高, 那么&#34;碎子树&#34;高度不减, &#34;不碎子树&#34;高度不增. 同样的, 选择的楼层变矮的话, &#34;碎子树&#34;高度不增, &#34;不碎子树&#34;高度不减.&lt;/p&gt;
+&lt;p&gt;这时候答案很明显了: 为了使两子树中高度最大者尽量小, 我们的选择应当使两子树高度尽量接近. 最终希望的结果是, 整个二叉树尽量像一个满二叉树.&lt;/p&gt;
+&lt;p&gt;假设第一次在根节点上, 我们选择扔kk层, 其&#34;碎子树&#34;的高度显然是k−1k−1. 为了考虑不碎子树的高度, 设不碎后第二次扔mm层(显然m&amp;gt;km&amp;gt;k), 则这个新节点的碎子树高度为m−k−1m−k−1, 不碎子树高度仍然未知, 但按照满二叉树的目标, 我们认为它与碎子树相同或少1就好. 那么在根节点上的不碎子树的高度就是m−k−1+1m−k−1+1, 令它与碎子树高度相同, 于是:&lt;br /&gt;
+m−k−1+1=k−1⇒m=k+k−1&lt;br /&gt;
+m−k−1+1=k−1⇒m=k+k−1&lt;br /&gt;
+也即, 如果第一次扔在kk层, 第二次应该高k−1k−1 层, 这可以有直观一点的理解: 每扔一次, 就要更保守一些, 所以让区间长度少1. [1,k)→[k+1,2k−1)[1,k)→[k+1,2k−1). 用类似刚才的分析, 可以继续得到, 下一次应该增高k−2k−2, 再下一次应该增高k−3k−3. 考虑:&lt;br /&gt;
+k+(k−1)+⋯+1=k(k+1)2=100⇒k≈14&lt;br /&gt;
+k+(k−1)+⋯+1=k(k+1)2=100⇒k≈14&lt;br /&gt;
+所以第一次扔14层, 最坏需要14次(策略不唯一, 树的叶子可以交换位置). 200层的话, kk =20.&lt;/p&gt;
+&lt;p&gt;面试的时候脑子有点乱, 没想到树, 就只是从两边要平均的角度来算的, 所以有点不自信. 最后算出来14之后由于是个近似(其实上取整就对了), 又试了一下15和13. 之后在重新理思路, 这时候貌似已经过了很久,zhibing就问怎么样了, 我说了下答案, 然后说我没有想出很好的办法证明14一定是最优的. zhibing就直接说: 这是对的, 应该是一个等差数列. 然后下一句话就是别的什么了...&lt;/p&gt;
+&lt;p&gt;所以面试要多说话啊....................!&lt;/p&gt;
+&lt;p&gt;以上说的是数学做法..代码做法就简单的多, 看面试是要答案还是要程序了.&lt;/p&gt;
+&lt;p&gt;设f(n,m)f(n,m)为n层楼, m个蛋所需次数, 那么它成了一道DP..&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$&lt;br /&gt;
+\begin{eqnarray}&lt;br /&gt;
+f(0, m) &amp;amp; = &amp;amp; 0, (m &amp;gt;= 1)\\&lt;br /&gt;
+f(n, 1) &amp;amp; = &amp;amp; n, (n &amp;gt;= 1)\\&lt;br /&gt;
+f(n, m) &amp;amp; = &amp;amp; \min_{1 \le i \le n} \{ \max\{ f(i - 1, m - 1), f(n - i, m)\}\} + 1 \\&lt;br /&gt;
+\end{eqnarray}&lt;br /&gt;
+$$&lt;br /&gt;
+[Doge],有关&lt;br /&gt;
+$$\min_{1 \le i \le n} \{ \max\{a,b\}\}$$&lt;br /&gt;
+很简单看出a，b近似时才能达到效果的最优[a,b是存在一定的制约关系的]&lt;/p&gt;
+&lt;h3 id=&#34;_1&#34;&gt;实现&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;c&#34;&gt;#！/usr/bin/env python3&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;functools&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@functools.lru_cache&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;maxsize&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)])&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;    &lt;span class=&#34;c&#34;&gt;# 14&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;    &lt;span class=&#34;c&#34;&gt;# 20&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;据大神说python3的functools的一个自带函数, 可以对函数返回结果进行LRU cache, 下次以相同参数调用就不重复计算了.&lt;br /&gt;
+maxsize=None就是不限制大小, 其实就变成是全部都cache下来, 不考虑LRU了..&lt;/p&gt;
+&lt;p&gt;好吧：），问题解决了[懒的码代码，copy了一遍]&lt;/p&gt;
+&lt;/blockquote&gt;</content>
     
     
   </entry>
@@ -983,7 +1040,7 @@ setcap cap_net_raw,cap_net_admin&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;eip 
 &lt;/ul&gt;
 &lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;c&#34;&gt;# 最基本是要会使用manual,分7类&lt;/span&gt;
 1. 用户在shell环境中可以操作的命令或可执行文件
-2. 系统内核可调用的函数与工具等
+2. 系统内核可调用的函数与工具等&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;The system call interface has always been documented in Section 2 of the UNIXProgrammer ’s Manual.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
 3. 一些常用的函数（function）与函数库（library），大部分为C的函数库（libc）
 4. 设备文件的说明，通常是在/dev下的文件
 5. 配置文件或者是某些文件的格式
@@ -1051,37 +1108,35 @@ zsh: &lt;span class=&#34;k&#34;&gt;do &lt;/span&gt;you wish to see all 2333 poss
   
     
   <entry>
-    <id>/SE/se_define.html</id>
-    <title>LAB1</title>
-    <link href="/SE/se_define.html" />
-    <published>2017-09-28T12:00:00+08:00</published>
+    <id>/Os/fileMean.html</id>
+    <title>文件介绍</title>
+    <link href="/Os/fileMean.html" />
+    <published>2017-09-08T21:00:00+08:00</published>
 
     
-    <updated>2017-09-28T12:00:00+08:00</updated>
-    
-
-    
-    <category term="SE" />
+    <updated>2017-09-08T21:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+    <category term="Os" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;谈数据流图&lt;/a&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;一切都是在上下文中的可计算问题的探究罢了...&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;h3 id=&#34;_1&#34;&gt;谈数据流图&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li&gt;今天思考了一下软件工程设计，在可行性分析中的数据流图的一些东西出现了和以前不一样的看法，但是由于思考的时间比较短，所以得到的信息比较混乱.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;自1900年Paris，从希尔伯特的问题到哥德尔不完备性定理再到图灵对计算建立的模型，&lt;/p&gt;</content>
+&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;电脑维修中,只能先备份了...&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[/etc/services] 存放服务器服务及其占用端口号&lt;/li&gt;
+&lt;li&gt;[/usr/share/fonts ] 字体存放处&lt;/li&gt;
+&lt;li&gt;[/usr/share/fonts/truetype]&lt;/li&gt;
+&lt;/ul&gt;</content>
     
     
   </entry>
@@ -1909,36 +1964,74 @@ Intel x86共支持256中向量中断，Intel给每种中断源编号，从0-255,
   
     
   <entry>
-    <id>/Math/Intro.html</id>
-    <title>目录地图</title>
-    <link href="/Math/Intro.html" />
-    <published>2016-02-25T11:02:20+08:00</published>
+    <id>/Unix/unix Advance Programming.html</id>
+    <title>unix高级环境编程</title>
+    <link href="/Unix/unix Advance Programming.html" />
+    <published>2017-04-28T20:00:00+08:00</published>
 
     
-    <updated>2016-02-25T11:02:20+08:00</updated>
+    <updated>2017-04-28T20:00:00+08:00</updated>
     
 
     
-    <category term="Math" />
+    <category term="Unix" />
     
 
     
     <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;Math目录下的文章均属于&lt;a href=&#34;../Tool&#34;&gt;工具类&lt;/a&gt;的子集&lt;a href=&#34;../Language&#34;&gt;Language&lt;/a&gt;的子集由于选用的此Wiki暂时没有建立页面目录分级功能,且此类文章较多故只能将其分离出来&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;层次关系&lt;/span&gt;
-&lt;span class=&#34;n&#34;&gt;Tool&lt;/span&gt;
- &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__Language&lt;/span&gt;
- &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;     &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__Math&lt;/span&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#chapter-01&#34;&gt;chapter 01&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#errorno&#34;&gt;errorno&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#user-id-grounp-id&#34;&gt;User id &amp;amp;Grounp id&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#signal&#34;&gt;signal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;chapter-01&#34;&gt;chapter 01&lt;/h3&gt;
+&lt;p&gt;OverView:&lt;/p&gt;
+&lt;h4 id=&#34;errorno&#34;&gt;errorno&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;The errors defined in &amp;lt;errno.h&amp;gt; can be divided into two categories: fatal and nonfatal.
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;1&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;A fatal error has no recovery action. The best we can &lt;span class=&#34;k&#34;&gt;do &lt;/span&gt;is print an error message on the user ’s screen or to a log file, and &lt;span class=&#34;k&#34;&gt;then &lt;/span&gt;exit.
+
+Nonfatal errors, on the other hand, can sometimes be dealt with more robustly.
+Nonfatal Errors
+    |___resource shortage&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EAGAIN, ENFILE, ENOBUFS, ENOLCK,ENOSPC,EWOULDBLOCK&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;2&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;The typical recovery action &lt;span class=&#34;k&#34;&gt;for &lt;/span&gt;a resource-related nonfatal error is to delay and retry later.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
-&lt;/div&gt;</content>
+&lt;h4 id=&#34;user-id-grounp-id&#34;&gt;User id &amp;amp;Grounp id&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;key&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; We call the user whose user ID is 0 either root or the superuser.
+
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;FAQ&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+_______________________________________________________________________________
+Q: what is the &lt;span class=&#34;k&#34;&gt;function &lt;/span&gt;of /etc/passwd and /etc/group
+A: Map. /etc/group maps group names into numeric group IDs./etc/passwd maps user names into numeric user IDs.
+_______________________________________________________________________________
+Q: why  should we need user/grounp id?
+A: the file system stores both the user ID and the group ID of a
+file’s owner. Storing both of these values requires only four bytes, assuming that each is stored as a two-byte integer. If the full ASCII login name and group name were used instead, additional disk space would be required. In addition, comparing strings during permission checks is more expensive than comparing integers.
+_______________________________________________________________________________
+Q: whereas why does we just use the user id to instead user id+user name?
+A: Users, however, work better with names than with numbers, so the password file maintains the mapping between login names and user IDs, and the group file provides the mapping between group names and group IDs.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;signal&#34;&gt;signal&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;Many conditions generate signals. 
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;HardWare&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+    |___Two terminal keys
+    |        |_____interrupt key&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;DELETE key or Control-C&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+    |        |_____quit key&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Control-backslash&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;SoftWare&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+    |___calling the &lt;span class=&#34;nb&#34;&gt;kill &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;
+Naturally, there are &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;limitations&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: we have to be the owner of the other
+process &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;or the superuser&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; to be able to send it a signal.
+&lt;/pre&gt;&lt;/div&gt;</content>
     
     
   </entry>
@@ -2377,44 +2470,6 @@ fetched from the underlying file, but has not been consumed by the application.&
   
     
   <entry>
-    <id>/Life/emotion-sum.html</id>
-    <title>情绪概论</title>
-    <link href="/Life/emotion-sum.html" />
-    <published>2017-08-26T19:00:00+08:00</published>
-
-    
-    <updated>2017-08-26T19:00:00+08:00</updated>
-    
-
-    
-    <category term="Life" />
-    
-
-    
-    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;情绪&lt;/strong&gt;，是对一系列主观认知经验的通称，是多种感觉、思想和行为综合产生的心理和生理状态。&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%83%85%E7%BB%AA&#34;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;包含&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;a&gt;情绪&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;a&gt;钦佩&lt;/a&gt; &lt;a&gt;爱意&lt;/a&gt; &lt;a&gt;畏&lt;/a&gt; &lt;a&gt;躁动&lt;/a&gt; &lt;a&gt;疼痛&lt;/a&gt; &lt;a&gt;滑稽&lt;/a&gt; &lt;a&gt;愤怒&lt;/a&gt; &lt;a&gt;精神痛苦&lt;/a&gt; &lt;a&gt;烦恼&lt;/a&gt; &lt;a&gt;焦虑&lt;/a&gt; &lt;a&gt;冷漠&lt;/a&gt; &lt;a&gt;警醒&lt;/a&gt; &lt;a&gt;人际吸引力&lt;/a&gt; &lt;a&gt;敬畏&lt;/a&gt; &lt;a&gt;厌烦&lt;/a&gt; &lt;a&gt;冷静&lt;a/&gt; &lt;a&gt;同情&lt;/a&gt; &lt;a&gt;轻视&lt;/a&gt; &lt;a&gt;满足&lt;/a&gt; &lt;a&gt;失败主义&lt;/a&gt; &lt;a&gt;抑郁&lt;/a&gt; &lt;a&gt;绝望&lt;/a&gt; &lt;a&gt;欲望&lt;/a&gt; &lt;a&gt;失望&lt;/a&gt; &lt;a&gt;厌恶&lt;/a&gt; &lt;a&gt;狂喜&lt;/a&gt; &lt;a&gt;尴尬&lt;/a&gt; &lt;a&gt;同理心&lt;/a&gt; &lt;a&gt;注意&lt;/a&gt; &lt;a&gt;热心&lt;/a&gt; &lt;a&gt;羡慕&lt;/a&gt; &lt;a&gt;欣快&lt;/a&gt; &lt;a&gt;兴奋&lt;/a&gt; &lt;a&gt;恐惧&lt;/a&gt; &lt;a&gt;挫折&lt;/a&gt; &lt;a&gt;感恩&lt;/a&gt; &lt;a&gt;丧恸&lt;/a&gt; &lt;a&gt;罪恶感&lt;/a&gt; &lt;a&gt;快乐&lt;/a&gt; &lt;a&gt;仇恨&lt;/a&gt; &lt;a&gt;思乡病&lt;/a&gt; &lt;a&gt;希望&lt;/a&gt; &lt;a&gt;恐怖 (Horror and terror)&lt;/a&gt; &lt;a&gt;敌意&lt;/a&gt; &lt;a&gt;羞辱&lt;/a&gt; &lt;a&gt;歇斯底里&lt;/a&gt; &lt;a&gt;迷恋&lt;/a&gt; &lt;a&gt;不安&lt;/a&gt; &lt;a&gt;侮辱&lt;/a&gt; &lt;a&gt;兴趣&lt;/a&gt; &lt;a&gt;应激性&lt;/a&gt; &lt;a&gt;孤立&lt;/a&gt; &lt;a&gt;妒忌&lt;/a&gt; &lt;a&gt;欢乐&lt;/a&gt; &lt;a&gt;孤单&lt;/a&gt; &lt;a&gt;爱&lt;/a&gt; &lt;a&gt;贪念&lt;/a&gt; &lt;a&gt;忧郁&lt;/a&gt; &lt;a&gt;物哀&lt;/a&gt; &lt;a&gt;忽视&lt;/a&gt; &lt;a&gt;怀旧&lt;/a&gt; &lt;a&gt;恐慌&lt;/a&gt; &lt;a&gt;激情&lt;/a&gt; &lt;a&gt;可惜&lt;/a&gt; &lt;a&gt;愉快&lt;/a&gt; &lt;a&gt;骄傲&lt;/a&gt;  &lt;a&gt;傲慢&lt;/a&gt;   &lt;a&gt;暴怒&lt;/a&gt; &lt;a&gt;后悔&lt;/a&gt; &lt;a&gt;排挤&lt;/a&gt; &lt;a&gt;悔恨&lt;/a&gt; &lt;a&gt;不满&lt;/a&gt; &lt;a&gt;报复&lt;/a&gt; &lt;a&gt;悲伤&lt;/a&gt; &lt;a&gt;萨乌达德&lt;/a&gt; &lt;a&gt;幸灾乐祸&lt;/a&gt; &lt;a&gt;怀念&lt;/a&gt; &lt;a&gt;感伤&lt;/a&gt; &lt;a&gt;羞耻&lt;/a&gt; &lt;a&gt;急性压力反应&lt;/a&gt; &lt;a&gt;害羞&lt;/a&gt; &lt;a&gt;忧伤&lt;/a&gt; &lt;a&gt;恼怒&lt;/a&gt; &lt;a&gt;压力&lt;/a&gt; &lt;a&gt;痛苦&lt;/a&gt; &lt;a&gt;惊讶&lt;/a&gt; &lt;a&gt;同感 (Sympathy)&lt;/a&gt; &lt;a&gt;慢性压力&lt;/a&gt; &lt;a&gt;好奇&lt;/a&gt; &lt;a&gt;担心&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
     <id>/编码/进制.html</id>
     <title>进制介绍</title>
     <link href="/编码/进制.html" />
@@ -2606,61 +2661,6 @@ float 占四个字节&lt;/p&gt;
   
     
   <entry>
-    <id>/Os/inital.html</id>
-    <title>linux概论</title>
-    <link href="/Os/inital.html" />
-    <published>2017-08-30T21:00:00+08:00</published>
-
-    
-    <updated>2017-08-30T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Os" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;维基百科讲过许多,过分谈论反倒是令人厌烦,为什么使用linux那是有原因的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[网评]&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;谢谢网易云音乐让我知道真相.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=624751&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&#34;_1&#34;&gt;起始&lt;/h2&gt;
-&lt;h3 id=&#34;_2&#34;&gt;认识&lt;/h3&gt;
-&lt;p&gt;我是从大一开始接触linux的,在这个时间段也就是2015-2016,linux发行版早已经不是以前的交互性差,难以操纵的命令行模式,他也有了自己的开源图像引擎,开始有很多软件在他的平台上进行开发,金山、网易、各种著名IDE都在Linux有了自己的dev Branch,Linux早已经不再难学,鼠标交互,主题美化,游戏软件,连终端也不放过,linux看起来像一件艺术品,更小的内存需求,更完备的开发环境,更简洁的操作模式,我身边也有很多人投身于linux的”开发“中,然而这正是错误的开始,过于依赖于图形交互模式,就类似于学了一个类似的windows系统,到头来什么也不会,也许只是能在不懂的人面前装13,但是这如果是你学习的意义的话,linux没什么好学的.&lt;/p&gt;
-&lt;h3 id=&#34;_3&#34;&gt;名词&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;OpenGL&lt;/li&gt;
-&lt;li&gt;Directx&lt;/li&gt;
-&lt;li&gt;Unity&lt;/li&gt;
-&lt;li&gt;opencv&lt;/li&gt;
-&lt;li&gt;gnome&lt;/li&gt;
-&lt;li&gt;kde&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;gtk&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;竟然有人搞混&lt;code&gt;&amp;gt;&lt;/code&gt;和&lt;code&gt;|&lt;/code&gt;，&lt;code&gt;&amp;gt;&lt;/code&gt;是用来重定向IO，&lt;code&gt;|&lt;/code&gt;是用来将数据作为参数流向管道的另一端&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
     <id>/Tool/conftool.html</id>
     <title>前端配置</title>
     <link href="/Tool/conftool.html" />
@@ -2839,6 +2839,133 @@ float 占四个字节&lt;/p&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;v2.4&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;v29-32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/Language/regex03.html</id>
+    <title>正则[R|P]编程</title>
+    <link href="/Language/regex03.html" />
+    <published>2017-09-08T21:00:00+08:00</published>
+
+    
+    <updated>2017-09-08T21:00:00+08:00</updated>
+    
+
+    
+    <category term="Language" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;思索中....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;规律之外,无语无言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#perl&#34;&gt;perl&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#904&#34;&gt;9/04更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#918&#34;&gt;9/18更新&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;perl&#34;&gt;perl&lt;/h3&gt;
+&lt;h4 id=&#34;904&#34;&gt;9/04更新&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;简单掌握&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;变量的特殊性 &lt;code&gt;$variable&lt;/code&gt;，面临引号输出也不会解体,除非转义&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运算符的特殊性&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=～ &lt;code&gt;匹配&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;==  &lt;code&gt;相等&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;=   &lt;code&gt;赋值&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;编码运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;welcome to use perl test \n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;please input the value:\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;&amp;lt;STDIN&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;chomp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=~&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt; /^[0-9]+$/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;你是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;不是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&amp;gt;&amp;gt;&amp;gt; perl -w &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
+&amp;gt;&amp;gt;&amp;gt; welcome to use perl &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;    &lt;/span&gt;please input the value:
+    101
+    你是数字
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;918&#34;&gt;9/18更新&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;注意精通regex  p49总结&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/i&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;忽略大小写的替换&lt;/span&gt;
+&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/g&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;所有行都进行替换&lt;/span&gt;
+&lt;span class=&#34;sr&#34;&gt;m/regex/i&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或者&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以不用加&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;意会即可&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;任务来了,老板给了一个超级大的文件,是的html文件(然而所有的代码都挤在了一块),他说让我让这个文档层次感显示,小意思,我去做,但是&lt;b&gt;mmp&lt;/b&gt;914行,本来我说使用&lt;b&gt;notepad++&lt;/b&gt;毕竟能匹配括号,但是这并没有卵用啊,914行,所以说我只能借助正则婊了,但是完全不会用啊摔!那么只能先使用perl把标签分出来,让其单行显示&lt;/p&gt;
+&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;v0.01&lt;/b&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;(!| )*([a-z!-])+ *[^&amp;gt;&amp;lt;]*&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;\/ *[^&amp;gt;&amp;lt;]+ *&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;真是呵呵,现在的自己好辣鸡,而且还是分两次做完的单行&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;部分解释&lt;/b&gt;&lt;br /&gt;
+1. 其实在perl中&lt;code&gt;$1&lt;/code&gt;, &lt;code&gt;$2&lt;/code&gt;, &lt;code&gt;$3&lt;/code&gt;, 可以代替 &lt;code&gt;\1&lt;/code&gt;, &lt;code&gt;\2&lt;/code&gt;, &lt;code&gt;\3&lt;/code&gt;作为捕获文本的&lt;br /&gt;
+2. 我们都知道正则&lt;code&gt;()&lt;/code&gt; 可以用来捕获文本,但是如果不需要捕获,它偏偏捕获了,这样只会肆意拓展$型变量的长度,所以使用了非捕获型规则,即&lt;code&gt;(?:...)&lt;/code&gt;, 但凡出现在这个括号里面,都不会被捕获的.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;那么我现在有一个&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;还没有&lt;del&gt;思考出来&lt;/del&gt;实践验证出来, &lt;code&gt;(|)&lt;/code&gt; 会 不会被捕获&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;b&gt;Perl参数含义&lt;/b&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;参数&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;-p&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;对目标文件的每一行进行查找&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;-w&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;like gdb, 和warning一个意思,打开perl额外警告功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;-e&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;表示整个程序接在命令后面[&lt;b style=&#39;color:green&#39;&gt;不明觉li&lt;/b&gt;]&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</content>
@@ -4003,6 +4130,90 @@ float 占四个字节&lt;/p&gt;
   
     
   <entry>
+    <id>/Os/LinuxProblem.html</id>
+    <title>指令[8086]</title>
+    <link href="/Os/LinuxProblem.html" />
+    <published>2016-09-22T19:00:00+08:00</published>
+
+    
+    <updated>2016-09-22T19:00:00+08:00</updated>
+    
+
+    
+    <category term="Os" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关注问题的发生形成有利于发展的思路&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#problem&#34;&gt;Problem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;problem&#34;&gt;Problem&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;文章推荐&lt;br /&gt;
+&lt;a href=&#34;https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html&#34;&gt;IBM-软硬链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;/usr/bin 与 /bin&lt;br /&gt;
+&lt;a href=&#34;http://slayer.blog.51cto.com/4845839/1872014&#34;&gt;故障实例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;软链接与硬链接&lt;/li&gt;
+&lt;li&gt;理解 /proc/bus/input/devices信息对应/dev/input的信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;    &lt;span class=&#34;err&#34;&gt;这个很好玩！可以直接用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;去操作设备&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//#include &amp;lt;input.h&amp;gt; 引用内核头文件 linux/input.h&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//主要使用input.h的数据结构 input_event&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_event&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/dev/input/event5&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;O_RDONLY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;type = %d  code = %d  value = %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;linux/unix 查看文件元数据&lt;br /&gt;
+&lt;code&gt;$ stat xxx 或 ls -i[查看inode]&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;AIX 系统 使用 istat&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;dd if=/dev/zero of=mo.img bs=5120k count=1的意义&lt;br /&gt;
+&lt;code&gt;1. ls -lh mo.img&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;2. mkfs -t ext4  -F ./mo.img&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;3. mount -o loop ./mo.img /mnt&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;4. df -iT /mnt/; du -sh /mnt/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看inode值&lt;br /&gt;
+&lt;code&gt;// 查看磁盘分区 /dev/sda7 上的 inode 值&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;# dumpe2fs -h /dev/sda7 | grep &#34;Inode size&#34;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;dumpe2fs 1.42 (29-Nov-2011)
+      Inode size:              256&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;# tune2fs -l /dev/sda7 | grep &#34;Inode size&#34;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;Inode size:              256&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬链接目录环问题&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/SE/lab1.html</id>
     <title>LAB1</title>
     <link href="/SE/lab1.html" />
@@ -5075,6 +5286,238 @@ s.clear()&lt;br /&gt;
   
     
   <entry>
+    <id>/About/aboutMe.html</id>
+    <title>关于我</title>
+    <link href="/About/aboutMe.html" />
+    <published>2017-08-25T21:00:00+08:00</published>
+
+    
+    <updated>2017-08-25T21:00:00+08:00</updated>
+    
+
+    
+    <category term="About" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;center style=&#34;position:relative; width:140px;margin-left:39%;text-align:left&#34;&gt;&lt;br /&gt;
+&lt;img alt=&#34;&#34; src=&#34;https://https://s1.ax1x.com/2018/03/06/9glcf1.png&#34; /&gt;&lt;br /&gt;
+&lt;/center&gt;&lt;br /&gt;
+  &lt;p style=&#34;position:relative; margin-left:39%;text-align:left&#34;&gt;&lt;br /&gt;
+    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
+    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
+    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
+  &lt;/p&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
+&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
+&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
+&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
+&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
+&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
+&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
+&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
+&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
+&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
+&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
+&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
+    <id>/Math/Intro.html</id>
+    <title>目录地图</title>
+    <link href="/Math/Intro.html" />
+    <published>2016-02-25T11:02:20+08:00</published>
+
+    
+    <updated>2016-02-25T11:02:20+08:00</updated>
+    
+
+    
+    <category term="Math" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Math目录下的文章均属于&lt;a href=&#34;../Tool&#34;&gt;工具类&lt;/a&gt;的子集&lt;a href=&#34;../Language&#34;&gt;Language&lt;/a&gt;的子集由于选用的此Wiki暂时没有建立页面目录分级功能,且此类文章较多故只能将其分离出来&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;层次关系&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Tool&lt;/span&gt;
+ &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__Language&lt;/span&gt;
+ &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;     &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__Math&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/Language/intro_language.html</id>
     <title>语言介绍</title>
     <link href="/Language/intro_language.html" />
@@ -5646,13 +6089,13 @@ Ext3 通过“钩入（hooking in）”JBD的API 来实现其日志记录的功�
   
     
   <entry>
-    <id>/Os/LinuxProblem.html</id>
-    <title>指令[8086]</title>
-    <link href="/Os/LinuxProblem.html" />
-    <published>2016-09-22T19:00:00+08:00</published>
+    <id>/Os/inital.html</id>
+    <title>linux概论</title>
+    <link href="/Os/inital.html" />
+    <published>2017-08-30T21:00:00+08:00</published>
 
     
-    <updated>2016-09-22T19:00:00+08:00</updated>
+    <updated>2017-08-30T21:00:00+08:00</updated>
     
 
     
@@ -5660,68 +6103,39 @@ Ext3 通过“钩入（hooking in）”JBD的API 来实现其日志记录的功�
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;关注问题的发生形成有利于发展的思路&lt;/p&gt;
+&lt;p&gt;维基百科讲过许多,过分谈论反倒是令人厌烦,为什么使用linux那是有原因的&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;&lt;/b&gt;&lt;/p&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#problem&#34;&gt;Problem&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;problem&#34;&gt;Problem&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;文章推荐&lt;br /&gt;
-&lt;a href=&#34;https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html&#34;&gt;IBM-软硬链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;/usr/bin 与 /bin&lt;br /&gt;
-&lt;a href=&#34;http://slayer.blog.51cto.com/4845839/1872014&#34;&gt;故障实例&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;软链接与硬链接&lt;/li&gt;
-&lt;li&gt;理解 /proc/bus/input/devices信息对应/dev/input的信息&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;    &lt;span class=&#34;err&#34;&gt;这个很好玩！可以直接用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;去操作设备&lt;/span&gt;
-    &lt;span class=&#34;c1&#34;&gt;//#include &amp;lt;input.h&amp;gt; 引用内核头文件 linux/input.h&lt;/span&gt;
-    &lt;span class=&#34;c1&#34;&gt;//主要使用input.h的数据结构 input_event&lt;/span&gt;
-    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_event&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/dev/input/event5&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;O_RDONLY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;type = %d  code = %d  value = %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-            &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;[网评]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;谢谢网易云音乐让我知道真相.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=624751&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&#34;_1&#34;&gt;起始&lt;/h2&gt;
+&lt;h3 id=&#34;_2&#34;&gt;认识&lt;/h3&gt;
+&lt;p&gt;我是从大一开始接触linux的,在这个时间段也就是2015-2016,linux发行版早已经不是以前的交互性差,难以操纵的命令行模式,他也有了自己的开源图像引擎,开始有很多软件在他的平台上进行开发,金山、网易、各种著名IDE都在Linux有了自己的dev Branch,Linux早已经不再难学,鼠标交互,主题美化,游戏软件,连终端也不放过,linux看起来像一件艺术品,更小的内存需求,更完备的开发环境,更简洁的操作模式,我身边也有很多人投身于linux的”开发“中,然而这正是错误的开始,过于依赖于图形交互模式,就类似于学了一个类似的windows系统,到头来什么也不会,也许只是能在不懂的人面前装13,但是这如果是你学习的意义的话,linux没什么好学的.&lt;/p&gt;
+&lt;h3 id=&#34;_3&#34;&gt;名词&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li&gt;OpenGL&lt;/li&gt;
+&lt;li&gt;Directx&lt;/li&gt;
+&lt;li&gt;Unity&lt;/li&gt;
+&lt;li&gt;opencv&lt;/li&gt;
+&lt;li&gt;gnome&lt;/li&gt;
+&lt;li&gt;kde&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;linux/unix 查看文件元数据&lt;br /&gt;
-&lt;code&gt;$ stat xxx 或 ls -i[查看inode]&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;AIX 系统 使用 istat&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;gtk&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;dd if=/dev/zero of=mo.img bs=5120k count=1的意义&lt;br /&gt;
-&lt;code&gt;1. ls -lh mo.img&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;2. mkfs -t ext4  -F ./mo.img&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;3. mount -o loop ./mo.img /mnt&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;4. df -iT /mnt/; du -sh /mnt/&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;查看inode值&lt;br /&gt;
-&lt;code&gt;// 查看磁盘分区 /dev/sda7 上的 inode 值&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;# dumpe2fs -h /dev/sda7 | grep &#34;Inode size&#34;&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;dumpe2fs 1.42 (29-Nov-2011)
-      Inode size:              256&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;# tune2fs -l /dev/sda7 | grep &#34;Inode size&#34;&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;Inode size:              256&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;硬链接目录环问题&lt;/p&gt;
+&lt;p&gt;竟然有人搞混&lt;code&gt;&amp;gt;&lt;/code&gt;和&lt;code&gt;|&lt;/code&gt;，&lt;code&gt;&amp;gt;&lt;/code&gt;是用来重定向IO，&lt;code&gt;|&lt;/code&gt;是用来将数据作为参数流向管道的另一端&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content>
     
@@ -6081,41 +6495,6 @@ or the file name is not valid.
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;暂停&lt;/li&gt;
-&lt;/ul&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/Os/fileMean.html</id>
-    <title>文件介绍</title>
-    <link href="/Os/fileMean.html" />
-    <published>2017-09-08T21:00:00+08:00</published>
-
-    
-    <updated>2017-09-08T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Os" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;电脑维修中,只能先备份了...&lt;/b&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[/etc/services] 存放服务器服务及其占用端口号&lt;/li&gt;
-&lt;li&gt;[/usr/share/fonts ] 字体存放处&lt;/li&gt;
-&lt;li&gt;[/usr/share/fonts/truetype]&lt;/li&gt;
 &lt;/ul&gt;</content>
     
     
@@ -7267,6 +7646,43 @@ context 有点像缓冲区&lt;/p&gt;
   
     
   <entry>
+    <id>/SE/se_define.html</id>
+    <title>LAB1</title>
+    <link href="/SE/se_define.html" />
+    <published>2017-09-28T12:00:00+08:00</published>
+
+    
+    <updated>2017-09-28T12:00:00+08:00</updated>
+    
+
+    
+    <category term="SE" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;谈数据流图&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;一切都是在上下文中的可计算问题的探究罢了...&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_1&#34;&gt;谈数据流图&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;今天思考了一下软件工程设计，在可行性分析中的数据流图的一些东西出现了和以前不一样的看法，但是由于思考的时间比较短，所以得到的信息比较混乱.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;自1900年Paris，从希尔伯特的问题到哥德尔不完备性定理再到图灵对计算建立的模型，&lt;/p&gt;</content>
+    
+    
+  </entry>
+  
+    
+  <entry>
     <id>/Algorithm/Experience.html</id>
     <title>编程技巧</title>
     <link href="/Algorithm/Experience.html" />
@@ -7923,381 +8339,40 @@ sudo apt-get install libgtk2.0-dev &lt;span class=&#34;c&#34;&gt;#含gtk/gtk.h&l
   
     
   <entry>
-    <id>/入门/pyobject.html</id>
-    <title>对象类型</title>
-    <link href="/入门/pyobject.html" />
-    <published>2015-09-21T18:00:00+08:00</published>
+    <id>/net/net001.html</id>
+    <title>arp介绍</title>
+    <link href="/net/net001.html" />
+    <published>2017-09-01T11:00:00+08:00</published>
 
     
-    <updated>2015-09-21T18:00:00+08:00</updated>
-    
-
-    
-    <category term="入门" />
+    <updated>2017-09-01T11:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;object与type的关系就像是鸡与鸡蛋的关系,充满设计的思想问题&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;暂无评论&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    <category term="net" />
+    
 
-
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=386830&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
+    
+    <content type="html">&lt;h2 id=&#34;_1&#34;&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;电脑维修中....&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;对象&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;三大特性&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;身份&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;类型&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;值&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;对象属性&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;类型&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;标准类型&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;其他内建类型&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#nonepythonnull&#34;&gt;None[PYTHON的Null对象]&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;内部类型&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;对象运算&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;对象值比较&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;对象身份比较&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;布尔类型&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;内建函数&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;类型工厂函数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;标准类型分类&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;&lt;span style=&#39;color:red&#39;&gt;分类&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;Python的选择&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#typeobject&#34;&gt;type与object详解&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;设计思想&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_20&#34;&gt;待解决&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;文档状态：&lt;a style=&#34;color:red;background-color:gray&#34;&gt;电脑维修中....&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;_1&#34;&gt;对象&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_2&#34;&gt;三大特性&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&#34;_3&#34;&gt;身份&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;内建函数id()&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;    &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;
-    &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;mi&#34;&gt;42533160&lt;/span&gt;
-    &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_4&#34;&gt;类型&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;内建函数type()&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&#34;_5&#34;&gt;值&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;`除了值之外&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;以上两个特性是只读的`&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;上面三个特性在对象创建时就被赋值,对于新风格的类型,对象的类型其实也是可以改变的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;_6&#34;&gt;对象属性&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;函数&lt;/li&gt;
-&lt;li&gt;方法&lt;/li&gt;
-&lt;li&gt;数据&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;_7&#34;&gt;类型&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_8&#34;&gt;标准类型&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;python中的基本数据类型不想多写&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
+&lt;p&gt;&lt;b style=&#34;color:red&#34;&gt;电脑维修中,只能先备份了...&lt;/b&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;也称作基本数据类型，因为这些类型是Python内建的基本数据类型&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;_9&#34;&gt;其他内建类型&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;类型()&lt;/li&gt;
-&lt;li&gt;NULL对象(None)&lt;/li&gt;
-&lt;li&gt;文件&lt;/li&gt;
-&lt;li&gt;集合/固定集合&lt;/li&gt;
-&lt;li&gt;函数/方法&lt;/li&gt;
-&lt;li&gt;模块&lt;/li&gt;
-&lt;li&gt;类&lt;/li&gt;
+&lt;li&gt;arp协议的具体，什么是arp，固定长度42？&lt;/li&gt;
+&lt;li&gt;广播&lt;ul&gt;
+&lt;li&gt;是只有网关发广播吗？[x]&lt;/li&gt;
+&lt;li&gt;一直不停地发广播吗&lt;/li&gt;
+&lt;li&gt;广播以什么样的形式发送出去？&lt;/li&gt;
+&lt;li&gt;发送广播的目的是什么？[建立ARP表？]&lt;ul&gt;
+&lt;li&gt;建立Arp的顺序是什么？&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;nonepythonnull&#34;&gt;None[PYTHON的Null对象]&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;值为none&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_10&#34;&gt;内部类型&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;内建类型是python类库提供给你的基本数据类型&lt;br /&gt;
-内部类型是面向对象的，类的内部类型，它是类内部使用的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;代码[core_python.c14]&lt;br /&gt;
-&lt;code&gt;代码对象是编译过的 Python 源代码片段,它是可执行对象&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;通过调用内建函数 compile()可以得到代码对象&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;代码对象可以被 exec 命令或 eval()内建函数来执行&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[事实上代码对象是函数的一个属性]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;帧&lt;br /&gt;
-&lt;code&gt;帧对象表示 Python 的执行栈帧&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;帧对象包含 Python 解释器在运行时所需要知道的所有信息&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;它的属性包括指向上一帧的链接,正在被执行的代码对象(参见上文),本地及全局名字空间字典以及当前指令等&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;每次函数调用产生一个新的帧,每一个帧对象都会相应创建一个 C 栈帧&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;跟踪记录&lt;br /&gt;
-&lt;code&gt;当异常发生时,一个包含针对异常的栈跟踪信息的跟踪记录对象被创建&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;如果一个异常有自己的处理程序,处理程序就可以访问这个跟踪记录对象&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;切片&lt;br /&gt;
-&lt;code&gt;当使用 Python 扩展的切片语法时,就会创建切片对象&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;包括步进切片, 多维切片,及省略切片&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;切片对象也可以由内建函 数 slice() 来 生 成&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;省略&lt;br /&gt;
-&lt;code&gt;省略对象用于扩展切片语法中,起记号作用&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;这个对象在切片语法中表示省略号&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;类似Null 对象 None, 省略对象有一个唯一的名字 Ellipsis, 它的布尔值始终为 True.&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Xrange[core_python c8]&lt;br /&gt;
-&lt;code&gt;调用内建函数 xrange() 会生成一个 Xrange 对象&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;xrange()是内建函数 range()的兄弟版本&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;用于需要节省内存使用或 range()无法完成的超大数据集场合&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_11&#34;&gt;对象运算&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&#34;_12&#34;&gt;对象值比较&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;==&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;!=&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;
-&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_13&#34;&gt;对象身份比较&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;is&lt;/li&gt;
-&lt;li&gt;is not&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;==&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_14&#34;&gt;布尔类型&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;or&lt;br /&gt;
-&lt;code&gt;expr1 or expr2&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;and&lt;br /&gt;
-&lt;code&gt;expr1 and expr2&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;not&lt;br /&gt;
-&lt;code&gt;not expr&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_15&#34;&gt;内建函数&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;cmp&lt;/li&gt;
-&lt;li&gt;repr&lt;/li&gt;
-&lt;li&gt;str&lt;br /&gt;
-&lt;code&gt;str比repr返回的可读性好&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&#39;str&#39;&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;准确的说这是一个运算符&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;&amp;gt;&amp;gt; &#39;[1,2,3,4]&#39;&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;&amp;gt;&amp;gt; &#39;[1,2,3,4]&#39;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;type&lt;br /&gt;
-&lt;code&gt;返回类型对象,是object的子对象&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;faq&#34;&gt;FAQ&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;为什么我们有了 repr()还需要``&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;语法糖&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_16&#34;&gt;类型工厂函数&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;Python 2.2 统一了类型和类, 所有的内建类型现在也都是类, 在这基础之上, 原来的&lt;br /&gt;
-所谓内建转换函数象 int(), type(), list() 等等, 现在都成了工厂函数。 也就是说虽然他&lt;br /&gt;
-们看上去有点象函数, 实质上他们是类。当你调用它们时, 实际上是生成了该类型的一个实&lt;br /&gt;
-例, 就象工厂生产货物一样.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_17&#34;&gt;标准类型分类&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;如果让我们最啰嗦的描述标准类型,我们也许会称它们是 Python 的“基本内建数据对象原&lt;br /&gt;
-始类型”。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;“基本”&lt;br /&gt;
-&lt;code&gt;是指这些类型都是 Python 提供的标准或核心类型&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;“内建”&lt;br /&gt;
-&lt;code&gt;是由于这些类型是 Python 默认就提供的&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;“数据”&lt;br /&gt;
-&lt;code&gt;因为他们用于一般数据存储&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;“对象”&lt;br /&gt;
-&lt;code&gt;因为对象是数据和功能的默认抽象&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;“原始”&lt;br /&gt;
-&lt;code&gt;因为这些类型提供的是最底层的粒度数据存储&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;“类型”&lt;br /&gt;
-&lt;code&gt;因为他们就是数据类型&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;_18&#34;&gt;&lt;span style=&#39;color:red&#39;&gt;分类&lt;/span&gt;&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;可以按照增改查三大基本操作对类型进行分类&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;[增/存储]存储模型&lt;br /&gt;
-&lt;code&gt;[容器]------&amp;gt;元组，列表，字典&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[标量/原子]--&amp;gt;数字，字符串&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;[改/更新]更新模型&lt;br /&gt;
-&lt;code&gt;[可变]----&amp;gt;列表，字典&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[不可变]--&amp;gt;数字，字符串，元组&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;[查/访问]访问模型&lt;br /&gt;
-&lt;code&gt;[直接存取]--&amp;gt;数字&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[顺序存取]--&amp;gt;元组，字符串，列表&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;[映射访问]--&amp;gt;字典&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;python&#34;&gt;Python的选择&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li&gt;不适用char，byte&lt;/li&gt;
-&lt;li&gt;int统一世界&lt;/li&gt;
-&lt;li&gt;放弃double&lt;br /&gt;
-&lt;code&gt;感觉double带来的坏处比好处多&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;typeobject&#34;&gt;type与object详解&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&#34;_19&#34;&gt;设计思想&lt;/h4&gt;
-&lt;p&gt;这里不谈代码只是说设计思想&lt;br /&gt;
-首先万物有源,物质有所谓的通性,python说万物皆对象,那么追溯其源头,总会出现一个object源头,但是python也说了对象具有三大特性其一就有类型,那么问题来了,既然万物皆对象,那么类型也就会是对象,object作为元对象拥有类型,就意味着object是其子对象的实例&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;_20&#34;&gt;待解决&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li&gt;没有完全融会贯通&lt;code&gt;Object&lt;/code&gt;与&lt;code&gt;Type&lt;/code&gt;的关系&lt;/li&gt;
+&lt;/li&gt;
+&lt;li&gt;什么是IGMPv3？&lt;/li&gt;
 &lt;/ol&gt;</content>
-    
-    
-  </entry>
-  
-    
-  <entry>
-    <id>/Algorithm/DP_egg.html</id>
-    <title>高楼抛蛋决策树</title>
-    <link href="/Algorithm/DP_egg.html" />
-    <published>2017-09-24T16:19:32+08:00</published>
-
-    
-    <updated>2017-09-24T16:19:32+08:00</updated>
-    
-
-    
-    <category term="Algorithm" />
-    
-
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=461080452&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;决策树是一个好东西&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;实现&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一般情况当我问讨论算法的效率时，有的人注重平均时间复杂度，有的人注重最坏时间复杂度，当注重最坏时间复杂度的时候，决策的路径就已经很明显了，引入决策树的办法还是很好的。&lt;/p&gt;
-&lt;p&gt;Problem[来源知乎]&lt;br /&gt;
-一幢 200 层的大楼,给你两个鸡蛋. 如果在第 n 层扔下鸡蛋,鸡蛋不碎,那么从前 n-1 层扔鸡蛋都不碎. 这两只鸡蛋一模一样,不碎的话可以扔无数次. 已知鸡蛋在0层扔不会碎.&lt;br /&gt;
-提出一个策略, 要保证能测出鸡蛋恰好会碎的楼层, 并使此策略在最坏情况下所扔次数最少.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最早看见这个问题是在&lt;a href=&#34;http://ppwwyyxx.com/2013/Problem-of-Two-Eggs/&#34;&gt;吴育昕&lt;/a&gt;学长的Blog中,他的解法很不错，贴上他的回答&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;面试Hulu的最后一轮, 是我现在的manager zhibing来面试, 他只问了我这一个问题. 不过把200层换成了100层, 把鸡蛋换成了瓶子(瓶子更科学!).&lt;/p&gt;
-&lt;p&gt;首先搞清楚这题的意思: 第一个瓶子用来试探, 只要它从 kk 层楼扔下去没碎, 则目标就在[k+1,100][k+1,100]之间了. 但一旦运气不好碎了, 对于已知的区间, 我们只能用剩下一个瓶子从小到大一层层试, 因为我们要保证策略必须成功, 不能冒险了.&lt;/p&gt;
-&lt;p&gt;面试时我得到的题目描述也不太严谨, 没有说&#34;最坏情况下代价最小&#34;, 因此我愚昧了一会才明白这题的意思.&lt;/p&gt;
-&lt;p&gt;&#34;最坏情况下代价最小&#34;这句话十分重要, 它已经反映了题目的数学结构:&lt;/p&gt;
-&lt;p&gt;我们如果把任何一种策略看成一个决策树, 每一次扔瓶子都会有两个子节点, 对应碎与不碎的情况下下一步应该扔的楼层. 那么, 策略的一次执行, 是树中的一条从根往下走的路, 当且仅当这条路上出现过形如 kk 没碎 与 k+1k+1碎了的一对节点时, 路停止, 当前节点不再扩展. 那么要找的是这么一棵树, 使得所有路里最长者尽量短, 也即, 要找一个最矮的决策树.&lt;/p&gt;
-&lt;p&gt;再看一个节点处, 选择楼层时会发生什么. 容易看出, 选择的楼层如果变高, 那么&#34;碎子树&#34;高度不减, &#34;不碎子树&#34;高度不增. 同样的, 选择的楼层变矮的话, &#34;碎子树&#34;高度不增, &#34;不碎子树&#34;高度不减.&lt;/p&gt;
-&lt;p&gt;这时候答案很明显了: 为了使两子树中高度最大者尽量小, 我们的选择应当使两子树高度尽量接近. 最终希望的结果是, 整个二叉树尽量像一个满二叉树.&lt;/p&gt;
-&lt;p&gt;假设第一次在根节点上, 我们选择扔kk层, 其&#34;碎子树&#34;的高度显然是k−1k−1. 为了考虑不碎子树的高度, 设不碎后第二次扔mm层(显然m&amp;gt;km&amp;gt;k), 则这个新节点的碎子树高度为m−k−1m−k−1, 不碎子树高度仍然未知, 但按照满二叉树的目标, 我们认为它与碎子树相同或少1就好. 那么在根节点上的不碎子树的高度就是m−k−1+1m−k−1+1, 令它与碎子树高度相同, 于是:&lt;br /&gt;
-m−k−1+1=k−1⇒m=k+k−1&lt;br /&gt;
-m−k−1+1=k−1⇒m=k+k−1&lt;br /&gt;
-也即, 如果第一次扔在kk层, 第二次应该高k−1k−1 层, 这可以有直观一点的理解: 每扔一次, 就要更保守一些, 所以让区间长度少1. [1,k)→[k+1,2k−1)[1,k)→[k+1,2k−1). 用类似刚才的分析, 可以继续得到, 下一次应该增高k−2k−2, 再下一次应该增高k−3k−3. 考虑:&lt;br /&gt;
-k+(k−1)+⋯+1=k(k+1)2=100⇒k≈14&lt;br /&gt;
-k+(k−1)+⋯+1=k(k+1)2=100⇒k≈14&lt;br /&gt;
-所以第一次扔14层, 最坏需要14次(策略不唯一, 树的叶子可以交换位置). 200层的话, kk =20.&lt;/p&gt;
-&lt;p&gt;面试的时候脑子有点乱, 没想到树, 就只是从两边要平均的角度来算的, 所以有点不自信. 最后算出来14之后由于是个近似(其实上取整就对了), 又试了一下15和13. 之后在重新理思路, 这时候貌似已经过了很久,zhibing就问怎么样了, 我说了下答案, 然后说我没有想出很好的办法证明14一定是最优的. zhibing就直接说: 这是对的, 应该是一个等差数列. 然后下一句话就是别的什么了...&lt;/p&gt;
-&lt;p&gt;所以面试要多说话啊....................!&lt;/p&gt;
-&lt;p&gt;以上说的是数学做法..代码做法就简单的多, 看面试是要答案还是要程序了.&lt;/p&gt;
-&lt;p&gt;设f(n,m)f(n,m)为n层楼, m个蛋所需次数, 那么它成了一道DP..&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;$$&lt;br /&gt;
-\begin{eqnarray}&lt;br /&gt;
-f(0, m) &amp;amp; = &amp;amp; 0, (m &amp;gt;= 1)\\&lt;br /&gt;
-f(n, 1) &amp;amp; = &amp;amp; n, (n &amp;gt;= 1)\\&lt;br /&gt;
-f(n, m) &amp;amp; = &amp;amp; \min_{1 \le i \le n} \{ \max\{ f(i - 1, m - 1), f(n - i, m)\}\} + 1 \\&lt;br /&gt;
-\end{eqnarray}&lt;br /&gt;
-$$&lt;br /&gt;
-[Doge],有关&lt;br /&gt;
-$$\min_{1 \le i \le n} \{ \max\{a,b\}\}$$&lt;br /&gt;
-很简单看出a，b近似时才能达到效果的最优[a,b是存在一定的制约关系的]&lt;/p&gt;
-&lt;h3 id=&#34;_1&#34;&gt;实现&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;c&#34;&gt;#！/usr/bin/env python3&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;functools&lt;/span&gt;
-&lt;span class=&#34;nd&#34;&gt;@functools.lru_cache&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;maxsize&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;
-
-    &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)])&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt;
-
-&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;    &lt;span class=&#34;c&#34;&gt;# 14&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;    &lt;span class=&#34;c&#34;&gt;# 20&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;据大神说python3的functools的一个自带函数, 可以对函数返回结果进行LRU cache, 下次以相同参数调用就不重复计算了.&lt;br /&gt;
-maxsize=None就是不限制大小, 其实就变成是全部都cache下来, 不考虑LRU了..&lt;/p&gt;
-&lt;p&gt;好吧：），问题解决了[懒的码代码，copy了一遍]&lt;/p&gt;
-&lt;/blockquote&gt;</content>
     
     
   </entry>
@@ -8409,8 +8484,11 @@ maxsize=None就是不限制大小, 其实就变成是全部都cache下来, 不�
 &lt;li&gt;&lt;a href=&#34;#a&#34;&gt;A&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#f&#34;&gt;F&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#i&#34;&gt;I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#n&#34;&gt;N&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#o&#34;&gt;O&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#r&#34;&gt;R&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#s&#34;&gt;S&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#u&#34;&gt;U&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3 id=&#34;a&#34;&gt;A&lt;/h3&gt;
@@ -8428,11 +8506,48 @@ maxsize=None就是不限制大小, 其实就变成是全部都cache下来, 不�
 
 &lt;h3 id=&#34;i&#34;&gt;I&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;in addition to&lt;br /&gt;
+&lt;li&gt;
+&lt;p&gt;in addition to&lt;br /&gt;
 &lt;code&gt;除…之外,注意容易搞混,是除了...之外还有...,而不是有很多但除了...&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;we bought the car ,in addition to the house.除了买房,我们还买了车&lt;/code&gt;&lt;/li&gt;
+&lt;code&gt;we bought the car ,in addition to the house.除了买房,我们还买了车&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It is up to you&lt;br /&gt;
+&lt;code&gt;由你决定; 由你来决定,后面常接不定式&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;It is up to you to decide.这事由你定夺&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;n&#34;&gt;N&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;no other&lt;br /&gt;
+&lt;code&gt;没有其他&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id=&#34;o&#34;&gt;O&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;other than&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;other than有两种意思：一是用来表示否定意义，即&lt;span class=&#34;s2&#34;&gt;&amp;quot;不同于（= different from)，非（= not)&amp;quot;&lt;/span&gt;;二是用来表示排除意义，即“除了”，相当于except。例如： 
+The truth is quite other than what you think.    事实真相和你们想的完全不一样。  
+She can hardly be other than grateful.    她除了感激之外还能怎么样呢。 
+He has visited every country in Asia other than Japan.    除了日本之外，他访问了所有的亚洲国家。
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3 id=&#34;r&#34;&gt;R&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;rather than&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;rather than是连词，前后两端所连的词性是一致的，通常译为“而不是”或“与其说是……不如说是”，有时可用短语介词instead of替代。例如： 
+He was engaged in writing a letter rather than&lt;span class=&#34;o&#34;&gt;(=&lt;/span&gt; instead of&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; reading the newspaper.    他那时是在写信而不是看报纸。 
+John ought to go rather than&lt;span class=&#34;o&#34;&gt;(=&lt;/span&gt; instead of&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; Jean.    应该去的是约翰，而不是吉恩。 
+Evans is a historian rather than a writer.    埃文斯与其说是个作家，不如说是个史学家。
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;ul&gt;
 &lt;li&gt;refer to ... as&lt;br /&gt;
 &lt;code&gt;表达把...当作... ; 把...称作... . ,没有refer..as的用法&lt;/code&gt;&lt;/li&gt;
@@ -8441,7 +8556,15 @@ maxsize=None就是不限制大小, 其实就变成是全部都cache下来, 不�
 &lt;ul&gt;
 &lt;li&gt;such ...as&lt;br /&gt;
 &lt;code&gt;引导定语从句,as做such后面名词的定语,例如i like such thing as a,b,c,d表示 我喜欢a,b,c,d&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;
+&lt;h3 id=&#34;u&#34;&gt;U&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;used to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;  &lt;span class=&#34;err&#34;&gt;过去一向，过去时常，过去曾（而现在不再）做&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;用于过去持续或经常发生的事）&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;feel&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;more&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compassion&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;less&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;anger&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;than&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;used&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;我觉得自己比过去多了些同情，少了些怒气。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content>
     
     
   </entry>
@@ -9405,196 +9528,38 @@ NONE&lt;/li&gt;
   
     
   <entry>
-    <id>/About/aboutMe.html</id>
-    <title>关于我</title>
-    <link href="/About/aboutMe.html" />
-    <published>2017-08-25T21:00:00+08:00</published>
+    <id>/Life/emotion-sum.html</id>
+    <title>情绪概论</title>
+    <link href="/Life/emotion-sum.html" />
+    <published>2017-08-26T19:00:00+08:00</published>
 
     
-    <updated>2017-08-25T21:00:00+08:00</updated>
-    
-
-    
-    <category term="About" />
+    <updated>2017-08-26T19:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;技能树&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;语言&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;面向机器&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#8086&#34;&gt;8086汇编&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;面向过程&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#c&#34;&gt;C语言&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;面向对象&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#java&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#c_1&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;面向领域&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sql&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#haskell&#34;&gt;Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;系统&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#linux&#34;&gt;Linux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;算法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;编辑排版&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#latex&#34;&gt;Latex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#html5css&#34;&gt;HTML5+CSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;计算&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;计算的模型&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;图灵机&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;元细胞自动机&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;可计算理论&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;停机问题&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;计算的复杂性&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+    <category term="Life" />
+    
+
+    
+    <content type="html">&lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;&lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;center style=&#34;position:relative; left:80px; &#34;&gt;&lt;br /&gt;
-&lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png&#34; /&gt;&lt;br /&gt;
-&lt;/center&gt;&lt;br /&gt;
-  &lt;p style=&#34;position:relative; left:80px;text-align:center&#34;&gt;&lt;br /&gt;
-    &lt;b&gt;Name&lt;/b&gt;:Li Guo Zhen&lt;br /&gt;
-    &lt;b&gt;Profession&lt;/b&gt;:student&lt;br /&gt;
-    &lt;b&gt;Sex&lt;/b&gt;:male&lt;br /&gt;
-  &lt;/p&gt;&lt;/p&gt;
-&lt;h2 id=&#34;_1&#34;&gt;技能树&lt;/h2&gt;
-&lt;h3 id=&#34;_2&#34;&gt;语言&lt;/h3&gt;
-&lt;h4 id=&#34;_3&#34;&gt;面向机器&lt;/h4&gt;
-&lt;h5 id=&#34;8086&#34;&gt;8086汇编&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;仅仅停留在王爽《汇编语言》读完水平&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_4&#34;&gt;面向过程&lt;/h4&gt;
-&lt;h5 id=&#34;c&#34;&gt;C语言&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微精通&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;操作以及系统级调用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_5&#34;&gt;面向对象&lt;/h4&gt;
-&lt;h5 id=&#34;java&#34;&gt;Java&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;曾建设类似天猫网站&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;完成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Oracle&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库的&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;web&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;管理应用&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;虚拟机、线程、正则表达式的熟练程度不够&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;c_1&#34;&gt;C++&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;普通应用&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;python&#34;&gt;python&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;开发出爬虫&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;局域网扫描&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长很多模块&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_6&#34;&gt;面向领域&lt;/h4&gt;
-&lt;h5 id=&#34;_7&#34;&gt;正则表达式&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;对其数学原理有所深入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;造完轮子再更新&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;sql&#34;&gt;SQL&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;了解并会简单使用&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;注入&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以再应用层次防范低级注入&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;haskell&#34;&gt;Haskell&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;浅读设计哲学&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_8&#34;&gt;系统&lt;/h3&gt;
-&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;停留在解决&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dll&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;与注册表问题层次&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;linux&#34;&gt;Linux&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中等玩家&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;日常办公&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_9&#34;&gt;算法&lt;/h3&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;较为深入了解递归思想&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;2.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;擅长树、图、数组的操作&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;3.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;熟练算法的效率分析&lt;/span&gt;
-&lt;span class=&#34;mf&#34;&gt;4.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ACMing&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_10&#34;&gt;编辑排版&lt;/h3&gt;
-&lt;h4 id=&#34;markdown&#34;&gt;Markdown&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;十分熟练&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;latex&#34;&gt;Latex&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;菜鸟一只&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;html5css&#34;&gt;HTML5+CSS&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;略微擅长&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id=&#34;_11&#34;&gt;计算&lt;/h3&gt;
-&lt;h4 id=&#34;_12&#34;&gt;计算的模型&lt;/h4&gt;
-&lt;h5 id=&#34;_13&#34;&gt;图灵机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5 id=&#34;_14&#34;&gt;元细胞自动机&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;略微了解&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_15&#34;&gt;可计算理论&lt;/h4&gt;
-&lt;h5 id=&#34;_16&#34;&gt;停机问题&lt;/h5&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;可以十分简单的证明&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;_17&#34;&gt;计算的复杂性&lt;/h4&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;未曾涉足&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href=&#34;&#34;&gt;未完待续&lt;/a&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;情绪&lt;/strong&gt;，是对一系列主观认知经验的通称，是多种感觉、思想和行为综合产生的心理和生理状态。&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%83%85%E7%BB%AA&#34;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;包含&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a&gt;情绪&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a&gt;钦佩&lt;/a&gt; &lt;a&gt;爱意&lt;/a&gt; &lt;a&gt;畏&lt;/a&gt; &lt;a&gt;躁动&lt;/a&gt; &lt;a&gt;疼痛&lt;/a&gt; &lt;a&gt;滑稽&lt;/a&gt; &lt;a&gt;愤怒&lt;/a&gt; &lt;a&gt;精神痛苦&lt;/a&gt; &lt;a&gt;烦恼&lt;/a&gt; &lt;a&gt;焦虑&lt;/a&gt; &lt;a&gt;冷漠&lt;/a&gt; &lt;a&gt;警醒&lt;/a&gt; &lt;a&gt;人际吸引力&lt;/a&gt; &lt;a&gt;敬畏&lt;/a&gt; &lt;a&gt;厌烦&lt;/a&gt; &lt;a&gt;冷静&lt;a/&gt; &lt;a&gt;同情&lt;/a&gt; &lt;a&gt;轻视&lt;/a&gt; &lt;a&gt;满足&lt;/a&gt; &lt;a&gt;失败主义&lt;/a&gt; &lt;a&gt;抑郁&lt;/a&gt; &lt;a&gt;绝望&lt;/a&gt; &lt;a&gt;欲望&lt;/a&gt; &lt;a&gt;失望&lt;/a&gt; &lt;a&gt;厌恶&lt;/a&gt; &lt;a&gt;狂喜&lt;/a&gt; &lt;a&gt;尴尬&lt;/a&gt; &lt;a&gt;同理心&lt;/a&gt; &lt;a&gt;注意&lt;/a&gt; &lt;a&gt;热心&lt;/a&gt; &lt;a&gt;羡慕&lt;/a&gt; &lt;a&gt;欣快&lt;/a&gt; &lt;a&gt;兴奋&lt;/a&gt; &lt;a&gt;恐惧&lt;/a&gt; &lt;a&gt;挫折&lt;/a&gt; &lt;a&gt;感恩&lt;/a&gt; &lt;a&gt;丧恸&lt;/a&gt; &lt;a&gt;罪恶感&lt;/a&gt; &lt;a&gt;快乐&lt;/a&gt; &lt;a&gt;仇恨&lt;/a&gt; &lt;a&gt;思乡病&lt;/a&gt; &lt;a&gt;希望&lt;/a&gt; &lt;a&gt;恐怖 (Horror and terror)&lt;/a&gt; &lt;a&gt;敌意&lt;/a&gt; &lt;a&gt;羞辱&lt;/a&gt; &lt;a&gt;歇斯底里&lt;/a&gt; &lt;a&gt;迷恋&lt;/a&gt; &lt;a&gt;不安&lt;/a&gt; &lt;a&gt;侮辱&lt;/a&gt; &lt;a&gt;兴趣&lt;/a&gt; &lt;a&gt;应激性&lt;/a&gt; &lt;a&gt;孤立&lt;/a&gt; &lt;a&gt;妒忌&lt;/a&gt; &lt;a&gt;欢乐&lt;/a&gt; &lt;a&gt;孤单&lt;/a&gt; &lt;a&gt;爱&lt;/a&gt; &lt;a&gt;贪念&lt;/a&gt; &lt;a&gt;忧郁&lt;/a&gt; &lt;a&gt;物哀&lt;/a&gt; &lt;a&gt;忽视&lt;/a&gt; &lt;a&gt;怀旧&lt;/a&gt; &lt;a&gt;恐慌&lt;/a&gt; &lt;a&gt;激情&lt;/a&gt; &lt;a&gt;可惜&lt;/a&gt; &lt;a&gt;愉快&lt;/a&gt; &lt;a&gt;骄傲&lt;/a&gt;  &lt;a&gt;傲慢&lt;/a&gt;   &lt;a&gt;暴怒&lt;/a&gt; &lt;a&gt;后悔&lt;/a&gt; &lt;a&gt;排挤&lt;/a&gt; &lt;a&gt;悔恨&lt;/a&gt; &lt;a&gt;不满&lt;/a&gt; &lt;a&gt;报复&lt;/a&gt; &lt;a&gt;悲伤&lt;/a&gt; &lt;a&gt;萨乌达德&lt;/a&gt; &lt;a&gt;幸灾乐祸&lt;/a&gt; &lt;a&gt;怀念&lt;/a&gt; &lt;a&gt;感伤&lt;/a&gt; &lt;a&gt;羞耻&lt;/a&gt; &lt;a&gt;急性压力反应&lt;/a&gt; &lt;a&gt;害羞&lt;/a&gt; &lt;a&gt;忧伤&lt;/a&gt; &lt;a&gt;恼怒&lt;/a&gt; &lt;a&gt;压力&lt;/a&gt; &lt;a&gt;痛苦&lt;/a&gt; &lt;a&gt;惊讶&lt;/a&gt; &lt;a&gt;同感 (Sympathy)&lt;/a&gt; &lt;a&gt;慢性压力&lt;/a&gt; &lt;a&gt;好奇&lt;/a&gt; &lt;a&gt;担心&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content>
     
     
   </entry>
@@ -9602,7 +9567,7 @@ NONE&lt;/li&gt;
     
   <entry>
     <id>/Unix/book01.html</id>
-    <title>unixBook</title>
+    <title>unix sys programming</title>
     <link href="/Unix/book01.html" />
     <published>2017-04-18T20:00:00+08:00</published>
 
@@ -11130,9 +11095,11 @@ NONE&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#booksite&#34;&gt;Booksite&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#lecture&#34;&gt;lecture&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#tools&#34;&gt;tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tech&#34;&gt;tech&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#images&#34;&gt;images&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#design&#34;&gt;DESIGN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#web&#34;&gt;web 模拟&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#user&#34;&gt;user&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3 id=&#34;booksite&#34;&gt;Booksite&lt;/h3&gt;
@@ -11157,6 +11124,10 @@ NONE&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://community.emc.com/thread/194901&#34;&gt;wireshark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://man.lupaworld.com/content/network/wireshark/index.html&#34;&gt;wireshark manual&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;tech&#34;&gt;tech&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.apuebook.com/debuglinux.pdf&#34;&gt;linux高级debug技术&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;images&#34;&gt;images&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://wallhalla.com/&#34;&gt;Rank[1]&lt;/a&gt;&lt;/li&gt;
@@ -11175,6 +11146,11 @@ NONE&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://bellard.org/jslinux/&#34;&gt;js模拟linux&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://explainshell.com&#34;&gt;explain shell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;user&#34;&gt;user&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/EZLippi&#34;&gt;EZLippi&lt;/a&gt;&lt;br /&gt;
+&lt;code&gt;HttpServer&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
     
     
@@ -11883,127 +11859,284 @@ NONE&lt;/li&gt;
   
     
   <entry>
-    <id>/Language/regex03.html</id>
-    <title>正则[R|P]编程</title>
-    <link href="/Language/regex03.html" />
-    <published>2017-09-08T21:00:00+08:00</published>
+    <id>/入门/pyobject.html</id>
+    <title>对象类型</title>
+    <link href="/入门/pyobject.html" />
+    <published>2015-09-21T18:00:00+08:00</published>
 
     
-    <updated>2017-09-08T21:00:00+08:00</updated>
-    
-
-    
-    <category term="Language" />
+    <updated>2015-09-21T18:00:00+08:00</updated>
     
 
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;思索中....&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;br /&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=286999&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/li&gt;
-&lt;/ul&gt;
+    <category term="入门" />
+    
+
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;文档状态：&lt;/strong&gt;&lt;a style=&#34;color:red;background-color:gray&#34;&gt;编辑中....&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;规律之外,无语无言&lt;/p&gt;
+&lt;p&gt;object与type的关系就像是鸡与鸡蛋的关系,充满设计的思想问题&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今日音乐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;暂无评论&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=386830&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
 &lt;div class=&#34;toc&#34;&gt;&lt;span class=&#34;toctitle&#34;&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#perl&#34;&gt;perl&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#904&#34;&gt;9/04更新&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#918&#34;&gt;9/18更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_1&#34;&gt;对象&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_2&#34;&gt;三大特性&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_3&#34;&gt;身份&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_4&#34;&gt;类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_5&#34;&gt;值&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_6&#34;&gt;对象属性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_7&#34;&gt;类型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_8&#34;&gt;标准类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_9&#34;&gt;其他内建类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nonepythonnull&#34;&gt;None[PYTHON的Null对象]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_10&#34;&gt;内部类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_11&#34;&gt;对象运算&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_12&#34;&gt;对象值比较&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_13&#34;&gt;对象身份比较&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_14&#34;&gt;布尔类型&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_15&#34;&gt;内建函数&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_16&#34;&gt;类型工厂函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_17&#34;&gt;标准类型分类&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_18&#34;&gt;&lt;span style=&#39;color:red&#39;&gt;分类&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#python&#34;&gt;Python的选择&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#typeobject&#34;&gt;type与object详解&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#_19&#34;&gt;设计思想&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#_20&#34;&gt;待解决&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;perl&#34;&gt;perl&lt;/h3&gt;
-&lt;h4 id=&#34;904&#34;&gt;9/04更新&lt;/h4&gt;
+&lt;h2 id=&#34;_1&#34;&gt;对象&lt;/h2&gt;
 &lt;hr /&gt;
-&lt;p&gt;简单掌握&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;变量的特殊性 &lt;code&gt;$variable&lt;/code&gt;，面临引号输出也不会解体,除非转义&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;运算符的特殊性&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;=～ &lt;code&gt;匹配&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;==  &lt;code&gt;相等&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;=   &lt;code&gt;赋值&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;编码运行&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;welcome to use perl test \n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;please input the value:\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;&amp;lt;STDIN&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;chomp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$well&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=~&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt; /^[0-9]+$/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;你是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;不是数字\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&amp;gt;&amp;gt;&amp;gt; perl -w &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; welcome to use perl &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;    &lt;/span&gt;please input the value:
-    101
-    你是数字
-&amp;gt;&amp;gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id=&#34;918&#34;&gt;9/18更新&lt;/h4&gt;
+&lt;h3 id=&#34;_2&#34;&gt;三大特性&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;注意精通regex  p49总结&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/i&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;忽略大小写的替换&lt;/span&gt;
-&lt;span class=&#34;sr&#34;&gt;s/regex/replacement/g&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;所有行都进行替换&lt;/span&gt;
-&lt;span class=&#34;sr&#34;&gt;m/regex/i&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或者&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可以不用加&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;意会即可&lt;/span&gt;
+&lt;h4 id=&#34;_3&#34;&gt;身份&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;内建函数id()&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;    &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;mi&#34;&gt;42533160&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;任务来了,老板给了一个超级大的文件,是的html文件(然而所有的代码都挤在了一块),他说让我让这个文档层次感显示,小意思,我去做,但是&lt;b&gt;mmp&lt;/b&gt;914行,本来我说使用&lt;b&gt;notepad++&lt;/b&gt;毕竟能匹配括号,但是这并没有卵用啊,914行,所以说我只能借助正则婊了,但是完全不会用啊摔!那么只能先使用perl把标签分出来,让其单行显示&lt;/p&gt;
-&lt;p&gt;&lt;b style=&#39;color:red&#39;&gt;v0.01&lt;/b&gt;&lt;/p&gt;
-&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;(!| )*([a-z!-])+ *[^&amp;gt;&amp;lt;]*&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
-
-&lt;span class=&#34;n&#34;&gt;meta&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;@meta$&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;perl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;s/(&amp;lt;\/ *[^&amp;gt;&amp;lt;]+ *&amp;gt;)/\n\1\n/g&amp;#39;&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;/home/m&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eta&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/Desktop/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt;
+&lt;h4 id=&#34;_4&#34;&gt;类型&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;内建函数type()&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;_5&#34;&gt;值&lt;/h4&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;`除了值之外&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;以上两个特性是只读的`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;真是呵呵,现在的自己好辣鸡,而且还是分两次做完的单行&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;部分解释&lt;/b&gt;&lt;br /&gt;
-1. 其实在perl中&lt;code&gt;$1&lt;/code&gt;, &lt;code&gt;$2&lt;/code&gt;, &lt;code&gt;$3&lt;/code&gt;, 可以代替 &lt;code&gt;\1&lt;/code&gt;, &lt;code&gt;\2&lt;/code&gt;, &lt;code&gt;\3&lt;/code&gt;作为捕获文本的&lt;br /&gt;
-2. 我们都知道正则&lt;code&gt;()&lt;/code&gt; 可以用来捕获文本,但是如果不需要捕获,它偏偏捕获了,这样只会肆意拓展$型变量的长度,所以使用了非捕获型规则,即&lt;code&gt;(?:...)&lt;/code&gt;, 但凡出现在这个括号里面,都不会被捕获的.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上面三个特性在对象创建时就被赋值,对于新风格的类型,对象的类型其实也是可以改变的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;_6&#34;&gt;对象属性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;方法&lt;/li&gt;
+&lt;li&gt;数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;_7&#34;&gt;类型&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_8&#34;&gt;标准类型&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;python中的基本数据类型不想多写&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
 &lt;ol&gt;
-&lt;li&gt;那么我现在有一个&lt;b style=&#39;color:red&#39;&gt;疑问&lt;/b&gt;还没有&lt;del&gt;思考出来&lt;/del&gt;实践验证出来, &lt;code&gt;(|)&lt;/code&gt; 会 不会被捕获&lt;/li&gt;
+&lt;li&gt;也称作基本数据类型，因为这些类型是Python内建的基本数据类型&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;b&gt;Perl参数含义&lt;/b&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;参数&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;-p&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;对目标文件的每一行进行查找&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;-w&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;like gdb, 和warning一个意思,打开perl额外警告功能&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;-e&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;表示整个程序接在命令后面[&lt;b style=&#39;color:green&#39;&gt;不明觉li&lt;/b&gt;]&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content>
+&lt;h3 id=&#34;_9&#34;&gt;其他内建类型&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;类型()&lt;/li&gt;
+&lt;li&gt;NULL对象(None)&lt;/li&gt;
+&lt;li&gt;文件&lt;/li&gt;
+&lt;li&gt;集合/固定集合&lt;/li&gt;
+&lt;li&gt;函数/方法&lt;/li&gt;
+&lt;li&gt;模块&lt;/li&gt;
+&lt;li&gt;类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;nonepythonnull&#34;&gt;None[PYTHON的Null对象]&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;值为none&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_10&#34;&gt;内部类型&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内建类型是python类库提供给你的基本数据类型&lt;br /&gt;
+内部类型是面向对象的，类的内部类型，它是类内部使用的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;代码[core_python.c14]&lt;br /&gt;
+&lt;code&gt;代码对象是编译过的 Python 源代码片段,它是可执行对象&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;通过调用内建函数 compile()可以得到代码对象&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;代码对象可以被 exec 命令或 eval()内建函数来执行&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[事实上代码对象是函数的一个属性]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;帧&lt;br /&gt;
+&lt;code&gt;帧对象表示 Python 的执行栈帧&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;帧对象包含 Python 解释器在运行时所需要知道的所有信息&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;它的属性包括指向上一帧的链接,正在被执行的代码对象(参见上文),本地及全局名字空间字典以及当前指令等&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;每次函数调用产生一个新的帧,每一个帧对象都会相应创建一个 C 栈帧&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;跟踪记录&lt;br /&gt;
+&lt;code&gt;当异常发生时,一个包含针对异常的栈跟踪信息的跟踪记录对象被创建&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;如果一个异常有自己的处理程序,处理程序就可以访问这个跟踪记录对象&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;切片&lt;br /&gt;
+&lt;code&gt;当使用 Python 扩展的切片语法时,就会创建切片对象&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;包括步进切片, 多维切片,及省略切片&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;切片对象也可以由内建函 数 slice() 来 生 成&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;省略&lt;br /&gt;
+&lt;code&gt;省略对象用于扩展切片语法中,起记号作用&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;这个对象在切片语法中表示省略号&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;类似Null 对象 None, 省略对象有一个唯一的名字 Ellipsis, 它的布尔值始终为 True.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Xrange[core_python c8]&lt;br /&gt;
+&lt;code&gt;调用内建函数 xrange() 会生成一个 Xrange 对象&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;xrange()是内建函数 range()的兄弟版本&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;用于需要节省内存使用或 range()无法完成的超大数据集场合&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_11&#34;&gt;对象运算&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_12&#34;&gt;对象值比较&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;==&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!=&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hlcode&#34;&gt;&lt;pre&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;
+&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;_13&#34;&gt;对象身份比较&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;is&lt;/li&gt;
+&lt;li&gt;is not&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;==&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_14&#34;&gt;布尔类型&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;or&lt;br /&gt;
+&lt;code&gt;expr1 or expr2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;and&lt;br /&gt;
+&lt;code&gt;expr1 and expr2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;not&lt;br /&gt;
+&lt;code&gt;not expr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_15&#34;&gt;内建函数&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;cmp&lt;/li&gt;
+&lt;li&gt;repr&lt;/li&gt;
+&lt;li&gt;str&lt;br /&gt;
+&lt;code&gt;str比repr返回的可读性好&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;str&#39;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;准确的说这是一个运算符&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;&amp;gt;&amp;gt; &#39;[1,2,3,4]&#39;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;&amp;gt;&amp;gt; &#39;[1,2,3,4]&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;type&lt;br /&gt;
+&lt;code&gt;返回类型对象,是object的子对象&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;faq&#34;&gt;FAQ&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么我们有了 repr()还需要``&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;语法糖&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_16&#34;&gt;类型工厂函数&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;Python 2.2 统一了类型和类, 所有的内建类型现在也都是类, 在这基础之上, 原来的&lt;br /&gt;
+所谓内建转换函数象 int(), type(), list() 等等, 现在都成了工厂函数。 也就是说虽然他&lt;br /&gt;
+们看上去有点象函数, 实质上他们是类。当你调用它们时, 实际上是生成了该类型的一个实&lt;br /&gt;
+例, 就象工厂生产货物一样.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_17&#34;&gt;标准类型分类&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;如果让我们最啰嗦的描述标准类型,我们也许会称它们是 Python 的“基本内建数据对象原&lt;br /&gt;
+始类型”。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“基本”&lt;br /&gt;
+&lt;code&gt;是指这些类型都是 Python 提供的标准或核心类型&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;“内建”&lt;br /&gt;
+&lt;code&gt;是由于这些类型是 Python 默认就提供的&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;“数据”&lt;br /&gt;
+&lt;code&gt;因为他们用于一般数据存储&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;“对象”&lt;br /&gt;
+&lt;code&gt;因为对象是数据和功能的默认抽象&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;“原始”&lt;br /&gt;
+&lt;code&gt;因为这些类型提供的是最底层的粒度数据存储&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;“类型”&lt;br /&gt;
+&lt;code&gt;因为他们就是数据类型&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;_18&#34;&gt;&lt;span style=&#39;color:red&#39;&gt;分类&lt;/span&gt;&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以按照增改查三大基本操作对类型进行分类&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;[增/存储]存储模型&lt;br /&gt;
+&lt;code&gt;[容器]------&amp;gt;元组，列表，字典&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[标量/原子]--&amp;gt;数字，字符串&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[改/更新]更新模型&lt;br /&gt;
+&lt;code&gt;[可变]----&amp;gt;列表，字典&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[不可变]--&amp;gt;数字，字符串，元组&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[查/访问]访问模型&lt;br /&gt;
+&lt;code&gt;[直接存取]--&amp;gt;数字&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[顺序存取]--&amp;gt;元组，字符串，列表&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;[映射访问]--&amp;gt;字典&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;python&#34;&gt;Python的选择&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;不适用char，byte&lt;/li&gt;
+&lt;li&gt;int统一世界&lt;/li&gt;
+&lt;li&gt;放弃double&lt;br /&gt;
+&lt;code&gt;感觉double带来的坏处比好处多&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;typeobject&#34;&gt;type与object详解&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&#34;_19&#34;&gt;设计思想&lt;/h4&gt;
+&lt;p&gt;这里不谈代码只是说设计思想&lt;br /&gt;
+首先万物有源,物质有所谓的通性,python说万物皆对象,那么追溯其源头,总会出现一个object源头,但是python也说了对象具有三大特性其一就有类型,那么问题来了,既然万物皆对象,那么类型也就会是对象,object作为元对象拥有类型,就意味着object是其子对象的实例&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;_20&#34;&gt;待解决&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;没有完全融会贯通&lt;code&gt;Object&lt;/code&gt;与&lt;code&gt;Type&lt;/code&gt;的关系&lt;/li&gt;
+&lt;/ol&gt;</content>
     
     
   </entry>
