@@ -82,6 +82,8 @@
 </li>
 <li><a href="#_4">工具</a></li>
 <li><a href="#perf">perf</a></li>
+<li><a href="#swap">swap</a></li>
+<li><a href="#page-size">page size</a></li>
 </ul>
 </div>
 <h3 id="_1">起源</h3>
@@ -252,8 +254,24 @@
 <strong>参照</strong><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-perf2/">perf2</a><br />
 <strong>Instance</strong></li>
 <li>针对branch-misses进行优化<a href="https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array#11227902">为什么有序数组在循环中速度比无序的快</a></li>
-<li></li>
 </ol>
+<hr />
+<blockquote>
+<p>这里还是有点乱,不知道下面是否是从IO角度考虑进行优化.</p>
+</blockquote>
+<h3 id="swap">swap</h3>
+<div class="hlcode"><pre><span class="c"># adjust swap</span>
+Linux提供了一个/proc/sys/vm/swappiness,只需要简单的echo 0-100 中的一个数值到这个文件中即可。值越大，系统swap到硬盘的越多.
+</pre></div>
+
+
+<blockquote>
+<p>网上看到一个2.6内核维护者，将它设置成 100。给出的理由：“我的观点是降低kernel swap出内存数据不对。你实际上不想让几百兆的内存在自己的机器内存中呆着，但从未被访问。所以把这些数据请到磁盘上，留出更多的主存给要用的程序”.</p>
+</blockquote>
+<h3 id="page-size">page size</h3>
+<div class="hlcode"><pre><span class="cp"># include &lt;unistd.h&gt;</span>
+<span class="kt">int</span> <span class="nf">getpagesize</span><span class="p">();</span><span class="c1">//get size of page</span>
+</pre></div>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -286,7 +304,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-03-06 19:45:34</p>
+        <p>Site Generated 2018-03-14 21:02:37</p>
       </span>
     </div>
 

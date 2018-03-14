@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style type="text/css">.coll_list a{color:green!important;}
+    .toc{
+      color:green;
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    #header a{
+      color: red!important;
+      font: bold;
+    }
+    pre{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    code{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    textarea{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+</style>
+    <title>高等数学 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body style="margin: 0px;
+    padding: 0px;">
+    <img id="bg" style="width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    overflow:auto;
+    z-index: -1;" src="https://s1.ax1x.com/2018/03/03/9yiaUH.jpg" />
+    <div id="container" style="color:yellow;background-color: rgba(0,0,0,0.8);">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Math">Math</a>&nbsp;&#187;&nbsp;高等数学
+    <span class="updated">Page Updated&nbsp;
+      2018-03-13 11:02:20
+    </span></div>
+  
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">高等数学</div>
+<!-- <b>更改颜色：</b><input style="margin-left: 0px" type="color" id="onchange"> -->
+  <blockquote>
+<p>无论做什么都是在学习,只要是学习,便不会因为浮华的欲望而焦躁下去.　</p>
+</blockquote>
+<p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<ul>
+<li><strong>今日音乐</strong></li>
+</ul>
+<hr />
+<h3 id="_1">极限</h3>
+<blockquote>
+<p>谈极限就要开始谈历史,因为我们必须要了解极限是为什么被创造出来,它的研究对象是什么?它能够解决上什么问题.</p>
+</blockquote>
+<p><span style="margin-left: 25px"></span>最开始是牛顿为了研究物理学上面的问题(参考问题链接<a href=""></a>),引入了<b style="color:red">无穷小</b>,任何被引入数学中的东西都要被定义,他是这样定义的,<code>无穷小最早指的是比零大，但绝对值小于任意正实数的"数"</code>,这里实际上立马就出现了悖论,既然无穷小是绝对值小于任意正实数的<code>数</code>,那么如果无穷小是正实数,那么他自身不可能小于自身,但是它又大于0,所以说这个数是不存在的,但是在解决微积分问题时无穷小却又发挥了很好的效果,这让人疑惑.<br />
+<span style="margin-left: 25px"></span>牛顿没有过于关注无穷小定义的精准性,就在上面建立了<b style="color:red">导数</b>的定义,然后就被神教徒抓住不放了,一定要看这一段,点击此处链接<a href="https://baike.baidu.com/item/微积分/6065?fr=aladdin#9">贝克莱嘲笑牛顿的原因</a>,很明显,牛顿把无穷小认为是一个数,在分子和分母共同除以<code>x的增量</code>时相当于默认<code>x的增量</code>不为0(因为分子分母<code>不能</code>共同除以0),但是在求出来结果的时候,即<code>3x^2+x的增量</code>却直接等于<code>3x^2</code>相当于又认为<code>x的增量</code>为0,因为当时牛顿认为无穷小量是个数,但是却没有精准的说明无穷小是0还是非0?数学很严格,以至于神学家轻松抓住把柄,数学怎么能存在对一个数的取值不确定呢?要么是0,要么不是0,这种即是又不是的认知肯定严重违背了数学的严格性,所以牛顿一直很痛苦这个问题.<br />
+<span style="margin-left: 25px"></span>其实不能说牛顿不厉害,我们要解决这种是不是0的问题其实有两种方案,<strong>第一种</strong>是<code>无穷小不是数</code>,而是一种<code>状态</code>,一种<code>接近0</code>的状态,直接推翻牛顿的定义,让它不是<code>数</code>就行了,<strong>第二种</strong>方案是仍然<code>坚持无穷小是数</code>,但是修改人们对<code>数</code>这个东西的认知,即<code>数</code>不能是以前能够直观认知的数了,将实数进行重新定义,形成<code>超实数域</code>,让<code>无穷小在超实数域里成为一个确实存在的数</code>,这样就不存在违背牛顿的定义了,即无穷小小于任何正实数,但是无穷小本身已经不是正实数了,就不存在自身小于自身的悖论了,所以悖论问题解决了!<br />
+<span style="margin-left: 25px"></span>这两种方案在数学界进行两大分支,第一种是认为无穷小不是数的<code>标准分析</code>即柯西派将微积分建立在<code>极限理论</code>(这个稍后就讲)的基础上,另一种则认为无穷小是超实数的<code>非标准分析</code>,即美国数学家(点击链接查看)<a href="http://blog.csdn.net/yuanmeng001/article/details/78170808">EdwinHewitt超实数理论</a>建立起基于超实数的微积分,现阶段我们在高等数学中学习的即是<code>标准分析</code>,作为非科班出身的工科类学生我们只是研究<code>标准分析</code>,不要考虑不应该过多考虑的事情!!!<br />
+<strong>好了</strong>,我们从标准分析开始,标准分析认为无穷小不是数,那么既然不是数,就必须规定一种状态让我们能够直观的感受到无穷小是什么?</p>
+<!-- **以下均为错误的思考,较为错误的结论,所以不建议去看,以防错误的对问题产生认知上的错误.** -->
+
+<!-- <del>
+###　极限
+最开始的时候,是我对`极限`这个概念认知不清楚,我最开始的理解就是`一种模糊的趋势,表示着某种函数或数列在自变量变化时,因变量呈现的趋势特性,比如说x^2趋近于无穷大`,后来我逐渐发现这种思想是大错特错,我证明这种想法错误的论据有两点:
+#### 极限的来源
+
+wzxhzdk:0
+
+2. 现在这个论据还不能清晰的组织语言
+</del>
+
+#### 几个性质
+1. 普通性质
+    - 唯一性
+    - 保号性
+    - 三明治准则(国内一些数学家学术上建树极差,在翻译上也是低素质的东西)
+ -->
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '高等数学',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-03-14 21:02:37</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
+
+<!-- <script type="text/javascript">
+    document.getElementById('onchange').onchange = function(){
+        document.getElementById('onchange').click();
+        document.body.style.background = this.value;
+    };
+</script> -->
