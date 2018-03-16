@@ -92,8 +92,12 @@
 </pre></div>
 
 
-<p><strong>1.机器数和真值</strong></p>
-<div class="hlcode"><pre><span class="mi">1</span><span class="err">、机器数一个数在计算机中的二进制表示形式</span><span class="p">,</span>  <span class="err">叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号</span><span class="p">,</span> <span class="err">正数为</span><span class="mi">0</span><span class="p">,</span> <span class="err">负数为</span><span class="mf">1.</span><span class="err">比如，十进制中的数</span> <span class="o">+</span><span class="mi">3</span> <span class="err">，计算机字长为</span><span class="mi">8</span><span class="err">位，转换成二进制就是</span><span class="mo">00000011</span><span class="err">。如果是</span> <span class="o">-</span><span class="mi">3</span> <span class="err">，就是</span> <span class="mi">10000011</span> <span class="err">。那么，这里的</span> <span class="mo">00000011</span> <span class="err">和</span> <span class="mi">10000011</span> <span class="err">就是机器数。</span><span class="mi">2</span><span class="err">、真值因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如上面的有符号数</span> <span class="mi">10000011</span><span class="err">，其最高位</span><span class="mi">1</span><span class="err">代表负，其真正数值是</span> <span class="o">-</span><span class="mi">3</span> <span class="err">而不是形式值</span><span class="mi">131</span><span class="err">（</span><span class="mi">10000011</span><span class="err">转换成十进制等于</span><span class="mi">131</span><span class="err">）。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。例：</span><span class="mo">0000</span> <span class="mo">0001</span><span class="err">的真值</span> <span class="o">=</span> <span class="o">+</span><span class="mo">000</span> <span class="mo">0001</span> <span class="o">=</span> <span class="o">+</span><span class="mi">1</span><span class="err">，</span><span class="mi">1000</span> <span class="mo">0001</span><span class="err">的真值</span> <span class="o">=</span> <span class="err">–</span><span class="mo">000</span> <span class="mo">0001</span> <span class="o">=</span> <span class="err">–</span><span class="mi">1</span>
+<p><strong>1.机器数和真值</strong><br />
+自从负数出现以后，我们在日常表示数学符号时，总是添加一些附加信息，即<code>+</code>和<code>-</code>,通过符号的标明以此作为一个flag去到真正的运算中采用相应的运算方式,计算机中存储的数据也应如此,虽然我们尽量压缩空间提高存储空间的利用率,但是我们最基本应该保证信息的完整性,在处理计算机问题的时候,我们涉及到了两个基本的<code>客观对象</code>即<code>human</code>和<code>computer</code>,其次我们应该让个体独立出来,国内存在所谓的<code>名</code>与<code>相</code>按照形式逻辑大约就是<code>符号</code>与<code>语义</code>吧.首先我们应该创造一个新的适用于computer操作运算数据的规则定义,其次为了与人类进行交互</p>
+<div class="hlcode"><pre><span class="mf">1.</span> <span class="err">机器数</span>
+<span class="err">一个数在计算机中的二进制表示形式</span><span class="p">,</span><span class="err">叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号</span><span class="p">,</span> <span class="err">正数为</span><span class="mi">0</span><span class="p">,</span> <span class="err">负数为</span><span class="mf">1.</span><span class="err">比如，十进制中的数</span> <span class="o">+</span><span class="mi">3</span> <span class="err">，计算机字长为</span><span class="mi">8</span><span class="err">位，转换成二进制就是</span><span class="mo">00000011</span><span class="err">。如果是</span> <span class="o">-</span><span class="mi">3</span> <span class="err">，就是</span> <span class="mi">10000011</span> <span class="err">。那么，这里的</span> <span class="mo">00000011</span> <span class="err">和</span> <span class="mi">10000011</span> <span class="err">就是机器数。</span>
+<span class="mf">2.</span> <span class="err">真值</span>
+<span class="err">因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如上面的有符号数</span> <span class="mi">10000011</span><span class="err">，其最高位</span><span class="mi">1</span><span class="err">代表负，其真正数值是</span> <span class="o">-</span><span class="mi">3</span> <span class="err">而不是形式值</span><span class="mi">131</span><span class="err">（</span><span class="mi">10000011</span><span class="err">转换成十进制等于</span><span class="mi">131</span><span class="err">）。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。例：</span><span class="mo">0000</span> <span class="mo">0001</span><span class="err">的真值</span> <span class="o">=</span> <span class="o">+</span><span class="mo">000</span> <span class="mo">0001</span> <span class="o">=</span> <span class="o">+</span><span class="mi">1</span><span class="err">，</span><span class="mi">1000</span> <span class="mo">0001</span><span class="err">的真值</span> <span class="o">=</span> <span class="err">–</span><span class="mo">000</span> <span class="mo">0001</span> <span class="o">=</span> <span class="err">–</span><span class="mf">1.</span>
 </pre></div>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -127,7 +131,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-03-14 21:09:27</p>
+        <p>Site Generated 2018-03-16 21:48:11</p>
       </span>
     </div>
 

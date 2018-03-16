@@ -73,7 +73,8 @@
 </pre></div>
 
 
-<h3 id="_1">极限</h3>
+<h2 id="_1">核心概念</h2>
+<h3 id="11"><b style="color:green">1.1极限</b></h3>
 <blockquote>
 <p>谈极限就要开始谈历史,因为我们必须要了解极限是为什么被创造出来,它的研究对象是什么?它能够解决上什么问题.</p>
 </blockquote>
@@ -82,12 +83,100 @@
 <span style="margin-left: 25px"></span>其实不能说牛顿不厉害,我们要解决这种是不是0的问题其实有两种方案,<strong>第一种</strong>是<code>无穷小不是数</code>,而是一种<code>状态</code>,一种<code>接近0</code>的状态,直接推翻牛顿的定义,让它不是<code>数</code>就行了,<strong>第二种</strong>方案是仍然<code>坚持无穷小是数</code>,但是修改人们对<code>数</code>这个东西的认知,即<code>数</code>不能是以前能够直观认知的数了,将实数进行重新定义,形成<code>超实数域</code>,让<code>无穷小在超实数域里成为一个确实存在的数</code>,这样就不存在违背牛顿的定义了,即无穷小小于任何正实数,但是无穷小本身已经不是正实数了,就不存在自身小于自身的悖论了,所以悖论问题解决了!<br />
 <span style="margin-left: 25px"></span>这两种方案在数学界进行两大分支,第一种是认为无穷小不是数的<code>标准分析</code>即柯西派将微积分建立在<code>极限理论</code>(这个稍后就讲)的基础上,另一种则认为无穷小是超实数的<code>非标准分析</code>,即美国数学家(点击链接查看)<a href="http://blog.csdn.net/yuanmeng001/article/details/78170808">EdwinHewitt超实数理论</a>建立起基于超实数的微积分,现阶段我们在高等数学中学习的即是<code>标准分析</code>,作为非科班出身的工科类学生我们只是研究<code>标准分析</code>,不要考虑不应该过多考虑的事情!!!<br />
 <strong>好了</strong>,我们从标准分析开始,标准分析认为无穷小不是数,那么既然不是数,就必须规定一种状态让我们能够直观的感受到无穷小是什么?</p>
+<hr />
+<h3 id="12"><b style="color:green">1.2无穷小</b></h3>
+<h4 id="121">1.2.1无穷小定义</h4>
+<p>无穷小<code>---&gt;</code>若 $(\lim \limits_{x \to a}{\alpha(x)=0})$, 称$({\alpha(x) } )$当$({x \to a})$时为无穷小.</p>
+<h4 id="122">1.2.2 无穷小分类</h4>
+<p>对于 $({  \alpha \to  0})$ 且 $({  \beta \to 0  })$ 分三种情况<br />
+1. case1: $({  \lim \limits_{   }   \frac{ \beta  } {  \alpha  } =0 <br />
+  })$ 称 $({  \beta=o(\alpha)  })$ 为高阶无穷小.<br />
+2. case1: $({  \lim \limits_{   }   \frac{ \beta  } {  \alpha  } =k(\neq 0,\infty) <br />
+  })$ 称 $({  \beta=O(\alpha)  })$ 为同阶无穷小.<br />
+3. case3: $({  \lim \limits_{   }   \frac{ \beta  } {  \alpha  } =1<br />
+  })$ 称 $({  \beta \sim \alpha  })$ 为同阶无穷小.</p>
+<hr />
+<h3 id="13"><b style="color:green">1.3性质</b></h3>
+<h4 id="131">1.3.1极限性质</h4>
+<ul>
+<li>1.一般性质(汤只讲了两个)<ul>
+<li>唯一性(极限有且只有一个)</li>
+<li>保号性 若 $({  \lim \limits_{  x  \to a } {f(x)}<br />
+= A \begin{cases}<br />
+\lt 0 \\<br />
+\gt 0 \\<br />
+\end{cases} , \exists \delta \gt 0<br />
+ })$ 当0&lt;|x-a|&lt; $({ \delta})$ 时,f(x) $({  \begin{cases}<br />
+ \lt 0\\<br />
+ \gt 0\\<br />
+ \end{cases}  })$</li>
+</ul>
+</li>
+</ul>
+<div class="hlcode"><pre><span class="p">[</span><span class="err">应用简介</span><span class="p">]</span><span class="o">:</span>
+    <span class="err">注意汤讲的例题</span><span class="p">,</span><span class="err">我们使用保号性的时候通常考虑的是</span> <span class="err">极限函数所具有的大于</span><span class="mi">0</span><span class="err">或者小于</span><span class="mi">0</span><span class="err">的性质</span><span class="p">,</span> <span class="err">即函数具有的值正负性质</span><span class="p">,</span><span class="err">如果我们的问题过于关注函数的本身</span><span class="p">,</span><span class="err">比如函数中存在变量参数</span><span class="p">,</span><span class="err">此时我们通常考虑保号性</span>
+</pre></div>
+
+
+<p><code>EX:</code> $({  f\text{'}(1)=0,  \lim \limits_{  x  \to 1 }   \frac{ f \text{'}(x)  } {  (x-1)^{3}  } =-2 <br />
+ })$,求x=1是什么点.<code>答案:最大值点</code></p>
+<ul>
+<li>2.存在性质[准则]<ul>
+<li><b style="color:red">[题型一]n项和极限</b><ul>
+<li>方法1:先求和再求极限</li>
+<li>方法2:夹逼定理</li>
+<li>方法3:定积分定义 $({  \lim \limits_{  n  \to \infty }   \frac{ 1  } {  n  } \sum_{i=1}^{n} f(   \frac{ i  } {  n  } )= \int_0^1 f(x) dx <br />
+  })$</li>
+</ul>
+</li>
+<li><b style="color:red">[题型二]极限存在性质证明</b></li>
+<li>[性质一]夹逼定理(用于求极限值)</li>
+<li>[性质二]单调有界的数列必有极限[不需要学生证明这个性质]<code>用于证明极限的存在</code></li>
+</ul>
+</li>
+</ul>
+<p>$${\text{夹逼定理证明:}<br />
+        \begin{cases}<br />
+        a_n\le b_n \le c_n\\<br />
+        \lim \limits_{  n  \to \infty  } c_n =A\\<br />
+        \end{cases}  \Leftarrow \Rightarrow \lim \limits_{  n  \to \infty }b_n=A \begin{cases}<br />
+        \text{以上数列用在消次上}\\<br />
+        \text{所以汤说条件是不齐}\\<br />
+        \end{cases}\\ <br />
+}$$</p>
+<h4 id="132">1.3.2无穷小性质</h4>
+<ul>
+<li>一般性质</li>
+<li>等价性质</li>
+</ul>
+<hr />
+<h3 id="14">1.4重要极限</h3>
+<h4 id="141">1.4.1几何理解</h4>
+<h4 id="142">1.4.2两个重要极限</h4>
+<ol>
+<li>$({  \lim \limits_{   \Delta  \to 0 }   \frac{ sin  \Delta  } {  \Delta   }=1 <br />
+ })$</li>
+<li>$({  \lim \limits_{   \Delta   \to 0 } (1+ \Delta )^{  \frac{ 1  } {   \Delta   } <br />
+}=e })$</li>
+</ol>
+<p><b style="color:red">[题型三]不定型极限(非常重要)</b><br />
+$${<br />
+\begin{cases}<br />
+  \frac{ 0  } {  0  },1^{\infty} <br />
+\\<br />
+  \frac{ \infty  } {  \infty  } <br />
+\\<br />
+\end{cases}<br />
+}<br />
+$$</p>
+<hr />
 <h3 id="_2">文献来源</h3>
 <p>[1]. <a href="https://www.zhihu.com/question/20454375?rf=20869677">无穷小量究竟是否为0</a><br />
 [2]. <a href="https://www.zhihu.com/question/22199657/answer/115178055">微分和导数的关系</a><br />
 [3]. <a href="https://www.zhihu.com/question/20573378/answer/120029023">极限的精确定义</a><br />
 [4]. <a href="http://blog.csdn.net/yuanmeng001/article/details/78170808">超实数</a><br />
-[5]. <a href="https://baike.baidu.com/item/微积分/6065?fr=aladdin">微积分百科</a></p>
+[5]. <a href="https://baike.baidu.com/item/微积分/6065?fr=aladdin">微积分百科</a><br />
+[6]. <a href="https://wenku.baidu.com/view/61a5c4a9a417866fb94a8e60.html">殷君芳. 用等价无穷小代换求极限的误区及一点补充[J]. 宜春学院学报, 2011, 33(4):25-26.</a></p>
 <!-- **以下均为错误的思考,较为错误的结论,所以不建议去看,以防错误的对问题产生认知上的错误.** -->
 
 <!-- <del>
@@ -95,7 +184,7 @@
 最开始的时候,是我对`极限`这个概念认知不清楚,我最开始的理解就是`一种模糊的趋势,表示着某种函数或数列在自变量变化时,因变量呈现的趋势特性,比如说x^2趋近于无穷大`,后来我逐渐发现这种思想是大错特错,我证明这种想法错误的论据有两点:
 #### 极限的来源
 
-wzxhzdk:1
+wzxhzdk:2
 
 2. 现在这个论据还不能清晰的组织语言
 </del>
@@ -138,7 +227,7 @@
             </a>
           </span>
        </p>
-        <p>Site Generated 2018-03-14 21:09:27</p>
+        <p>Site Generated 2018-03-16 21:48:11</p>
       </span>
     </div>
 
