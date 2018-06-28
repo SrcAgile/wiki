@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$(',')$'], ['\\(','\\)']]}
+       });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style type="text/css">.coll_list a{color:green!important;}
+    .toc{
+      color:green;
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    #header a{
+      color: red!important;
+      font: bold;
+    }
+    pre{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    code{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+    textarea{
+      background-color: rgba(0,0,0,0.5)!important;
+    }
+</style>
+    <title>词法分析器 - Meta's Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body style="margin: 0px;
+    padding: 0px;">
+    <img id="bg" style="width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    overflow:auto;
+    z-index: -1;" src="https://s1.ax1x.com/2018/03/03/9yiaUH.jpg" />
+    <div id="container" style="color:yellow;background-color: rgba(0,0,0,0.8);">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#compile">compile</a>&nbsp;&#187;&nbsp;词法分析器
+    <span class="updated">Page Updated&nbsp;
+      2018-06-21 20:00:00
+    </span></div>
+  
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">词法分析器</div>
+<!-- <b>更改颜色：</b><input style="margin-left: 0px" type="color" id="onchange"> -->
+  <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
+<hr />
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">误区订正</a></li>
+<li><a href="#_2">功能</a></li>
+<li><a href="#_3">设计</a><ul>
+<li><a href="#_4">超前搜索问题</a></li>
+</ul>
+</li>
+<li><a href="#_5">怎样写</a></li>
+<li><a href="#_6">正规表达式和有限自动机</a><ul>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</li>
+<li><a href="#dfa">DFA[确定有限自动机]</a></li>
+<li><a href="#nfa">NFA[非确定有限自动机]</a></li>
+<li><a href="#nfadfa">NFA&lt;=&gt;DFA</a></li>
+<li><a href="#_7">正规式与有限自动机的等价性</a></li>
+<li><a href="#_8">确定有限自动机的化简</a></li>
+</ul>
+</div>
+<p>首选要熟知编译的整个过程的几个阶段,第一步词法分析器,本blog讲述词法分析的构造原理以及基本技术</p>
+<ol>
+<li>熟知词法分析器的任务[逐行扫描]</li>
+<li>对于词法分析器的要求[功能,单词符号种类]</li>
+<li>词法分析器的设计</li>
+<li>正规表达式和有限自动机[*]</li>
+<li>词法分析器的自动产生--LEX </li>
+</ol>
+<hr />
+<h3 id="_1">误区订正</h3>
+<ul>
+<li>词法分析作为一个独立的子程序不作为一遍处理终生不用的行为,是存在迭代的</li>
+</ul>
+<hr />
+<h3 id="_2">功能</h3>
+<p>输入字符串------[<strong><em>_</em></strong>__]----&gt;输出tok<br />
+输出的单词符号的 <strong>表示形式</strong> (单词种别,单词自身的值)</p>
+<ul>
+<li>基本字,运算符,界符只需要单词种别就可以唯一确定了,因为可以一符一种</li>
+<li>但是标识符,常数就需要再加上单词自身的值进行标识了</li>
+</ul>
+<hr />
+<h3 id="_3">设计</h3>
+<p>拆分结构:程序文件 |输入缓冲区|预处理子程序|扫描器|扫描缓冲区</p>
+<p>扫描缓冲区使用的半区互补策略解决一些 <strong>问题</strong></p>
+<h4 id="_4">超前搜索问题</h4>
+<p>辣鸡语言需要的超前搜索问题,所以所有语言都是辣鸡?其实是一些没必要的语法糖增加了扫描器的难度<br />
+超前搜索问题分布在</p>
+<ul>
+<li>标识符识别[有的语言基本字不是保留字,可以自己改变用比如 int int=3;第一个int是类型,第二个是标识符]</li>
+<li>常数识别[8var(变量名) 还是8(单纯的常量)]</li>
+<li>算符和界符识别[++ ,**,&gt;=,:=存在到底是识别一个就结束了,还是还得继续往前看看再确定]</li>
+</ul>
+<p>解决方案[加上几点限制,但是限制不完]</p>
+<hr />
+<h3 id="_5">怎样写</h3>
+<p>工具需要:<br />
+状态转换图<br />
+- 可用来识别(或接受)一定的字符串,比如:常数状态转换图,标识符状态转换图,<br />
+<del>像基本字这种东西不像标识符一样存在无数种,既然是有限的且数量比较少,就使用保留字表就行了.</del></p>
+<p>有了状态转换图再将其转化为程序</p>
+<ul>
+<li>[思想]每个状态节点对应一小段程序</li>
+<li>[方法]<ul>
+<li>普通分支使用if then</li>
+<li>回路分支使用while</li>
+<li>终态节点返回</li>
+</ul>
+</li>
+<li>[方法框架化]<ul>
+<li>将状态图使用二维数组描述,将状态图转化方法框架化</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="_6">正规表达式和有限自动机</h3>
+<h4 id="faq">FAQ</h4>
+<ol>
+<li>正规式与正规集是什么?<br />
+<code>我们要研究的程序语言的所有单词词汇构成的集合就是字的集合叫正规集,但这句话并非定义</code><br />
+<code>[1] 正规集可以用正规表达式表达</code><br />
+<code>[2] 正规表达式是表示正规集的一种方法</code><br />
+<code>[3] 一个字集合是正规集当且仅当它能用正规式表示</code></li>
+</ol>
+<p>2.正规式和正规集的递归定义<br />
+    1. $({  \varepsilon})$和 $({  \varnothing  })$上的正规式,他们所表示的正规集为 $({  \{\varepsilon\}  })$ 和 $({  \varnothing  })$<br />
+    2. 任何<b style="color: green">a</b> $({  \in \sum  })$,<b style="color: red">a</b>是 $({  \sum  })$上的正规式,他所表示的正规集为{<b style="color: blue">a</b>},其中<b style="color: green">a</b>表示字母,<b style="color: red">a</b>表示正规式,<b style="color: blue">a</b>表示字,即字符串</p>
+<ol>
+<li>正规式满足的规律<ol>
+<li>或交换e1|e2=e2|e1</li>
+<li>或的左结合=或的右结合e1|(e2|e3)=(e1|e2)|e3</li>
+<li>乘法的左结合=或的右结合</li>
+<li>乘对或的左分配e1(e2|e3)=e1e2|e1e3</li>
+<li>乘对或的右分配(e2|e3)e1=e2e1|e3e1</li>
+<li>乘与空的交换$({ e \varepsilon  })$=$({  \varepsilon  e=e ----e_1 e_2\neq e_2 e_1})$</li>
+</ol>
+</li>
+</ol>
+<p>类似冯诺依曼构造自然数的方案[左侧是集合,右侧是表达式]<br />
+$({  \varnothing })$----&gt;0<br />
+$({  \{ \varnothing \}})$----&gt;1<br />
+$({ \{\varnothing  \{ \varnothing \}\} })$----&gt;2</p>
+<hr />
+<h3 id="dfa">DFA[确定有限自动机]</h3>
+<blockquote>
+<p>就是状态转换图的高度形式化,便于后继做数学上的加工<br />
+易于程序实现</p>
+</blockquote>
+<p>使用五元式定义($({  S, \sum,f,S_0,F })$)<br />
+$({  S为有穷状态机, \sum为有穷输入字母表,f为状态转换函数,S_0为唯一的初态 ,F为可空终态集 })$</p>
+<p><b style="color:green">DFA与NFA定义区别</b><br />
+1. 状态转换函数的不同,DFA的状态转换函数是单值映射,可以没有下一状态,但是一旦有必须唯一,但是NFA不唯一<br />
+2. 初态不一样,DFA的初态是唯一的,而NFA的初态可以是一个集合(多个)</p>
+<p><b style="color:green">DFA与NFA状态图区别</b><br />
+1.弧上的标记的标记可以是 $({  \sum^‘ 中的一个字,甚至可以是一个正规式,而不一定是单个字符 })$<br />
+2. 可以有多个初态<br />
+3. 同一个字可能出现在同状态射出的多条弧上<br />
+4. [caution]DFA弧上不允许出现 <b style="color: blue">$({ \varepsilon })$</b>,因为它是字</p>
+<p><b style="text-decoration: underline;text-decoration-color: red;text-decoration-style: wavy;">DFA是NFA的特例</b></p>
+<hr />
+<h3 id="nfa">NFA[非确定有限自动机]</h3>
+<blockquote>
+<p>NFA具有更强的直观性,易于人们设计和理解</p>
+</blockquote>
+<p>使用五元式定义($({  S, \sum,f,S_0,F })$)<br />
+$({  S为有穷状态机, \sum为有穷输入字母表,f为状态转换函数,S_0为初态集合 ,F为可空终态集 })$</p>
+<ul>
+<li>自动机等价的判定,M'等价M,IF L(M)=L(M')</li>
+<li>[重要的结论]判定自动机等价的算法是存在的,可以在有限的步骤内实现</li>
+<li>DFA与NFA描述能力<b style="color: red">相同</b></li>
+</ul>
+<hr />
+<h3 id="nfadfa">NFA&lt;=&gt;DFA</h3>
+<blockquote>
+<p>基于上面提出的定义上或者是状态图上的差异进行改造消除差异<br />
+两者进行转换具有很大的意义,因为基于NFA设计十分简单,基于DFA应用于程序实现比较方便,这样就可以先根据NFA设计,再通过转化为DFA之后进行程序实现</p>
+</blockquote>
+<ol>
+<li>消除多个初态问题[easy]</li>
+<li>消除弧上的正规式[拆开]</li>
+<li>消除 $({  \varepsilon  })$ [子集法, $({ \varepsilon-closure(I) 即 \varepsilon-闭包 })$ ]<br />
+<code>要熟练了解epsilon闭包的定义</code></li>
+</ol>
+<p>$({  \varepsilon-closure(I) 其实就是单独的状态们重新根据某种规则视状态集为基本单位,这种规则即为针对 \varepsilon 的扩展})$,说来说去就是 $({  \varepsilon^*a\varepsilon^* 这种包含多个状态节点的状态们看成一个状态以达到消除 \varepsilon的目的  })$</p>
+<hr />
+<h3 id="_7">正规式与有限自动机的等价性</h3>
+<ol>
+<li>对任何FA M,都存在一个正规式r,使得L(r)=L(M)</li>
+<li>对于任何正规式r,都存在一个FA M,使得L(M)=L(r)</li>
+</ol>
+<p>[1]好证[2]使用运算符数量归纳法</p>
+<hr />
+<h3 id="_8">确定有限自动机的化简</h3>
+<blockquote>
+<p>引入略微绕口的概念,不太方便使用</p>
+</blockquote>
+<ol>
+<li>状态等价</li>
+</ol>
+<p>对M的状态集进行划分</p>
+<ol>
+<li>把S划分为<b style="color: blue">终态</b>和<b style="color: red">非终态</b>两个子集形成基本划分 $({  \prod [说什么以 \varepsilon 为划分原理....] })$</li>
+</ol>
+  <div id="comments"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    title: '词法分析器',
+    owner: 'srcagile',
+    repo: 'wiki',
+    oauth: {
+      client_id: '8d3768fea78397a633b8',
+      client_secret: 'a79297700926ce00af68c66bc8ad1b06e6389cc0',
+    },
+    // ...
+    // For more available options, check out the documentation below
+  })
+  gitment.render('comments')
+  // or
+  // gitment.render(document.getElementById('comments'))
+  // or
+  // document.body.appendChild(gitment.render())
+  </script>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2018 Guozhen Li.
+          <a href='https://github.com/srcagile/wiki' style="color:red">Fork me on GitHub</a>
+          <span id="cnzz_stat_icon_1256629854">
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1256629854" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+       </p>
+        <p>Site Generated 2018-06-28 10:21:40</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+
+</html>
+
+<!-- <script type="text/javascript">
+    document.getElementById('onchange').onchange = function(){
+        document.getElementById('onchange').click();
+        document.body.style.background = this.value;
+    };
+</script> -->

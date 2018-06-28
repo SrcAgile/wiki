@@ -32,7 +32,7 @@
       background-color: rgba(0,0,0,0.5)!important;
     }
 </style>
-    <title>Jin[W|P]ja2 - Meta's Wiki</title>
+    <title>程序语言的语法描述 - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -50,41 +50,73 @@
     <div id="container" style="color:yellow;background-color: rgba(0,0,0,0.8);">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#入门">入门</a>&nbsp;&#187;&nbsp;Jin[W|P]ja2
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#compile">compile</a>&nbsp;&#187;&nbsp;程序语言的语法描述
     <span class="updated">Page Updated&nbsp;
-      2017-09-28 12:00:00
+      2018-06-21 19:00:00
     </span></div>
   
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">Jin[W|P]ja2</div>
+<div class="page_title">程序语言的语法描述</div>
 <!-- <b>更改颜色：</b><input style="margin-left: 0px" type="color" id="onchange"> -->
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑中....</a></p>
 <hr />
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#_1">特性</a></li>
-<li><a href="#test">Test</a></li>
+<li><a href="#_1">区分</a></li>
+<li><a href="#_2">文法推导</a><ul>
+<li><a href="#_3">文法&lt;=&gt;语言</a></li>
+<li><a href="#_4">最左推导,最右推导</a></li>
+</ul>
+</li>
+<li><a href="#_5">语法树</a></li>
+<li><a href="#_6">二义性</a><ul>
+<li><a href="#_7">文法的二义性</a></li>
+<li><a href="#_8">语言的二义性</a></li>
+</ul>
+</li>
+<li><a href="#_9">存在描述的语言的一个无二义性的文法</a><ul>
+<li><a href="#chomsky">chomsky的语言体系</a><ul>
+<li><a href="#0">0型(短语文法 图灵机)</a></li>
+<li><a href="#1">１型(上下文有关文法 线性界限自动机)</a></li>
+<li><a href="#2">2型(上下文无关文法 非确定下推自动机)</a></li>
+<li><a href="#3">3型(正规文法有限自动机)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-<h3 id="_1">特性</h3>
-<ul>
-<li>沙箱中执行</li>
-<li>强大的 HTML 自动转义系统保护系统免受 XSS</li>
-<li>模板继承</li>
-<li>及时编译最优的 python 代码</li>
-<li>可选提前编译模板的时间</li>
-<li>易于调试。异常的行数直接指向模板中的对应行。</li>
-<li>可配置的语法</li>
-</ul>
-<h3 id="test">Test</h3>
-<p>Template--&gt;生成模板--&gt;render参数渲染</p>
+<h3 id="_1">区分</h3>
+<p>字母&amp;字(字符串)&amp;空字</p>
+<h3 id="_2">文法推导</h3>
+<h4 id="_3">文法&lt;=&gt;语言</h4>
+<h4 id="_4">最左推导,最右推导</h4>
+<hr />
+<h3 id="_5">语法树</h3>
+<hr />
+<h3 id="_6">二义性</h3>
+<h4 id="_7">文法的二义性</h4>
+<p>对于同一种语言有多颗语法树</p>
+<h4 id="_8">语言的二义性</h4>
+<h2 id="_9">存在描述的语言的一个无二义性的文法</h2>
+<h3 id="chomsky">chomsky的语言体系</h3>
+<blockquote>
+<p>从0-3型差异在推导规则上,从对左侧的限制到对右侧的限制,像如果想要使用上下文无关文法<br />
+左侧需要变成一个否则左侧出现依赖行为,总而言之,这里描述的不够详细,0型的描述能力最强但是比较复杂,3型比较简单但是能力有限,我们通常使用2型,技术成熟,对于2型无法做到的,通常使用一些奇技淫巧比如说符号表等小东西去实现0型或1型才能实现的东西,比如 标识符引用或者过程调用过程中的形实参对应性(个数,顺序和类型一致性)</p>
+</blockquote>
+<h4 id="0">0型(短语文法 图灵机)</h4>
+<h4 id="1">１型(上下文有关文法 线性界限自动机)</h4>
+<h4 id="2">2型(上下文无关文法 非确定下推自动机)</h4>
+<h4 id="3">3型(正规文法有限自动机)</h4>
+<p>1型文法是0型文法的特例,2型文法是1型文法的特例<br />
+0----+限制---&gt;1型----+限制---&gt;2型----+限制---&gt;3型</p>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: 'Jin[W|P]ja2',
+    title: '程序语言的语法描述',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {
