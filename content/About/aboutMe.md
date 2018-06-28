@@ -9,10 +9,10 @@ date: 2017-08-25 21:00:00
 
 [TOC]
 
-<center style="position:relative; left:80px; ">
-![](https://raw.githubusercontent.com/srcmit/source/wiki/photo/student.png)
+<center style="position:relative; width:140px;margin-left:39%;text-align:left">
+![](https://s1.ax1x.com/2018/03/06/9glcf1.png)
 </center>
-  <p style="position:relative; left:80px;text-align:center">
+  <p style="position:relative; margin-left:39%;text-align:left">
     <b>Name</b>:Li Guo Zhen
     <b>Profession</b>:student
     <b>Sex</b>:male

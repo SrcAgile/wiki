@@ -26,7 +26,7 @@ collection: "[背景知识]"
 
 现在，大多数的x86处理器都支持了CAS[\[2\]](#index)的硬件实现，保证了多处理器多核系统下的原子操作的正确性。CAS的实现同样无需锁住总线，只会阻塞其他cpu核对相关内存的缓存块的访问。同样的，在MIPS和ARM架构下，还支持了LL/SC的实现[\[3\]](#index)。LL/SC不会出现CAS中的ABA问题。
 
-在继续深入以前，需要了解MESI缓存协议[\[4\]](#index)。当然，还存在其他的MESI变种，不过这里只会简单解释下MESI。每个cache line存在四种状态，Modified代表该cache line为该cpu核独有，且尚未写回（write back）到内存（对缓存一致性不了解的看这里[\[5\]](index)）。Exclusive代表该cache line为该cpu核独有，且与内存一致。Shared代表该cache line为多核共享，且与内存一致。Invalid代表缓存失效。系统中多个核之间通过快速通道直接通信，比如intel家的QPI，amd家的Hypertransport。cpu核之间通信的消息包括读消息，以及读消息的响应消息。使无效消息，以及使无效消息的响应消息。当运行在某个cpu核的线程准备读取某个cache line的内容时，如果状态处于M,E,S，直接读取即可。如果状态处于I，则需要向其他cpu核广播读消息，在接受到其他cpu核的读响应后，更新cache line，并将状态设置为S。而当线程准备写入某个cache line时，如果处于M状态，直接写入。如果处于E状态，写入并将cache line状态改为M。如果处于S，则需要向其他cpu核广播使无效消息，并进入E状态，写入修改，后进入M状态。如果处于I，则需要向其他cpu核广播读消息核使无效消息，在收集到读响应后，更新cache line。在收集到使无效响应后，进入E状态，写入修改，后进入M状态。
+在继续深入以前，需要了解MESI缓存协议[\[4\]](#index)。当然，还存在其他的MESI变种，不过这里只会简单解释下MESI。每个cacheline存在四种状态，Modified代表该cacheline为该cpu核独有，且尚未写回（write back）到内存（对缓存一致性不了解的看这里[\[5\]](index).Exclusive代表该cache line为该cpu核独有，且与内存一致。Shared代表该cache line为多核共享，且与内存一致。Invalid代表缓存失效。系统中多个核之间通过快速通道直接通信，比如intel家的QPI，amd家的Hypertransport。cpu核之间通信的消息包括读消息，以及读消息的响应消息。使无效消息，以及使无效消息的响应消息。当运行在某个cpu核的线程准备读取某个cache line的内容时，如果状态处于M,E,S，直接读取即可。如果状态处于I，则需要向其他cpu核广播读消息，在接受到其他cpu核的读响应后，更新cache line，并将状态设置为S。而当线程准备写入某个cache line时，如果处于M状态，直接写入。如果处于E状态，写入并将cache line状态改为M。如果处于S，则需要向其他cpu核广播使无效消息，并进入E状态，写入修改，后进入M状态。如果处于I，则需要向其他cpu核广播读消息核使无效消息，在收集到读响应后，更新cache line。在收集到使无效响应后，进入E状态，写入修改，后进入M状态。
 
 从上面的说明可知，LOCK的实现，只需要保持cache line的M状态即可，此时就可以阻止其他cpu核对该块内存的修改，而不用去锁住整个总线。
 

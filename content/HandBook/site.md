@@ -35,6 +35,8 @@ date: 2015-11-01 15:00:00
 - [wireshark](https://community.emc.com/thread/194901)
 - [wireshark manual](http://man.lupaworld.com/content/network/wireshark/index.html)
 
+### tech
+- [linux高级debug技术](http://www.apuebook.com/debuglinux.pdf)
 
 ### images
 - [Rank\[1\]](https://wallhalla.com/)
@@ -44,7 +46,15 @@ date: 2015-11-01 15:00:00
 - [zhihu](https://www.zhihu.com/question/26373533)
 - [unsplash](https://unsplash.com)
 - [RICK](https://wallhalla.com/tags/rick-and-morty)
-
+- [png素材](http://669pic.com/sc/11-0-4.html)
 
 ### DESIGN
 - [ZHIHU](https://www.zhihu.com/question/19652441/answer/27689261)
+
+### web 模拟
+- [js模拟linux](https://bellard.org/jslinux/)
+- [explain shell](https://explainshell.com)
+
+### user
+- [EZLippi](https://github.com/EZLippi)
+`HttpServer`

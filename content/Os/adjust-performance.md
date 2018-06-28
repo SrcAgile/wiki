@@ -180,4 +180,20 @@ meta@meta:~/workstation/c/performace$ perf record -f -e probe:schedule -a sleep 
 **参照**[perf2](https://www.ibm.com/developerworks/cn/linux/l-cn-perf2/)
 **Instance**
 1. 针对branch-misses进行优化[为什么有序数组在循环中速度比无序的快](https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array#11227902)
-2. 
+
+---
+
+> 这里还是有点乱,不知道下面是否是从IO角度考虑进行优化.
+
+### swap
+```bash
+# adjust swap
+Linux提供了一个/proc/sys/vm/swappiness,只需要简单的echo 0-100 中的一个数值到这个文件中即可。值越大，系统swap到硬盘的越多.
+```
+> 网上看到一个2.6内核维护者，将它设置成 100。给出的理由：“我的观点是降低kernel swap出内存数据不对。你实际上不想让几百兆的内存在自己的机器内存中呆着，但从未被访问。所以把这些数据请到磁盘上，留出更多的主存给要用的程序”.
+
+### page size
+```c
+# include <unistd.h>
+int getpagesize();//get size of page
+```

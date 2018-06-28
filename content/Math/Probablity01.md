@@ -34,7 +34,6 @@ date: 2016-02-25 11:02:20
 3. 随机变量
 
 <b>
-
 给定样本空间 $({\displaystyle (S,\mathbb {F} )} )$ ，如果其上的实值函数 $({\displaystyle X:S\to \mathbb {R} } )$ 是 $({\displaystyle \mathbb {F} } )$ (实值)可测函数，则称 $({\displaystyle X})$ 为（实值）随机变量。初等概率论中通常不涉及到可测性的概念，而直接把任何 $({\displaystyle X:S\to \mathbb {R} } )$ 的函数称为随机变量。
 如果 $({\displaystyle X})$ 指定给概率空间 $({\displaystyle S})$ 中每一个事件 $({\displaystyle e})$ 有一个实数 $({\displaystyle X(e)})$ ，同时针对每一个实数 $({\displaystyle r})$ 都有一个事件集合 $({\displaystyle A_{r}} )$ 与其相对应，其中 $( A_{r}= {  e:X(e) ≤ r })$ ，那么 $({\displaystyle X} )$ 被称作随机变量。随机变量一般用大写拉丁字母或小写希腊字母（比如 $({\displaystyle X,Y,Z,\xi ,\eta })$ )来表示，从上面的定义注意到，随机变量实质上是函数，不能把它的定义与变量的定义相混淆，另外概率函数 $({\displaystyle P})$ 并没有在考虑之中。
 
