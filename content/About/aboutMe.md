@@ -19,6 +19,7 @@ date: 2017-08-25 21:00:00
   </p>
 
 ## 技能树 ##
+
 ### 语言 ###
 #### 面向机器 ####
 ##### 8086汇编 #####
@@ -78,3 +79,30 @@ date: 2017-08-25 21:00:00
 #### 计算的复杂性 ####
     未曾涉足
 [未完待续]()
+<div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar"
+         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+         style="width: 30%;">python
+        <span class="sr-only">40% 完成</span>
+    </div>
+    <div class="progress-bar progress-bar-info" role="progressbar"
+         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+         style="width: 20%;">c/c++
+        <span class="sr-only">30% 完成（信息）</span>
+    </div>
+    <div class="progress-bar progress-bar-warning" role="progressbar"
+         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+         style="width: 20%;">java
+        <span class="sr-only">20% 完成（警告）</span>
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar"
+         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+         style="width: 15%;">前端语言
+        <span class="sr-only">20% 完成（警告）</span>
+    </div>
+    <div class="progress-bar progress-bar-info" role="progressbar"
+         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+         style="width: 15%;">正则类语言
+        <span class="sr-only">20% 完成（警告）</span>
+    </div>
+</div>
