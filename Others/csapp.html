@@ -51,7 +51,7 @@
       background-color: rgba(0,0,0,0.5)!important;
     }
 </style>
-    <title>指令[8086] - Meta's Wiki</title>
+    <title>CSAPP - Meta's Wiki</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -93,86 +93,87 @@
     <div id="container" style="color:yellow;background-color: rgba(0,0,0,0.8);">
       
 <div id="header">
-  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Os">Os</a>&nbsp;&#187;&nbsp;指令[8086]
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Others">Others</a>&nbsp;&#187;&nbsp;CSAPP
     <span class="updated">Page Updated&nbsp;
-      2016-09-22 19:00:00
+      2016-03-11 07:00:00
     </span></div>
   
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">指令[8086]</div>
+<div class="page_title">CSAPP</div>
 <!-- <b>更改颜色：</b><input style="margin-left: 0px" type="color" id="onchange"> -->
   <p><strong>文档状态：</strong><a style="color:red;background-color:gray">编辑....</a></p>
 <hr />
-<ul>
-<li><strong>今日音乐</strong><br />
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=286999&auto=0&height=66"></iframe></li>
-</ul>
+<blockquote></blockquote>
 <hr />
-<blockquote>
-<p>关注问题的发生形成有利于发展的思路</p>
-</blockquote>
-<hr />
-<p><b style="color:red"></b></p>
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#problem">Problem</a></li>
+<li><a href="#download">Download</a></li>
+<li><a href="#manual">Manual</a></li>
+<li><a href="#datalab">Datalab</a><ul>
+<li><a href="#fitsbitrating2">fitsBit[rating:2]</a></li>
+<li><a href="#divpwr2">divpwr2</a></li>
+<li><a href="#ispositive">isPositive</a></li>
+<li><a href="#islessorequal">isLessOrEqual</a></li>
+</ul>
+</li>
 </ul>
 </div>
-<h3 id="problem">Problem</h3>
+<h3 id="download">Download</h3>
 <ul>
-<li>文章推荐<br />
-<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html">IBM-软硬链接</a></li>
-<li>/usr/bin 与 /bin<br />
-<a href="http://slayer.blog.51cto.com/4845839/1872014">故障实例</a></li>
-<li>软链接与硬链接</li>
-<li>理解 /proc/bus/input/devices信息对应/dev/input的信息</li>
+<li><a href="http://csapp.cs.cmu.edu/3e/labs.html">lab-handout</a></li>
 </ul>
-<div class="hlcode"><pre>    <span class="err">这个很好玩！可以直接用</span><span class="n">c</span><span class="err">去操作设备</span>
-    <span class="c1">//#include &lt;input.h&gt; 引用内核头文件 linux/input.h</span>
-    <span class="c1">//主要使用input.h的数据结构 input_event</span>
-    <span class="kt">int</span> <span class="n">fd</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">input_event</span> <span class="n">ie</span><span class="p">;</span>
-    <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;/dev/input/event5&quot;</span><span class="p">,</span> <span class="n">O_RDONLY</span><span class="p">);</span>
-    <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ie</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">input_event</span><span class="p">));</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;type = %d  code = %d  value = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-            <span class="n">ie</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">ie</span><span class="p">.</span><span class="n">code</span><span class="p">,</span> <span class="n">ie</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
-    <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+<h3 id="manual">Manual</h3>
+<ul>
+<li>Error[fatal error: sys/cdefs.h]<br />
+<code>[RESOLVED]: sudo apt-get install libc6-dev-i386</code></li>
+</ul>
+<h3 id="datalab">Datalab</h3>
+<p>常使用的规则</p>
+<p>可以用来判断一串二进制数字中是否存在1</p>
+<div class="hlcode"><pre><span class="p">[</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>   <span class="o">!</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span>
+<span class="p">[</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">]</span>  <span class="o">!</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 
 
+<h4 id="fitsbitrating2">fitsBit[rating:2]</h4>
 <ul>
-<li>
-<p>linux/unix 查看文件元数据<br />
-<code>$ stat xxx 或 ls -i[查看inode]</code><br />
-<code>AIX 系统 使用 istat</code></p>
-</li>
-<li>
-<p>dd if=/dev/zero of=mo.img bs=5120k count=1的意义<br />
-<code>1. ls -lh mo.img</code><br />
-<code>2. mkfs -t ext4  -F ./mo.img</code><br />
-<code>3. mount -o loop ./mo.img /mnt</code><br />
-<code>4. df -iT /mnt/; du -sh /mnt/</code></p>
-</li>
-<li>
-<p>查看inode值<br />
-<code>// 查看磁盘分区 /dev/sda7 上的 inode 值</code><br />
-<code># dumpe2fs -h /dev/sda7 | grep "Inode size"</code><br />
-<code>dumpe2fs 1.42 (29-Nov-2011)
-      Inode size:              256</code><br />
-<code># tune2fs -l /dev/sda7 | grep "Inode size"</code><br />
-<code>Inode size:              256</code></p>
-</li>
-<li>
-<p>硬链接目录环问题</p>
-</li>
+<li>!为字节级操作</li>
+<li>本题转换为能否以更少的位数表示x,从而进一步转换为符号位扩展问题</li>
+<li>~n = -n-1[不让使用减号,只能利用位级操作表达字节级操作]</li>
+<li>=&gt; -n = ~n+1[注意补码不对称,-128使用此规则得不到128]</li>
+</ul>
+<h4 id="divpwr2">divpwr2</h4>
+<ul>
+<li>x&lt;0: x/(2^n) = (x + (1 &lt;&lt; n) - 1) &gt;&gt; n[记住]</li>
+<li>x&gt;0: x&gt;&gt;2 </li>
+<li>对补码来说 x&gt;&gt;31,x&gt;0得到全0,x&lt;0时得到全F,正好可以利用&amp;做掩码</li>
+<li>int val = ((1&lt;&lt;n)+~0);(√)</li>
+<li>int val = (1&lt;&lt;n+~0);(×)</li>
+</ul>
+<h4 id="ispositive">isPositive</h4>
+<ul>
+<li>[0]&gt;&gt;31  = 0  ![0] =1</li>
+<li>[&gt;0]&gt;&gt;31 = 0  ![&gt;0]=0</li>
+<li>[&lt;0]&gt;&gt;31 = 1  ![&lt;0]=1<br />
+以上第一列不可分开,但是加上第二列就可以分开了,直接使用|</li>
+</ul>
+<h4 id="islessorequal">isLessOrEqual</h4>
+<ul>
+<li>单纯求符号位[0000 0001]或[0000 0000]使用(x&gt;&gt;31)&amp;1</li>
+<li>否则对负数x进行x&gt;&gt;31得[1111 1111]</li>
+<li>不能直接用减法,会出现溢出<br />
+<code>isLessOrEqual(-2147483648[0x80000000],2147483647[0x7fffffff]) failed</code></li>
+<li>同号[(x&gt;&gt;31)^(y&gt;&gt;31)]==0 使用减法(y+(~x)+1)&gt;&gt;31==0[true] ==1(false)</li>
+<li>异号[(x&gt;&gt;31)^(y&gt;&gt;31)]==1 比较符号!((y&gt;&gt;31)-(x&gt;&gt;31))==1[true] ==0(false)</li>
+<li>如何在[(x&gt;&gt;31)^(y&gt;&gt;31)]==0时使用上面的操作,反之使用下面的操作</li>
 </ul>
   <div id="comments"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    title: '指令[8086]',
+    title: 'CSAPP',
     owner: 'srcagile',
     repo: 'wiki',
     oauth: {
